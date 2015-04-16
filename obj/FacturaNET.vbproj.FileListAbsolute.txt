@@ -568,3 +568,7 @@ C:\Users\MANUEL\Documents\Proyectos\FacturaNET - Tedesi2.0\obj\Debug\FacturaNET.
 C:\Users\MANUEL\Documents\Proyectos\FacturaNET - Tedesi2.0\obj\Debug\FacturaNET.vbproj.GenerateResource.Cache
 C:\Users\MANUEL\Documents\Proyectos\FacturaNET - Tedesi2.0\obj\Debug\FacturaNET.exe.licenses
 C:\Users\MANUEL\Documents\Proyectos\FacturaNET - Tedesi2.0\bin\x86\Release\FacturaNETLib.XmlSerializers.dll
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\FacturaNET.exe.config
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Debug\FacturaNET.exe
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Debug\FacturaNET.xml
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Debug\FacturaNET.pdb

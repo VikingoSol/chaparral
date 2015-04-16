@@ -328,10 +328,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FacturaNETLib\FacturaNETLib\FacturaNETLib.vbproj">
-      <Project>{AE74E561-18CD-4116-8324-EAAE8DC766C3}</Project>
-      <Name>FacturaNETLib</Name>
-    </ProjectReference>
     <ProjectReference Include="BaseDatos\BaseDatos.vbproj">
       <Project>{11FDAA7C-6736-4998-97F3-15E8E567D9D1}</Project>
       <Name>BaseDatos</Name>
