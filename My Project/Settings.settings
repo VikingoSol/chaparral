@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="FacturaNET_WsCFDI_expidetufactura_recibe_wsdl" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://timbrado.expidetufactura.com.mx:8080/produccion/TimbradoWS</Value>
+    </Setting>
+    <Setting Name="FacturaNET_WsCancel_expidetufactura_cancelacion_wsdl" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://www.expidetufactura.com.mx:443/cfdi/webservice/cancelacionProductivo.php</Value>
+    </Setting>
+    <Setting Name="FacturaNET_mx_advans_app_advanswsdl" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://app.advans.mx:443/ws/awscfdi.php</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

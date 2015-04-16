@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "FacturaNET", "FacturaNET.vbproj", "{90C228FA-4E5F-4048-AB7C-6CAE908768E0}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "BaseDatos", "BaseDatos\BaseDatos.vbproj", "{11FDAA7C-6736-4998-97F3-15E8E567D9D1}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "FacturaNETLib", "..\FacturaNETLib\FacturaNETLib\FacturaNETLib.vbproj", "{AE74E561-18CD-4116-8324-EAAE8DC766C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FacturaNET.Crypt", "..\FacturaNETLib\FacturaNET.Crypt\FacturaNET.Crypt.csproj", "{301BD1CA-AE7C-4B86-B535-E97C75DAFED4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90C228FA-4E5F-4048-AB7C-6CAE908768E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90C228FA-4E5F-4048-AB7C-6CAE908768E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90C228FA-4E5F-4048-AB7C-6CAE908768E0}.Debug|x86.ActiveCfg = Debug|x86
+		{90C228FA-4E5F-4048-AB7C-6CAE908768E0}.Debug|x86.Build.0 = Debug|x86
+		{90C228FA-4E5F-4048-AB7C-6CAE908768E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90C228FA-4E5F-4048-AB7C-6CAE908768E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90C228FA-4E5F-4048-AB7C-6CAE908768E0}.Release|x86.ActiveCfg = Release|x86
+		{90C228FA-4E5F-4048-AB7C-6CAE908768E0}.Release|x86.Build.0 = Release|x86
+		{11FDAA7C-6736-4998-97F3-15E8E567D9D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11FDAA7C-6736-4998-97F3-15E8E567D9D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11FDAA7C-6736-4998-97F3-15E8E567D9D1}.Debug|x86.ActiveCfg = Debug|x86
+		{11FDAA7C-6736-4998-97F3-15E8E567D9D1}.Debug|x86.Build.0 = Debug|x86
+		{11FDAA7C-6736-4998-97F3-15E8E567D9D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11FDAA7C-6736-4998-97F3-15E8E567D9D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11FDAA7C-6736-4998-97F3-15E8E567D9D1}.Release|x86.ActiveCfg = Release|x86
+		{11FDAA7C-6736-4998-97F3-15E8E567D9D1}.Release|x86.Build.0 = Release|x86
+		{AE74E561-18CD-4116-8324-EAAE8DC766C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE74E561-18CD-4116-8324-EAAE8DC766C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE74E561-18CD-4116-8324-EAAE8DC766C3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AE74E561-18CD-4116-8324-EAAE8DC766C3}.Debug|x86.Build.0 = Debug|Any CPU
+		{AE74E561-18CD-4116-8324-EAAE8DC766C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE74E561-18CD-4116-8324-EAAE8DC766C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE74E561-18CD-4116-8324-EAAE8DC766C3}.Release|x86.ActiveCfg = Release|Any CPU
+		{301BD1CA-AE7C-4B86-B535-E97C75DAFED4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{301BD1CA-AE7C-4B86-B535-E97C75DAFED4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{301BD1CA-AE7C-4B86-B535-E97C75DAFED4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{301BD1CA-AE7C-4B86-B535-E97C75DAFED4}.Debug|x86.Build.0 = Debug|Any CPU
+		{301BD1CA-AE7C-4B86-B535-E97C75DAFED4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{301BD1CA-AE7C-4B86-B535-E97C75DAFED4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{301BD1CA-AE7C-4B86-B535-E97C75DAFED4}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

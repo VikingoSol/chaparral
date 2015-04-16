@@ -1,0 +1,25 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <Productos>
+    <factura>10</factura>
+    <producto>0</producto>
+    <cantidad>100</cantidad>
+    <precio>1000</precio>
+    <unidad>23</unidad>
+    <isproducto>false</isproducto>
+    <producto_nombre>aaa b  c   d  e    d  f    e   g   d   a a  las a las fla f asd asf  asf asfd as ffa sf asf as fa s  a a a as fa sdf afd a fa fa fasf</producto_nombre>
+    <productonombre>aaa b  c   d  e    d  f    e   g   d   a a  las a las fla f asd asf  asf asfd as ffa sf asf as fa s  a a a as fa sdf afd a fa fa fasf</productonombre>
+    <nom_uni>SERVICIO</nom_uni>
+  </Productos>
+  <Productos>
+    <factura>10</factura>
+    <producto>1</producto>
+    <cantidad>100</cantidad>
+    <precio>85</precio>
+    <unidad>22</unidad>
+    <isproducto>true</isproducto>
+    <producto_nombre />
+    <productonombre>Soporte</productonombre>
+    <nom_uni>HORA</nom_uni>
+  </Productos>
+</NewDataSet>

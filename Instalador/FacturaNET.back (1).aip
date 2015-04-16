@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="8.0.2" version="9.1" Modules="professional" RootPath="." Language="es" Id="{EE9404DC-D4B8-4405-9A2E-BFE57F5A6E8C}">
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="ALLUSERS" Value="2"/>
+    <ROW Property="ARPCOMMENTS" Value="Esta base de datos del instalador contiene la lógica y los datos necesarios para instalar [|ProductName]." ValueLocId="*"/>
+    <ROW Property="Manufacturer" Value="Tedesi" ValueLocId="*"/>
+    <ROW Property="ProductCode" Value="3082:{A9F2136A-9CC7-47DC-969D-6C137703AB34} " Type="16"/>
+    <ROW Property="ProductLanguage" Value="3082"/>
+    <ROW Property="ProductName" Value="FacturaNET" ValueLocId="*"/>
+    <ROW Property="ProductVersion" Value="1.0.0"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
+    <ROW Property="UpgradeCode" Value="{B878731B-5DD6-4DEC-A63C-5FB4DB3852AB}"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="Deskto~1|DesktopFolder" IsPseudoRoot="1"/>
+    <ROW Directory="Reportes_DIR" Directory_Parent="APPDIR" DefaultDir="Reportes"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="APPDIR" ComponentId="{FC8AC59E-C47E-4385-8433-3C1FA96541BB}" Directory_="APPDIR" Attributes="0"/>
+    <ROW Component="BaseDatos.dll" ComponentId="{9B21B6D8-A7E2-4DDF-A3A5-33383102CAA1}" Directory_="APPDIR" Attributes="0" KeyPath="BaseDatos.dll"/>
+    <ROW Component="FacturaNET.Crypt.dll" ComponentId="{C3FF5E30-965F-444E-A69D-96B2726A86C4}" Directory_="APPDIR" Attributes="0" KeyPath="FacturaNET.Crypt.dll"/>
+    <ROW Component="FacturaNET.exe" ComponentId="{1DF169AB-0220-4549-A8EC-81941A6CD4DF}" Directory_="APPDIR" Attributes="0" KeyPath="FacturaNET.exe"/>
+    <ROW Component="FacturaNETLib.dll" ComponentId="{BBADB895-3CEE-4869-B561-98795E72B79F}" Directory_="APPDIR" Attributes="0" KeyPath="FacturaNETLib.dll"/>
+    <ROW Component="FastReport.Bars.dll" ComponentId="{005F586F-A4DB-406A-9DE5-E96C3C6A566C}" Directory_="APPDIR" Attributes="0" KeyPath="FastReport.Bars.dll"/>
+    <ROW Component="FastReport.Editor.dll" ComponentId="{D00E8C81-57B9-498E-941B-98831262E55D}" Directory_="APPDIR" Attributes="0" KeyPath="FastReport.Editor.dll"/>
+    <ROW Component="FastReport.dll" ComponentId="{7C2D252D-8852-4DBA-8817-58648F709B43}" Directory_="APPDIR" Attributes="0" KeyPath="FastReport.dll"/>
+    <ROW Component="Ionic.Zip.dll" ComponentId="{40D3FEBB-1063-445B-A308-CE7FB62981E9}" Directory_="APPDIR" Attributes="0" KeyPath="Ionic.Zip.dll"/>
+    <ROW Component="Janus.Data.v3.dll" ComponentId="{8F2D02A2-E7C9-4E0A-8F77-024829E10616}" Directory_="APPDIR" Attributes="0" KeyPath="Janus.Data.v3.dll"/>
+    <ROW Component="Janus.Windows.Common.v3.dll" ComponentId="{B9223FD9-3196-41B6-9471-5DC51606DEE7}" Directory_="APPDIR" Attributes="0" KeyPath="Janus.Windows.Common.v3.dll"/>
+    <ROW Component="Janus.Windows.GridEX.v3.dll" ComponentId="{224D5462-BEF1-4A41-884F-838D97D912BA}" Directory_="APPDIR" Attributes="0" KeyPath="Janus.Windows.GridEX.v3.dll"/>
+    <ROW Component="Janus.Windows.UI.v3.dll" ComponentId="{8E434DF3-967B-4758-8B77-F7DFCDBF07FE}" Directory_="APPDIR" Attributes="0" KeyPath="Janus.Windows.UI.v3.dll"/>
+    <ROW Component="MySql.Data.dll" ComponentId="{C7C72E6C-72BD-479C-81F6-1D8F17A869AD}" Directory_="APPDIR" Attributes="0" KeyPath="MySql.Data.dll"/>
+    <ROW Component="ThoughtWorks.QRCode.dll" ComponentId="{AB997EC7-6AD8-45F8-8C97-09942B12F8BD}" Directory_="APPDIR" Attributes="0" KeyPath="ThoughtWorks.QRCode.dll"/>
+    <ROW Component="factura.frx" ComponentId="{F1395DF7-1E33-4B42-9DD9-F4ED744051A5}" Directory_="Reportes_DIR" Attributes="0" KeyPath="factura.frx" Type="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Descripción" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="APPDIR BaseDatos.dll FacturaNET.Crypt.dll FacturaNET.exe FacturaNETLib.dll FastReport.Bars.dll FastReport.Editor.dll FastReport.dll Ionic.Zip.dll Janus.Data.v3.dll Janus.Windows.Common.v3.dll Janus.Windows.GridEX.v3.dll Janus.Windows.UI.v3.dll MySql.Data.dll ThoughtWorks.QRCode.dll factura.frx"/>
+    <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="BaseDatos.dll" Component_="BaseDatos.dll" FileName="BaseDa~1.dll|BaseDatos.dll" Attributes="0" SourcePath="..\bin\x86\Release\BaseDatos.dll" SelfReg="false" NextFile="FacturaNET.Crypt.dll"/>
+    <ROW File="FacturaNET.Crypt.dll" Component_="FacturaNET.Crypt.dll" FileName="Factur~1.dll|FacturaNET.Crypt.dll" Attributes="0" SourcePath="..\..\FacturaNETLib\FacturaNETLib\bin\Release\FacturaNET.Crypt.dll" SelfReg="false" NextFile="FacturaNET.exe"/>
+    <ROW File="FacturaNET.exe" Component_="FacturaNET.exe" FileName="Factur~1.exe|FacturaNET.exe" Attributes="0" SourcePath="..\bin\x86\Release\FacturaNET.exe" SelfReg="false" NextFile="FacturaNETLib.dll"/>
+    <ROW File="FacturaNETLib.dll" Component_="FacturaNETLib.dll" FileName="Factur~2.dll|FacturaNETLib.dll" Attributes="0" SourcePath="..\..\FacturaNETLib\FacturaNETLib\bin\Release\FacturaNETLib.dll" SelfReg="false" NextFile="FastReport.Bars.dll"/>
+    <ROW File="FastReport.Bars.dll" Component_="FastReport.Bars.dll" FileName="FastRe~1.dll|FastReport.Bars.dll" Attributes="0" SourcePath="..\bin\x86\Release\FastReport.Bars.dll" SelfReg="false" NextFile="FastReport.dll"/>
+    <ROW File="FastReport.Editor.dll" Component_="FastReport.Editor.dll" FileName="FastRe~3.dll|FastReport.Editor.dll" Attributes="0" SourcePath="..\bin\x86\Release\FastReport.Editor.dll" SelfReg="false" NextFile="Ionic.Zip.dll"/>
+    <ROW File="FastReport.dll" Component_="FastReport.dll" FileName="FastRe~2.dll|FastReport.dll" Attributes="0" SourcePath="..\bin\x86\Release\FastReport.dll" SelfReg="false" NextFile="FastReport.Editor.dll"/>
+    <ROW File="Ionic.Zip.dll" Component_="Ionic.Zip.dll" FileName="IonicZ~1.dll|Ionic.Zip.dll" Attributes="0" SourcePath="..\bin\x86\Release\Ionic.Zip.dll" SelfReg="false" NextFile="Janus.Data.v3.dll"/>
+    <ROW File="Janus.Data.v3.dll" Component_="Janus.Data.v3.dll" FileName="JanusD~1.dll|Janus.Data.v3.dll" Attributes="0" SourcePath="..\bin\x86\Release\Janus.Data.v3.dll" SelfReg="false" NextFile="MySql.Data.dll"/>
+    <ROW File="Janus.Windows.Common.v3.dll" Component_="Janus.Windows.Common.v3.dll" FileName="JanusW~1.dll|Janus.Windows.Common.v3.dll" Attributes="0" SourcePath="..\bin\x86\Release\Janus.Windows.Common.v3.dll" SelfReg="false" NextFile="Janus.Windows.GridEX.v3.dll"/>
+    <ROW File="Janus.Windows.GridEX.v3.dll" Component_="Janus.Windows.GridEX.v3.dll" FileName="JanusW~2.dll|Janus.Windows.GridEX.v3.dll" Attributes="0" SourcePath="..\bin\x86\Release\Janus.Windows.GridEX.v3.dll" SelfReg="false" NextFile="Janus.Windows.UI.v3.dll"/>
+    <ROW File="Janus.Windows.UI.v3.dll" Component_="Janus.Windows.UI.v3.dll" FileName="JanusW~3.dll|Janus.Windows.UI.v3.dll" Attributes="0" SourcePath="..\bin\x86\Release\Janus.Windows.UI.v3.dll" SelfReg="false" NextFile="ThoughtWorks.QRCode.dll"/>
+    <ROW File="MySql.Data.dll" Component_="MySql.Data.dll" FileName="MySqlD~1.dll|MySql.Data.dll" Attributes="0" SourcePath="..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.5.4\Assemblies\v2.0\MySql.Data.dll" SelfReg="false"/>
+    <ROW File="ThoughtWorks.QRCode.dll" Component_="ThoughtWorks.QRCode.dll" FileName="Though~1.dll|ThoughtWorks.QRCode.dll" Attributes="0" SourcePath="..\..\FacturaNETLib\FacturaNETLib\bin\Release\ThoughtWorks.QRCode.dll" SelfReg="false" NextFile="BaseDatos.dll"/>
+    <ROW File="factura.frx" Component_="factura.frx" FileName="factura.frx" Attributes="0" SourcePath="..\bin\Release\Reportes\factura.frx" SelfReg="false" NextFile="Janus.Windows.Common.v3.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" Languages="es" InstallationType="4" PackageType="1"/>
+    <ATTRIBUTE name="CurrentBuild" value="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_es.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="FolderDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\FolderDlg.aip"/>
+    <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;classic\fragments\SequenceDialogs.aip"/>
+    <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;classic\fragments\UI.aip"/>
+    <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="Prereq.dll" SourcePath="&lt;AI_CUSTACTS&gt;Prereq.dll"/>
+    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlComponent">
+    <ATTRIBUTE name="FixedSizeBitmaps" value="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="197"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceWelcomeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="99"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="301"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="202"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_MAINT" Ordering="198"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_PATCH" Ordering="201"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
+    <ROW Dialog_="ResumeDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_RESUME" Ordering="299"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
+    <ROW Directory_="APPDIR" Component_="APPDIR"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_AppSearchEx" Type="1" Source="Prereq.dll" Target="DoAppSearchEx"/>
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="Not Installed" Sequence="1501"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="51"/>
+    <ROW Action="AI_AppSearchEx" Sequence="101"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="51"/>
+    <ROW Action="AI_AppSearchEx" Sequence="101"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
+    <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]" DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiLockPermComponent">
+    <ROW LockObject="APPDIR" Table="CreateFolder" User="Everyone" Permission="1880096767"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="FacturaNET.exe" Directory_="DesktopFolder" Name="Factur~1.exe|FacturaNET.exe" Component_="FacturaNET.exe" Target="[#FacturaNET.exe]" Hotkey="0" IconIndex="0" ShowCmd="1" WkDir="APPDIR"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
+    <ATTRIBUTE name="UsedTheme" value="classic"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMax="[|ProductVersion]" Attributes="1025" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.PreReqComponent">
+    <ROW PrereqKey="E1F6EB5E_F84F_4E25_BA49_6DFFF987C29D" DisplayName=".NET Framework 2.0" SetupFileUrl="http://download.microsoft.com/download/5/6/7/567758a3-759e-473e-bf8f-52154438565a/dotnetfx.exe" Location="1" ExactSize="0" Win9xVersions="Windows 95, Windows 95 OSR, Windows 95 OSR2.5" WinNTVersions="Windows NT 4.0, Windows NT 4.0, Windows NT 4.0 Service Pack 1, Windows NT 4.0 Service Pack 2, Windows NT 4.0 Service Pack 3, Windows NT 4.0 Service Pack 4, Windows NT 4.0 Service Pack 5, Windows NT 4.0 Service Pack 6, Windows 2000, Windows 2000, Windows 2000 Service Pack 1, Windows 2000 Service Pack 2" Operator="1"/>
+    <ATTRIBUTE name="PrereqsOrder" value="E1F6EB5E_F84F_4E25_BA49_6DFFF987C29D"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.PreReqSearchComponent">
+    <ROW SearchKey="E1F6EB5E_F84F_4E25_BA49_6DFFF987C29D_NET_20_40_CP_SEARCH" Prereq="E1F6EB5E_F84F_4E25_BA49_6DFFF987C29D" SearchType="9" SearchString="HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Client\Install" RefContent="M1" Order="3" Property="AI_NET_20_40_CP_PREREQSEARCH_PROP"/>
+    <ROW SearchKey="E1F6EB5E_F84F_4E25_BA49_6DFFF987C29D_NET_20_40_SEARCH" Prereq="E1F6EB5E_F84F_4E25_BA49_6DFFF987C29D" SearchType="9" SearchString="HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\Install" RefContent="M1" Order="4" Property="AI_NET_20_40_PREREQSEARCH_PROP"/>
+    <ROW SearchKey="E1F6EB5E_F84F_4E25_BA49_6DFFF987C29D_NET_20_SEARCH" Prereq="E1F6EB5E_F84F_4E25_BA49_6DFFF987C29D" SearchType="9" SearchString="HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP\v2.0.50727\Install" RefContent="M1" Order="1" Property="AI_NET_20_PREREQSEARCH_PROP"/>
+    <ROW SearchKey="E1F6EB5E_F84F_4E25_BA49_6DFFF987C29D_NET_20_WIN_SEARCH" Prereq="E1F6EB5E_F84F_4E25_BA49_6DFFF987C29D" SearchType="9" SearchString="HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\CurrentBuildNumber" RefContent="G3790" Order="2" Property="AI_NET_20_WIN_PREREQSEARCH_PROP"/>
+  </COMPONENT>
+</DOCUMENT>

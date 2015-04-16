@@ -1,0 +1,488 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{90C228FA-4E5F-4048-AB7C-6CAE908768E0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>FacturaNET.My.MyApplication</StartupObject>
+    <RootNamespace>FacturaNET</RootNamespace>
+    <AssemblyName>FacturaNET</AssemblyName>
+    <MyType>WindowsForms</MyType>
+    <ApplicationIcon>facturanet.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>FacturaNET.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>FacturaNET.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>FacturaNET.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>FacturaNET.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FastReport, Version=1.4.18.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files\FastReports\FastReport.Net_1.4.18\1.4.18\FastReport.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Referencias\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Janus.Data.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.Common.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.GridEX.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Janus.Windows.UI.v3, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmExportarXML.Designer.vb">
+      <DependentUpon>frmExportarXML.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmExportarXML.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmExportarXMLProc.Designer.vb">
+      <DependentUpon>frmExportarXMLProc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmExportarXMLProc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFacturaCanProc.designer.vb">
+      <DependentUpon>frmFacturaCanProc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFacturaCanProc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFacturaNormal.Designer.vb">
+      <DependentUpon>frmFacturaNormal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFacturaNormal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFacturaTimbre.Designer.vb">
+      <DependentUpon>frmFacturaTimbre.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFacturaTimbre.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFacturaView.Designer.vb">
+      <DependentUpon>frmFacturaView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFacturaView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCliente.Designer.vb">
+      <DependentUpon>frmCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClienteBus.Designer.vb">
+      <DependentUpon>frmClienteBus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmClienteBus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClientes.Designer.vb">
+      <DependentUpon>frmClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfig.Designer.vb">
+      <DependentUpon>frmConfig.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmConfig.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConfigBD.Designer.vb">
+      <DependentUpon>frmConfigBD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmConfigBD.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFactura.Designer.vb">
+      <DependentUpon>frmFactura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFactura.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFacturaProc.Designer.vb">
+      <DependentUpon>frmFacturaProc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFacturaProc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.Designer.vb">
+      <DependentUpon>frmPrincipal.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProducto.Designer.vb">
+      <DependentUpon>frmProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProductos.Designer.vb">
+      <DependentUpon>frmProductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmProductos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFacturas.Designer.vb">
+      <DependentUpon>frmFacturas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmFacturas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProductosBus.Designer.vb">
+      <DependentUpon>frmProductosBus.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmProductosBus.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProductoUnico.Designer.vb">
+      <DependentUpon>frmProductoUnico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmProductoUnico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mGlobales.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Web References\mx.advans.app\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WsCancel\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WsCFDI\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmExportarXML.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmExportarXML.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmExportarXMLProc.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmExportarXMLProc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFacturaCanProc.resx">
+      <DependentUpon>frmFacturaCanProc.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFacturaNormal.resx">
+      <DependentUpon>frmFacturaNormal.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFacturaTimbre.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmFacturaTimbre.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFacturaView.resx">
+      <DependentUpon>frmFacturaView.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCliente.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClienteBus.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmClienteBus.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClientes.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfig.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmConfig.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConfigBD.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmConfigBD.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFactura.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmFactura.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFacturaProc.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmFacturaProc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFacturas.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmFacturas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProducto.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProductos.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmProductos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProductosBus.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmProductosBus.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProductoUnico.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmProductoUnico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FacturaNETLib\FacturaNETLib\FacturaNETLib.vbproj">
+      <Project>{AE74E561-18CD-4116-8324-EAAE8DC766C3}</Project>
+      <Name>FacturaNETLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="BaseDatos\BaseDatos.vbproj">
+      <Project>{11FDAA7C-6736-4998-97F3-15E8E567D9D1}</Project>
+      <Name>BaseDatos</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iconos\actualizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iconos\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iconos\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="iconos\delete.png" />
+    <None Include="Web References\WsCFDI\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="https://app.advans.mx/ws/awscfdi.php%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\mx.advans.app\</RelPath>
+      <UpdateFromURL>https://app.advans.mx/ws/awscfdi.php%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>FacturaNET_mx_advans_app_advanswsdl</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://www.expidetufactura.com.mx/cfdi/webservice/cancelacionProductivo.php%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WsCancel\</RelPath>
+      <UpdateFromURL>https://www.expidetufactura.com.mx/cfdi/webservice/cancelacionProductivo.php%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>FacturaNET_WsCancel_expidetufactura_cancelacion_wsdl</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://timbrado.expidetufactura.com.mx:8080/produccion/TimbradoWS%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WsCFDI\</RelPath>
+      <UpdateFromURL>http://timbrado.expidetufactura.com.mx:8080/produccion/TimbradoWS%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>FacturaNET_WsCFDI_expidetufactura_recibe_wsdl</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iconos\buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iconos\add_prod5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iconos\filtro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iconos\clientes_o.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iconos\products_o24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iconos\config_o.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iconos\facturas_o.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iconos\exit_o.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iconos\imprimir1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="iconos\pdf.png" />
+    <None Include="Reportes\factura.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BarCodeLibrary.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="facturanet.ico" />
+    <None Include="CUMM820805L44\factura.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="LEMM670906AE6\factura.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="MEMM8505319S4\factura.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\excel-8.png" />
+    <None Include="iconos\Xml.png" />
+    <None Include="SASJ831108MK1\factura.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="SOCM850211BM4\factura.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Web References\mx.advans.app\awscfdi.wsdl" />
+    <None Include="Web References\mx.advans.app\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\mx.advans.app\RespuestaCancelacion.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\mx.advans.app\RespuestaConsulta.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\mx.advans.app\RespuestaConsultaHora.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\mx.advans.app\RespuestaTimbre.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\mx.advans.app\RespuestaTimbre2.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WsCancel\cancelacionProductivo.wsdl" />
+    <None Include="Web References\WsCancel\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Web References\WsCFDI\respuestaTimbrado.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WsCFDI\TimbradoWSService.wsdl" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

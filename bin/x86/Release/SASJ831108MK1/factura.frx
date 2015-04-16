@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="Vb" ReportInfo.Created="02/23/2012 22:31:56" ReportInfo.Modified="04/15/2014 20:06:03" ReportInfo.CreatorVersion="1.9.1.0">
+  <ScriptText>Imports System
+Imports System.Collections
+Imports System.Collections.Generic
+Imports System.ComponentModel
+Imports System.Windows.Forms
+Imports System.Drawing
+Imports Microsoft.VisualBasic
+Imports FastReport
+Imports FastReport.Data
+Imports FastReport.Dialog
+Imports FastReport.Table
+Imports FastReport.Barcode
+Imports FastReport.Utils
+
+Namespace FastReport
+  Public Class ReportScript
+    private prod_cant as string
+    private prod_desc as string
+    private prod_unidad as string
+    private prod_precio as String
+    private prod_importe as   String
+
+
+    Private Sub tblProds_ManualBuild(ByVal sender As object, ByVal e As EventArgs)
+      dim vdata as DataSourceBase = Report.GetDataSource(&quot;Productos&quot;)     
+     vdata.Init
+      tblProds.PrintRow(0)    
+      tblProds.PrintColumns()
+      dim n as integer=1       
+      dim MaxRow as Integer=12
+      while vdata.HasMoreRows 
+        if n Mod 2 = 0 Then 
+          Cell47.Fill=new SolidFill(System.Drawing.Color.FromArgb (230,231,232))
+          Cell48.Fill=new SolidFill(System.Drawing.Color.FromArgb (230,231,232))
+          Cell49.Fill=new SolidFill(System.Drawing.Color.FromArgb (230,231,232))
+          Cell50.Fill=new SolidFill(System.Drawing.Color.FromArgb (230,231,232))
+          Cell52.Fill=new SolidFill(System.Drawing.Color.FromArgb (230,231,232))
+        else
+          Cell47.Fill=new SolidFill(System.Drawing.Color.White)
+          Cell48.Fill=new SolidFill(System.Drawing.Color.White)
+          Cell49.Fill=new SolidFill(System.Drawing.Color.White)
+          Cell50.Fill=new SolidFill(System.Drawing.Color.White)
+          Cell52.Fill=new SolidFill(System.Drawing.Color.White)
+        end if
+        tblProds.PrintRow(1)
+        
+        
+        prod_unidad=vData.Item(&quot;nom_uni&quot;)
+        prod_cant=formatnumber(vData.Item(&quot;cantidad&quot;),2)                        
+        prod_desc=vdata.Item(&quot;productonombre&quot;)
+        prod_precio=&quot;$ &quot; &amp; FormatNumber(vData.Item(&quot;precio&quot;),2) 
+        prod_importe=&quot;$ &quot; &amp; FormatNumber(vData.Item(&quot;cantidad&quot;) * vData.Item(&quot;precio&quot;),2)
+        tblProds.PrintColumns()        
+      
+        n+=1
+        vdata.Next            
+      end while
+        tblProds.PrintRow(2)
+        tblProds.PrintColumns()    
+      prod_cant=&quot; &quot;
+      prod_desc=&quot; &quot;     
+      prod_unidad=&quot; &quot;
+      prod_precio=&quot; &quot;
+      prod_importe=&quot; &quot;
+      
+    End Sub
+  End Class
+End Namespace
+</ScriptText>
+  <Dictionary>
+    <XmlDataConnection Name="Connection" ConnectionString="rijcmlqmmfdjkQxfe1iwShBNGpudyj+55k/QAdx8qHHpcMUtOcKrwkIIwAEmvF8NFzEEVO2JnJBdcD22juIof0HbpFhRg==">
+      <TableDataSource Name="Productos" DataType="System.Int32" Enabled="true" TableName="Productos">
+        <Column Name="factura" DataType="System.String"/>
+        <Column Name="producto" DataType="System.String"/>
+        <Column Name="cantidad" DataType="System.String"/>
+        <Column Name="precio" DataType="System.String"/>
+        <Column Name="unidad" DataType="System.String"/>
+        <Column Name="isproducto" DataType="System.String"/>
+        <Column Name="producto_nombre" DataType="System.String"/>
+        <Column Name="productonombre" DataType="System.String"/>
+        <Column Name="nom_uni" DataType="System.String"/>
+      </TableDataSource>
+    </XmlDataConnection>
+    <Parameter Name="folio_fiscal" DataType="System.String"/>
+    <Parameter Name="cer_sat" DataType="System.String"/>
+    <Parameter Name="fecha_cer" DataType="System.String"/>
+    <Parameter Name="fecha_emi" DataType="System.String"/>
+    <Parameter Name="Serie" DataType="System.String"/>
+    <Parameter Name="folio" DataType="System.String"/>
+    <Parameter Name="cer_emi" DataType="System.String"/>
+    <Parameter Name="Moneda" DataType="System.String"/>
+    <Parameter Name="tipo_cambio" DataType="System.String"/>
+    <Parameter Name="txt_cantidad" DataType="System.String"/>
+    <Parameter Name="cadena_original" DataType="System.String"/>
+    <Parameter Name="sello_emi" DataType="System.String"/>
+    <Parameter Name="sello_sat" DataType="System.String"/>
+    <Parameter Name="subtotal" DataType="System.String"/>
+    <Parameter Name="iva" DataType="System.String"/>
+    <Parameter Name="total" DataType="System.String"/>
+    <Parameter Name="Parameter" DataType="System.String"/>
+    <Parameter Name="Cliente" DataType="System.String"/>
+    <Parameter Name="RFC" DataType="System.String"/>
+    <Parameter Name="cl_dir" DataType="System.String"/>
+    <Parameter Name="txtiva" DataType="System.String"/>
+    <Parameter Name="codsitio" DataType="System.String"/>
+    <Parameter Name="nomsitio" DataType="System.String"/>
+    <Parameter Name="ordentrab" DataType="System.String"/>
+    <Parameter Name="metodo_pago" DataType="System.String"/>
+    <Parameter Name="banco" DataType="System.String"/>
+    <Parameter Name="cuenta" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" Guides="699.52,15">
+    <PageHeaderBand Name="PageHeader1" Width="718.2" Height="400.68">
+      <TableObject Name="Table2" Left="14.61" Top="202.23" Width="684.01" Height="39.31">
+        <TableColumn Name="Column2" Width="161.12"/>
+        <TableColumn Name="Column3" Width="47.72"/>
+        <TableColumn Name="Column4" Width="77.96"/>
+        <TableColumn Name="Column5" Width="236.72"/>
+        <TableColumn Name="Column6" Width="62.84"/>
+        <TableColumn Name="Column7" Width="97.65"/>
+        <TableRow Name="Row7" Height="20.41">
+          <TableCell Name="Cell23" Border.ShadowColor="96, 96, 98" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Fill.Color="1, 127, 252" Text="Fecha y Hora de Emisión" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold" TextFill.Color="White"/>
+          <TableCell Name="Cell24" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Fill.Color="1, 127, 252" Text="Serie" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold" TextFill.Color="White"/>
+          <TableCell Name="Cell25" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Fill.Color="1, 127, 252" Text="Folio" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold" TextFill.Color="White"/>
+          <TableCell Name="Cell26" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Fill.Color="1, 127, 252" Text="No. de Serie del Certificado del Emisor" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold" TextFill.Color="White"/>
+          <TableCell Name="Cell27" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Fill.Color="1, 127, 252" Text="Moneda" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold" TextFill.Color="White"/>
+          <TableCell Name="Cell33" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Fill.Color="1, 127, 252" Text="Tipo Cambio" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt, style=Bold" TextFill.Color="White"/>
+        </TableRow>
+        <TableRow Name="Row8">
+          <TableCell Name="Cell28" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Text="[fecha_emi]" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt"/>
+          <TableCell Name="Cell29" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Text="[Serie]" HorzAlign="Center" VertAlign="Center"/>
+          <TableCell Name="Cell30" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Text="[folio]" HorzAlign="Center" VertAlign="Center"/>
+          <TableCell Name="Cell31" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Text="[cer_emi]" HorzAlign="Center" VertAlign="Center"/>
+          <TableCell Name="Cell32" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Text="[Moneda]" HorzAlign="Center" VertAlign="Center"/>
+          <TableCell Name="Cell34" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Text="[tipo_cambio]" HorzAlign="Center" VertAlign="Center"/>
+        </TableRow>
+      </TableObject>
+      <TableObject Name="Table3" Left="14.61" Top="294.84" Width="684.03" Height="98.28" Border.Lines="All">
+        <TableColumn Name="Column8" MaxWidth="756" Width="684.03"/>
+        <TableRow Name="Row9" Height="26.46">
+          <TableCell Name="Cell35" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Fill.Color="1, 127, 252" Text="Facturado A" Padding="10, 1, 2, 1" VertAlign="Center" Font="Arial, 10pt, style=Bold" TextFill.Color="White"/>
+        </TableRow>
+        <TableRow Name="Row10" Height="71.82">
+          <TableCell Name="Cell40" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Text="[Cliente]&#13;&#10;[RFC]&#13;&#10;[cl_dir]"/>
+        </TableRow>
+      </TableObject>
+      <TableObject Name="Table6" Left="15" Top="249.48" Width="306.85" Height="39.31">
+        <TableColumn Name="Column20" Width="207.11"/>
+        <TableColumn Name="Column22" Width="99.74"/>
+        <TableRow Name="Row18" Height="20.41">
+          <TableCell Name="Cell70" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Fill.Color="1, 127, 252" Text="Metodo de Pago" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold" TextFill.Color="White"/>
+          <TableCell Name="Cell72" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Fill.Color="1, 127, 252" Text="Cuenta" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold" TextFill.Color="White"/>
+        </TableRow>
+        <TableRow Name="Row19">
+          <TableCell Name="Cell76" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Text="[metodo_pago]" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt"/>
+          <TableCell Name="Cell78" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Text="[cuenta]" HorzAlign="Center" VertAlign="Center"/>
+        </TableRow>
+      </TableObject>
+      <TableObject Name="Table7" Left="15.51" Top="149.31" Width="684.18" Height="39.31">
+        <TableColumn Name="Column23" Width="264.6"/>
+        <TableColumn Name="Column24" Width="230.58"/>
+        <TableColumn Name="Column25" Width="189"/>
+        <TableRow Name="Row20" Height="20.41">
+          <TableCell Name="Cell79" Border.ShadowColor="96, 96, 98" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Fill.Color="1, 127, 252" Text="Folio Fiscal" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold" TextFill.Color="White"/>
+          <TableCell Name="Cell80" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Fill.Color="1, 127, 252" Text="No. de Serie del Certificado del SAT" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold" TextFill.Color="White"/>
+          <TableCell Name="Cell81" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Fill.Color="1, 127, 252" Text="Fecha y Hora de Certificación" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold" TextFill.Color="White"/>
+        </TableRow>
+        <TableRow Name="Row21">
+          <TableCell Name="Cell85" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Text="[folio_fiscal]" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt"/>
+          <TableCell Name="Cell86" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Text="[cer_sat]" HorzAlign="Center" VertAlign="Center"/>
+          <TableCell Name="Cell87" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Text="[fecha_cer]" HorzAlign="Center" VertAlign="Center"/>
+        </TableRow>
+      </TableObject>
+      <TextObject Name="Text12" Left="15" Top="5.67" Width="684.52" Height="34.02" Text="JUAN PABLO SALVATIERRA SALGADO" HorzAlign="Center" Font="Arial Black, 20pt, style=Bold" TextFill.Color="DimGray"/>
+      <TextObject Name="Text13" Left="15" Top="43.47" Width="684.52" Height="90.72" Text="R.F.C   SASJ831108MK1		CURP. SASJ8311081-1BSLLNO8&#13;&#10;Calle Reforma #606 entre H. de Indepedencia y Josefa de Ortiz de Dominguez&#13;&#10;Col. Centro, C.P. 23000&#13;&#10;La Paz, Baja California Sur" HorzAlign="Center" Font="Arial, 11pt"/>
+      <TextObject Name="Text14" Left="15" Top="134.19" Width="684.52" Height="18.9" Text="Regimen de Incorporación Fiscal" HorzAlign="Center"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="404.68" Width="718.2" Height="56.7">
+      <TableObject Name="tblProds" Left="15.12" Width="684.04" Height="56.7" Fill.Color="White" GrowToBottom="true" ManualBuildEvent="tblProds_ManualBuild">
+        <TableColumn Name="Column10" Width="74.23"/>
+        <TableColumn Name="Column11" Width="80"/>
+        <TableColumn Name="Column12" Width="331.37"/>
+        <TableColumn Name="Column13" Width="96.91"/>
+        <TableColumn Name="Column14" Width="101.53"/>
+        <TableRow Name="Row11">
+          <TableCell Name="Cell42" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Fill.Color="1, 127, 252" Text="Cantidad" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold" TextFill.Color="White"/>
+          <TableCell Name="Cell43" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Fill.Color="1, 127, 252" Text="Unidad" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold" TextFill.Color="White"/>
+          <TableCell Name="Cell44" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Fill.Color="1, 127, 252" Text="Descripcion" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold" TextFill.Color="White"/>
+          <TableCell Name="Cell45" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Fill.Color="1, 127, 252" Text="Precio Unitario" HorzAlign="Center" VertAlign="Center" Font="Arial, 9pt, style=Bold" TextFill.Color="White"/>
+          <TableCell Name="Cell51" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Fill.Color="1, 127, 252" Text="Importe" HorzAlign="Center" Font="Arial, 10pt, style=Bold" TextFill.Color="White"/>
+        </TableRow>
+        <TableRow Name="Row12" Height="24.57" AutoSize="true">
+          <TableCell Name="Cell47" Border.Lines="Left, Right, Top" Border.Color="96, 96, 98" Border.Width="1.5" Text="[prod_cant]" Padding="2, 3, 2, 1" HorzAlign="Right" Font="Arial, 9pt"/>
+          <TableCell Name="Cell48" Border.Lines="Left, Right, Top" Border.Color="96, 96, 98" Border.Width="1.5" Text="[prod_unidad]" Padding="2, 3, 2, 1" HorzAlign="Center" Font="Arial, 9pt"/>
+          <TableCell Name="Cell49" Border.Lines="Left, Right, Top" Border.Color="96, 96, 98" Border.Width="1.5" Text="[prod_desc]" Padding="2, 3, 2, 1" Font="Arial, 9pt"/>
+          <TableCell Name="Cell50" Border.Lines="Left, Right, Top" Border.Color="96, 96, 98" Border.Width="1.5" Text="[prod_precio]" Padding="2, 3, 2, 1" HorzAlign="Right" Font="Arial, 9pt"/>
+          <TableCell Name="Cell52" Border.Lines="Left, Right, Top" Border.Color="96, 96, 98" Border.Width="1.5" Text="[prod_importe]" Padding="2, 3, 2, 1" HorzAlign="Right" Font="Arial, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row22" Height="13.23">
+          <TableCell Name="Cell88" Border.Lines="Top" Border.Color="96, 96, 98" Border.Width="1.5"/>
+          <TableCell Name="Cell89" Border.Lines="Top" Border.Color="96, 96, 98" Border.Width="1.5"/>
+          <TableCell Name="Cell90" Border.Lines="Top" Border.Color="96, 96, 98" Border.Width="1.5"/>
+          <TableCell Name="Cell91" Border.Lines="Top" Border.Color="96, 96, 98" Border.Width="1.5"/>
+          <TableCell Name="Cell92" Border.Lines="Top" Border.Color="96, 96, 98" Border.Width="1.5"/>
+        </TableRow>
+      </TableObject>
+    </DataBand>
+    <ReportSummaryBand Name="ReportSummary1" Top="465.38" Width="718.2" Height="115.29" CanGrow="true" CanBreak="true">
+      <PictureObject Name="BarCodeImg" Left="16.1" Top="1.89" Width="113.4" Height="113.4" Border.Lines="All" Fill.Color="96, 96, 98"/>
+      <TableObject Name="Table5" Left="509.39" Top="3.78" Width="190.13" Height="109.62">
+        <TableColumn Name="Column15" Width="88.83"/>
+        <TableColumn Name="Column16" Width="101.3"/>
+        <TableRow Name="Row13" Height="36.54">
+          <TableCell Name="Cell53" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Fill.Color="1, 127, 252" Text="SubTotal" HorzAlign="Right" VertAlign="Center" Font="Arial, 9pt, style=Bold" TextFill.Color="White"/>
+          <TableCell Name="Cell54" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Text="[subtotal]" HorzAlign="Right" VertAlign="Center" Font="Arial, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row14" Height="36.54">
+          <TableCell Name="Cell58" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Fill.Color="1, 127, 252" Text="[txtiva]" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt, style=Bold" TextFill.Color="White"/>
+          <TableCell Name="Cell59" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Text="[iva]" HorzAlign="Right" VertAlign="Center" Font="Arial, 9pt"/>
+        </TableRow>
+        <TableRow Name="Row15" Height="36.54">
+          <TableCell Name="Cell60" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Fill.Color="1, 127, 252" Text="Total:" HorzAlign="Right" VertAlign="Center" Font="Arial, 9pt, style=Bold" TextFill.Color="White"/>
+          <TableCell Name="Cell61" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Text="[total]" HorzAlign="Right" VertAlign="Center" Font="Arial, 9pt"/>
+        </TableRow>
+      </TableObject>
+      <TextObject Name="Text1" Left="137.06" Top="3.78" Width="370.44" Height="109.62" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Text="[txt_cantidad]" Padding="2, 5, 2, 0"/>
+      <TextObject Name="Text9" Left="140.84" Top="98.28" Width="362.88" Height="15.12" Text="PAGO EN UNA SOLA EXHIBICIÓN" HorzAlign="Center" Font="Arial, 9pt, style=Bold" TextFill.Color="95, 95, 96"/>
+      <ChildBand Name="Child5" Top="584.67" Width="718.2" Height="60.48" CanGrow="true" CanBreak="true">
+        <TextObject Name="Text2" Left="15.49" Top="3.78" Width="684.03" Height="22.68" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Fill.Color="1, 127, 252" Text="CADENA ORIGINAL DEL COMPLEMENTO DE CERTIFICACION DIGITAL DEL SAT" VertAlign="Center" Font="Arial, 10pt, style=Bold" TextFill.Color="White"/>
+        <TextObject Name="Text3" Left="15.49" Top="26.46" Width="684.03" Height="30.24" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Fill.Color="White" CanGrow="true" GrowToBottom="true" Text="[cadena_original]" Font="Arial, 8pt"/>
+        <ChildBand Name="Child6" Top="649.15" Width="718.2" Height="56.7" CanGrow="true">
+          <TextObject Name="Text4" Left="15.49" Width="684.03" Height="22.68" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Fill.Color="1, 127, 252" Text="SELLO DIGITAL DEL EMISOR" VertAlign="Center" Font="Arial, 10pt, style=Bold" TextFill.Color="White"/>
+          <TextObject Name="Text5" Left="15.49" Top="22.68" Width="684.03" Height="30.24" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Fill.Color="White" CanGrow="true" GrowToBottom="true" Text="[sello_emi]" Font="Arial, 8pt"/>
+          <ChildBand Name="Child7" Top="709.85" Width="718.2" Height="52.92" CanGrow="true">
+            <TextObject Name="Text6" Left="15.49" Width="684.03" Height="22.68" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Fill.Color="1, 127, 252" Text="SELLO DIGITAL DEL SAT" VertAlign="Center" Font="Arial, 10pt, style=Bold" TextFill.Color="White"/>
+            <TextObject Name="Text7" Left="15.49" Top="22.68" Width="684.03" Height="30.24" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Fill.Color="White" CanGrow="true" GrowToBottom="true" Text="[sello_sat]" Font="Arial, 8pt"/>
+            <ChildBand Name="Child8" Top="766.77" Width="718.2" Height="24.57">
+              <TextObject Name="Text8" Left="15" Top="3.78" Width="684.52" Height="15.12" Text="&quot;Este documento es una representación impresa de un CFDI&quot;" HorzAlign="Center" Font="Arial, 9pt, style=Bold" TextFill.Color="96, 96, 98"/>
+            </ChildBand>
+          </ChildBand>
+        </ChildBand>
+      </ChildBand>
+    </ReportSummaryBand>
+  </ReportPage>
+</Report>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="urn:expidetufactura_cancelacion_wsdl" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:expidetufactura_cancelacion_wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="urn:expidetufactura_cancelacion_wsdl">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="recibeRequest">
+    <wsdl:part name="XML_para_cancelacion" type="xsd:base64Binary" />
+    <wsdl:part name="ID" type="xsd:string" />
+    <wsdl:part name="token" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="recibeResponse">
+    <wsdl:part name="error" type="xsd:string" />
+    <wsdl:part name="acuse" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="expidetufactura_cancelacion_wsdlPortType">
+    <wsdl:operation name="recibe">
+      <documentation>Recibe Folios para cancelar</documentation>
+      <wsdl:input message="tns:recibeRequest" />
+      <wsdl:output message="tns:recibeResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="expidetufactura_cancelacion_wsdlBinding" type="tns:expidetufactura_cancelacion_wsdlPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="recibe">
+      <soap:operation soapAction="urn:expidetufactura_cancelacion_wsdl#recibe" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:expidetufactura_cancelacion_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:expidetufactura_cancelacion_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="expidetufactura_cancelacion_wsdl">
+    <wsdl:port name="expidetufactura_cancelacion_wsdlPort" binding="tns:expidetufactura_cancelacion_wsdlBinding">
+      <soap:address location="https://www.expidetufactura.com.mx:443/cfdi/webservice/cancelacionProductivo.php" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
