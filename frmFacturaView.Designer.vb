@@ -73,6 +73,14 @@ Partial Class frmFacturaView
         Me.Label11 = New System.Windows.Forms.Label
         Me.Label10 = New System.Windows.Forms.Label
         Me.TabPage3 = New System.Windows.Forms.TabPage
+        Me.Button1 = New System.Windows.Forms.Button
+        Me.Label44 = New System.Windows.Forms.Label
+        Me.TextBox11 = New System.Windows.Forms.TextBox
+        Me.Label43 = New System.Windows.Forms.Label
+        Me.TextBox10 = New System.Windows.Forms.TextBox
+        Me.Label42 = New System.Windows.Forms.Label
+        Me.TextBox9 = New System.Windows.Forms.TextBox
+        Me.Label41 = New System.Windows.Forms.Label
         Me.Label40 = New System.Windows.Forms.Label
         Me.Label39 = New System.Windows.Forms.Label
         Me.TextBox8 = New System.Windows.Forms.TextBox
@@ -111,14 +119,9 @@ Partial Class frmFacturaView
         Me.Label22 = New System.Windows.Forms.Label
         Me.Label21 = New System.Windows.Forms.Label
         Me.Txtremision = New System.Windows.Forms.TextBox
-        Me.Label41 = New System.Windows.Forms.Label
-        Me.Label42 = New System.Windows.Forms.Label
-        Me.TextBox9 = New System.Windows.Forms.TextBox
-        Me.Label43 = New System.Windows.Forms.Label
-        Me.TextBox10 = New System.Windows.Forms.TextBox
-        Me.Label44 = New System.Windows.Forms.Label
-        Me.TextBox11 = New System.Windows.Forms.TextBox
-        Me.Button1 = New System.Windows.Forms.Button
+        Me.Label45 = New System.Windows.Forms.Label
+        Me.TextBox12 = New System.Windows.Forms.TextBox
+        Me.Button2 = New System.Windows.Forms.Button
         Me.GroupBox1.SuspendLayout()
         CType(Me.grdProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
@@ -623,6 +626,9 @@ Partial Class frmFacturaView
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.Button2)
+        Me.TabPage3.Controls.Add(Me.TextBox12)
+        Me.TabPage3.Controls.Add(Me.Label45)
         Me.TabPage3.Controls.Add(Me.Button1)
         Me.TabPage3.Controls.Add(Me.Label44)
         Me.TabPage3.Controls.Add(Me.TextBox11)
@@ -675,6 +681,89 @@ Partial Class frmFacturaView
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Addenda Soriana"
         Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(240, 488)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(125, 23)
+        Me.Button1.TabIndex = 77
+        Me.Button1.Text = "Processar Addenda"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Label44
+        '
+        Me.Label44.AutoSize = True
+        Me.Label44.Location = New System.Drawing.Point(5, 397)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(95, 13)
+        Me.Label44.TabIndex = 75
+        Me.Label44.Text = "Pedido Proveedor:"
+        '
+        'TextBox11
+        '
+        Me.TextBox11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox11.ForeColor = System.Drawing.Color.DarkRed
+        Me.TextBox11.Location = New System.Drawing.Point(112, 397)
+        Me.TextBox11.Name = "TextBox11"
+        Me.TextBox11.ReadOnly = True
+        Me.TextBox11.Size = New System.Drawing.Size(82, 20)
+        Me.TextBox11.TabIndex = 76
+        Me.TextBox11.Text = "0"
+        Me.TextBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label43
+        '
+        Me.Label43.AutoSize = True
+        Me.Label43.Location = New System.Drawing.Point(9, 374)
+        Me.Label43.Name = "Label43"
+        Me.Label43.Size = New System.Drawing.Size(95, 13)
+        Me.Label43.TabIndex = 73
+        Me.Label43.Text = "Cantidad Articulos:"
+        '
+        'TextBox10
+        '
+        Me.TextBox10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox10.ForeColor = System.Drawing.Color.DarkRed
+        Me.TextBox10.Location = New System.Drawing.Point(112, 371)
+        Me.TextBox10.Name = "TextBox10"
+        Me.TextBox10.ReadOnly = True
+        Me.TextBox10.Size = New System.Drawing.Size(82, 20)
+        Me.TextBox10.TabIndex = 74
+        Me.TextBox10.Text = "0"
+        Me.TextBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.Location = New System.Drawing.Point(25, 345)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(68, 13)
+        Me.Label42.TabIndex = 71
+        Me.Label42.Text = "Folio Pedido:"
+        '
+        'TextBox9
+        '
+        Me.TextBox9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox9.ForeColor = System.Drawing.Color.DarkRed
+        Me.TextBox9.Location = New System.Drawing.Point(112, 345)
+        Me.TextBox9.Name = "TextBox9"
+        Me.TextBox9.ReadOnly = True
+        Me.TextBox9.Size = New System.Drawing.Size(82, 20)
+        Me.TextBox9.TabIndex = 72
+        Me.TextBox9.Text = "0"
+        Me.TextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label41
+        '
+        Me.Label41.AutoSize = True
+        Me.Label41.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label41.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.Label41.Location = New System.Drawing.Point(35, 52)
+        Me.Label41.Name = "Label41"
+        Me.Label41.Size = New System.Drawing.Size(103, 24)
+        Me.Label41.TabIndex = 70
+        Me.Label41.Text = "Remision:"
         '
         'Label40
         '
@@ -1053,88 +1142,31 @@ Partial Class frmFacturaView
         Me.Txtremision.Text = "0"
         Me.Txtremision.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'Label41
+        'Label45
         '
-        Me.Label41.AutoSize = True
-        Me.Label41.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label41.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.Label41.Location = New System.Drawing.Point(35, 52)
-        Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(103, 24)
-        Me.Label41.TabIndex = 70
-        Me.Label41.Text = "Remision:"
+        Me.Label45.AutoSize = True
+        Me.Label45.Location = New System.Drawing.Point(9, 453)
+        Me.Label45.Name = "Label45"
+        Me.Label45.Size = New System.Drawing.Size(118, 13)
+        Me.Label45.TabIndex = 78
+        Me.Label45.Text = "Archivo XML Timbrado:"
         '
-        'Label42
+        'TextBox12
         '
-        Me.Label42.AutoSize = True
-        Me.Label42.Location = New System.Drawing.Point(25, 345)
-        Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(68, 13)
-        Me.Label42.TabIndex = 71
-        Me.Label42.Text = "Folio Pedido:"
+        Me.TextBox12.Location = New System.Drawing.Point(132, 446)
+        Me.TextBox12.Name = "TextBox12"
+        Me.TextBox12.ReadOnly = True
+        Me.TextBox12.Size = New System.Drawing.Size(414, 20)
+        Me.TextBox12.TabIndex = 79
         '
-        'TextBox9
+        'Button2
         '
-        Me.TextBox9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox9.ForeColor = System.Drawing.Color.DarkRed
-        Me.TextBox9.Location = New System.Drawing.Point(112, 345)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.ReadOnly = True
-        Me.TextBox9.Size = New System.Drawing.Size(82, 20)
-        Me.TextBox9.TabIndex = 72
-        Me.TextBox9.Text = "0"
-        Me.TextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label43
-        '
-        Me.Label43.AutoSize = True
-        Me.Label43.Location = New System.Drawing.Point(9, 374)
-        Me.Label43.Name = "Label43"
-        Me.Label43.Size = New System.Drawing.Size(95, 13)
-        Me.Label43.TabIndex = 73
-        Me.Label43.Text = "Cantidad Articulos:"
-        '
-        'TextBox10
-        '
-        Me.TextBox10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox10.ForeColor = System.Drawing.Color.DarkRed
-        Me.TextBox10.Location = New System.Drawing.Point(112, 371)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.ReadOnly = True
-        Me.TextBox10.Size = New System.Drawing.Size(82, 20)
-        Me.TextBox10.TabIndex = 74
-        Me.TextBox10.Text = "0"
-        Me.TextBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label44
-        '
-        Me.Label44.AutoSize = True
-        Me.Label44.Location = New System.Drawing.Point(5, 397)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(95, 13)
-        Me.Label44.TabIndex = 75
-        Me.Label44.Text = "Pedido Proveedor:"
-        '
-        'TextBox11
-        '
-        Me.TextBox11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox11.ForeColor = System.Drawing.Color.DarkRed
-        Me.TextBox11.Location = New System.Drawing.Point(112, 397)
-        Me.TextBox11.Name = "TextBox11"
-        Me.TextBox11.ReadOnly = True
-        Me.TextBox11.Size = New System.Drawing.Size(82, 20)
-        Me.TextBox11.TabIndex = 76
-        Me.TextBox11.Text = "0"
-        Me.TextBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(240, 474)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(125, 23)
-        Me.Button1.TabIndex = 77
-        Me.Button1.Text = "Processar Addenda"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button2.Location = New System.Drawing.Point(552, 446)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(29, 23)
+        Me.Button2.TabIndex = 80
+        Me.Button2.Text = "Button2"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'frmFacturaView
         '
@@ -1256,4 +1288,7 @@ Partial Class frmFacturaView
     Friend WithEvents Label42 As System.Windows.Forms.Label
     Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
     Friend WithEvents Label41 As System.Windows.Forms.Label
+    Friend WithEvents TextBox12 As System.Windows.Forms.TextBox
+    Friend WithEvents Label45 As System.Windows.Forms.Label
+    Friend WithEvents Button2 As System.Windows.Forms.Button
 End Class

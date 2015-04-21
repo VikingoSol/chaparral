@@ -109,3 +109,12 @@ C:\Users\jbarboza\Desktop\ProyectosCompartidos\chaparral\BaseDatos\obj\x86\Debug
 C:\Users\jbarboza\Desktop\ProyectosCompartidos\chaparral\BaseDatos\obj\x86\Debug\BaseDatos.dll
 C:\Users\jbarboza\Desktop\ProyectosCompartidos\chaparral\BaseDatos\obj\x86\Debug\BaseDatos.xml
 C:\Users\jbarboza\Desktop\ProyectosCompartidos\chaparral\BaseDatos\obj\x86\Debug\BaseDatos.pdb
+C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\bin\x86\Debug\BaseDatos.dll
+C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\bin\x86\Debug\BaseDatos.pdb
+C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\bin\x86\Debug\BaseDatos.xml
+C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\obj\x86\Debug\BaseDatos.Resources.resources
+C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\obj\x86\Debug\BaseDatos.vbproj.GenerateResource.Cache
+C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\obj\x86\Debug\BaseDatos.dll
+C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\obj\x86\Debug\BaseDatos.xml
+C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\obj\x86\Debug\BaseDatos.pdb
