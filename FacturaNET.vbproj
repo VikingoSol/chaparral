@@ -437,29 +437,17 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="facturanet.ico" />
+    <None Include="BAMG670420V91\factura.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\adenda.jpg" />
     <None Include="Resources\addenda.png" />
     <None Include="Resources\ley.jpg" />
     <None Include="Resources\comer.png" />
     <None Include="Resources\soriana.jpg" />
     <None Include="Resources\chedraui.jpg" />
-    <None Include="CUMM820805L44\factura.frx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="LEMM670906AE6\factura.frx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="MEMM8505319S4\factura.frx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="Resources\excel-8.png" />
     <None Include="iconos\Xml.png" />
-    <None Include="SASJ831108MK1\factura.frx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="SOCM850211BM4\factura.frx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="Web References\mx.advans.app\awscfdi.wsdl" />
     <None Include="Web References\mx.advans.app\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
