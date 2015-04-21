@@ -657,3 +657,46 @@ C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\obj\x86\Debug
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\obj\x86\Debug\FacturaNET.Resources.resources
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\obj\x86\Debug\FacturaNET.vbproj.GenerateResource.Cache
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\obj\x86\Debug\FacturaNET.exe.licenses
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\BarCodeLibrary.dll
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\Reportes\factura.frx
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\BAMG670420V91\factura.frx
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\FacturaNET.exe
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\FacturaNET.pdb
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\FacturaNET.xml
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\BaseDatos.dll
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\FacturaNETLib.dll
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\FastReport.dll
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\Ionic.Zip.dll
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\FastReport.Bars.dll
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\FastReport.Editor.dll
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\MySql.Data.dll
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\FacturaNET.Crypt.dll
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\ThoughtWorks.QRCode.dll
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\BaseDatos.pdb
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\BaseDatos.xml
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\FastReport.xml
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Debug\FacturaNET.frmaddendas.resources
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Debug\FacturaNET.frmExportarXML.resources
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Debug\FacturaNET.frmExportarXMLProc.resources
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Debug\FacturaNET.frmFacturaCanProc.resources
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Debug\FacturaNET.frmFacturaNormal.resources
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Debug\FacturaNET.frmFacturaTimbre.resources
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Debug\FacturaNET.frmFacturaView.resources
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Debug\FacturaNET.frmCliente.resources
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Debug\FacturaNET.frmClienteBus.resources
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Debug\FacturaNET.frmClientes.resources
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Debug\FacturaNET.frmConfig.resources
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Debug\FacturaNET.frmConfigBD.resources
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Debug\FacturaNET.frmFactura.resources
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Debug\FacturaNET.frmFacturaProc.resources
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Debug\FacturaNET.frmFacturas.resources
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Debug\FacturaNET.frmPrincipal.resources
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Debug\FacturaNET.frmProducto.resources
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Debug\FacturaNET.frmProductos.resources
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Debug\FacturaNET.frmProductosBus.resources
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Debug\FacturaNET.frmProductoUnico.resources
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Debug\FacturaNET.Resources.resources
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Debug\FacturaNET.vbproj.GenerateResource.Cache
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Debug\FacturaNET.exe.licenses
+C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\obj\x86\Debug\FacturaNET.Dialog1.resources

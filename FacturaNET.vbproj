@@ -51,9 +51,10 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FacturaNET.Crypt, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86" />
-    <Reference Include="FacturaNETLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86" />
-    <Reference Include="FastReport, Version=1.9.1.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="FacturaNETLib, Version=1.1.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Referencias\FacturaNETLib.dll</HintPath>
+    </Reference>
     <Reference Include="Ionic.Zip, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Referencias\Ionic.Zip.dll</HintPath>
@@ -83,6 +84,12 @@
     <Import Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dialog1.Designer.vb">
+      <DependentUpon>Dialog1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog1.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmaddendas.Designer.vb">
       <DependentUpon>frmaddendas.vb</DependentUpon>
     </Compile>
@@ -237,6 +244,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Dialog1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Dialog1.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmaddendas.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmaddendas.vb</DependentUpon>
@@ -435,29 +446,17 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="facturanet.ico" />
+    <None Include="BAMG670420V91\factura.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\adenda.jpg" />
     <None Include="Resources\addenda.png" />
     <None Include="Resources\ley.jpg" />
     <None Include="Resources\comer.png" />
     <None Include="Resources\soriana.jpg" />
     <None Include="Resources\chedraui.jpg" />
-    <None Include="CUMM820805L44\factura.frx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="LEMM670906AE6\factura.frx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="MEMM8505319S4\factura.frx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="Resources\excel-8.png" />
     <None Include="iconos\Xml.png" />
-    <None Include="SASJ831108MK1\factura.frx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="SOCM850211BM4\factura.frx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="Web References\mx.advans.app\awscfdi.wsdl" />
     <None Include="Web References\mx.advans.app\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>

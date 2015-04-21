@@ -5,6 +5,11 @@ Public Class frmPrincipal
         End
     End Sub
 
+    Private Sub frmPrincipal_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Dim f As New Dialog1
+        f.ShowDialog()
+    End Sub
+
     Private Sub frmPrincipal_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
         If Not IO.File.Exists(gConfigFile) Then
             MsgBox("No se ha configurado el acceso a la base de datos, es necesario configurarlo para que el sistema funcione correctamente", MsgBoxStyle.Critical, "¿Base de datos?")
@@ -39,40 +44,8 @@ Public Class frmPrincipal
         gPathFactuacion = gPathDataSoft & gConfigGlobal.Registro_Federal & "\"
         gPathBarCodes = gPathDataSoft & gConfigGlobal.Registro_Federal & "\BarCodes\"
 
-        If Not IsNothing(gConfigGlobal) AndAlso (gConfig.Cer_Version <> gConfigGlobal.Cer_Ver Or Not IO.File.Exists(gPathFactuacion & gConfigGlobal.Cer_Name)) Then
-            Dim vFile As dArchivo = cConfig.DownloadCertificado()
-            If vFile.Nombre <> "" Then
-                If Not IO.Directory.Exists(gPathFactuacion) Then
-                    IO.Directory.CreateDirectory(gPathFactuacion)
-                End If
-                If IO.File.Exists(gPathFactuacion & vFile.Nombre) Then
-                    IO.File.Delete(gPathFactuacion & vFile.Nombre)
-
-                End If
-
-                Bytes_To_File(vFile.File, gPathFactuacion & vFile.Nombre)
-                gConfigGlobal.Cer_Ver = vFile.Version
-            End If
-
-        End If
-
-        If Not IsNothing(gConfigGlobal) AndAlso (gConfig.Key_Version <> gConfigGlobal.Key_Ver Or Not IO.File.Exists(gPathFactuacion & gConfigGlobal.Key_Name)) Then
-            Dim vFile As dArchivo = cConfig.DownloadKey()
-            If vFile.Nombre <> "" Then
-                If Not IO.Directory.Exists(gPathFactuacion) Then
-                    IO.Directory.CreateDirectory(gPathFactuacion)
-                End If
-                If IO.File.Exists(gPathFactuacion & vFile.Nombre) Then
-                    IO.File.Delete(gPathFactuacion & vFile.Nombre)
-
-                End If
-
-                Bytes_To_File(vFile.File, gPathFactuacion & vFile.Nombre)
-                gConfigGlobal.Key_Ver = vFile.Version
-            End If
-
-        End If
-
+        
+        BajarCertificadoKey()
         'PruebaError()
     End Sub
 

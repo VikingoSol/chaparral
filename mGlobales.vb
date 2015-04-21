@@ -12,6 +12,7 @@ Module mGlobales
     Public gPathFactuacion As String = gPathDataSoft & "facturacion\"
     Public gPathBarCodes As String = gPathDataSoft & "facturacion\BarCodes\"
     Public gRFCPublicGeneral As String = "XAXX010101000"
+    Public RfcActual As String = ""
 
     Public Function RFC_Check(ByVal pRFC As String) As Boolean
         If Regex.IsMatch(pRFC, "^([a-zA-Z\s]{3,4})\d{6}([0-9a-zA-Z\w]{3})$") Then
@@ -356,5 +357,44 @@ Module mGlobales
     '        Next n
     '    End If
     'End Sub
+
+
+    Public Sub BajarCertificadoKey()
+        Dim cConfig As New cConfigGlobal
+
+        If Not IsNothing(gConfigGlobal) AndAlso (gConfig.Cer_Version <> gConfigGlobal.Cer_Ver Or Not IO.File.Exists(gPathFactuacion & gConfigGlobal.Cer_Name)) Then
+            Dim vFile As dArchivo = cConfig.DownloadCertificado(RfcActual)
+            If vFile.Nombre <> "" Then
+                If Not IO.Directory.Exists(gPathFactuacion) Then
+                    IO.Directory.CreateDirectory(gPathFactuacion)
+                End If
+                If IO.File.Exists(gPathFactuacion & vFile.Nombre) Then
+                    IO.File.Delete(gPathFactuacion & vFile.Nombre)
+
+                End If
+
+                Bytes_To_File(vFile.File, gPathFactuacion & vFile.Nombre)
+                gConfigGlobal.Cer_Ver = vFile.Version
+            End If
+
+        End If
+
+        If Not IsNothing(gConfigGlobal) AndAlso (gConfig.Key_Version <> gConfigGlobal.Key_Ver Or Not IO.File.Exists(gPathFactuacion & gConfigGlobal.Key_Name)) Then
+            Dim vFile As dArchivo = cConfig.DownloadKey(RfcActual)
+            If vFile.Nombre <> "" Then
+                If Not IO.Directory.Exists(gPathFactuacion) Then
+                    IO.Directory.CreateDirectory(gPathFactuacion)
+                End If
+                If IO.File.Exists(gPathFactuacion & vFile.Nombre) Then
+                    IO.File.Delete(gPathFactuacion & vFile.Nombre)
+
+                End If
+
+                Bytes_To_File(vFile.File, gPathFactuacion & vFile.Nombre)
+                gConfigGlobal.Key_Ver = vFile.Version
+            End If
+
+        End If
+    End Sub
 
 End Module

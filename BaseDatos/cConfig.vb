@@ -12,6 +12,7 @@ Public Class cConfigLocal
     Public Cer_Version As Integer
     Public Key_Version As Integer
 
+
     Public Sub Guardar(ByVal pFile As String)
         Dim vDir As New DirectoryInfo(Path.GetDirectoryName(pFile))
         If Not vDir.Exists Then
@@ -51,15 +52,15 @@ Public Class cConfigGlobal
         vCmd.ExecuteNonQuery()
     End Sub
 
-    Public Function DownloadCertificado() As dArchivo
+    Public Function DownloadCertificado(ByVal rfc As String) As dArchivo
         If gConn.State <> ConnectionState.Open Then gConn.Open()
-        Dim vCmd As New MySqlCommand("SELECT cer_file,cer_name,cer_ver FROM config", gConn)
-        '            vCmd.Parameters.AddWithValue("?id", pEmpresa)
+        Dim vCmd As New MySqlCommand("SELECT cer_file,cer_name,cer_ver FROM config WHERE rfc=rfc", gConn)
+        vCmd.Parameters.AddWithValue("?rfc", rfc)
         Dim vAdap As New MySqlDataAdapter(vCmd)
         Dim vTabla As New DataTable
         vAdap.Fill(vTabla)
         Dim vFile As dArchivo
-        If vTabla.Rows.Count = 2 Then
+        If vTabla.Rows.Count > 0 Then
             vFile = New dArchivo
             vFile.File = vTabla.Rows(0).Item("cer_file")
             vFile.Nombre = vTabla.Rows(0).Item("cer_name")
@@ -68,15 +69,15 @@ Public Class cConfigGlobal
         Return vFile
     End Function
 
-    Public Function DownloadKey() As dArchivo
+    Public Function DownloadKey(ByVal rfc As String) As dArchivo
         If gConn.State <> ConnectionState.Open Then gConn.Open()
-        Dim vCmd As New MySqlCommand("SELECT key_file,key_name,key_ver FROM config", gConn)
-        'vCmd.Parameters.AddWithValue("?id", pEmpresa)
+        Dim vCmd As New MySqlCommand("SELECT key_file,key_name,key_ver FROM config WHERE rfc=rfc", gConn)
+        vCmd.Parameters.AddWithValue("?rfc", rfc)
         Dim vAdap As New MySqlDataAdapter(vCmd)
         Dim vTabla As New DataTable
         vAdap.Fill(vTabla)
         Dim vFile As dArchivo
-        If vTabla.Rows.Count = 2 Then
+        If vTabla.Rows.Count > 0 Then
             vFile = New dArchivo
             vFile.File = vTabla.Rows(0).Item("key_file")
             vFile.Nombre = vTabla.Rows(0).Item("key_name")
@@ -178,7 +179,11 @@ Public Class cConfigGlobal
                 vConfig.Direccion_Fiscal.NoInterior = .Item("df_noint")
                 vConfig.Direccion_Fiscal.Referencia = .Item("df_ref")
                 vConfig.Direccion_Fiscal.Pais = .Item("df_pais")
-                vConfig.ProveedorTimbres = .Item("prov_timbrado")
+                If vTabla.Columns.Contains("prov_timbrado") Then
+                    vConfig.ProveedorTimbres = .Item("prov_timbrado")
+                Else
+                    vConfig.ProveedorTimbres = eProveedorTimbres.Advans
+                End If
             End With
         End If
 
@@ -196,7 +201,7 @@ Public Class cConfigGlobal
     Public Function GetConfiguracionEmisor(ByVal RfcEmisor As String)
         If gConn.State <> ConnectionState.Open Then gConn.Open()
 
-        Dim vCmd As New MySqlCommand("SELECT * FROM config WHERE rfc=rfc", gConn)
+        Dim vCmd As New MySqlCommand("SELECT * FROM config WHERE rfc=?rfc", gConn)
         vCmd.Parameters.AddWithValue("?rfc", RfcEmisor)
         'Dim vCmd As New MySqlCommand("SELECT * FROM config", gConn)
         Dim vAdap As New MySqlDataAdapter(vCmd)
@@ -273,6 +278,7 @@ Public Class cConfigGlobal
                     vConfig.ProveedorTimbres = .Item("prov_timbrado")
                 End With
             End If
+
 
 
             'With vTabla.Rows(0)

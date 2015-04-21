@@ -166,7 +166,7 @@ Partial Class frmProducto
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCancelar
-        Me.ClientSize = New System.Drawing.Size(388, 222)
+        Me.ClientSize = New System.Drawing.Size(388, 206)
         Me.Controls.Add(Me.Txtcodigo)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.cmbTasa)
