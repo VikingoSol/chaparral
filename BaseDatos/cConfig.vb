@@ -59,7 +59,7 @@ Public Class cConfigGlobal
         Dim vTabla As New DataTable
         vAdap.Fill(vTabla)
         Dim vFile As dArchivo
-        If vTabla.Rows.Count = 2 Then
+        If vTabla.Rows.Count > 0 Then
             vFile = New dArchivo
             vFile.File = vTabla.Rows(0).Item("cer_file")
             vFile.Nombre = vTabla.Rows(0).Item("cer_name")
@@ -76,7 +76,7 @@ Public Class cConfigGlobal
         Dim vTabla As New DataTable
         vAdap.Fill(vTabla)
         Dim vFile As dArchivo
-        If vTabla.Rows.Count = 2 Then
+        If vTabla.Rows.Count > 0 Then
             vFile = New dArchivo
             vFile.File = vTabla.Rows(0).Item("key_file")
             vFile.Nombre = vTabla.Rows(0).Item("key_name")
@@ -178,7 +178,11 @@ Public Class cConfigGlobal
                 vConfig.Direccion_Fiscal.NoInterior = .Item("df_noint")
                 vConfig.Direccion_Fiscal.Referencia = .Item("df_ref")
                 vConfig.Direccion_Fiscal.Pais = .Item("df_pais")
-                vConfig.ProveedorTimbres = .Item("prov_timbrado")
+                If vTabla.Columns.Contains("prov_timbrado") Then
+                    vConfig.ProveedorTimbres = .Item("prov_timbrado")
+                Else
+                    vConfig.ProveedorTimbres = eProveedorTimbres.Advans
+                End If
             End With
         End If
 
@@ -196,7 +200,7 @@ Public Class cConfigGlobal
     Public Function GetConfiguracionEmisor(ByVal RfcEmisor As String)
         If gConn.State <> ConnectionState.Open Then gConn.Open()
 
-        Dim vCmd As New MySqlCommand("SELECT * FROM config WHERE rfc=rfc", gConn)
+        Dim vCmd As New MySqlCommand("SELECT * FROM config WHERE rfc=?rfc", gConn)
         vCmd.Parameters.AddWithValue("?rfc", RfcEmisor)
         'Dim vCmd As New MySqlCommand("SELECT * FROM config", gConn)
         Dim vAdap As New MySqlDataAdapter(vCmd)
@@ -273,6 +277,7 @@ Public Class cConfigGlobal
                     vConfig.ProveedorTimbres = .Item("prov_timbrado")
                 End With
             End If
+
 
 
             'With vTabla.Rows(0)
