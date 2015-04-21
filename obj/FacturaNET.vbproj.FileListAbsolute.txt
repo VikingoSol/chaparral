@@ -630,15 +630,10 @@ C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\FacturaNET.xml
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\BaseDatos.dll
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\Ionic.Zip.dll
-C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\FastReport.Bars.dll
-C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\FastReport.Editor.dll
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\MySql.Data.dll
-C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\ThoughtWorks.QRCode.dll
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\BaseDatos.pdb
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\BaseDatos.xml
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\FastReport.xml
-C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\ThoughtWorks.QRCode.pdb
-C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\FacturaNETLib.pdb
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\FacturaNETLib.xml
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\obj\x86\Debug\FacturaNET.frmaddendas.resources
