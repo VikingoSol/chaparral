@@ -85,6 +85,12 @@
     <Import Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmaddendas.Designer.vb">
+      <DependentUpon>frmaddendas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmaddendas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmExportarXML.Designer.vb">
       <DependentUpon>frmExportarXML.vb</DependentUpon>
     </Compile>
@@ -233,6 +239,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmaddendas.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmaddendas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmExportarXML.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmExportarXML.vb</DependentUpon>
@@ -427,6 +437,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="facturanet.ico" />
+    <None Include="Resources\adenda.jpg" />
+    <None Include="Resources\addenda.png" />
+    <None Include="Resources\ley.jpg" />
+    <None Include="Resources\comer.png" />
+    <None Include="Resources\soriana.jpg" />
+    <None Include="Resources\chedraui.jpg" />
     <None Include="CUMM820805L44\factura.frx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
