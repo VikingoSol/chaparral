@@ -633,8 +633,6 @@ C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\MySql.Data.dll
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\BaseDatos.pdb
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\BaseDatos.xml
-C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\FastReport.xml
-C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\FacturaNETLib.xml
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\obj\x86\Debug\FacturaNET.frmaddendas.resources
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\obj\x86\Debug\FacturaNET.frmExportarXML.resources

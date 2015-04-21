@@ -391,9 +391,6 @@ Public Class frmFactura
         End If
     End Sub
 
-    
-
-   
     Private Sub CboRFCemisor_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CboRFCemisor.SelectedIndexChanged
         If Me.CboRFCemisor.Text = "BAMG670420V91" Then  'Guadalupe  cargar datos del emisor 
             Dim cConfig As New cConfigGlobal
