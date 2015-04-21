@@ -51,8 +51,10 @@
     <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FacturaNET.Crypt, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86" />
-    <Reference Include="FacturaNETLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86" />
+    <Reference Include="FacturaNETLib, Version=1.1.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Referencias\FacturaNETLib.dll</HintPath>
+    </Reference>
     <Reference Include="FastReport, Version=1.9.1.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="Ionic.Zip, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

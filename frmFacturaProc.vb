@@ -64,7 +64,7 @@ Public Class frmFacturaProc
             If vFacturaData.Serie <> "" Then .Serie.Value = vFacturaData.Serie
             .Folio.Value = vFacturaData.Folio
             .Serie.Value = vFacturaData.Serie
-            .Fecha.Value = vFacturaData.Fecha            
+            .Fecha.Value = vFacturaData.Fecha
             .FormaPago.Value = "PAGO EN UNA SOLA EXHIBICION"
             .SubTotal.Value = FormatNumber(vFacturaData.Subtotal, 2, TriState.False, TriState.False, TriState.False)
             .Total.Value = FormatNumber(vFacturaData.Total, 2, TriState.False, TriState.False, TriState.False)
