@@ -42,8 +42,6 @@ End Class
 
 Public Class cConfigGlobal
 
-
-
     Public Sub UploadCertificado(ByVal pName As String, ByVal pCertificado As Byte())
         If gConn.State <> ConnectionState.Open Then gConn.Open()
         Dim vCmd As New MySqlCommand("UPDATE config SET cer_file=?cer,cer_name=?file,cer_ver=cer_ver+1", gConn)
@@ -61,7 +59,7 @@ Public Class cConfigGlobal
         Dim vTabla As New DataTable
         vAdap.Fill(vTabla)
         Dim vFile As dArchivo
-        If vTabla.Rows.Count = 1 Then
+        If vTabla.Rows.Count = 2 Then
             vFile = New dArchivo
             vFile.File = vTabla.Rows(0).Item("cer_file")
             vFile.Nombre = vTabla.Rows(0).Item("cer_name")
@@ -78,7 +76,7 @@ Public Class cConfigGlobal
         Dim vTabla As New DataTable
         vAdap.Fill(vTabla)
         Dim vFile As dArchivo
-        If vTabla.Rows.Count = 1 Then
+        If vTabla.Rows.Count = 2 Then
             vFile = New dArchivo
             vFile.File = vTabla.Rows(0).Item("key_file")
             vFile.Nombre = vTabla.Rows(0).Item("key_name")
@@ -184,7 +182,6 @@ Public Class cConfigGlobal
             End With
         End If
 
-
         'Dim vDate As New Date(2000, 1, 1)
         'Dim vMaxDate As New Date(2100, 12, 31)
         'vCmd = New MySqlCommand("INSERT INTO fechas(fecha) VALUES(?fecha)", gConn)
@@ -196,6 +193,124 @@ Public Class cConfigGlobal
         'End While
         Return vConfig
     End Function
+    Public Function GetConfiguracionEmisor(ByVal RfcEmisor As String)
+        If gConn.State <> ConnectionState.Open Then gConn.Open()
+
+        Dim vCmd As New MySqlCommand("SELECT * FROM config WHERE rfc=rfc", gConn)
+        vCmd.Parameters.AddWithValue("?rfc", RfcEmisor)
+        'Dim vCmd As New MySqlCommand("SELECT * FROM config", gConn)
+        Dim vAdap As New MySqlDataAdapter(vCmd)
+        Dim vTabla As New DataTable
+        vAdap.Fill(vTabla)
+        Dim vConfig As dConfigGlobal
+        If vTabla.Rows.Count > 0 Then
+            vConfig = New dConfigGlobal
+            If RfcEmisor = "BAMG670420V91" Then
+                With vTabla.Rows(1)
+                    vConfig.NextFolio = .Item("nextfolio")
+                    vConfig.IVA = .Item("iva")
+                    vConfig.TipoCambio = .Item("tipo_cambio")
+                    vConfig.Serie = .Item("serie")
+                    vConfig.TipoCambio = .Item("tipo_cambio")
+                    vConfig.Registro_Federal = .Item("rfc")
+                    vConfig.Cer_Ver = .Item("cer_ver")
+                    vConfig.Key_Ver = .Item("key_ver")
+                    vConfig.PassCert = .Item("pass")
+                    vConfig.NoCertificado = .Item("no_cer")
+                    If Not IsDBNull(.Item("cer_name")) Then vConfig.Cer_Name = .Item("cer_name")
+                    If Not IsDBNull(.Item("key_name")) Then vConfig.Key_Name = .Item("key_name")
+                    vConfig.CFDI_Token = .Item("cfdi_token")
+                    vConfig.CFDI_Url = .Item("cfdi_url")
+                    vConfig.CFDI_Id = .Item("cfdi_id")
+                    vConfig.CFDI_CancelWs = .Item("cfdi_can_url")
+                    vConfig.CFDI_CancelId = .Item("cfdi_can_id")
+                    vConfig.RazonSocial = .Item("razon_social")
+                    vConfig.RegimenFiscal = .Item("regimen_fiscal")
+                    vConfig.Direccion_Fiscal.Calle = .Item("df_calle")
+                    vConfig.Direccion_Fiscal.CodigoPostal = .Item("df_cp")
+                    vConfig.Direccion_Fiscal.Colonia = .Item("df_colonia")
+                    vConfig.Direccion_Fiscal.Estado = .Item("df_estado")
+                    vConfig.Direccion_Fiscal.Localidad = .Item("df_localidad")
+                    vConfig.Direccion_Fiscal.Municipio = .Item("df_municipio")
+                    vConfig.Direccion_Fiscal.NoExterior = .Item("df_noext")
+                    vConfig.Direccion_Fiscal.NoInterior = .Item("df_noint")
+                    vConfig.Direccion_Fiscal.Referencia = .Item("df_ref")
+                    vConfig.Direccion_Fiscal.Pais = .Item("df_pais")
+                    vConfig.ProveedorTimbres = .Item("prov_timbrado")
+                End With
+            End If
+            If RfcEmisor = "BAMF650219E70" Then
+                With vTabla.Rows(0)
+                    vConfig.NextFolio = .Item("nextfolio")
+                    vConfig.IVA = .Item("iva")
+                    vConfig.TipoCambio = .Item("tipo_cambio")
+                    vConfig.Serie = .Item("serie")
+                    vConfig.TipoCambio = .Item("tipo_cambio")
+                    vConfig.Registro_Federal = .Item("rfc")
+                    vConfig.Cer_Ver = .Item("cer_ver")
+                    vConfig.Key_Ver = .Item("key_ver")
+                    vConfig.PassCert = .Item("pass")
+                    vConfig.NoCertificado = .Item("no_cer")
+                    If Not IsDBNull(.Item("cer_name")) Then vConfig.Cer_Name = .Item("cer_name")
+                    If Not IsDBNull(.Item("key_name")) Then vConfig.Key_Name = .Item("key_name")
+                    vConfig.CFDI_Token = .Item("cfdi_token")
+                    vConfig.CFDI_Url = .Item("cfdi_url")
+                    vConfig.CFDI_Id = .Item("cfdi_id")
+                    vConfig.CFDI_CancelWs = .Item("cfdi_can_url")
+                    vConfig.CFDI_CancelId = .Item("cfdi_can_id")
+                    vConfig.RazonSocial = .Item("razon_social")
+                    vConfig.RegimenFiscal = .Item("regimen_fiscal")
+                    vConfig.Direccion_Fiscal.Calle = .Item("df_calle")
+                    vConfig.Direccion_Fiscal.CodigoPostal = .Item("df_cp")
+                    vConfig.Direccion_Fiscal.Colonia = .Item("df_colonia")
+                    vConfig.Direccion_Fiscal.Estado = .Item("df_estado")
+                    vConfig.Direccion_Fiscal.Localidad = .Item("df_localidad")
+                    vConfig.Direccion_Fiscal.Municipio = .Item("df_municipio")
+                    vConfig.Direccion_Fiscal.NoExterior = .Item("df_noext")
+                    vConfig.Direccion_Fiscal.NoInterior = .Item("df_noint")
+                    vConfig.Direccion_Fiscal.Referencia = .Item("df_ref")
+                    vConfig.Direccion_Fiscal.Pais = .Item("df_pais")
+                    vConfig.ProveedorTimbres = .Item("prov_timbrado")
+                End With
+            End If
+
+
+            'With vTabla.Rows(0)
+            '    vConfig.NextFolio = .Item("nextfolio")
+            '    vConfig.IVA = .Item("iva")
+            '    vConfig.TipoCambio = .Item("tipo_cambio")
+            '    vConfig.Serie = .Item("serie")
+            '    vConfig.TipoCambio = .Item("tipo_cambio")
+            '    vConfig.Registro_Federal = .Item("rfc")
+            '    vConfig.Cer_Ver = .Item("cer_ver")
+            '    vConfig.Key_Ver = .Item("key_ver")
+            '    vConfig.PassCert = .Item("pass")
+            '    vConfig.NoCertificado = .Item("no_cer")
+            '    If Not IsDBNull(.Item("cer_name")) Then vConfig.Cer_Name = .Item("cer_name")
+            '    If Not IsDBNull(.Item("key_name")) Then vConfig.Key_Name = .Item("key_name")
+            '    vConfig.CFDI_Token = .Item("cfdi_token")
+            '    vConfig.CFDI_Url = .Item("cfdi_url")
+            '    vConfig.CFDI_Id = .Item("cfdi_id")
+            '    vConfig.CFDI_CancelWs = .Item("cfdi_can_url")
+            '    vConfig.CFDI_CancelId = .Item("cfdi_can_id")
+            '    vConfig.RazonSocial = .Item("razon_social")
+            '    vConfig.RegimenFiscal = .Item("regimen_fiscal")
+            '    vConfig.Direccion_Fiscal.Calle = .Item("df_calle")
+            '    vConfig.Direccion_Fiscal.CodigoPostal = .Item("df_cp")
+            '    vConfig.Direccion_Fiscal.Colonia = .Item("df_colonia")
+            '    vConfig.Direccion_Fiscal.Estado = .Item("df_estado")
+            '    vConfig.Direccion_Fiscal.Localidad = .Item("df_localidad")
+            '    vConfig.Direccion_Fiscal.Municipio = .Item("df_municipio")
+            '    vConfig.Direccion_Fiscal.NoExterior = .Item("df_noext")
+            '    vConfig.Direccion_Fiscal.NoInterior = .Item("df_noint")
+            '    vConfig.Direccion_Fiscal.Referencia = .Item("df_ref")
+            '    vConfig.Direccion_Fiscal.Pais = .Item("df_pais")
+            '    vConfig.ProveedorTimbres = .Item("prov_timbrado")
+            'End With
+        End If
+        Return vConfig
+    End Function
+
 
     Public Sub GuardarConfiguracion(ByVal pConfig As dConfigGlobal)
         If gConn.State <> ConnectionState.Open Then gConn.Open()

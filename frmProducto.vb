@@ -12,6 +12,7 @@ Public Class frmProducto
         Me.txtPrecio.Text = vProd.Precio
         Me.cmbUnidades.SelectedValue = vProd.Unidad
         Me.cmbTasa.SelectedValue = vProd.TasaId
+        Me.Txtcodigo.Text = vProd.codigo
         If Me.ShowDialog = Windows.Forms.DialogResult.OK Then
             Return True
         Else : Return False
@@ -26,6 +27,11 @@ Public Class frmProducto
     End Function
 
     Private Sub btnAceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAceptar.Click
+        If Trim(Me.Txtcodigo.Text) = "" Then
+            MsgBox("Especifique el Codigo del producto y/o servicio", MsgBoxStyle.Critical, "¿Nombre?")
+            Me.Txtcodigo.Focus()
+            Exit Sub
+        End If
         If Trim(Me.txtNombre.Text) = "" Then
             MsgBox("Especifique el nombre del producto y/o servicio", MsgBoxStyle.Critical, "¿Nombre?")
             Me.txtNombre.Focus()
@@ -45,9 +51,9 @@ Public Class frmProducto
             Exit Sub
         End If
         If vIdProd = -1 Then
-            vIdProd = vProds.Agregar(Me.txtNombre.Text, Me.txtPrecio.Text, Me.cmbUnidades.SelectedValue, Me.cmbTasa.SelectedValue)
+            vIdProd = vProds.Agregar(Me.txtNombre.Text, Me.txtPrecio.Text, Me.cmbUnidades.SelectedValue, Me.cmbTasa.SelectedValue, Me.Txtcodigo.Text)
         Else
-            vProds.Modificar(Me.vIdProd, Me.txtNombre.Text, Me.txtPrecio.Text, Me.cmbUnidades.SelectedValue, Me.cmbTasa.SelectedValue)
+            vProds.Modificar(Me.vIdProd, Me.txtNombre.Text, Me.txtPrecio.Text, Me.cmbUnidades.SelectedValue, Me.cmbTasa.SelectedValue, Me.Txtcodigo.Text)
         End If
         Me.DialogResult = Windows.Forms.DialogResult.OK
         Me.Close()

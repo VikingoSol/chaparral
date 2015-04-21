@@ -42,9 +42,9 @@ Public Class cClientes
         End If
     End Function
 
-    Public Function Agregar(ByVal pNombre As String, ByVal pRFC As String, ByVal pCalle As String, ByVal pNoInt As String, ByVal pNoExt As String, ByVal pColonia As String, ByVal pLocalidad As String, ByVal pReferencia As String, ByVal pMunicipio As String, ByVal pEstado As String, ByVal pPais As String, ByVal pCP As String, ByVal pRetIVA As Boolean) As Integer
+    Public Function Agregar(ByVal pNombre As String, ByVal pRFC As String, ByVal pCalle As String, ByVal pNoInt As String, ByVal pNoExt As String, ByVal pColonia As String, ByVal pLocalidad As String, ByVal pReferencia As String, ByVal pMunicipio As String, ByVal pEstado As String, ByVal pPais As String, ByVal pCP As String, ByVal pRetIVA As Boolean, ByVal pDescFactura As Double) As Integer
         If gConn.State <> ConnectionState.Open Then gConn.Open()
-        Dim vCmd As New MySqlCommand("INSERT INTO clientes(rfc, nombre, calle, no_ext, no_int, colonia, localidad, referencia, municipio, estado, pais, cp, retiva) VALUE(?rfc, ?nombre, ?calle, ?no_ext, ?no_int, ?colonia, ?localidad, ?referencia, ?municipio, ?estado, ?pais, ?cp, ?riva)", gConn)
+        Dim vCmd As New MySqlCommand("INSERT INTO clientes(rfc, nombre, calle, no_ext, no_int, colonia, localidad, referencia, municipio, estado, pais, cp, retiva, DescFactura) VALUE(?rfc, ?nombre, ?calle, ?no_ext, ?no_int, ?colonia, ?localidad, ?referencia, ?municipio, ?estado, ?pais, ?cp, ?riva,  ?DescFactura)", gConn)
         vCmd.Parameters.AddWithValue("?rfc", pRFC)
         vCmd.Parameters.AddWithValue("?nombre", Trim(pNombre))
         vCmd.Parameters.AddWithValue("?calle", Trim(pCalle))
@@ -58,15 +58,16 @@ Public Class cClientes
         vCmd.Parameters.AddWithValue("?pais", Trim(pPais))
         vCmd.Parameters.AddWithValue("?cp", Trim(pCP))
         vCmd.Parameters.AddWithValue("?riva", Convert.ToInt32(pRetIVA))
+        vCmd.Parameters.AddWithValue("?DescFactura", Convert.ToInt32(pDescFactura))
         vCmd.ExecuteNonQuery()
         Return vCmd.LastInsertedId
     End Function
 
     Public Function Modificar(ByVal pId As Integer, ByVal pNombre As String, ByVal pRFC As String, ByVal pCalle As String, _
     ByVal pNoInt As String, ByVal pNoExt As String, ByVal pColonia As String, ByVal pLocalidad As String, ByVal pReferencia As String, _
-    ByVal pMunicipio As String, ByVal pEstado As String, ByVal pPais As String, ByVal pCP As String, ByVal pRetIva As Boolean) As Integer
+    ByVal pMunicipio As String, ByVal pEstado As String, ByVal pPais As String, ByVal pCP As String, ByVal pRetIva As Boolean, ByVal pDescFactura As Double) As Integer
         If gConn.State <> ConnectionState.Open Then gConn.Open()
-        Dim vCmd As New MySqlCommand("UPDATE clientes SET rfc=?rfc, nombre=?nombre, calle= ?calle, no_ext=?no_ext, no_int=?no_int, colonia=?colonia, localidad=?localidad, referencia=?referencia, municipio=?municipio, estado=?estado, pais=?pais, cp=?cp, retiva=?riva WHERE id=?id", gConn)
+        Dim vCmd As New MySqlCommand("UPDATE clientes SET rfc=?rfc, nombre=?nombre, calle= ?calle, no_ext=?no_ext, no_int=?no_int, colonia=?colonia, localidad=?localidad, referencia=?referencia, municipio=?municipio, estado=?estado, pais=?pais, cp=?cp, retiva=?riva, DescFactura=?DescFactura WHERE id=?id", gConn)
         vCmd.Parameters.AddWithValue("?rfc", pRFC)
         vCmd.Parameters.AddWithValue("?nombre", Trim(pNombre))
         vCmd.Parameters.AddWithValue("?calle", Trim(pCalle))
@@ -81,6 +82,7 @@ Public Class cClientes
         vCmd.Parameters.AddWithValue("?cp", Trim(pCP))
         vCmd.Parameters.AddWithValue("?id", pId)
         vCmd.Parameters.AddWithValue("?riva", Convert.ToInt32(pRetIva))
+        vCmd.Parameters.AddWithValue("?DescFactura", Convert.ToInt32(pDescFactura))
         vCmd.ExecuteNonQuery()
         Return vCmd.LastInsertedId
     End Function
@@ -111,6 +113,7 @@ Public Class cClientes
             vCl.CP = vTabla.Rows(0).Item("cp")
             vCl.Email = vTabla.Rows(0).Item("email")
             vCl.RetieneIva = vTabla.Rows(0).Item("retiva")
+            vCl.DescFactura = vTabla.Rows(0).Item("DescFactura")
         End If
         Return vCl
     End Function
@@ -134,4 +137,5 @@ Public Class dCliente
     Public CP As String
     Public Email As String
     Public RetieneIva As Boolean
+    Public DescFactura As Double
 End Class

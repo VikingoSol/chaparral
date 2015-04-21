@@ -48,6 +48,8 @@ Partial Class frmFacturaView
         Me.txtMetodosPago = New System.Windows.Forms.TextBox
         Me.TabControl1 = New System.Windows.Forms.TabControl
         Me.TabPage1 = New System.Windows.Forms.TabPage
+        Me.Txtdescuento = New System.Windows.Forms.TextBox
+        Me.Label20 = New System.Windows.Forms.Label
         Me.txtRetIVA = New System.Windows.Forms.TextBox
         Me.Label19 = New System.Windows.Forms.Label
         Me.txtCuenta = New System.Windows.Forms.TextBox
@@ -70,11 +72,59 @@ Partial Class frmFacturaView
         Me.Label12 = New System.Windows.Forms.Label
         Me.Label11 = New System.Windows.Forms.Label
         Me.Label10 = New System.Windows.Forms.Label
+        Me.TabPage3 = New System.Windows.Forms.TabPage
+        Me.Label40 = New System.Windows.Forms.Label
+        Me.Label39 = New System.Windows.Forms.Label
+        Me.TextBox8 = New System.Windows.Forms.TextBox
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker
+        Me.Label38 = New System.Windows.Forms.Label
+        Me.Label37 = New System.Windows.Forms.Label
+        Me.TextBox7 = New System.Windows.Forms.TextBox
+        Me.Label33 = New System.Windows.Forms.Label
+        Me.TextBox6 = New System.Windows.Forms.TextBox
+        Me.TextBox2 = New System.Windows.Forms.TextBox
+        Me.Label32 = New System.Windows.Forms.Label
+        Me.TextBox3 = New System.Windows.Forms.TextBox
+        Me.TextBox4 = New System.Windows.Forms.TextBox
+        Me.TextBox5 = New System.Windows.Forms.TextBox
+        Me.Label34 = New System.Windows.Forms.Label
+        Me.Label35 = New System.Windows.Forms.Label
+        Me.Label36 = New System.Windows.Forms.Label
+        Me.Label31 = New System.Windows.Forms.Label
+        Me.TextBox1 = New System.Windows.Forms.TextBox
+        Me.Label30 = New System.Windows.Forms.Label
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox
+        Me.Label29 = New System.Windows.Forms.Label
+        Me.TxtEntregaMerc = New System.Windows.Forms.TextBox
+        Me.Label28 = New System.Windows.Forms.Label
+        Me.Label27 = New System.Windows.Forms.Label
+        Me.Txttipobulto = New System.Windows.Forms.TextBox
+        Me.cmbMoneda = New System.Windows.Forms.ComboBox
+        Me.Label25 = New System.Windows.Forms.Label
+        Me.cmbtienda = New System.Windows.Forms.ComboBox
+        Me.Label26 = New System.Windows.Forms.Label
+        Me.Label24 = New System.Windows.Forms.Label
+        Me.Txtconsecutivo = New System.Windows.Forms.TextBox
+        Me.TxtProveedor = New System.Windows.Forms.TextBox
+        Me.Label23 = New System.Windows.Forms.Label
+        Me.dpFecha = New System.Windows.Forms.DateTimePicker
+        Me.Label22 = New System.Windows.Forms.Label
+        Me.Label21 = New System.Windows.Forms.Label
+        Me.Txtremision = New System.Windows.Forms.TextBox
+        Me.Label41 = New System.Windows.Forms.Label
+        Me.Label42 = New System.Windows.Forms.Label
+        Me.TextBox9 = New System.Windows.Forms.TextBox
+        Me.Label43 = New System.Windows.Forms.Label
+        Me.TextBox10 = New System.Windows.Forms.TextBox
+        Me.Label44 = New System.Windows.Forms.Label
+        Me.TextBox11 = New System.Windows.Forms.TextBox
+        Me.Button1 = New System.Windows.Forms.Button
         Me.GroupBox1.SuspendLayout()
         CType(Me.grdProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -208,13 +258,13 @@ Partial Class frmFacturaView
         Me.grdProductos.HideSelection = Janus.Windows.GridEX.HideSelection.Highlight
         Me.grdProductos.Location = New System.Drawing.Point(5, 200)
         Me.grdProductos.Name = "grdProductos"
-        Me.grdProductos.Size = New System.Drawing.Size(585, 207)
+        Me.grdProductos.Size = New System.Drawing.Size(585, 219)
         Me.grdProductos.TabIndex = 11
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(396, 416)
+        Me.Label7.Location = New System.Drawing.Point(396, 431)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(53, 13)
         Me.Label7.TabIndex = 17
@@ -222,7 +272,7 @@ Partial Class frmFacturaView
         '
         'lblIVA
         '
-        Me.lblIVA.Location = New System.Drawing.Point(365, 438)
+        Me.lblIVA.Location = New System.Drawing.Point(365, 476)
         Me.lblIVA.Name = "lblIVA"
         Me.lblIVA.Size = New System.Drawing.Size(84, 13)
         Me.lblIVA.TabIndex = 18
@@ -232,7 +282,7 @@ Partial Class frmFacturaView
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(415, 484)
+        Me.Label9.Location = New System.Drawing.Point(415, 522)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(34, 13)
         Me.Label9.TabIndex = 19
@@ -240,7 +290,7 @@ Partial Class frmFacturaView
         '
         'txtSubTotal
         '
-        Me.txtSubTotal.Location = New System.Drawing.Point(455, 413)
+        Me.txtSubTotal.Location = New System.Drawing.Point(455, 428)
         Me.txtSubTotal.Name = "txtSubTotal"
         Me.txtSubTotal.ReadOnly = True
         Me.txtSubTotal.Size = New System.Drawing.Size(113, 20)
@@ -250,7 +300,7 @@ Partial Class frmFacturaView
         '
         'txtIVA
         '
-        Me.txtIVA.Location = New System.Drawing.Point(455, 435)
+        Me.txtIVA.Location = New System.Drawing.Point(455, 473)
         Me.txtIVA.Name = "txtIVA"
         Me.txtIVA.ReadOnly = True
         Me.txtIVA.Size = New System.Drawing.Size(113, 20)
@@ -260,7 +310,7 @@ Partial Class frmFacturaView
         '
         'txtTotal
         '
-        Me.txtTotal.Location = New System.Drawing.Point(455, 481)
+        Me.txtTotal.Location = New System.Drawing.Point(455, 519)
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.ReadOnly = True
         Me.txtTotal.Size = New System.Drawing.Size(113, 20)
@@ -270,7 +320,7 @@ Partial Class frmFacturaView
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(267, 541)
+        Me.Button4.Location = New System.Drawing.Point(267, 582)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
         Me.Button4.TabIndex = 23
@@ -299,14 +349,17 @@ Partial Class frmFacturaView
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Location = New System.Drawing.Point(3, 1)
+        Me.TabControl1.Controls.Add(Me.TabPage3)
+        Me.TabControl1.Location = New System.Drawing.Point(3, 5)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(603, 533)
+        Me.TabControl1.Size = New System.Drawing.Size(603, 571)
         Me.TabControl1.TabIndex = 27
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.Txtdescuento)
+        Me.TabPage1.Controls.Add(Me.Label20)
         Me.TabPage1.Controls.Add(Me.txtRetIVA)
         Me.TabPage1.Controls.Add(Me.Label19)
         Me.TabPage1.Controls.Add(Me.txtCuenta)
@@ -332,14 +385,33 @@ Partial Class frmFacturaView
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(595, 507)
+        Me.TabPage1.Size = New System.Drawing.Size(595, 545)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Datos Generales"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'Txtdescuento
+        '
+        Me.Txtdescuento.Location = New System.Drawing.Point(455, 450)
+        Me.Txtdescuento.Name = "Txtdescuento"
+        Me.Txtdescuento.ReadOnly = True
+        Me.Txtdescuento.Size = New System.Drawing.Size(113, 20)
+        Me.Txtdescuento.TabIndex = 29
+        Me.Txtdescuento.Text = "0.00"
+        Me.Txtdescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(384, 452)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(62, 13)
+        Me.Label20.TabIndex = 28
+        Me.Label20.Text = "Descuento:"
+        '
         'txtRetIVA
         '
-        Me.txtRetIVA.Location = New System.Drawing.Point(455, 458)
+        Me.txtRetIVA.Location = New System.Drawing.Point(455, 496)
         Me.txtRetIVA.Name = "txtRetIVA"
         Me.txtRetIVA.ReadOnly = True
         Me.txtRetIVA.Size = New System.Drawing.Size(113, 20)
@@ -349,7 +421,7 @@ Partial Class frmFacturaView
         '
         'Label19
         '
-        Me.Label19.Location = New System.Drawing.Point(365, 461)
+        Me.Label19.Location = New System.Drawing.Point(365, 499)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(84, 13)
         Me.Label19.TabIndex = 40
@@ -421,7 +493,7 @@ Partial Class frmFacturaView
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(595, 507)
+        Me.TabPage2.Size = New System.Drawing.Size(595, 545)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Datos SAT"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -549,11 +621,526 @@ Partial Class frmFacturaView
         Me.Label10.TabIndex = 0
         Me.Label10.Text = "Folio Fisca:"
         '
+        'TabPage3
+        '
+        Me.TabPage3.Controls.Add(Me.Button1)
+        Me.TabPage3.Controls.Add(Me.Label44)
+        Me.TabPage3.Controls.Add(Me.TextBox11)
+        Me.TabPage3.Controls.Add(Me.Label43)
+        Me.TabPage3.Controls.Add(Me.TextBox10)
+        Me.TabPage3.Controls.Add(Me.Label42)
+        Me.TabPage3.Controls.Add(Me.TextBox9)
+        Me.TabPage3.Controls.Add(Me.Label41)
+        Me.TabPage3.Controls.Add(Me.Label40)
+        Me.TabPage3.Controls.Add(Me.Label39)
+        Me.TabPage3.Controls.Add(Me.TextBox8)
+        Me.TabPage3.Controls.Add(Me.DateTimePicker1)
+        Me.TabPage3.Controls.Add(Me.Label38)
+        Me.TabPage3.Controls.Add(Me.Label37)
+        Me.TabPage3.Controls.Add(Me.TextBox7)
+        Me.TabPage3.Controls.Add(Me.Label33)
+        Me.TabPage3.Controls.Add(Me.TextBox6)
+        Me.TabPage3.Controls.Add(Me.TextBox2)
+        Me.TabPage3.Controls.Add(Me.Label32)
+        Me.TabPage3.Controls.Add(Me.TextBox3)
+        Me.TabPage3.Controls.Add(Me.TextBox4)
+        Me.TabPage3.Controls.Add(Me.TextBox5)
+        Me.TabPage3.Controls.Add(Me.Label34)
+        Me.TabPage3.Controls.Add(Me.Label35)
+        Me.TabPage3.Controls.Add(Me.Label36)
+        Me.TabPage3.Controls.Add(Me.Label31)
+        Me.TabPage3.Controls.Add(Me.TextBox1)
+        Me.TabPage3.Controls.Add(Me.Label30)
+        Me.TabPage3.Controls.Add(Me.ComboBox1)
+        Me.TabPage3.Controls.Add(Me.Label29)
+        Me.TabPage3.Controls.Add(Me.TxtEntregaMerc)
+        Me.TabPage3.Controls.Add(Me.Label28)
+        Me.TabPage3.Controls.Add(Me.Label27)
+        Me.TabPage3.Controls.Add(Me.Txttipobulto)
+        Me.TabPage3.Controls.Add(Me.cmbMoneda)
+        Me.TabPage3.Controls.Add(Me.Label25)
+        Me.TabPage3.Controls.Add(Me.cmbtienda)
+        Me.TabPage3.Controls.Add(Me.Label26)
+        Me.TabPage3.Controls.Add(Me.Label24)
+        Me.TabPage3.Controls.Add(Me.Txtconsecutivo)
+        Me.TabPage3.Controls.Add(Me.TxtProveedor)
+        Me.TabPage3.Controls.Add(Me.Label23)
+        Me.TabPage3.Controls.Add(Me.dpFecha)
+        Me.TabPage3.Controls.Add(Me.Label22)
+        Me.TabPage3.Controls.Add(Me.Label21)
+        Me.TabPage3.Controls.Add(Me.Txtremision)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Size = New System.Drawing.Size(595, 545)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "Addenda Soriana"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label40.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.Label40.Location = New System.Drawing.Point(35, 305)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(167, 24)
+        Me.Label40.TabIndex = 69
+        Me.Label40.Text = "Datos del pedido"
+        '
+        'Label39
+        '
+        Me.Label39.AutoSize = True
+        Me.Label39.Location = New System.Drawing.Point(45, 209)
+        Me.Label39.Name = "Label39"
+        Me.Label39.Size = New System.Drawing.Size(98, 13)
+        Me.Label39.TabIndex = 67
+        Me.Label39.Text = "Folio Nota Entrada:"
+        '
+        'TextBox8
+        '
+        Me.TextBox8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox8.ForeColor = System.Drawing.Color.DarkRed
+        Me.TextBox8.Location = New System.Drawing.Point(155, 206)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.ReadOnly = True
+        Me.TextBox8.Size = New System.Drawing.Size(62, 20)
+        Me.TextBox8.TabIndex = 68
+        Me.TextBox8.Text = "0"
+        Me.TextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.CustomFormat = "dd / MMM / yyyy"
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateTimePicker1.Location = New System.Drawing.Point(452, 173)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(117, 20)
+        Me.DateTimePicker1.TabIndex = 66
+        '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.Location = New System.Drawing.Point(361, 176)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(80, 13)
+        Me.Label38.TabIndex = 65
+        Me.Label38.Text = "Fecha Entrega:"
+        '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.Location = New System.Drawing.Point(179, 176)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(90, 13)
+        Me.Label37.TabIndex = 63
+        Me.Label37.Text = "Cantidad Pedidos"
+        '
+        'TextBox7
+        '
+        Me.TextBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox7.ForeColor = System.Drawing.Color.DarkRed
+        Me.TextBox7.Location = New System.Drawing.Point(275, 173)
+        Me.TextBox7.Name = "TextBox7"
+        Me.TextBox7.ReadOnly = True
+        Me.TextBox7.Size = New System.Drawing.Size(79, 20)
+        Me.TextBox7.TabIndex = 64
+        Me.TextBox7.Text = "0"
+        Me.TextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label33
+        '
+        Me.Label33.Location = New System.Drawing.Point(356, 280)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(84, 13)
+        Me.Label33.TabIndex = 62
+        Me.Label33.Text = "Otros Impuestos"
+        Me.Label33.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'TextBox6
+        '
+        Me.TextBox6.Location = New System.Drawing.Point(456, 255)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.ReadOnly = True
+        Me.TextBox6.Size = New System.Drawing.Size(113, 20)
+        Me.TextBox6.TabIndex = 61
+        Me.TextBox6.Text = "0.00"
+        Me.TextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(456, 232)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.ReadOnly = True
+        Me.TextBox2.Size = New System.Drawing.Size(113, 20)
+        Me.TextBox2.TabIndex = 60
+        Me.TextBox2.Text = "0.00"
+        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.Location = New System.Drawing.Point(400, 235)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(34, 13)
+        Me.Label32.TabIndex = 59
+        Me.Label32.Text = "IEPS:"
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(456, 277)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.ReadOnly = True
+        Me.TextBox3.Size = New System.Drawing.Size(113, 20)
+        Me.TextBox3.TabIndex = 58
+        Me.TextBox3.Text = "0.00"
+        Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox4.Location = New System.Drawing.Point(456, 302)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.ReadOnly = True
+        Me.TextBox4.Size = New System.Drawing.Size(113, 20)
+        Me.TextBox4.TabIndex = 56
+        Me.TextBox4.Text = "0.00"
+        Me.TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Location = New System.Drawing.Point(456, 211)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.ReadOnly = True
+        Me.TextBox5.Size = New System.Drawing.Size(113, 20)
+        Me.TextBox5.TabIndex = 55
+        Me.TextBox5.Text = "0.00"
+        Me.TextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Location = New System.Drawing.Point(416, 305)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(34, 13)
+        Me.Label34.TabIndex = 54
+        Me.Label34.Text = "Total:"
+        '
+        'Label35
+        '
+        Me.Label35.Location = New System.Drawing.Point(353, 258)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(84, 13)
+        Me.Label35.TabIndex = 53
+        Me.Label35.Text = "I.V.A.:"
+        Me.Label35.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Location = New System.Drawing.Point(397, 214)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(53, 13)
+        Me.Label36.TabIndex = 52
+        Me.Label36.Text = "SubTotal:"
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.Location = New System.Drawing.Point(45, 176)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(49, 13)
+        Me.Label31.TabIndex = 50
+        Me.Label31.Text = "# Bultos:"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.ForeColor = System.Drawing.Color.DarkRed
+        Me.TextBox1.Location = New System.Drawing.Point(100, 169)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.Size = New System.Drawing.Size(62, 20)
+        Me.TextBox1.TabIndex = 51
+        Me.TextBox1.Text = "0"
+        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Font = New System.Drawing.Font("Arial", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label30.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.Label30.Location = New System.Drawing.Point(126, 8)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(291, 33)
+        Me.Label30.TabIndex = 49
+        Me.Label30.Text = "ADDENDA SORIANA"
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.DisplayMember = "metodo"
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Si", "No"})
+        Me.ComboBox1.Location = New System.Drawing.Point(490, 143)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(79, 21)
+        Me.ComboBox1.TabIndex = 48
+        Me.ComboBox1.ValueMember = "id"
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Location = New System.Drawing.Point(380, 143)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(104, 13)
+        Me.Label29.TabIndex = 47
+        Me.Label29.Text = "Cumple req. Fiscales"
+        '
+        'TxtEntregaMerc
+        '
+        Me.TxtEntregaMerc.Location = New System.Drawing.Point(275, 141)
+        Me.TxtEntregaMerc.Name = "TxtEntregaMerc"
+        Me.TxtEntregaMerc.ReadOnly = True
+        Me.TxtEntregaMerc.Size = New System.Drawing.Size(79, 20)
+        Me.TxtEntregaMerc.TabIndex = 46
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Location = New System.Drawing.Point(173, 143)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(96, 13)
+        Me.Label28.TabIndex = 45
+        Me.Label28.Text = "Entrega mercancia"
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Location = New System.Drawing.Point(36, 143)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(58, 13)
+        Me.Label27.TabIndex = 43
+        Me.Label27.Text = "Tipo Bulto:"
+        '
+        'Txttipobulto
+        '
+        Me.Txttipobulto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txttipobulto.ForeColor = System.Drawing.Color.DarkRed
+        Me.Txttipobulto.Location = New System.Drawing.Point(100, 141)
+        Me.Txttipobulto.Name = "Txttipobulto"
+        Me.Txttipobulto.ReadOnly = True
+        Me.Txttipobulto.Size = New System.Drawing.Size(62, 20)
+        Me.Txttipobulto.TabIndex = 44
+        Me.Txttipobulto.Text = "0"
+        Me.Txttipobulto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'cmbMoneda
+        '
+        Me.cmbMoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbMoneda.FormattingEnabled = True
+        Me.cmbMoneda.Items.AddRange(New Object() {"MXN", "USD"})
+        Me.cmbMoneda.Location = New System.Drawing.Point(490, 113)
+        Me.cmbMoneda.Name = "cmbMoneda"
+        Me.cmbMoneda.Size = New System.Drawing.Size(79, 21)
+        Me.cmbMoneda.TabIndex = 42
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Location = New System.Drawing.Point(411, 116)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(73, 13)
+        Me.Label25.TabIndex = 41
+        Me.Label25.Text = "Tipo Moneda:"
+        '
+        'cmbtienda
+        '
+        Me.cmbtienda.DisplayMember = "metodo"
+        Me.cmbtienda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmbtienda.FormattingEnabled = True
+        Me.cmbtienda.Items.AddRange(New Object() {"1", "2", "3"})
+        Me.cmbtienda.Location = New System.Drawing.Point(275, 110)
+        Me.cmbtienda.Name = "cmbtienda"
+        Me.cmbtienda.Size = New System.Drawing.Size(79, 21)
+        Me.cmbtienda.TabIndex = 40
+        Me.cmbtienda.ValueMember = "id"
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Location = New System.Drawing.Point(226, 113)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(43, 13)
+        Me.Label26.TabIndex = 39
+        Me.Label26.Text = "Tienda:"
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(417, 88)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(69, 13)
+        Me.Label24.TabIndex = 35
+        Me.Label24.Text = "Consecutivo:"
+        '
+        'Txtconsecutivo
+        '
+        Me.Txtconsecutivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txtconsecutivo.ForeColor = System.Drawing.Color.DarkRed
+        Me.Txtconsecutivo.Location = New System.Drawing.Point(490, 88)
+        Me.Txtconsecutivo.Name = "Txtconsecutivo"
+        Me.Txtconsecutivo.ReadOnly = True
+        Me.Txtconsecutivo.Size = New System.Drawing.Size(79, 20)
+        Me.Txtconsecutivo.TabIndex = 36
+        Me.Txtconsecutivo.Text = "0"
+        Me.Txtconsecutivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'TxtProveedor
+        '
+        Me.TxtProveedor.Location = New System.Drawing.Point(100, 84)
+        Me.TxtProveedor.Name = "TxtProveedor"
+        Me.TxtProveedor.ReadOnly = True
+        Me.TxtProveedor.Size = New System.Drawing.Size(79, 20)
+        Me.TxtProveedor.TabIndex = 34
+        Me.TxtProveedor.Text = "303008"
+        Me.TxtProveedor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(21, 91)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(59, 13)
+        Me.Label23.TabIndex = 33
+        Me.Label23.Text = "Proveedor:"
+        '
+        'dpFecha
+        '
+        Me.dpFecha.CustomFormat = "dd / MMM / yyyy"
+        Me.dpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dpFecha.Location = New System.Drawing.Point(100, 110)
+        Me.dpFecha.Name = "dpFecha"
+        Me.dpFecha.Size = New System.Drawing.Size(117, 20)
+        Me.dpFecha.TabIndex = 32
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(9, 113)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(86, 13)
+        Me.Label22.TabIndex = 31
+        Me.Label22.Text = "Fecha Remision:"
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(202, 84)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(53, 13)
+        Me.Label21.TabIndex = 28
+        Me.Label21.Text = "Remision:"
+        '
+        'Txtremision
+        '
+        Me.Txtremision.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txtremision.ForeColor = System.Drawing.Color.DarkRed
+        Me.Txtremision.Location = New System.Drawing.Point(275, 84)
+        Me.Txtremision.Name = "Txtremision"
+        Me.Txtremision.ReadOnly = True
+        Me.Txtremision.Size = New System.Drawing.Size(79, 20)
+        Me.Txtremision.TabIndex = 29
+        Me.Txtremision.Text = "0"
+        Me.Txtremision.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label41
+        '
+        Me.Label41.AutoSize = True
+        Me.Label41.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label41.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.Label41.Location = New System.Drawing.Point(35, 52)
+        Me.Label41.Name = "Label41"
+        Me.Label41.Size = New System.Drawing.Size(103, 24)
+        Me.Label41.TabIndex = 70
+        Me.Label41.Text = "Remision:"
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.Location = New System.Drawing.Point(25, 345)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(68, 13)
+        Me.Label42.TabIndex = 71
+        Me.Label42.Text = "Folio Pedido:"
+        '
+        'TextBox9
+        '
+        Me.TextBox9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox9.ForeColor = System.Drawing.Color.DarkRed
+        Me.TextBox9.Location = New System.Drawing.Point(112, 345)
+        Me.TextBox9.Name = "TextBox9"
+        Me.TextBox9.ReadOnly = True
+        Me.TextBox9.Size = New System.Drawing.Size(82, 20)
+        Me.TextBox9.TabIndex = 72
+        Me.TextBox9.Text = "0"
+        Me.TextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label43
+        '
+        Me.Label43.AutoSize = True
+        Me.Label43.Location = New System.Drawing.Point(9, 374)
+        Me.Label43.Name = "Label43"
+        Me.Label43.Size = New System.Drawing.Size(95, 13)
+        Me.Label43.TabIndex = 73
+        Me.Label43.Text = "Cantidad Articulos:"
+        '
+        'TextBox10
+        '
+        Me.TextBox10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox10.ForeColor = System.Drawing.Color.DarkRed
+        Me.TextBox10.Location = New System.Drawing.Point(112, 371)
+        Me.TextBox10.Name = "TextBox10"
+        Me.TextBox10.ReadOnly = True
+        Me.TextBox10.Size = New System.Drawing.Size(82, 20)
+        Me.TextBox10.TabIndex = 74
+        Me.TextBox10.Text = "0"
+        Me.TextBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label44
+        '
+        Me.Label44.AutoSize = True
+        Me.Label44.Location = New System.Drawing.Point(5, 397)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(95, 13)
+        Me.Label44.TabIndex = 75
+        Me.Label44.Text = "Pedido Proveedor:"
+        '
+        'TextBox11
+        '
+        Me.TextBox11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox11.ForeColor = System.Drawing.Color.DarkRed
+        Me.TextBox11.Location = New System.Drawing.Point(112, 397)
+        Me.TextBox11.Name = "TextBox11"
+        Me.TextBox11.ReadOnly = True
+        Me.TextBox11.Size = New System.Drawing.Size(82, 20)
+        Me.TextBox11.TabIndex = 76
+        Me.TextBox11.Text = "0"
+        Me.TextBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(240, 474)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(125, 23)
+        Me.Button1.TabIndex = 77
+        Me.Button1.Text = "Processar Addenda"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'frmFacturaView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(609, 570)
+        Me.ClientSize = New System.Drawing.Size(609, 607)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Button4)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -569,6 +1156,8 @@ Partial Class frmFacturaView
         Me.TabPage1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -618,4 +1207,53 @@ Partial Class frmFacturaView
     Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents txtRetIVA As System.Windows.Forms.TextBox
     Friend WithEvents Label19 As System.Windows.Forms.Label
+    Friend WithEvents Txtdescuento As System.Windows.Forms.TextBox
+    Friend WithEvents Label20 As System.Windows.Forms.Label
+    Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
+    Friend WithEvents Label22 As System.Windows.Forms.Label
+    Friend WithEvents Label21 As System.Windows.Forms.Label
+    Friend WithEvents Txtremision As System.Windows.Forms.TextBox
+    Friend WithEvents Label24 As System.Windows.Forms.Label
+    Friend WithEvents Txtconsecutivo As System.Windows.Forms.TextBox
+    Friend WithEvents TxtProveedor As System.Windows.Forms.TextBox
+    Friend WithEvents Label23 As System.Windows.Forms.Label
+    Friend WithEvents dpFecha As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label27 As System.Windows.Forms.Label
+    Friend WithEvents Txttipobulto As System.Windows.Forms.TextBox
+    Friend WithEvents cmbMoneda As System.Windows.Forms.ComboBox
+    Friend WithEvents Label25 As System.Windows.Forms.Label
+    Friend WithEvents cmbtienda As System.Windows.Forms.ComboBox
+    Friend WithEvents Label26 As System.Windows.Forms.Label
+    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents Label29 As System.Windows.Forms.Label
+    Friend WithEvents TxtEntregaMerc As System.Windows.Forms.TextBox
+    Friend WithEvents Label28 As System.Windows.Forms.Label
+    Friend WithEvents Label30 As System.Windows.Forms.Label
+    Friend WithEvents Label31 As System.Windows.Forms.Label
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents Label32 As System.Windows.Forms.Label
+    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
+    Friend WithEvents Label34 As System.Windows.Forms.Label
+    Friend WithEvents Label35 As System.Windows.Forms.Label
+    Friend WithEvents Label36 As System.Windows.Forms.Label
+    Friend WithEvents Label37 As System.Windows.Forms.Label
+    Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
+    Friend WithEvents Label33 As System.Windows.Forms.Label
+    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
+    Friend WithEvents Label39 As System.Windows.Forms.Label
+    Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
+    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label38 As System.Windows.Forms.Label
+    Friend WithEvents Label40 As System.Windows.Forms.Label
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Label44 As System.Windows.Forms.Label
+    Friend WithEvents TextBox11 As System.Windows.Forms.TextBox
+    Friend WithEvents Label43 As System.Windows.Forms.Label
+    Friend WithEvents TextBox10 As System.Windows.Forms.TextBox
+    Friend WithEvents Label42 As System.Windows.Forms.Label
+    Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
+    Friend WithEvents Label41 As System.Windows.Forms.Label
 End Class

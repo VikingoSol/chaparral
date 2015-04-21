@@ -80,7 +80,7 @@ Public Class frmFacturaProc
 
             .Emisor.Domicilio.Calle.Value = gConfigGlobal.Direccion_Fiscal.Calle
             If Trim(gConfigGlobal.Direccion_Fiscal.NoExterior) <> "" Then .Emisor.Domicilio.NumeroExterior.Value = gConfigGlobal.Direccion_Fiscal.NoExterior
-            If Trim(gConfigGlobal.Direccion_Fiscal.NoInterior) <> "" Then .Emisor.Domicilio.NumeroInterior.Value = gConfigGlobal.Direccion_Fiscal.NoExterior
+            If Trim(gConfigGlobal.Direccion_Fiscal.NoInterior) <> "" Then .Emisor.Domicilio.NumeroInterior.Value = gConfigGlobal.Direccion_Fiscal.NoInterior
             If Trim(gConfigGlobal.Direccion_Fiscal.Colonia) <> "" Then .Emisor.Domicilio.Colonia.Value = gConfigGlobal.Direccion_Fiscal.Colonia
             If Trim(gConfigGlobal.Direccion_Fiscal.Localidad) <> "" Then .Emisor.Domicilio.Localidad.Value = gConfigGlobal.Direccion_Fiscal.Localidad
             If Trim(gConfigGlobal.Direccion_Fiscal.Referencia) <> "" Then .Emisor.Domicilio.Referencia.Value = gConfigGlobal.Direccion_Fiscal.Referencia
@@ -176,7 +176,10 @@ Public Class frmFacturaProc
                     If gConfigGlobal.ProveedorTimbres = eProveedorTimbres.Advans Then
                         vRes = FacturaNETLib.Facturacion.Facturar(gConfigGlobal.CFDI_Url, gConfigGlobal.CFDI_Id, vXml)
                     ElseIf gConfigGlobal.ProveedorTimbres = eProveedorTimbres.FEL Then
-                        vRes = FacturaNETLib.Facturacion.FacturarFEL(gConfigGlobal.CFDI_Url, gConfigGlobal.CFDI_Id, gConfigGlobal.CFDI_Token, vXml, gConfigGlobal.Registro_Federal & "-" & vCliente.RFC & "-" & vFacturaData.Serie & vFacturaData.Folio)
+                        MsgBox(vXml)
+                        'vRes = FacturaNETLib.Facturacion.FacturarFEL(gConfigGlobal.CFDI_Url, gConfigGlobal.CFDI_Id, gConfigGlobal.CFDI_Token, vXml, gConfigGlobal.Registro_Federal & "-" & vCliente.RFC & "-" & vFacturaData.Serie & vFacturaData.Folio)
+                        Dim refe As String = vCliente.RFC & vFacturaData.Folio
+                        vRes = FacturaNETLib.Facturacion.FacturarFEL(gConfigGlobal.CFDI_Url, gConfigGlobal.CFDI_Id, gConfigGlobal.CFDI_Token, vXml, vFacturaData.Folio)
                     End If
 
                     'vRes = Timbrado2.timbrar2(gConfigGlobal.CFDI_Id, vXml)
@@ -213,8 +216,8 @@ Public Class frmFacturaProc
                         For n = 0 To vFactura.Data.Complementos.Count - 1
                             If vFactura.Data.Complementos(n).Type = Complementos.eComplementoTipo.TimbreFiscalDigital Then
                                 vTimbreData = CType(vFactura.Data.Complementos(n).Data, Complementos.TimbreFiscalDigital)
-
-                                vIdFac = vFacs.Agregar(vFacturaData.Serie, vFacturaData.Folio, vFacturaData.Fecha, vFacturaData.IdCliente, vFacturaData.Subtotal, vFacturaData.IVA, vFacturaData.Total, vXml, vRes.Timbre, "", vTimbreData.Uuid.Value.ToUpper, vTimbreData.FechaTimbrado.Value, vFacturaData.MetodosPagoId, vFacturaData.Cuenta, vFacturaData.RetencionIVA)
+                                'Dim Descto As Double = frmFactura.gdescuento ' por mientras se añade la variable descuento en facturas
+                                vIdFac = vFacs.Agregar(vFacturaData.Serie, vFacturaData.Folio, vFacturaData.Fecha, vFacturaData.IdCliente, vFacturaData.Subtotal, vFacturaData.IVA, vFacturaData.Total, vXml, vRes.Timbre, "", vTimbreData.Uuid.Value.ToUpper, vTimbreData.FechaTimbrado.Value, vFacturaData.MetodosPagoId, vFacturaData.Cuenta, vFacturaData.RetencionIVA, frmFactura.gdescuento)
                                 If vIdFac <= -1 Then
                                     MsgBox("Ocurrio un error al querer dar de alta la factura, por favor importe el xml del cfdi", MsgBoxStyle.Critical, "Error")
                                     e.Cancel = True

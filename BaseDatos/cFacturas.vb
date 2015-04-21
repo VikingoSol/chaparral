@@ -65,7 +65,7 @@ Public Class cFacturas
 
     Public Function GetFactura(ByVal pId As Integer)
         If gConn.State <> ConnectionState.Open Then gConn.Open()
-        Dim vCmd As New MySqlCommand("SELECT  facturas.id,metodo_pago,digitos_cta,folio,serie,fecha_emision,idcliente,subtotal,iva,total,xml,xml_sat,acuse,folio_fiscal,fecha_cer,facturas.estado as festado,clientes.*,mp.metodo  FROM ( facturas INNER JOIN clientes ON facturas.idcliente=clientes.id) INNER JOIN metodos_pago mp ON metodo_pago=mp.id WHERE facturas.id=?id", gConn)
+        Dim vCmd As New MySqlCommand("SELECT  facturas.id,metodo_pago,digitos_cta,folio,serie,fecha_emision,idcliente,subtotal,iva,total,xml,xml_sat,acuse,folio_fiscal,fecha_cer,facturas.estado as festado,clientes.*,mp.metodo,facturas.descuento  FROM ( facturas INNER JOIN clientes ON facturas.idcliente=clientes.id) INNER JOIN metodos_pago mp ON metodo_pago=mp.id WHERE facturas.id=?id", gConn)
         vCmd.Parameters.AddWithValue("?id", pId)
         Dim vAdap As New MySqlDataAdapter(vCmd)
         Dim vTable As New DataTable
@@ -102,6 +102,7 @@ Public Class cFacturas
                 vFac.Cuenta = .Item("digitos_cta")                              
                 If Not IsDBNull(.Item("digitos_cta")) Then vFac.Cuenta = .Item("digitos_cta")
                 vFac.RetencionIVA = .Item("retiva")
+                vFac.Descuento = .Item("Descuento")
             End With
         End If
         Return vFac
@@ -152,9 +153,9 @@ Public Class cFacturas
     Public Function Agregar(ByVal pSerie As String, ByVal pFolio As String, ByVal pFechaEm As Date, _
     ByVal pIdCliente As Integer, ByVal pSubTotal As Double, ByVal pIVA As Double, ByVal pTotal As Double, _
     ByVal pXml As String, ByVal pTimbre As String, ByVal pAcuse As String, ByVal pFolioFiscal As String, _
-    ByVal pFechaTimbrado As DateTime, ByVal pMetodoPago As String, ByVal pCuenta As String, ByVal pRetIva As Double)
+    ByVal pFechaTimbrado As DateTime, ByVal pMetodoPago As String, ByVal pCuenta As String, ByVal pRetIva As Double, ByVal pDescuento As Double)
         If gConn.State <> ConnectionState.Open Then gConn.Open()
-        Dim vCmd As New MySqlCommand("INSERT INTO facturas(serie,folio,fecha_emision,idcliente,subtotal,iva,total,xml,xml_sat,acuse,folio_fiscal,fecha_cer,metodo_pago, digitos_cta, retiva) VALUES(?serie,?folio,?fecha,?cliente,?subtotal,?iva,?total,?xml,?xmlsat,?acuse,?foliof,?fechacer, ?mpago,?cta, ?riva)", gConn)
+        Dim vCmd As New MySqlCommand("INSERT INTO facturas(serie,folio,fecha_emision,idcliente,subtotal,iva,total,xml,xml_sat,acuse,folio_fiscal,fecha_cer,metodo_pago, digitos_cta, retiva,descuento) VALUES(?serie,?folio,?fecha,?cliente,?subtotal,?iva,?total,?xml,?xmlsat,?acuse,?foliof,?fechacer, ?mpago,?cta, ?riva, ?descuento)", gConn)
         vCmd.Parameters.AddWithValue("?serie", pSerie)
         vCmd.Parameters.AddWithValue("?folio", pFolio)
         vCmd.Parameters.AddWithValue("?fecha", pFechaEm)
@@ -170,6 +171,7 @@ Public Class cFacturas
         vCmd.Parameters.AddWithValue("?mpago", pMetodoPago)
         vCmd.Parameters.AddWithValue("?cta", pCuenta)
         vCmd.Parameters.AddWithValue("?riva", pRetIva)
+        vCmd.Parameters.AddWithValue("?descuento", pDescuento)
         vCmd.ExecuteNonQuery()
         Dim vLastID As Long = vCmd.LastInsertedId
         vCmd = New MySqlCommand("UPDATE config SET nextfolio=nextfolio+1", gConn)
@@ -214,4 +216,5 @@ Public Class dFacturaView
     Public Metodo_Pago As Integer
     Public Metodo_PagoTxt As String
     Public RetencionIVA As Double
+    Public Descuento As Double
 End Class

@@ -53,6 +53,7 @@ Partial Class frmFacturas
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         grdFacturas_DesignTimeLayout.LayoutString = resources.GetString("grdFacturas_DesignTimeLayout.LayoutString")
         Me.grdFacturas.DesignTimeLayout = grdFacturas_DesignTimeLayout
+        Me.grdFacturas.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grdFacturas.GroupByBoxVisible = False
         Me.grdFacturas.HideSelection = Janus.Windows.GridEX.HideSelection.Highlight
         Me.grdFacturas.Location = New System.Drawing.Point(4, 47)

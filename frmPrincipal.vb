@@ -33,7 +33,7 @@ Public Class frmPrincipal
 
 
         Dim cConfig As New cConfigGlobal
-        gConfigGlobal = cConfig.GetConfiguracion()
+        gConfigGlobal = cConfig.GetConfiguracion
 
 
         gPathFactuacion = gPathDataSoft & gConfigGlobal.Registro_Federal & "\"

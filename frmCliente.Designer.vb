@@ -53,6 +53,8 @@ Partial Class frmCliente
         Me.chkRetiene = New System.Windows.Forms.CheckBox
         Me.txtEmail = New System.Windows.Forms.TextBox
         Me.Label14 = New System.Windows.Forms.Label
+        Me.TxtdescFac = New System.Windows.Forms.TextBox
+        Me.Label15 = New System.Windows.Forms.Label
         Me.SuspendLayout()
         '
         'Label1
@@ -323,6 +325,24 @@ Partial Class frmCliente
         Me.Label14.TabIndex = 28
         Me.Label14.Text = "Email:"
         '
+        'TxtdescFac
+        '
+        Me.TxtdescFac.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TxtdescFac.Location = New System.Drawing.Point(350, 335)
+        Me.TxtdescFac.Name = "TxtdescFac"
+        Me.TxtdescFac.Size = New System.Drawing.Size(79, 20)
+        Me.TxtdescFac.TabIndex = 30
+        Me.TxtdescFac.Text = "0.00"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(219, 338)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(125, 13)
+        Me.Label15.TabIndex = 31
+        Me.Label15.Text = "Descuento para Factura:"
+        '
         'frmCliente
         '
         Me.AcceptButton = Me.btnAceptar
@@ -330,6 +350,8 @@ Partial Class frmCliente
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCancelar
         Me.ClientSize = New System.Drawing.Size(439, 411)
+        Me.Controls.Add(Me.Label15)
+        Me.Controls.Add(Me.TxtdescFac)
         Me.Controls.Add(Me.txtEmail)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.chkRetiene)
@@ -401,4 +423,6 @@ Partial Class frmCliente
     Friend WithEvents chkRetiene As System.Windows.Forms.CheckBox
     Friend WithEvents txtEmail As System.Windows.Forms.TextBox
     Friend WithEvents Label14 As System.Windows.Forms.Label
+    Friend WithEvents TxtdescFac As System.Windows.Forms.TextBox
+    Friend WithEvents Label15 As System.Windows.Forms.Label
 End Class

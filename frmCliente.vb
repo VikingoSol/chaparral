@@ -21,6 +21,7 @@ Public Class frmCliente
         Me.txtPais.Text = vcl.Pais
         Me.txtRef.Text = vcl.Referencia
         Me.chkRetiene.Checked = vcl.RetieneIva
+        Me.TxtdescFac.Text = vcl.DescFactura
         If Me.ShowDialog = Windows.Forms.DialogResult.OK Then
             Return True
         Else : Return False
@@ -81,9 +82,9 @@ Public Class frmCliente
             Exit Sub
         End If
         If vIdCliente = -1 Then
-            vIdCliente = vClients.Agregar(Me.txtNombre.Text, Me.txtRFC.Text, Me.txtCalle.Text, Me.txtNoInt.Text, Me.txtNoExt.Text, Me.txtCol.Text, Me.txtLoc.Text, Me.txtRef.Text, Me.txtMunicipio.Text, Me.txtEstado.Text, Me.txtPais.Text, Me.txtCP.Text, Me.chkRetiene.Checked)
+            vIdCliente = vClients.Agregar(Me.txtNombre.Text, Me.txtRFC.Text, Me.txtCalle.Text, Me.txtNoInt.Text, Me.txtNoExt.Text, Me.txtCol.Text, Me.txtLoc.Text, Me.txtRef.Text, Me.txtMunicipio.Text, Me.txtEstado.Text, Me.txtPais.Text, Me.txtCP.Text, Me.chkRetiene.Checked, Me.TxtdescFac.Text)
         Else
-            vClients.Modificar(vIdCliente, Me.txtNombre.Text, Me.txtRFC.Text, Me.txtCalle.Text, Me.txtNoInt.Text, Me.txtNoExt.Text, Me.txtCol.Text, Me.txtLoc.Text, Me.txtRef.Text, Me.txtMunicipio.Text, Me.txtEstado.Text, Me.txtPais.Text, Me.txtCP.Text, Me.chkRetiene.Checked)
+            vClients.Modificar(vIdCliente, Me.txtNombre.Text, Me.txtRFC.Text, Me.txtCalle.Text, Me.txtNoInt.Text, Me.txtNoExt.Text, Me.txtCol.Text, Me.txtLoc.Text, Me.txtRef.Text, Me.txtMunicipio.Text, Me.txtEstado.Text, Me.txtPais.Text, Me.txtCP.Text, Me.chkRetiene.Checked, Me.TxtdescFac.Text)
         End If
         Me.DialogResult = Windows.Forms.DialogResult.OK
     End Sub

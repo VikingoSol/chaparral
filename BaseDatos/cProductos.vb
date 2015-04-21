@@ -17,6 +17,8 @@ Public Class cProductos
             vProd.Unidad = vTabla.Rows(0).Item("unidad")
             vProd.UnidadNom = vTabla.Rows(0).Item("unidadnom")
             vProd.TasaId = vTabla.Rows(0).Item("tasa")
+            vProd.TasaPorc = GetTasaPorc(vTabla.Rows(0).Item("tasa"))
+            vProd.codigo = vTabla.Rows(0).Item("codigo")
         End If
         Return vProd
     End Function
@@ -39,7 +41,15 @@ Public Class cProductos
         Return vTabla
     End Function
 
-
+    Public Function GetTasaPorc(ByVal pId As Integer) As Double
+        If gConn.State <> ConnectionState.Open Then gConn.Open()
+        Dim vCmd As New MySqlCommand("SELECT tasas.tasa FROM tasas WHERE tasas.id=?id", gConn)
+        vCmd.Parameters.AddWithValue("?id", pId)
+        Dim vAdap As New MySqlDataAdapter(vCmd)
+        Dim vTabla As New DataTable
+        vAdap.Fill(vTabla)
+        Return vTabla.Rows(0).Item("tasa")
+    End Function
 
     Public Function GetTasas() As DataTable
         If gConn.State <> ConnectionState.Open Then gConn.Open()
@@ -50,13 +60,14 @@ Public Class cProductos
         Return vTabla
     End Function
 
-    Public Function Agregar(ByVal pNombre As String, ByVal pPrecio As Double, ByVal pUnidad As Integer, ByVal pTasa As Integer) As Integer
+    Public Function Agregar(ByVal pNombre As String, ByVal pPrecio As Double, ByVal pUnidad As Integer, ByVal pTasa As Integer, ByVal pCodigo As String) As Integer
         If gConn.State <> ConnectionState.Open Then gConn.Open()
-        Dim vCmd As New MySqlCommand("INSERT INTO productos(nombre,precio,unidad, tasa) VALUES(?nombre,?precio,?unidad, ?tasa)", gConn)
+        Dim vCmd As New MySqlCommand("INSERT INTO productos(nombre,precio,unidad, tasa,codigo) VALUES(?nombre,?precio,?unidad, ?tasa, ?codigo)", gConn)
         vCmd.Parameters.AddWithValue("?nombre", pNombre)
         vCmd.Parameters.AddWithValue("?precio", pPrecio)
         vCmd.Parameters.AddWithValue("?unidad", pUnidad)
         vCmd.Parameters.AddWithValue("?tasa", pTasa)
+        vCmd.Parameters.AddWithValue("?codigo", pCodigo)
         vCmd.ExecuteNonQuery()
         Return vCmd.LastInsertedId
     End Function
@@ -68,14 +79,15 @@ Public Class cProductos
         vCmd.ExecuteNonQuery()
     End Sub
 
-    Public Sub Modificar(ByVal pId As Integer, ByVal pNombre As String, ByVal pPrecio As Double, ByVal pUnidad As Integer, ByVal pTasa As Integer)
+    Public Sub Modificar(ByVal pId As Integer, ByVal pNombre As String, ByVal pPrecio As Double, ByVal pUnidad As Integer, ByVal pTasa As Integer, ByVal pCodigo As String)
         If gConn.State <> ConnectionState.Open Then gConn.Open()
-        Dim vCmd As New MySqlCommand("UPDATE productos SET nombre=?nombre,precio=?precio,unidad=?unidad, tasa=?tasa WHERE id=?id", gConn)
+        Dim vCmd As New MySqlCommand("UPDATE productos SET nombre=?nombre,precio=?precio,unidad=?unidad, tasa=?tasa, codigo=?codigo WHERE id=?id", gConn)
         vCmd.Parameters.AddWithValue("?nombre", pNombre)
         vCmd.Parameters.AddWithValue("?precio", pPrecio)
         vCmd.Parameters.AddWithValue("?id", pId)
         vCmd.Parameters.AddWithValue("?unidad", pUnidad)
         vCmd.Parameters.AddWithValue("?tasa", pTasa)
+        vCmd.Parameters.AddWithValue("?codigo", pCodigo)
         vCmd.ExecuteNonQuery()
     End Sub
 
@@ -102,4 +114,5 @@ Public Class dProducto
     Public UnidadNom As String
     Public TasaId As Integer
     Public TasaPorc As Double
+    Public codigo As String
 End Class

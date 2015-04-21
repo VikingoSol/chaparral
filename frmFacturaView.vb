@@ -25,6 +25,7 @@ Public Class frmFacturaView
         Me.txtFolioFiscal.Text = vFac.Folio_Fiscal
         Me.txtAcuse.Text = vFac.xml_acuse
         Me.txtCuenta.Text = vFac.Cuenta
+        Me.Txtdescuento.Text = Format(vFac.Descuento, "C2")
         Me.txtRetIVA.Text = Format(vFac.RetencionIVA, "C2")
         If vFac.Estado = 1 Then
             Me.txtEstado.Text = "Activa"
@@ -138,4 +139,10 @@ Public Class frmFacturaView
     Private Sub Button4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button4.Click
         Me.Close()
     End Sub
+
+    Private Sub TextBox3_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Txtconsecutivo.TextChanged
+
+    End Sub
+
+    
 End Class
