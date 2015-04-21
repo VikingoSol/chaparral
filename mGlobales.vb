@@ -363,7 +363,11 @@ Module mGlobales
         Dim cConfig As New cConfigGlobal
 
         If Not IsNothing(gConfigGlobal) AndAlso (gConfig.Cer_Version <> gConfigGlobal.Cer_Ver Or Not IO.File.Exists(gPathFactuacion & gConfigGlobal.Cer_Name)) Then
+<<<<<<< HEAD
             Dim vFile As dArchivo = cConfig.DownloadCertificado(RfcActual)
+=======
+            Dim vFile As dArchivo = cConfig.DownloadCertificado()
+>>>>>>> 89d4dc6b612e8ac9085c74dd16927a1343a08a8e
             If vFile.Nombre <> "" Then
                 If Not IO.Directory.Exists(gPathFactuacion) Then
                     IO.Directory.CreateDirectory(gPathFactuacion)
@@ -380,7 +384,11 @@ Module mGlobales
         End If
 
         If Not IsNothing(gConfigGlobal) AndAlso (gConfig.Key_Version <> gConfigGlobal.Key_Ver Or Not IO.File.Exists(gPathFactuacion & gConfigGlobal.Key_Name)) Then
+<<<<<<< HEAD
             Dim vFile As dArchivo = cConfig.DownloadKey(RfcActual)
+=======
+            Dim vFile As dArchivo = cConfig.DownloadKey()
+>>>>>>> 89d4dc6b612e8ac9085c74dd16927a1343a08a8e
             If vFile.Nombre <> "" Then
                 If Not IO.Directory.Exists(gPathFactuacion) Then
                     IO.Directory.CreateDirectory(gPathFactuacion)

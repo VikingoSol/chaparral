@@ -55,6 +55,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Referencias\FacturaNETLib.dll</HintPath>
     </Reference>
+<<<<<<< HEAD
+=======
+    <Reference Include="FastReport, Version=1.9.1.0, Culture=neutral, processorArchitecture=MSIL" />
+>>>>>>> 89d4dc6b612e8ac9085c74dd16927a1343a08a8e
     <Reference Include="Ionic.Zip, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Referencias\Ionic.Zip.dll</HintPath>

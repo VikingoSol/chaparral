@@ -699,4 +699,7 @@ C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\De
 C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Debug\FacturaNET.Resources.resources
 C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Debug\FacturaNET.vbproj.GenerateResource.Cache
 C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Debug\FacturaNET.exe.licenses
+<<<<<<< HEAD
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\obj\x86\Debug\FacturaNET.Dialog1.resources
+=======
+>>>>>>> 89d4dc6b612e8ac9085c74dd16927a1343a08a8e
