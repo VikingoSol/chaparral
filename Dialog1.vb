@@ -13,5 +13,4 @@ Public Class Dialog1
         RfcActual = "BAMG670420V91"
         Me.Close()
     End Sub
-
 End Class

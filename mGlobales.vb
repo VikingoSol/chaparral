@@ -21,7 +21,6 @@ Module mGlobales
         End If
     End Function
 
-
     Public Function EmailAddressCheck(ByVal emailAddress As String) As Boolean
         Dim pattern As String = "^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,3})$"
         Dim emailAddressMatch As Match = Regex.Match(emailAddress, pattern, RegexOptions.IgnoreCase)

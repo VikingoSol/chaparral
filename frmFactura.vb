@@ -387,88 +387,19 @@ Public Class frmFactura
                 Calcular_Totales()
                 Me.txtIdProd.Focus()
             End If
-
         End If
     End Sub
 
     Private Sub CboRFCemisor_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CboRFCemisor.SelectedIndexChanged
-        If Me.CboRFCemisor.Text = "BAMG670420V91" Then  'Guadalupe  cargar datos del emisor 
-            Dim cConfig As New cConfigGlobal
-            gConfigGlobal = cConfig.GetConfiguracionEmisor("BAMG670420V91")
-            Me.Text = "Facturacion para:  " & gConfigGlobal.RazonSocial
-            gPathFactuacion = gPathDataSoft & gConfigGlobal.Registro_Federal & "\"
-            gPathBarCodes = gPathDataSoft & gConfigGlobal.Registro_Federal & "\BarCodes\"
 
-            'If Not IsNothing(gConfigGlobal) AndAlso (gConfig.Cer_Version <> gConfigGlobal.Cer_Ver Or Not IO.File.Exists(gPathFactuacion & gConfigGlobal.Cer_Name)) Then
-            '    Dim vFile As dArchivo = cConfig.DownloadCertificado()
-            '    If vFile.Nombre <> "" Then
-            '        If Not IO.Directory.Exists(gPathFactuacion) Then
-            '            IO.Directory.CreateDirectory(gPathFactuacion)
-            '        End If
-            '        If IO.File.Exists(gPathFactuacion & vFile.Nombre) Then
-            '            IO.File.Delete(gPathFactuacion & vFile.Nombre)
-            '        End If
-            '        Bytes_To_File(vFile.File, gPathFactuacion & vFile.Nombre)
-            '        gConfigGlobal.Cer_Ver = vFile.Version
-            '    End If
-            'End If
+        Dim cConfig As New cConfigGlobal
+        gConfigGlobal = cConfig.GetConfiguracion(CboRFCemisor.Text)
+        Me.Text = "Facturacion para:  " & gConfigGlobal.RazonSocial
 
-            'If Not IsNothing(gConfigGlobal) AndAlso (gConfig.Key_Version <> gConfigGlobal.Key_Ver Or Not IO.File.Exists(gPathFactuacion & gConfigGlobal.Key_Name)) Then
-            '    Dim vFile As dArchivo = cConfig.DownloadKey()
-            '    If vFile.Nombre <> "" Then
-            '        If Not IO.Directory.Exists(gPathFactuacion) Then
-            '            IO.Directory.CreateDirectory(gPathFactuacion)
-            '        End If
-            '        If IO.File.Exists(gPathFactuacion & vFile.Nombre) Then
-            '            IO.File.Delete(gPathFactuacion & vFile.Nombre)
+        gPathFactuacion = gPathDataSoft & gConfigGlobal.Registro_Federal & "\"
+        gPathBarCodes = gPathDataSoft & gConfigGlobal.Registro_Federal & "\BarCodes\"
 
-            '        End If
-
-            '        Bytes_To_File(vFile.File, gPathFactuacion & vFile.Nombre)
-            '        gConfigGlobal.Key_Ver = vFile.Version
-            '    End If
-
-            'End If
-        End If
-        If Me.CboRFCemisor.Text = "BAMF650219E70" Then ' francisco
-            Dim cConfig As New cConfigGlobal
-            gConfigGlobal = cConfig.GetConfiguracionEmisor("BAMF650219E70")
-            Me.Text = "Facturacion para:  " & gConfigGlobal.RazonSocial
-
-            gPathFactuacion = gPathDataSoft & gConfigGlobal.Registro_Federal & "\"
-            gPathBarCodes = gPathDataSoft & gConfigGlobal.Registro_Federal & "\BarCodes\"
-
-            '    If Not IsNothing(gConfigGlobal) AndAlso (gConfig.Cer_Version <> gConfigGlobal.Cer_Ver Or Not IO.File.Exists(gPathFactuacion & gConfigGlobal.Cer_Name)) Then
-            '        Dim vFile As dArchivo = cConfig.DownloadCertificado()
-            '        If vFile.Nombre <> "" Then
-            '            If Not IO.Directory.Exists(gPathFactuacion) Then
-            '                IO.Directory.CreateDirectory(gPathFactuacion)
-            '            End If
-            '            If IO.File.Exists(gPathFactuacion & vFile.Nombre) Then
-            '                IO.File.Delete(gPathFactuacion & vFile.Nombre)
-            '            End If
-            '            Bytes_To_File(vFile.File, gPathFactuacion & vFile.Nombre)
-            '            '        gConfigGlobal.Cer_Ver = vFile.Version
-            '        End If
-            '    End If
-
-            '    If Not IsNothing(gConfigGlobal) AndAlso (gConfig.Key_Version <> gConfigGlobal.Key_Ver Or Not IO.File.Exists(gPathFactuacion & gConfigGlobal.Key_Name)) Then
-            '        Dim vFile As dArchivo = cConfig.DownloadKey()
-            '        If vFile.Nombre <> "" Then
-            '            If Not IO.Directory.Exists(gPathFactuacion) Then
-            '                IO.Directory.CreateDirectory(gPathFactuacion)
-            '            End If
-            '            If IO.File.Exists(gPathFactuacion & vFile.Nombre) Then
-            '                IO.File.Delete(gPathFactuacion & vFile.Nombre)
-
-            '            End If
-
-            '            Bytes_To_File(vFile.File, gPathFactuacion & vFile.Nombre)
-            '            gConfigGlobal.Key_Ver = vFile.Version
-            '        End If
-
-            '    End If
-        End If
+        RfcActual = CboRFCemisor.Text
         BajarCertificadoKey()
     End Sub
 

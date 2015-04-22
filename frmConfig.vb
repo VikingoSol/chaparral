@@ -20,7 +20,7 @@ Public Class frmConfig
 
 
         Dim cConfig As New cConfigGlobal
-        gConfigGlobal = cConfig.GetConfiguracion()
+        gConfigGlobal = cConfig.GetConfiguracion(RfcActual)
 
         Me.txtNextFolio.Text = gConfigGlobal.NextFolio
         Me.txtIVA.Text = gConfigGlobal.IVA * 100
@@ -70,7 +70,7 @@ Public Class frmConfig
             If IO.File.Exists(Me.txtCertificado.Text) Then
                 vConfigBase.UploadCertificado(IO.Path.GetFileName(Me.txtCertificado.Text), File_To_Bytes(Me.txtCertificado.Text))
                 gConfigGlobal.Cer_Name = IO.Path.GetFileName(Me.txtCertificado.Text)
-                Dim vFile As dArchivo = vConfigBase.DownloadCertificado()
+                Dim vFile As dArchivo = vConfigBase.DownloadCertificado(RfcActual)
                 If IO.File.Exists(gPathFactuacion & gConfigGlobal.Cer_Name) Then
                     IO.File.Delete(gPathFactuacion & gConfigGlobal.Cer_Name)
                 End If
@@ -89,7 +89,7 @@ Public Class frmConfig
             If IO.File.Exists(Me.txtKeyFile.Text) Then
                 vConfigBase.UploadKey(IO.Path.GetFileName(Me.txtKeyFile.Text), File_To_Bytes(Me.txtKeyFile.Text))
                 gConfigGlobal.Key_Name = IO.Path.GetFileName(Me.txtKeyFile.Text)
-                Dim vFileKey As dArchivo = vConfigBase.DownloadKey()
+                Dim vFileKey As dArchivo = vConfigBase.DownloadKey(RfcActual)
                 If IO.File.Exists(gPathFactuacion & gConfigGlobal.Key_Name) Then
                     IO.File.Delete(gPathFactuacion & gConfigGlobal.Key_Name)
                 End If
@@ -129,7 +129,7 @@ Public Class frmConfig
         gConfigGlobal.Direccion_Fiscal.Pais = Me.txtPais.Text
         gConfigGlobal.Direccion_Fiscal.CodigoPostal = Me.txtCP.Text
 
-        vConfigBase.GuardarConfiguracion(gConfigGlobal)
+        vConfigBase.GuardarConfiguracion(gConfigGlobal, Me.txtRFC.Text.Trim)
 
         Me.Close()
 
