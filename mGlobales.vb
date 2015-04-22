@@ -13,6 +13,7 @@ Module mGlobales
     Public gPathBarCodes As String = gPathDataSoft & "facturacion\BarCodes\"
     Public gRFCPublicGeneral As String = "XAXX010101000"
     Public RfcActual As String = ""
+    Public IdRfc As Integer
 
     Public Function RFC_Check(ByVal pRFC As String) As Boolean
         If Regex.IsMatch(pRFC, "^([a-zA-Z\s]{3,4})\d{6}([0-9a-zA-Z\w]{3})$") Then

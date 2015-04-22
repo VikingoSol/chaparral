@@ -67,6 +67,7 @@ Public Class frmFacturaProc
             .Fecha.Value = vFacturaData.Fecha
             .FormaPago.Value = "PAGO EN UNA SOLA EXHIBICION"
             .SubTotal.Value = FormatNumber(vFacturaData.Subtotal, 2, TriState.False, TriState.False, TriState.False)
+            .Descuento.Value = FormatNumber(vFacturaData.Descuento, 2, TriState.False, TriState.False, TriState.False)
             .Total.Value = FormatNumber(vFacturaData.Total, 2, TriState.False, TriState.False, TriState.False)
             .TipoCambio.Value = FormatNumber(vFacturaData.TipoCambio, 4, TriState.False, TriState.False, TriState.False)
             .Moneda.Value = vFacturaData.Moneda
@@ -130,6 +131,7 @@ Public Class frmFacturaProc
                 vConcepto = New Document.Concepto
                 vConcepto.Cantidad.Value = vRow.Item("cantidad")
                 vConcepto.Descripcion.Value = vRow.Item("producto")
+                'vConcepto.NumeroIdentificacion = vRow.Item("codigo")
                 vConcepto.ValorUnitario.Value = FormatNumber(vRow.Item("precio"), 2, TriState.False, TriState.False, TriState.False)
                 vConcepto.Importe.Value = FormatNumber(vRow.Item("precio") * vRow.Item("cantidad"), 2, TriState.False, TriState.False, TriState.False)
                 vConcepto.Unidad.Value = vRow.Item("unidadnom")
@@ -176,7 +178,7 @@ Public Class frmFacturaProc
                     If gConfigGlobal.ProveedorTimbres = eProveedorTimbres.Advans Then
                         vRes = FacturaNETLib.Facturacion.Facturar(gConfigGlobal.CFDI_Url, gConfigGlobal.CFDI_Id, vXml)
                     ElseIf gConfigGlobal.ProveedorTimbres = eProveedorTimbres.FEL Then
-                        MsgBox(vXml)
+                        'MsgBox(vXml)
                         'vRes = FacturaNETLib.Facturacion.FacturarFEL(gConfigGlobal.CFDI_Url, gConfigGlobal.CFDI_Id, gConfigGlobal.CFDI_Token, vXml, gConfigGlobal.Registro_Federal & "-" & vCliente.RFC & "-" & vFacturaData.Serie & vFacturaData.Folio)
                         Dim refe As String = vCliente.RFC & vFacturaData.Folio
                         vRes = FacturaNETLib.Facturacion.FacturarFEL(gConfigGlobal.CFDI_Url, gConfigGlobal.CFDI_Id, gConfigGlobal.CFDI_Token, vXml, vFacturaData.Folio)
@@ -217,7 +219,7 @@ Public Class frmFacturaProc
                             If vFactura.Data.Complementos(n).Type = Complementos.eComplementoTipo.TimbreFiscalDigital Then
                                 vTimbreData = CType(vFactura.Data.Complementos(n).Data, Complementos.TimbreFiscalDigital)
                                 'Dim Descto As Double = frmFactura.gdescuento ' por mientras se añade la variable descuento en facturas
-                                vIdFac = vFacs.Agregar(vFacturaData.Serie, vFacturaData.Folio, vFacturaData.Fecha, vFacturaData.IdCliente, vFacturaData.Subtotal, vFacturaData.IVA, vFacturaData.Total, vXml, vRes.Timbre, "", vTimbreData.Uuid.Value.ToUpper, vTimbreData.FechaTimbrado.Value, vFacturaData.MetodosPagoId, vFacturaData.Cuenta, vFacturaData.RetencionIVA, frmFactura.gdescuento)
+                                vIdFac = vFacs.Agregar(vFacturaData.Serie, vFacturaData.Folio, vFacturaData.Fecha, vFacturaData.IdCliente, vFacturaData.Subtotal, vFacturaData.IVA, vFacturaData.Total, vXml, vRes.Timbre, "", vTimbreData.Uuid.Value.ToUpper, vTimbreData.FechaTimbrado.Value, vFacturaData.MetodosPagoId, vFacturaData.Cuenta, vFacturaData.RetencionIVA, frmFactura.gdescuento, gConfigGlobal.Registro_Federal)
                                 If vIdFac <= -1 Then
                                     MsgBox("Ocurrio un error al querer dar de alta la factura, por favor importe el xml del cfdi", MsgBoxStyle.Critical, "Error")
                                     e.Cancel = True
@@ -225,9 +227,9 @@ Public Class frmFacturaProc
                                 End If
                                 For Each vRow In Me.vProdsFac.Rows
                                     If vRow.Item("isproducto") Then
-                                        vFacs.AgregarProducto(vIdFac, vRow.Item("id"), vRow.Item("cantidad"), vRow.Item("precio"), vRow.Item("unidad"), vRow.Item("isproducto"), "", vRow.Item("tasa"))
+                                        vFacs.AgregarProducto(vIdFac, vRow.Item("id"), vRow.Item("codigo"), vRow.Item("cantidad"), vRow.Item("precio"), vRow.Item("unidad"), vRow.Item("isproducto"), "", vRow.Item("tasa"))
                                     Else
-                                        vFacs.AgregarProducto(vIdFac, vRow.Item("id"), vRow.Item("cantidad"), vRow.Item("precio"), vRow.Item("unidad"), vRow.Item("isproducto"), vRow.Item("producto"), vRow.Item("tasa"))
+                                        vFacs.AgregarProducto(vIdFac, vRow.Item("id"), vRow.Item("codigo"), vRow.Item("cantidad"), vRow.Item("precio"), vRow.Item("unidad"), vRow.Item("isproducto"), vRow.Item("producto"), vRow.Item("tasa"))
                                     End If
 
                                 Next

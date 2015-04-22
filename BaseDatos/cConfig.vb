@@ -143,7 +143,7 @@ Public Class cConfigGlobal
     Public Function GetConfiguracion(ByVal RfcEmisor As String)
         If gConn.State <> ConnectionState.Open Then gConn.Open()
         'Dim vCmd As New MySqlCommand("SELECT * FROM config", gConn)
-        Dim vCmd As New MySqlCommand("SELECT * FROM config WHERE rfc=?rfc", gConn)
+        Dim vCmd As New MySqlCommand("SELECT * FROM config WHERE rfc=?Rfc", gConn)
         vCmd.Parameters.AddWithValue("?rfc", RfcEmisor)
         Dim vAdap As New MySqlDataAdapter(vCmd)
         Dim vTabla As New DataTable
@@ -152,6 +152,7 @@ Public Class cConfigGlobal
         If vTabla.Rows.Count > 0 Then
             vConfig = New dConfigGlobal
             With vTabla.Rows(0)
+                MsgBox(.Item("id"))
                 vConfig.NextFolio = .Item("nextfolio")
                 vConfig.IVA = .Item("iva")
                 vConfig.TipoCambio = .Item("tipo_cambio")
@@ -187,6 +188,7 @@ Public Class cConfigGlobal
                     vConfig.ProveedorTimbres = eProveedorTimbres.Advans
                 End If
             End With
+
         End If
 
         'Dim vDate As New Date(2000, 1, 1)
@@ -286,7 +288,7 @@ Public Class cConfigGlobal
 
     Public Sub GuardarConfiguracion(ByVal pConfig As dConfigGlobal, ByVal rfc As String)
         If gConn.State <> ConnectionState.Open Then gConn.Open()
-        Dim vCmd As New MySqlCommand("UPDATE config SET tipo_cambio=?tc, nextfolio=?folio,iva=?iva,rfc=?reg, tipo_cambio=?tcambio, pass=?pass, no_cer=?nocer, serie=?serie,cfdi_token=?token, cfdi_id=?cfdi_id, cfdi_url=?ws, razon_social=?razon, regimen_fiscal=?regimen, df_calle=?calle, df_noext=?noext, df_noint=?noint, df_colonia=?col, df_localidad=?loc, df_ref=?ref, df_municipio=?mun, df_estado=?estado, df_pais=?pais, df_cp=?cp, cfdi_can_url=?wscan, cfdi_can_id=?canid where rfc=rfc", gConn)
+        Dim vCmd As New MySqlCommand("UPDATE config SET tipo_cambio=?tc, nextfolio=?folio,iva=?iva,rfc=?reg, tipo_cambio=?tcambio, pass=?pass, no_cer=?nocer, serie=?serie,cfdi_token=?token, cfdi_id=?cfdi_id, cfdi_url=?ws, razon_social=?razon, regimen_fiscal=?regimen, df_calle=?calle, df_noext=?noext, df_noint=?noint, df_colonia=?col, df_localidad=?loc, df_ref=?ref, df_municipio=?mun, df_estado=?estado, df_pais=?pais, df_cp=?cp, cfdi_can_url=?wscan, cfdi_can_id=?canid where rfc=?rfc", gConn)
         vCmd.Parameters.AddWithValue("?rfc", rfc)
         vCmd.Parameters.AddWithValue("?folio", pConfig.NextFolio)
         vCmd.Parameters.AddWithValue("?iva", pConfig.IVA)

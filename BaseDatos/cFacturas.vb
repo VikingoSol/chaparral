@@ -153,9 +153,9 @@ Public Class cFacturas
     Public Function Agregar(ByVal pSerie As String, ByVal pFolio As String, ByVal pFechaEm As Date, _
     ByVal pIdCliente As Integer, ByVal pSubTotal As Double, ByVal pIVA As Double, ByVal pTotal As Double, _
     ByVal pXml As String, ByVal pTimbre As String, ByVal pAcuse As String, ByVal pFolioFiscal As String, _
-    ByVal pFechaTimbrado As DateTime, ByVal pMetodoPago As String, ByVal pCuenta As String, ByVal pRetIva As Double, ByVal pDescuento As Double)
+    ByVal pFechaTimbrado As DateTime, ByVal pMetodoPago As String, ByVal pCuenta As String, ByVal pRetIva As Double, ByVal pDescuento As Double, ByVal rfcEmisor As String)
         If gConn.State <> ConnectionState.Open Then gConn.Open()
-        Dim vCmd As New MySqlCommand("INSERT INTO facturas(serie,folio,fecha_emision,idcliente,subtotal,iva,total,xml,xml_sat,acuse,folio_fiscal,fecha_cer,metodo_pago, digitos_cta, retiva,descuento) VALUES(?serie,?folio,?fecha,?cliente,?subtotal,?iva,?total,?xml,?xmlsat,?acuse,?foliof,?fechacer, ?mpago,?cta, ?riva, ?descuento)", gConn)
+        Dim vCmd As New MySqlCommand("INSERT INTO facturas(serie,folio,fecha_emision,idcliente,subtotal,iva,total,xml,xml_sat,acuse,folio_fiscal,fecha_cer,metodo_pago, digitos_cta, retiva,descuento,rfc_emisor) VALUES(?serie,?folio,?fecha,?cliente,?subtotal,?iva,?total,?xml,?xmlsat,?acuse,?foliof,?fechacer, ?mpago,?cta, ?riva, ?descuento, ?rfcemisor)", gConn)
         vCmd.Parameters.AddWithValue("?serie", pSerie)
         vCmd.Parameters.AddWithValue("?folio", pFolio)
         vCmd.Parameters.AddWithValue("?fecha", pFechaEm)
@@ -172,6 +172,7 @@ Public Class cFacturas
         vCmd.Parameters.AddWithValue("?cta", pCuenta)
         vCmd.Parameters.AddWithValue("?riva", pRetIva)
         vCmd.Parameters.AddWithValue("?descuento", pDescuento)
+        vCmd.Parameters.AddWithValue("?rfcEmisor", rfcEmisor)
         vCmd.ExecuteNonQuery()
         Dim vLastID As Long = vCmd.LastInsertedId
         vCmd = New MySqlCommand("UPDATE config SET nextfolio=nextfolio+1", gConn)
@@ -179,10 +180,11 @@ Public Class cFacturas
         Return vLastID
     End Function
 
-    Public Sub AgregarProducto(ByVal pIdFactura As Integer, ByVal pIdProd As Integer, ByVal pCantidad As Double, ByVal pPrecio As Double, ByVal pUnidad As Integer, ByVal pIsProducto As Boolean, ByVal pProducto As String, ByVal pTasa As Double)
+    Public Sub AgregarProducto(ByVal pIdFactura As Integer, ByVal pCodigo As String, ByVal pIdProd As Integer, ByVal pCantidad As Double, ByVal pPrecio As Double, ByVal pUnidad As Integer, ByVal pIsProducto As Boolean, ByVal pProducto As String, ByVal pTasa As Double)
         If gConn.State <> ConnectionState.Open Then gConn.Open()
-        Dim vCmd As New MySqlCommand("INSERT INTO productos_facturados(factura,producto,cantidad,precio,unidad,isproducto,producto_nombre, tasa) VALUES(?fac,?prod,?cant,?precio,?unidad,?isproducto,?producto, ?tasa)", gConn)
+        Dim vCmd As New MySqlCommand("INSERT INTO productos_facturados(factura,producto,cantidad,precio,unidad,isproducto,producto_nombre, tasa,codigo) VALUES(?fac,?prod,?cant,?precio,?unidad,?isproducto,?producto, ?tasa, ?codigo)", gConn)
         vCmd.Parameters.AddWithValue("?fac", pIdFactura)
+        vCmd.Parameters.AddWithValue("?codigo", pCodigo)
         vCmd.Parameters.AddWithValue("?prod", pIdProd)
         vCmd.Parameters.AddWithValue("?cant", pCantidad)
         vCmd.Parameters.AddWithValue("?precio", pPrecio)

@@ -34,12 +34,14 @@ Partial Class frmProductoUnico
         Me.Label4 = New System.Windows.Forms.Label
         Me.cmbTasa = New System.Windows.Forms.ComboBox
         Me.Label5 = New System.Windows.Forms.Label
+        Me.Label6 = New System.Windows.Forms.Label
+        Me.txtcodigo = New System.Windows.Forms.TextBox
         Me.SuspendLayout()
         '
         'btnCancelar
         '
         Me.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCancelar.Location = New System.Drawing.Point(189, 196)
+        Me.btnCancelar.Location = New System.Drawing.Point(189, 222)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 7
@@ -48,7 +50,7 @@ Partial Class frmProductoUnico
         '
         'btnAceptar
         '
-        Me.btnAceptar.Location = New System.Drawing.Point(108, 196)
+        Me.btnAceptar.Location = New System.Drawing.Point(108, 222)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
         Me.btnAceptar.TabIndex = 6
@@ -57,7 +59,7 @@ Partial Class frmProductoUnico
         '
         'txtPrecio
         '
-        Me.txtPrecio.Location = New System.Drawing.Point(65, 136)
+        Me.txtPrecio.Location = New System.Drawing.Point(65, 162)
         Me.txtPrecio.Name = "txtPrecio"
         Me.txtPrecio.Size = New System.Drawing.Size(61, 20)
         Me.txtPrecio.TabIndex = 4
@@ -66,7 +68,7 @@ Partial Class frmProductoUnico
         '
         'txtNombre
         '
-        Me.txtNombre.Location = New System.Drawing.Point(65, 42)
+        Me.txtNombre.Location = New System.Drawing.Point(65, 68)
         Me.txtNombre.Multiline = True
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(304, 61)
@@ -75,7 +77,7 @@ Partial Class frmProductoUnico
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(22, 140)
+        Me.Label3.Location = New System.Drawing.Point(22, 166)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(40, 13)
         Me.Label3.TabIndex = 7
@@ -84,7 +86,7 @@ Partial Class frmProductoUnico
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(15, 46)
+        Me.Label2.Location = New System.Drawing.Point(15, 72)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(47, 13)
         Me.Label2.TabIndex = 6
@@ -112,7 +114,7 @@ Partial Class frmProductoUnico
         '
         Me.cmbUnidades.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbUnidades.FormattingEnabled = True
-        Me.cmbUnidades.Location = New System.Drawing.Point(65, 109)
+        Me.cmbUnidades.Location = New System.Drawing.Point(65, 135)
         Me.cmbUnidades.Name = "cmbUnidades"
         Me.cmbUnidades.Size = New System.Drawing.Size(168, 21)
         Me.cmbUnidades.TabIndex = 3
@@ -120,7 +122,7 @@ Partial Class frmProductoUnico
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(12, 112)
+        Me.Label4.Location = New System.Drawing.Point(12, 138)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(44, 13)
         Me.Label4.TabIndex = 13
@@ -130,7 +132,7 @@ Partial Class frmProductoUnico
         '
         Me.cmbTasa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbTasa.FormattingEnabled = True
-        Me.cmbTasa.Location = New System.Drawing.Point(65, 163)
+        Me.cmbTasa.Location = New System.Drawing.Point(65, 189)
         Me.cmbTasa.Name = "cmbTasa"
         Me.cmbTasa.Size = New System.Drawing.Size(103, 21)
         Me.cmbTasa.TabIndex = 5
@@ -138,17 +140,37 @@ Partial Class frmProductoUnico
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(16, 168)
+        Me.Label5.Location = New System.Drawing.Point(16, 194)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(34, 13)
         Me.Label5.TabIndex = 16
         Me.Label5.Text = "Tasa:"
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(10, 48)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(43, 13)
+        Me.Label6.TabIndex = 18
+        Me.Label6.Tag = "1"
+        Me.Label6.Text = "Codigo:"
+        '
+        'txtcodigo
+        '
+        Me.txtcodigo.Location = New System.Drawing.Point(65, 42)
+        Me.txtcodigo.Name = "txtcodigo"
+        Me.txtcodigo.Size = New System.Drawing.Size(86, 20)
+        Me.txtcodigo.TabIndex = 19
+        Me.txtcodigo.Text = "1"
+        '
         'frmProductoUnico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(372, 231)
+        Me.ClientSize = New System.Drawing.Size(372, 278)
+        Me.Controls.Add(Me.txtcodigo)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.cmbTasa)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.cmbUnidades)
@@ -182,4 +204,6 @@ Partial Class frmProductoUnico
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents cmbTasa As System.Windows.Forms.ComboBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents txtcodigo As System.Windows.Forms.TextBox
 End Class

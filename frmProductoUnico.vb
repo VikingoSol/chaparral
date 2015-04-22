@@ -13,6 +13,7 @@ Public Class frmProductoUnico
             vProd.UnidadNom = Me.cmbUnidades.Text
             vProd.TasaID = Me.cmbTasa.SelectedValue
             vProd.TasaPorc = CType(Me.cmbTasa.SelectedItem, DataRowView).Item("tasa")
+            vProd.codigo = Me.txtcodigo.Text
             Return vProd
         Else : Return Nothing
         End If
@@ -68,4 +69,5 @@ Public Class dProductoUnico
     Public Precio As Double
     Public TasaID As Integer
     Public TasaPorc As Double
+    Public codigo As String
 End Class

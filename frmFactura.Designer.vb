@@ -72,6 +72,7 @@ Partial Class frmFactura
         Me.Label16 = New System.Windows.Forms.Label
         Me.CboRFCemisor = New System.Windows.Forms.ComboBox
         Me.Label18 = New System.Windows.Forms.Label
+        Me.emisor = New System.Windows.Forms.Label
         Me.GroupBox1.SuspendLayout()
         CType(Me.grdProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -542,11 +543,23 @@ Partial Class frmFactura
         Me.Label18.TabIndex = 47
         Me.Label18.Text = "RFC Emisor:"
         '
+        'emisor
+        '
+        Me.emisor.AutoSize = True
+        Me.emisor.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.emisor.ForeColor = System.Drawing.Color.Gray
+        Me.emisor.Location = New System.Drawing.Point(329, 23)
+        Me.emisor.Name = "emisor"
+        Me.emisor.Size = New System.Drawing.Size(115, 16)
+        Me.emisor.TabIndex = 49
+        Me.emisor.Text = "Nombre Emisor"
+        '
         'frmFactura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(685, 556)
+        Me.Controls.Add(Me.emisor)
         Me.Controls.Add(Me.CboRFCemisor)
         Me.Controls.Add(Me.Label18)
         Me.Controls.Add(Me.Txtdescuento)
@@ -646,4 +659,5 @@ Partial Class frmFactura
     Friend WithEvents TxtDesctocte As System.Windows.Forms.TextBox
     Friend WithEvents CboRFCemisor As System.Windows.Forms.ComboBox
     Friend WithEvents Label18 As System.Windows.Forms.Label
+    Friend WithEvents emisor As System.Windows.Forms.Label
 End Class

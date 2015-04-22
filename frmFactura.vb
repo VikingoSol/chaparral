@@ -104,6 +104,7 @@ Public Class frmFactura
         Me.vTablaProds.Columns.Add("unidad", GetType(Integer))
         Me.vTablaProds.Columns.Add("unidadnom", GetType(String))
         Me.vTablaProds.Columns.Add("tasa", GetType(Double))
+        Me.vTablaProds.Columns.Add("codigo", GetType(String))
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
@@ -111,7 +112,8 @@ Public Class frmFactura
         Dim vId As Integer = vBus.Buscar_Producto()
         If vId > 0 Then
             Me.txtIdProd.Text = vId
-            Me.txtIdProd.Focus()
+            'Me.txtIdProd.Focus()
+            AgregarProducto()
         End If
     End Sub
 
@@ -136,6 +138,7 @@ Public Class frmFactura
             vRow.Item("isproducto") = False
             vRow.Item("unidadnom") = vProd.UnidadNom
             vRow.Item("tasa") = vProd.TasaPorc
+            vRow.Item("codigo") = vProd.codigo
             vTablaProds.Rows.Add(vRow)
             Me.grdProductos.Refetch()
             Calcular_Totales()
@@ -200,6 +203,7 @@ Public Class frmFactura
             vRow.Item("isproducto") = True
             vRow.Item("unidadnom") = vProd.UnidadNom
             vRow.Item("tasa") = vProd.TasaPorc
+            vRow.Item("codigo") = vProd.codigo
             vTablaProds.Rows.Add(vRow)
         End If
         Me.grdProductos.Refetch()
@@ -224,7 +228,7 @@ Public Class frmFactura
             Me.Txtdescuento.Text = FormatNumber(vDescuento * (CDbl(Me.TxtDesctocte.Text) / 100), 2)
             vDescuento = CDbl(Me.Txtdescuento.Text)
         Else
-            Me.Txtdescuento.Text = 0.0
+            Me.Txtdescuento.Text = FormatNumber(0.0, 2)
             vDescuento = 0
         End If
         Me.txtSubTotal.Text = FormatNumber(vSubTotal, 2)
@@ -392,19 +396,22 @@ Public Class frmFactura
 
     Private Sub CboRFCemisor_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CboRFCemisor.SelectedIndexChanged
 
+
+        RfcActual = CboRFCemisor.Text
+
         Dim cConfig As New cConfigGlobal
         gConfigGlobal = cConfig.GetConfiguracion(CboRFCemisor.Text)
-        Me.Text = "Facturacion para:  " & gConfigGlobal.RazonSocial
+        Me.emisor.Text = gConfigGlobal.RazonSocial
 
         gPathFactuacion = gPathDataSoft & gConfigGlobal.Registro_Federal & "\"
         gPathBarCodes = gPathDataSoft & gConfigGlobal.Registro_Federal & "\BarCodes\"
-
-        RfcActual = CboRFCemisor.Text
         BajarCertificadoKey()
+
+      
     End Sub
 
     Private Sub frmFactura_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Me.Text = "Facturacion para:  " & gConfigGlobal.RazonSocial
+        Me.emisor.Text = gConfigGlobal.RazonSocial
     End Sub
 End Class
 
@@ -423,6 +430,4 @@ Public Class dFactura
     Public Moneda As String = "MXN"
     Public TipoCambio As Double
     Public Descuento As Double
-
-    
 End Class
