@@ -182,17 +182,21 @@ Public Class cFacturas
 
     Public Sub AgregarProducto(ByVal pIdFactura As Integer, ByVal pCodigo As String, ByVal pIdProd As Integer, ByVal pCantidad As Double, ByVal pPrecio As Double, ByVal pUnidad As Integer, ByVal pIsProducto As Boolean, ByVal pProducto As String, ByVal pTasa As Double)
         If gConn.State <> ConnectionState.Open Then gConn.Open()
-        Dim vCmd As New MySqlCommand("INSERT INTO productos_facturados(factura,producto,cantidad,precio,unidad,isproducto,producto_nombre, tasa,codigo) VALUES(?fac,?prod,?cant,?precio,?unidad,?isproducto,?producto, ?tasa, ?codigo)", gConn)
-        vCmd.Parameters.AddWithValue("?fac", pIdFactura)
-        vCmd.Parameters.AddWithValue("?codigo", pCodigo)
-        vCmd.Parameters.AddWithValue("?prod", pIdProd)
-        vCmd.Parameters.AddWithValue("?cant", pCantidad)
-        vCmd.Parameters.AddWithValue("?precio", pPrecio)
-        vCmd.Parameters.AddWithValue("?isproducto", pIsProducto)
-        vCmd.Parameters.AddWithValue("?producto", pProducto)
-        vCmd.Parameters.AddWithValue("?unidad", pUnidad)
-        vCmd.Parameters.AddWithValue("?tasa", pTasa)
-        vCmd.ExecuteNonQuery()
+        Try
+            Dim vCmd As New MySqlCommand("INSERT INTO productos_facturados(factura,producto,cantidad,precio,unidad,isproducto,producto_nombre, tasa,codigo) VALUES(?fac,?prod,?cant,?precio,?unidad,?isproducto,?producto, ?tasa, ?codigo)", gConn)
+            vCmd.Parameters.AddWithValue("?fac", pIdFactura)
+            vCmd.Parameters.AddWithValue("?codigo", pCodigo)
+            vCmd.Parameters.AddWithValue("?prod", pIdProd)
+            vCmd.Parameters.AddWithValue("?cant", pCantidad)
+            vCmd.Parameters.AddWithValue("?precio", pPrecio)
+            vCmd.Parameters.AddWithValue("?isproducto", pIsProducto)
+            vCmd.Parameters.AddWithValue("?producto", pProducto)
+            vCmd.Parameters.AddWithValue("?unidad", pUnidad)
+            vCmd.Parameters.AddWithValue("?tasa", pTasa)
+            vCmd.ExecuteNonQuery()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
     End Sub
 
 End Class

@@ -67,7 +67,7 @@ Public Class frmFacturaProc
             .Fecha.Value = vFacturaData.Fecha
             .FormaPago.Value = "PAGO EN UNA SOLA EXHIBICION"
             .SubTotal.Value = FormatNumber(vFacturaData.Subtotal, 2, TriState.False, TriState.False, TriState.False)
-            .Descuento.Value = FormatNumber(vFacturaData.Descuento, 2, TriState.False, TriState.False, TriState.False)
+            '.Descuento.Value = FormatNumber(vFacturaData.Descuento, 2, TriState.False, TriState.False, TriState.False)
             .Total.Value = FormatNumber(vFacturaData.Total, 2, TriState.False, TriState.False, TriState.False)
             .TipoCambio.Value = FormatNumber(vFacturaData.TipoCambio, 4, TriState.False, TriState.False, TriState.False)
             .Moneda.Value = vFacturaData.Moneda
@@ -126,12 +126,11 @@ Public Class frmFacturaProc
 
             Dim vConcepto As Document.Concepto
             Dim vRow As DataRow
-
             For Each vRow In Me.vProdsFac.Rows
                 vConcepto = New Document.Concepto
                 vConcepto.Cantidad.Value = vRow.Item("cantidad")
                 vConcepto.Descripcion.Value = vRow.Item("producto")
-                'vConcepto.NumeroIdentificacion = vRow.Item("codigo")
+                vConcepto.NumeroIdentificacion.Value = vRow.Item("codigo")
                 vConcepto.ValorUnitario.Value = FormatNumber(vRow.Item("precio"), 2, TriState.False, TriState.False, TriState.False)
                 vConcepto.Importe.Value = FormatNumber(vRow.Item("precio") * vRow.Item("cantidad"), 2, TriState.False, TriState.False, TriState.False)
                 vConcepto.Unidad.Value = vRow.Item("unidadnom")
@@ -180,8 +179,8 @@ Public Class frmFacturaProc
                     ElseIf gConfigGlobal.ProveedorTimbres = eProveedorTimbres.FEL Then
                         'MsgBox(vXml)
                         'vRes = FacturaNETLib.Facturacion.FacturarFEL(gConfigGlobal.CFDI_Url, gConfigGlobal.CFDI_Id, gConfigGlobal.CFDI_Token, vXml, gConfigGlobal.Registro_Federal & "-" & vCliente.RFC & "-" & vFacturaData.Serie & vFacturaData.Folio)
-                        Dim refe As String = vCliente.RFC & vFacturaData.Folio
-                        vRes = FacturaNETLib.Facturacion.FacturarFEL(gConfigGlobal.CFDI_Url, gConfigGlobal.CFDI_Id, gConfigGlobal.CFDI_Token, vXml, vFacturaData.Folio)
+                        Dim refe As String = vFacturaData.Serie & vFacturaData.Folio
+                        vRes = FacturaNETLib.Facturacion.FacturarFEL(gConfigGlobal.CFDI_Url, gConfigGlobal.CFDI_Id, gConfigGlobal.CFDI_Token, vXml, vFacturaData.Serie & vFacturaData.Folio)
                     End If
 
                     'vRes = Timbrado2.timbrar2(gConfigGlobal.CFDI_Id, vXml)

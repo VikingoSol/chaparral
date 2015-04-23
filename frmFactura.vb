@@ -338,6 +338,7 @@ Public Class frmFactura
         vFactura.Serie = Me.txtSerie.Text
         vFactura.Folio = Me.txtFolio.Text
         vFactura.IdCliente = Me.txtIdCliente.Text
+        vFactura.Descuento = Me.Txtdescuento.Text
         vFactura.Subtotal = Me.txtSubTotal.Text
         vFactura.IVA = Me.txtIVA.Text
         vFactura.RetencionIVA = Me.txtRetIva.Text
