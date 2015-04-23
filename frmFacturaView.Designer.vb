@@ -119,9 +119,6 @@ Partial Class frmFacturaView
         Me.Label22 = New System.Windows.Forms.Label
         Me.Label21 = New System.Windows.Forms.Label
         Me.Txtremision = New System.Windows.Forms.TextBox
-        Me.Label45 = New System.Windows.Forms.Label
-        Me.TextBox12 = New System.Windows.Forms.TextBox
-        Me.Button2 = New System.Windows.Forms.Button
         Me.GroupBox1.SuspendLayout()
         CType(Me.grdProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabControl1.SuspendLayout()
@@ -626,9 +623,6 @@ Partial Class frmFacturaView
         '
         'TabPage3
         '
-        Me.TabPage3.Controls.Add(Me.Button2)
-        Me.TabPage3.Controls.Add(Me.TextBox12)
-        Me.TabPage3.Controls.Add(Me.Label45)
         Me.TabPage3.Controls.Add(Me.Button1)
         Me.TabPage3.Controls.Add(Me.Label44)
         Me.TabPage3.Controls.Add(Me.TextBox11)
@@ -688,7 +682,7 @@ Partial Class frmFacturaView
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(125, 23)
         Me.Button1.TabIndex = 77
-        Me.Button1.Text = "Processar Addenda"
+        Me.Button1.Text = "Procesar Addenda"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Label44
@@ -958,11 +952,11 @@ Partial Class frmFacturaView
         Me.Label30.AutoSize = True
         Me.Label30.Font = New System.Drawing.Font("Arial", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label30.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.Label30.Location = New System.Drawing.Point(126, 8)
+        Me.Label30.Location = New System.Drawing.Point(176, 16)
         Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(291, 33)
+        Me.Label30.Size = New System.Drawing.Size(238, 33)
         Me.Label30.TabIndex = 49
-        Me.Label30.Text = "ADDENDA SORIANA"
+        Me.Label30.Text = "Addenda Soriana"
         '
         'ComboBox1
         '
@@ -1142,32 +1136,6 @@ Partial Class frmFacturaView
         Me.Txtremision.Text = "0"
         Me.Txtremision.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'Label45
-        '
-        Me.Label45.AutoSize = True
-        Me.Label45.Location = New System.Drawing.Point(9, 453)
-        Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(118, 13)
-        Me.Label45.TabIndex = 78
-        Me.Label45.Text = "Archivo XML Timbrado:"
-        '
-        'TextBox12
-        '
-        Me.TextBox12.Location = New System.Drawing.Point(132, 446)
-        Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.ReadOnly = True
-        Me.TextBox12.Size = New System.Drawing.Size(414, 20)
-        Me.TextBox12.TabIndex = 79
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(552, 446)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(29, 23)
-        Me.Button2.TabIndex = 80
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
         'frmFacturaView
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1288,7 +1256,4 @@ Partial Class frmFacturaView
     Friend WithEvents Label42 As System.Windows.Forms.Label
     Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
     Friend WithEvents Label41 As System.Windows.Forms.Label
-    Friend WithEvents TextBox12 As System.Windows.Forms.TextBox
-    Friend WithEvents Label45 As System.Windows.Forms.Label
-    Friend WithEvents Button2 As System.Windows.Forms.Button
 End Class

@@ -448,6 +448,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="facturanet.ico" />
+    <None Include="BAMF650219E70\factura.frx" />
     <None Include="BAMG670420V91\factura.frx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

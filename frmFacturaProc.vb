@@ -35,23 +35,16 @@ Public Class frmFacturaProc
         Dim vFactura As ElectronicDocument
         ' MsgBox("hola")
         Try
-
-
             vManager = ElectronicManage.NewEntity
             'Con los certificados reales remover ValidateCertificateSubject
-
             'vManager.Save.Options = vManager.Save.Options - SaveOptions.ValidateWithFoliosAutorizados - SaveOptions.ValidateStamp _
             '- SaveOptions.ValidateCertificateSubject - SaveOptions.ValidateCertificateWithCrl
             vManager.Save.Options = vManager.Save.Options - SaveOptions.ValidateCertificateWithCrl
             ' vManager.CertificateAuthorityList.UseForTest()
-
             vCertificado = ElectronicCertificate.NewEntity(gPathFactuacion & gConfigGlobal.Cer_Name, gPathFactuacion & gConfigGlobal.Key_Name, gConfigGlobal.PassCert)
-
             vManager.Save.AssignCertificate(vCertificado)
-
             vFactura = ElectronicDocument.NewEntity()
             vFactura.AssignManage(vManager)
-
             vFactura.Data.Clear()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
@@ -67,7 +60,7 @@ Public Class frmFacturaProc
             .Fecha.Value = vFacturaData.Fecha
             .FormaPago.Value = "PAGO EN UNA SOLA EXHIBICION"
             .SubTotal.Value = FormatNumber(vFacturaData.Subtotal, 2, TriState.False, TriState.False, TriState.False)
-            '.Descuento.Value = FormatNumber(vFacturaData.Descuento, 2, TriState.False, TriState.False, TriState.False)
+            '.Descuento.Value = vFacturaData.Descuento
             .Total.Value = FormatNumber(vFacturaData.Total, 2, TriState.False, TriState.False, TriState.False)
             .TipoCambio.Value = FormatNumber(vFacturaData.TipoCambio, 4, TriState.False, TriState.False, TriState.False)
             .Moneda.Value = vFacturaData.Moneda
@@ -91,7 +84,6 @@ Public Class frmFacturaProc
             .Emisor.Domicilio.CodigoPostal.Value = gConfigGlobal.Direccion_Fiscal.CodigoPostal
 
             If gConfigGlobal.RazonSocial <> "" Then .Emisor.Nombre.Value = gConfigGlobal.RazonSocial
-
 
 
 
@@ -179,15 +171,15 @@ Public Class frmFacturaProc
                     ElseIf gConfigGlobal.ProveedorTimbres = eProveedorTimbres.FEL Then
                         'MsgBox(vXml)
                         'vRes = FacturaNETLib.Facturacion.FacturarFEL(gConfigGlobal.CFDI_Url, gConfigGlobal.CFDI_Id, gConfigGlobal.CFDI_Token, vXml, gConfigGlobal.Registro_Federal & "-" & vCliente.RFC & "-" & vFacturaData.Serie & vFacturaData.Folio)
-                        Dim refe As String = vFacturaData.Serie & vFacturaData.Folio
-                        vRes = FacturaNETLib.Facturacion.FacturarFEL(gConfigGlobal.CFDI_Url, gConfigGlobal.CFDI_Id, gConfigGlobal.CFDI_Token, vXml, vFacturaData.Serie & vFacturaData.Folio)
+                        Dim refe As String = gConfigGlobal.Registro_Federal & vFacturaData.Folio
+                        vRes = FacturaNETLib.Facturacion.FacturarFEL(gConfigGlobal.CFDI_Url, gConfigGlobal.CFDI_Id, gConfigGlobal.CFDI_Token, vXml, gConfigGlobal.Registro_Federal & vFacturaData.Folio)
                     End If
 
                     'vRes = Timbrado2.timbrar2(gConfigGlobal.CFDI_Id, vXml)
                     Bw.ReportProgress(10, "Respuesta Recibida")
                     Dim vFacs As New cFacturas
                     If IsNothing(vRes) OrElse (vRes.Codigo <> "200" And vRes.Codigo <> "504") Then
-                        MsgBox(vRes.Mensaje, MsgBoxStyle.Critical)
+                        MsgBox(vRes.Codigo & " " & vRes.Mensaje, MsgBoxStyle.Critical)
                         '  If Not IsNothing(vRes) AndAlso vRes.timbre <> "" Then
                         vFacs.Request(vXml, "")
                         'End If

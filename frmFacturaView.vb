@@ -145,7 +145,7 @@ Public Class frmFacturaView
     End Sub
 
     
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         'Me.OpenFileDialog1.Filter = "Archivo Cer (*.cer)|*.cer"
         'Me.OpenFileDialog1.FileName = Me.txtCertificado.Text
         'If Me.OpenFileDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
