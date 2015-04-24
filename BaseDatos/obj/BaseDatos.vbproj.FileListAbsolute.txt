@@ -1,12 +1,3 @@
-C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\bin\x86\Debug\BaseDatos.dll
-C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\bin\x86\Debug\BaseDatos.pdb
-C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\bin\x86\Debug\BaseDatos.xml
-C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\obj\x86\Debug\BaseDatos.Resources.resources
-C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\obj\x86\Debug\BaseDatos.vbproj.GenerateResource.Cache
-C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\obj\x86\Debug\BaseDatos.dll
-C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\obj\x86\Debug\BaseDatos.xml
-C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\obj\x86\Debug\BaseDatos.pdb
 C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\BaseDatos\bin\x86\Debug\BaseDatos.dll
 C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\BaseDatos\bin\x86\Debug\BaseDatos.pdb
 C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\BaseDatos\bin\x86\Debug\BaseDatos.xml
@@ -27,4 +18,13 @@ C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\BaseDatos\
 C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\BaseDatos\obj\x86\Release\BaseDatos.dll
 C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\BaseDatos\obj\x86\Release\BaseDatos.xml
 C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\BaseDatos\obj\x86\Release\BaseDatos.pdb
+C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\bin\x86\Debug\BaseDatos.dll
+C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\bin\x86\Debug\BaseDatos.pdb
+C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\bin\x86\Debug\BaseDatos.xml
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\bin\x86\Debug\MySql.Data.dll
+C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\obj\x86\Debug\BaseDatos.Resources.resources
+C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\obj\x86\Debug\BaseDatos.vbproj.GenerateResource.Cache
+C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\obj\x86\Debug\BaseDatos.dll
+C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\obj\x86\Debug\BaseDatos.xml
+C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\obj\x86\Debug\BaseDatos.pdb
