@@ -6,28 +6,19 @@ FacturaNET
 </name>
 </assembly>
 <members>
-<member name="M:FacturaNET.WsCancel.expidetufactura_cancelacion_wsdl.#ctor">
-	<remarks/>
-</member><member name="E:FacturaNET.WsCancel.expidetufactura_cancelacion_wsdl.recibeCompleted">
-	<remarks/>
-</member><member name="M:FacturaNET.WsCancel.expidetufactura_cancelacion_wsdl.recibe(System.Byte[],System.String,System.String,System.String@)">
-	<remarks/>
-</member><member name="M:FacturaNET.WsCancel.expidetufactura_cancelacion_wsdl.recibeAsync(System.Byte[],System.String,System.String)">
-	<remarks/>
-</member><member name="M:FacturaNET.WsCancel.expidetufactura_cancelacion_wsdl.recibeAsync(System.Byte[],System.String,System.String,System.Object)">
-	<remarks/>
-</member><member name="M:FacturaNET.WsCancel.expidetufactura_cancelacion_wsdl.CancelAsync(System.Object)">
-	<remarks/>
-</member><member name="T:FacturaNET.WsCancel.expidetufactura_cancelacion_wsdl">
-	<remarks/>
-</member><member name="T:FacturaNET.WsCancel.recibeCompletedEventHandler">
-	<remarks/>
-</member><member name="P:FacturaNET.WsCancel.recibeCompletedEventArgs.Result">
-	<remarks/>
-</member><member name="P:FacturaNET.WsCancel.recibeCompletedEventArgs.acuse">
-	<remarks/>
-</member><member name="T:FacturaNET.WsCancel.recibeCompletedEventArgs">
-	<remarks/>
+<member name="P:FacturaNET.My.Resources.Resources.ResourceManager">
+	<summary>
+  Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+</summary>
+</member><member name="P:FacturaNET.My.Resources.Resources.Culture">
+	<summary>
+  Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+  búsquedas de recursos mediante esta clase de recurso con establecimiento inflexible de tipos.
+</summary>
+</member><member name="T:FacturaNET.My.Resources.Resources">
+	<summary>
+  Clase de recurso con establecimiento inflexible de tipos, para buscar cadenas traducidas, etc.
+</summary>
 </member><member name="M:FacturaNET.WsCFDI.TimbradoWSService.#ctor">
 	<remarks/>
 </member><member name="E:FacturaNET.WsCFDI.TimbradoWSService.timbrarCompleted">
@@ -58,19 +49,28 @@ FacturaNET
 	<remarks/>
 </member><member name="T:FacturaNET.WsCFDI.timbrarCompletedEventArgs">
 	<remarks/>
-</member><member name="P:FacturaNET.My.Resources.Resources.ResourceManager">
-	<summary>
-  Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
-</summary>
-</member><member name="P:FacturaNET.My.Resources.Resources.Culture">
-	<summary>
-  Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
-  búsquedas de recursos mediante esta clase de recurso con establecimiento inflexible de tipos.
-</summary>
-</member><member name="T:FacturaNET.My.Resources.Resources">
-	<summary>
-  Clase de recurso con establecimiento inflexible de tipos, para buscar cadenas traducidas, etc.
-</summary>
+</member><member name="M:FacturaNET.WsCancel.expidetufactura_cancelacion_wsdl.#ctor">
+	<remarks/>
+</member><member name="E:FacturaNET.WsCancel.expidetufactura_cancelacion_wsdl.recibeCompleted">
+	<remarks/>
+</member><member name="M:FacturaNET.WsCancel.expidetufactura_cancelacion_wsdl.recibe(System.Byte[],System.String,System.String,System.String@)">
+	<remarks/>
+</member><member name="M:FacturaNET.WsCancel.expidetufactura_cancelacion_wsdl.recibeAsync(System.Byte[],System.String,System.String)">
+	<remarks/>
+</member><member name="M:FacturaNET.WsCancel.expidetufactura_cancelacion_wsdl.recibeAsync(System.Byte[],System.String,System.String,System.Object)">
+	<remarks/>
+</member><member name="M:FacturaNET.WsCancel.expidetufactura_cancelacion_wsdl.CancelAsync(System.Object)">
+	<remarks/>
+</member><member name="T:FacturaNET.WsCancel.expidetufactura_cancelacion_wsdl">
+	<remarks/>
+</member><member name="T:FacturaNET.WsCancel.recibeCompletedEventHandler">
+	<remarks/>
+</member><member name="P:FacturaNET.WsCancel.recibeCompletedEventArgs.Result">
+	<remarks/>
+</member><member name="P:FacturaNET.WsCancel.recibeCompletedEventArgs.acuse">
+	<remarks/>
+</member><member name="T:FacturaNET.WsCancel.recibeCompletedEventArgs">
+	<remarks/>
 </member><member name="M:FacturaNET.mx.advans.app.advanswsdl.#ctor">
 	<remarks/>
 </member><member name="E:FacturaNET.mx.advans.app.advanswsdl.timbrarCompleted">

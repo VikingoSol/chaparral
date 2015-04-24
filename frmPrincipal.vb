@@ -5,11 +5,6 @@ Public Class frmPrincipal
         End
     End Sub
 
-    Private Sub frmPrincipal_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Dim f As New Dialog1
-        f.ShowDialog()
-    End Sub
-
     Private Sub frmPrincipal_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
         If Not IO.File.Exists(gConfigFile) Then
             MsgBox("No se ha configurado el acceso a la base de datos, es necesario configurarlo para que el sistema funcione correctamente", MsgBoxStyle.Critical, "¿Base de datos?")
@@ -36,17 +31,20 @@ Public Class frmPrincipal
             End Try
         End While
 
+        Dim f As New Dialog1
+        f.ShowDialog()
 
         Dim cConfig As New cConfigGlobal
-        gConfigGlobal = cConfig.GetConfiguracion
+        gConfigGlobal = cConfig.GetConfiguracion(RfcActual)
 
 
         gPathFactuacion = gPathDataSoft & gConfigGlobal.Registro_Federal & "\"
         gPathBarCodes = gPathDataSoft & gConfigGlobal.Registro_Federal & "\BarCodes\"
 
-        
+
         BajarCertificadoKey()
         'PruebaError()
+
     End Sub
 
     Private Sub ConToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConToolStripMenuItem.Click

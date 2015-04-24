@@ -35,23 +35,16 @@ Public Class frmFacturaProc
         Dim vFactura As ElectronicDocument
         ' MsgBox("hola")
         Try
-
-
             vManager = ElectronicManage.NewEntity
             'Con los certificados reales remover ValidateCertificateSubject
-
             'vManager.Save.Options = vManager.Save.Options - SaveOptions.ValidateWithFoliosAutorizados - SaveOptions.ValidateStamp _
             '- SaveOptions.ValidateCertificateSubject - SaveOptions.ValidateCertificateWithCrl
             vManager.Save.Options = vManager.Save.Options - SaveOptions.ValidateCertificateWithCrl
             ' vManager.CertificateAuthorityList.UseForTest()
-
             vCertificado = ElectronicCertificate.NewEntity(gPathFactuacion & gConfigGlobal.Cer_Name, gPathFactuacion & gConfigGlobal.Key_Name, gConfigGlobal.PassCert)
-
             vManager.Save.AssignCertificate(vCertificado)
-
             vFactura = ElectronicDocument.NewEntity()
             vFactura.AssignManage(vManager)
-
             vFactura.Data.Clear()
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Critical)
@@ -67,6 +60,7 @@ Public Class frmFacturaProc
             .Fecha.Value = vFacturaData.Fecha
             .FormaPago.Value = "PAGO EN UNA SOLA EXHIBICION"
             .SubTotal.Value = FormatNumber(vFacturaData.Subtotal, 2, TriState.False, TriState.False, TriState.False)
+            '.Descuento.Value = vFacturaData.Descuento
             .Total.Value = FormatNumber(vFacturaData.Total, 2, TriState.False, TriState.False, TriState.False)
             .TipoCambio.Value = FormatNumber(vFacturaData.TipoCambio, 4, TriState.False, TriState.False, TriState.False)
             .Moneda.Value = vFacturaData.Moneda
@@ -90,7 +84,6 @@ Public Class frmFacturaProc
             .Emisor.Domicilio.CodigoPostal.Value = gConfigGlobal.Direccion_Fiscal.CodigoPostal
 
             If gConfigGlobal.RazonSocial <> "" Then .Emisor.Nombre.Value = gConfigGlobal.RazonSocial
-
 
 
 
@@ -125,11 +118,11 @@ Public Class frmFacturaProc
 
             Dim vConcepto As Document.Concepto
             Dim vRow As DataRow
-
             For Each vRow In Me.vProdsFac.Rows
                 vConcepto = New Document.Concepto
                 vConcepto.Cantidad.Value = vRow.Item("cantidad")
                 vConcepto.Descripcion.Value = vRow.Item("producto")
+                vConcepto.NumeroIdentificacion.Value = vRow.Item("codigo")
                 vConcepto.ValorUnitario.Value = FormatNumber(vRow.Item("precio"), 2, TriState.False, TriState.False, TriState.False)
                 vConcepto.Importe.Value = FormatNumber(vRow.Item("precio") * vRow.Item("cantidad"), 2, TriState.False, TriState.False, TriState.False)
                 vConcepto.Unidad.Value = vRow.Item("unidadnom")
@@ -176,17 +169,17 @@ Public Class frmFacturaProc
                     If gConfigGlobal.ProveedorTimbres = eProveedorTimbres.Advans Then
                         vRes = FacturaNETLib.Facturacion.Facturar(gConfigGlobal.CFDI_Url, gConfigGlobal.CFDI_Id, vXml)
                     ElseIf gConfigGlobal.ProveedorTimbres = eProveedorTimbres.FEL Then
-                        MsgBox(vXml)
+                        'MsgBox(vXml)
                         'vRes = FacturaNETLib.Facturacion.FacturarFEL(gConfigGlobal.CFDI_Url, gConfigGlobal.CFDI_Id, gConfigGlobal.CFDI_Token, vXml, gConfigGlobal.Registro_Federal & "-" & vCliente.RFC & "-" & vFacturaData.Serie & vFacturaData.Folio)
-                        Dim refe As String = vCliente.RFC & vFacturaData.Folio
-                        vRes = FacturaNETLib.Facturacion.FacturarFEL(gConfigGlobal.CFDI_Url, gConfigGlobal.CFDI_Id, gConfigGlobal.CFDI_Token, vXml, vFacturaData.Folio)
+                        Dim refe As String = gConfigGlobal.Registro_Federal & vFacturaData.Folio
+                        vRes = FacturaNETLib.Facturacion.FacturarFEL(gConfigGlobal.CFDI_Url, gConfigGlobal.CFDI_Id, gConfigGlobal.CFDI_Token, vXml, gConfigGlobal.Registro_Federal & vFacturaData.Folio)
                     End If
 
                     'vRes = Timbrado2.timbrar2(gConfigGlobal.CFDI_Id, vXml)
                     Bw.ReportProgress(10, "Respuesta Recibida")
                     Dim vFacs As New cFacturas
                     If IsNothing(vRes) OrElse (vRes.Codigo <> "200" And vRes.Codigo <> "504") Then
-                        MsgBox(vRes.Mensaje, MsgBoxStyle.Critical)
+                        MsgBox(vRes.Codigo & " " & vRes.Mensaje, MsgBoxStyle.Critical)
                         '  If Not IsNothing(vRes) AndAlso vRes.timbre <> "" Then
                         vFacs.Request(vXml, "")
                         'End If
@@ -217,7 +210,7 @@ Public Class frmFacturaProc
                             If vFactura.Data.Complementos(n).Type = Complementos.eComplementoTipo.TimbreFiscalDigital Then
                                 vTimbreData = CType(vFactura.Data.Complementos(n).Data, Complementos.TimbreFiscalDigital)
                                 'Dim Descto As Double = frmFactura.gdescuento ' por mientras se añade la variable descuento en facturas
-                                vIdFac = vFacs.Agregar(vFacturaData.Serie, vFacturaData.Folio, vFacturaData.Fecha, vFacturaData.IdCliente, vFacturaData.Subtotal, vFacturaData.IVA, vFacturaData.Total, vXml, vRes.Timbre, "", vTimbreData.Uuid.Value.ToUpper, vTimbreData.FechaTimbrado.Value, vFacturaData.MetodosPagoId, vFacturaData.Cuenta, vFacturaData.RetencionIVA, frmFactura.gdescuento)
+                                vIdFac = vFacs.Agregar(vFacturaData.Serie, vFacturaData.Folio, vFacturaData.Fecha, vFacturaData.IdCliente, vFacturaData.Subtotal, vFacturaData.IVA, vFacturaData.Total, vXml, vRes.Timbre, "", vTimbreData.Uuid.Value.ToUpper, vTimbreData.FechaTimbrado.Value, vFacturaData.MetodosPagoId, vFacturaData.Cuenta, vFacturaData.RetencionIVA, frmFactura.gdescuento, gConfigGlobal.Registro_Federal)
                                 If vIdFac <= -1 Then
                                     MsgBox("Ocurrio un error al querer dar de alta la factura, por favor importe el xml del cfdi", MsgBoxStyle.Critical, "Error")
                                     e.Cancel = True
@@ -225,9 +218,9 @@ Public Class frmFacturaProc
                                 End If
                                 For Each vRow In Me.vProdsFac.Rows
                                     If vRow.Item("isproducto") Then
-                                        vFacs.AgregarProducto(vIdFac, vRow.Item("id"), vRow.Item("cantidad"), vRow.Item("precio"), vRow.Item("unidad"), vRow.Item("isproducto"), "", vRow.Item("tasa"))
+                                        vFacs.AgregarProducto(vIdFac, vRow.Item("id"), vRow.Item("codigo"), vRow.Item("cantidad"), vRow.Item("precio"), vRow.Item("unidad"), vRow.Item("isproducto"), "", vRow.Item("tasa"))
                                     Else
-                                        vFacs.AgregarProducto(vIdFac, vRow.Item("id"), vRow.Item("cantidad"), vRow.Item("precio"), vRow.Item("unidad"), vRow.Item("isproducto"), vRow.Item("producto"), vRow.Item("tasa"))
+                                        vFacs.AgregarProducto(vIdFac, vRow.Item("id"), vRow.Item("codigo"), vRow.Item("cantidad"), vRow.Item("precio"), vRow.Item("unidad"), vRow.Item("isproducto"), vRow.Item("producto"), vRow.Item("tasa"))
                                     End If
 
                                 Next

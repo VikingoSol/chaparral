@@ -85,6 +85,7 @@
     <Import Include="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Dialog1.Designer.vb">
       <DependentUpon>Dialog1.vb</DependentUpon>
     </Compile>
@@ -447,6 +448,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="facturanet.ico" />
+    <None Include="BAMF650219E70\factura.frx" />
     <None Include="BAMG670420V91\factura.frx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

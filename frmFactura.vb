@@ -104,6 +104,7 @@ Public Class frmFactura
         Me.vTablaProds.Columns.Add("unidad", GetType(Integer))
         Me.vTablaProds.Columns.Add("unidadnom", GetType(String))
         Me.vTablaProds.Columns.Add("tasa", GetType(Double))
+        Me.vTablaProds.Columns.Add("codigo", GetType(String))
     End Sub
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
@@ -111,7 +112,8 @@ Public Class frmFactura
         Dim vId As Integer = vBus.Buscar_Producto()
         If vId > 0 Then
             Me.txtIdProd.Text = vId
-            Me.txtIdProd.Focus()
+            'Me.txtIdProd.Focus()
+            AgregarProducto()
         End If
     End Sub
 
@@ -136,6 +138,7 @@ Public Class frmFactura
             vRow.Item("isproducto") = False
             vRow.Item("unidadnom") = vProd.UnidadNom
             vRow.Item("tasa") = vProd.TasaPorc
+            vRow.Item("codigo") = vProd.codigo
             vTablaProds.Rows.Add(vRow)
             Me.grdProductos.Refetch()
             Calcular_Totales()
@@ -200,6 +203,7 @@ Public Class frmFactura
             vRow.Item("isproducto") = True
             vRow.Item("unidadnom") = vProd.UnidadNom
             vRow.Item("tasa") = vProd.TasaPorc
+            vRow.Item("codigo") = vProd.codigo
             vTablaProds.Rows.Add(vRow)
         End If
         Me.grdProductos.Refetch()
@@ -224,7 +228,7 @@ Public Class frmFactura
             Me.Txtdescuento.Text = FormatNumber(vDescuento * (CDbl(Me.TxtDesctocte.Text) / 100), 2)
             vDescuento = CDbl(Me.Txtdescuento.Text)
         Else
-            Me.Txtdescuento.Text = 0.0
+            Me.Txtdescuento.Text = FormatNumber(0.0, 2)
             vDescuento = 0
         End If
         Me.txtSubTotal.Text = FormatNumber(vSubTotal, 2)
@@ -334,6 +338,7 @@ Public Class frmFactura
         vFactura.Serie = Me.txtSerie.Text
         vFactura.Folio = Me.txtFolio.Text
         vFactura.IdCliente = Me.txtIdCliente.Text
+        vFactura.Descuento = Me.Txtdescuento.Text
         vFactura.Subtotal = Me.txtSubTotal.Text
         vFactura.IVA = Me.txtIVA.Text
         vFactura.RetencionIVA = Me.txtRetIva.Text
@@ -387,93 +392,27 @@ Public Class frmFactura
                 Calcular_Totales()
                 Me.txtIdProd.Focus()
             End If
-
         End If
     End Sub
 
     Private Sub CboRFCemisor_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CboRFCemisor.SelectedIndexChanged
-        If Me.CboRFCemisor.Text = "BAMG670420V91" Then  'Guadalupe  cargar datos del emisor 
-            Dim cConfig As New cConfigGlobal
-            gConfigGlobal = cConfig.GetConfiguracionEmisor("BAMG670420V91")
-            Me.Text = "Facturacion para:  " & gConfigGlobal.RazonSocial
-            gPathFactuacion = gPathDataSoft & gConfigGlobal.Registro_Federal & "\"
-            gPathBarCodes = gPathDataSoft & gConfigGlobal.Registro_Federal & "\BarCodes\"
 
-            'If Not IsNothing(gConfigGlobal) AndAlso (gConfig.Cer_Version <> gConfigGlobal.Cer_Ver Or Not IO.File.Exists(gPathFactuacion & gConfigGlobal.Cer_Name)) Then
-            '    Dim vFile As dArchivo = cConfig.DownloadCertificado()
-            '    If vFile.Nombre <> "" Then
-            '        If Not IO.Directory.Exists(gPathFactuacion) Then
-            '            IO.Directory.CreateDirectory(gPathFactuacion)
-            '        End If
-            '        If IO.File.Exists(gPathFactuacion & vFile.Nombre) Then
-            '            IO.File.Delete(gPathFactuacion & vFile.Nombre)
-            '        End If
-            '        Bytes_To_File(vFile.File, gPathFactuacion & vFile.Nombre)
-            '        gConfigGlobal.Cer_Ver = vFile.Version
-            '    End If
-            'End If
 
-            'If Not IsNothing(gConfigGlobal) AndAlso (gConfig.Key_Version <> gConfigGlobal.Key_Ver Or Not IO.File.Exists(gPathFactuacion & gConfigGlobal.Key_Name)) Then
-            '    Dim vFile As dArchivo = cConfig.DownloadKey()
-            '    If vFile.Nombre <> "" Then
-            '        If Not IO.Directory.Exists(gPathFactuacion) Then
-            '            IO.Directory.CreateDirectory(gPathFactuacion)
-            '        End If
-            '        If IO.File.Exists(gPathFactuacion & vFile.Nombre) Then
-            '            IO.File.Delete(gPathFactuacion & vFile.Nombre)
+        RfcActual = CboRFCemisor.Text
 
-            '        End If
+        Dim cConfig As New cConfigGlobal
+        gConfigGlobal = cConfig.GetConfiguracion(CboRFCemisor.Text)
+        Me.emisor.Text = gConfigGlobal.RazonSocial
 
-            '        Bytes_To_File(vFile.File, gPathFactuacion & vFile.Nombre)
-            '        gConfigGlobal.Key_Ver = vFile.Version
-            '    End If
-
-            'End If
-        End If
-        If Me.CboRFCemisor.Text = "BAMF650219E70" Then ' francisco
-            Dim cConfig As New cConfigGlobal
-            gConfigGlobal = cConfig.GetConfiguracionEmisor("BAMF650219E70")
-            Me.Text = "Facturacion para:  " & gConfigGlobal.RazonSocial
-
-            gPathFactuacion = gPathDataSoft & gConfigGlobal.Registro_Federal & "\"
-            gPathBarCodes = gPathDataSoft & gConfigGlobal.Registro_Federal & "\BarCodes\"
-
-            '    If Not IsNothing(gConfigGlobal) AndAlso (gConfig.Cer_Version <> gConfigGlobal.Cer_Ver Or Not IO.File.Exists(gPathFactuacion & gConfigGlobal.Cer_Name)) Then
-            '        Dim vFile As dArchivo = cConfig.DownloadCertificado()
-            '        If vFile.Nombre <> "" Then
-            '            If Not IO.Directory.Exists(gPathFactuacion) Then
-            '                IO.Directory.CreateDirectory(gPathFactuacion)
-            '            End If
-            '            If IO.File.Exists(gPathFactuacion & vFile.Nombre) Then
-            '                IO.File.Delete(gPathFactuacion & vFile.Nombre)
-            '            End If
-            '            Bytes_To_File(vFile.File, gPathFactuacion & vFile.Nombre)
-            '            '        gConfigGlobal.Cer_Ver = vFile.Version
-            '        End If
-            '    End If
-
-            '    If Not IsNothing(gConfigGlobal) AndAlso (gConfig.Key_Version <> gConfigGlobal.Key_Ver Or Not IO.File.Exists(gPathFactuacion & gConfigGlobal.Key_Name)) Then
-            '        Dim vFile As dArchivo = cConfig.DownloadKey()
-            '        If vFile.Nombre <> "" Then
-            '            If Not IO.Directory.Exists(gPathFactuacion) Then
-            '                IO.Directory.CreateDirectory(gPathFactuacion)
-            '            End If
-            '            If IO.File.Exists(gPathFactuacion & vFile.Nombre) Then
-            '                IO.File.Delete(gPathFactuacion & vFile.Nombre)
-
-            '            End If
-
-            '            Bytes_To_File(vFile.File, gPathFactuacion & vFile.Nombre)
-            '            gConfigGlobal.Key_Ver = vFile.Version
-            '        End If
-
-            '    End If
-        End If
+        gPathFactuacion = gPathDataSoft & gConfigGlobal.Registro_Federal & "\"
+        gPathBarCodes = gPathDataSoft & gConfigGlobal.Registro_Federal & "\BarCodes\"
         BajarCertificadoKey()
+
+      
     End Sub
 
     Private Sub frmFactura_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        Me.Text = "Facturacion para:  " & gConfigGlobal.RazonSocial
+        Me.emisor.Text = gConfigGlobal.RazonSocial
     End Sub
 End Class
 
@@ -492,6 +431,4 @@ Public Class dFactura
     Public Moneda As String = "MXN"
     Public TipoCambio As Double
     Public Descuento As Double
-
-    
 End Class
