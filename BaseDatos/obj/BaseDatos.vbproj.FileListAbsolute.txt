@@ -27,3 +27,4 @@ C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\BaseDatos\
 C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\BaseDatos\obj\x86\Release\BaseDatos.dll
 C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\BaseDatos\obj\x86\Release\BaseDatos.xml
 C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\BaseDatos\obj\x86\Release\BaseDatos.pdb
+C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\bin\x86\Debug\MySql.Data.dll
