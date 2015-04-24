@@ -2,7 +2,8 @@
   <PropertyGroup>
     <ProjectView>ShowAllFiles</ProjectView>
     <ReferencePath>C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\Referencias\</ReferencePath>
-    <ReferencePath>C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\Referencias\;C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\Referencias\</ReferencePath>
+    <ReferencePath>
+    </ReferencePath>
     <PublishUrlHistory>publish\</PublishUrlHistory>
     <InstallUrlHistory>
     </InstallUrlHistory>
