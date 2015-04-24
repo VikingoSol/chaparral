@@ -757,3 +757,11 @@ C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Re
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\BAMF650219E70\factura.frx
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\Ionic.Zip.dll
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\MySql.Data.dll
+C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\FacturaNETLib.dll
+C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\FastReport.dll
+C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\Janus.Data.v3.dll
+C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\Janus.Windows.Common.v3.dll
+C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\Janus.Windows.GridEX.v3.dll
+C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\Janus.Windows.UI.v3.dll
+C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\FacturaNET.Crypt.dll
+C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\ThoughtWorks.QRCode.dll

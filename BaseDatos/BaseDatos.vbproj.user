@@ -1,5 +1,5 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <ReferencePath>C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\Referencias\;C:\Referencias mysql\</ReferencePath>
+    <ReferencePath>C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\Referencias\</ReferencePath>
   </PropertyGroup>
 </Project>
