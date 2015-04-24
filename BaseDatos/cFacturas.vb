@@ -65,7 +65,7 @@ Public Class cFacturas
 
     Public Function GetFactura(ByVal pId As Integer)
         If gConn.State <> ConnectionState.Open Then gConn.Open()
-        Dim vCmd As New MySqlCommand("SELECT  facturas.id,metodo_pago,digitos_cta,folio,serie,fecha_emision,idcliente,subtotal,iva,total,xml,xml_sat,acuse,folio_fiscal,fecha_cer,facturas.estado as festado,clientes.*,mp.metodo,facturas.descuento  FROM ( facturas INNER JOIN clientes ON facturas.idcliente=clientes.id) INNER JOIN metodos_pago mp ON metodo_pago=mp.id WHERE facturas.id=?id", gConn)
+        Dim vCmd As New MySqlCommand("SELECT  facturas.id,metodo_pago,digitos_cta,folio,serie,fecha_emision,idcliente,subtotal,iva,total,xml,xml_sat,acuse,folio_fiscal,fecha_cer,facturas.estado as festado,clientes.*,mp.metodo,facturas.descuento, rfc_emisor  FROM ( facturas INNER JOIN clientes ON facturas.idcliente=clientes.id) INNER JOIN metodos_pago mp ON metodo_pago=mp.id WHERE facturas.id=?id", gConn)
         vCmd.Parameters.AddWithValue("?id", pId)
         Dim vAdap As New MySqlDataAdapter(vCmd)
         Dim vTable As New DataTable
@@ -103,6 +103,7 @@ Public Class cFacturas
                 If Not IsDBNull(.Item("digitos_cta")) Then vFac.Cuenta = .Item("digitos_cta")
                 vFac.RetencionIVA = .Item("retiva")
                 vFac.Descuento = .Item("Descuento")
+                vFac.RFC_Emisor = .Item("rfc_emisor")
             End With
         End If
         Return vFac
@@ -223,4 +224,5 @@ Public Class dFacturaView
     Public Metodo_PagoTxt As String
     Public RetencionIVA As Double
     Public Descuento As Double
+    Public RFC_Emisor As String
 End Class

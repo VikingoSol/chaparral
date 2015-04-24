@@ -72,7 +72,7 @@ Partial Class Dialog1
         Me.MinimizeBox = False
         Me.Name = "Dialog1"
         Me.ShowInTaskbar = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Seleccione el RFC a Trabajar"
         Me.TableLayoutPanel1.ResumeLayout(False)
         Me.ResumeLayout(False)

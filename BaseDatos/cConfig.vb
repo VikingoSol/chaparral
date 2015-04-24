@@ -143,7 +143,7 @@ Public Class cConfigGlobal
     Public Function GetConfiguracion(ByVal RfcEmisor As String)
         If gConn.State <> ConnectionState.Open Then gConn.Open()
         'Dim vCmd As New MySqlCommand("SELECT * FROM config", gConn)
-        Dim vCmd As New MySqlCommand("SELECT * FROM config WHERE rfc=?Rfc", gConn)
+        Dim vCmd As New MySqlCommand("SELECT * FROM config WHERE rfc=?rfc", gConn)
         vCmd.Parameters.AddWithValue("?rfc", RfcEmisor)
         Dim vAdap As New MySqlDataAdapter(vCmd)
         Dim vTabla As New DataTable

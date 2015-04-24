@@ -60,7 +60,7 @@ Public Class frmFacturaProc
             .Fecha.Value = vFacturaData.Fecha
             .FormaPago.Value = "PAGO EN UNA SOLA EXHIBICION"
             .SubTotal.Value = FormatNumber(vFacturaData.Subtotal, 2, TriState.False, TriState.False, TriState.False)
-            '.Descuento.Value = vFacturaData.Descuento
+            If vFacturaData.Descuento > 0 Then .Descuento.Value = vFacturaData.Descuento
             .Total.Value = FormatNumber(vFacturaData.Total, 2, TriState.False, TriState.False, TriState.False)
             .TipoCambio.Value = FormatNumber(vFacturaData.TipoCambio, 4, TriState.False, TriState.False, TriState.False)
             .Moneda.Value = vFacturaData.Moneda
@@ -172,7 +172,7 @@ Public Class frmFacturaProc
                         'MsgBox(vXml)
                         'vRes = FacturaNETLib.Facturacion.FacturarFEL(gConfigGlobal.CFDI_Url, gConfigGlobal.CFDI_Id, gConfigGlobal.CFDI_Token, vXml, gConfigGlobal.Registro_Federal & "-" & vCliente.RFC & "-" & vFacturaData.Serie & vFacturaData.Folio)
                         Dim refe As String = gConfigGlobal.Registro_Federal & vFacturaData.Folio
-                        vRes = FacturaNETLib.Facturacion.FacturarFEL(gConfigGlobal.CFDI_Url, gConfigGlobal.CFDI_Id, gConfigGlobal.CFDI_Token, vXml, gConfigGlobal.Registro_Federal & vFacturaData.Folio)
+                        vRes = FacturaNETLib.Facturacion.FacturarFEL(gConfigGlobal.CFDI_Url, gConfigGlobal.CFDI_Id, gConfigGlobal.CFDI_Token, vXml, vCliente.RFC & gConfigGlobal.Registro_Federal & vFacturaData.Folio)
                     End If
 
                     'vRes = Timbrado2.timbrar2(gConfigGlobal.CFDI_Id, vXml)
