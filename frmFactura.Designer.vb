@@ -255,7 +255,7 @@ Partial Class frmFactura
         Me.grdProductos.HideSelection = Janus.Windows.GridEX.HideSelection.Highlight
         Me.grdProductos.Location = New System.Drawing.Point(6, 214)
         Me.grdProductos.Name = "grdProductos"
-        Me.grdProductos.Size = New System.Drawing.Size(636, 184)
+        Me.grdProductos.Size = New System.Drawing.Size(640, 184)
         Me.grdProductos.TabIndex = 8
         '
         'txtCantidad
@@ -368,7 +368,7 @@ Partial Class frmFactura
         Me.btnDelete.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnDelete.Enabled = False
         Me.btnDelete.Image = Global.FacturaNET.My.Resources.Resources.delete
-        Me.btnDelete.Location = New System.Drawing.Point(648, 214)
+        Me.btnDelete.Location = New System.Drawing.Point(656, 214)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(36, 36)
         Me.btnDelete.TabIndex = 9
@@ -558,7 +558,7 @@ Partial Class frmFactura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(685, 556)
+        Me.ClientSize = New System.Drawing.Size(693, 556)
         Me.Controls.Add(Me.emisor)
         Me.Controls.Add(Me.CboRFCemisor)
         Me.Controls.Add(Me.Label18)

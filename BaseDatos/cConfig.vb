@@ -152,7 +152,7 @@ Public Class cConfigGlobal
         If vTabla.Rows.Count > 0 Then
             vConfig = New dConfigGlobal
             With vTabla.Rows(0)
-                MsgBox(.Item("id"))
+                'MsgBox(.Item("id"))
                 vConfig.NextFolio = .Item("nextfolio")
                 vConfig.IVA = .Item("iva")
                 vConfig.TipoCambio = .Item("tipo_cambio")
@@ -319,12 +319,12 @@ Public Class cConfigGlobal
     End Sub
 
 
-    Public Function GetNextFolio() As Integer
+    Public Function GetNextFolio(ByVal rfc As String) As Integer
         If gConn.State <> ConnectionState.Open Then gConn.Open()
         Dim vCmd As MySqlCommand
 
-        vCmd = New MySqlCommand("SELECT nextfolio FROM config", gConn)
-
+        vCmd = New MySqlCommand("SELECT nextfolio FROM config where rfc=?rfc", gConn)
+        vCmd.Parameters.AddWithValue("?rfc", rfc)
         Dim vFolio As Object = vCmd.ExecuteScalar
         If Not IsNumeric(vFolio) Then
             Return -1
