@@ -77,7 +77,7 @@ Public Class frmFactura
         Me.grdProductos.DataSource = vTablaProds
 
         Dim vConfig As New cConfigGlobal
-        Me.txtFolio.Text = vConfig.GetNextFolio
+        Me.txtFolio.Text = vConfig.GetNextFolio(RfcActual)
         Me.txtSerie.Text = gConfigGlobal.Serie
 
         lblIVA.Text = "IVA (" & FormatNumber((gConfigGlobal.IVA * 100), 2) & "%):"
@@ -408,11 +408,34 @@ Public Class frmFactura
         gPathBarCodes = gPathDataSoft & gConfigGlobal.Registro_Federal & "\BarCodes\"
         BajarCertificadoKey()
 
+        'Crear_Tabla()
+        'Me.grdProductos.DataSource = vTablaProds
+
+        Dim vConfig As New cConfigGlobal
+        Me.txtFolio.Text = vConfig.GetNextFolio(RfcActual)
+        Me.txtSerie.Text = gConfigGlobal.Serie
+
+        lblIVA.Text = "IVA (" & FormatNumber((gConfigGlobal.IVA * 100), 2) & "%):"
+
+        Dim vProds As New cProductos
+        Dim vUnis As DataTable = vProds.GetUnidades()
+        If Not IsNothing(vUnis) Then
+            Me.grdProductos.RootTable.Columns("unidad").ValueList.PopulateValueList(vUnis.DefaultView, "id", "unidad")
+        End If
+
+        '  Me.cmbMetodoPago.SelectedIndex = 4
+        Dim vFac As New BaseDatos.cFacturas
+        Me.cmbMetodoPago.DataSource = vFac.GetMetodosPago
+
+        Me.cmbMoneda.SelectedIndex = 0
       
     End Sub
 
     Private Sub frmFactura_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Dim cConfig As New cConfigGlobal
+        gConfigGlobal = cConfig.GetConfiguracion(RfcActual)
         Me.emisor.Text = gConfigGlobal.RazonSocial
+        Me.CboRFCemisor.Text = RfcActual
     End Sub
 End Class
 

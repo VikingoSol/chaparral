@@ -74,7 +74,7 @@ Public Class frmFacturaNormal
         Me.grdProductos.DataSource = vTablaProds
 
         Dim vConfig As New cConfigGlobal
-        Me.txtFolio.Text = vConfig.GetNextFolio
+        Me.txtFolio.Text = vConfig.GetNextFolio(RfcActual)
         Me.txtSerie.Text = gConfigGlobal.Serie
 
         lblIVA.Text = "IVA (" & FormatNumber((gConfigGlobal.IVA * 100), 2) & "%):"
