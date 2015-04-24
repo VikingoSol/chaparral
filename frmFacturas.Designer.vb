@@ -59,7 +59,7 @@ Partial Class frmFacturas
         Me.grdFacturas.HideSelection = Janus.Windows.GridEX.HideSelection.Highlight
         Me.grdFacturas.Location = New System.Drawing.Point(4, 47)
         Me.grdFacturas.Name = "grdFacturas"
-        Me.grdFacturas.Size = New System.Drawing.Size(997, 372)
+        Me.grdFacturas.Size = New System.Drawing.Size(997, 414)
         Me.grdFacturas.TabIndex = 6
         '
         'Label1
@@ -83,7 +83,7 @@ Partial Class frmFacturas
         'btnClose
         '
         Me.btnClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnClose.Location = New System.Drawing.Point(475, 428)
+        Me.btnClose.Location = New System.Drawing.Point(475, 470)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(75, 23)
         Me.btnClose.TabIndex = 14
@@ -208,7 +208,7 @@ Partial Class frmFacturas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1048, 459)
+        Me.ClientSize = New System.Drawing.Size(1048, 501)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.btnClose)
