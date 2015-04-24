@@ -93,6 +93,8 @@ Public Class frmFactura
         Me.cmbMetodoPago.DataSource = vFac.GetMetodosPago
 
         Me.cmbMoneda.SelectedIndex = 0
+
+        Me.CboRFCemisor.SelectedValue = gConfig
     End Sub
 
     Private Sub Crear_Tabla()
@@ -388,7 +390,7 @@ Public Class frmFactura
 
     Private Sub TxtDesctocte_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TxtDesctocte.KeyDown
         If e.KeyCode = Keys.Enter Then
-            If CDbl(Me.TxtDesctocte.Text) >= 0 Then
+            If IsNumeric(Me.TxtDesctocte.Text) Then
                 Calcular_Totales()
                 Me.txtIdProd.Focus()
             End If
@@ -413,6 +415,21 @@ Public Class frmFactura
 
     Private Sub frmFactura_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         Me.emisor.Text = gConfigGlobal.RazonSocial
+    End Sub
+
+    Private Sub TxtDesctocte_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles TxtDesctocte.LostFocus
+        If IsNumeric(Me.TxtDesctocte.Text) Then
+            Calcular_Totales()
+        Else
+            Me.TxtDesctocte.Text = 0
+            Calcular_Totales()
+        End If
+    End Sub
+
+    Private Sub TxtDesctocte_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TxtDesctocte.TextChanged
+        If IsNumeric(Me.TxtDesctocte.Text) Then
+            Calcular_Totales()       
+        End If
     End Sub
 End Class
 
