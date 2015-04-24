@@ -160,8 +160,8 @@ Public Class frmFacturas
 
         Dim vReport As New FastReport.Report
 
-        If IO.File.Exists(System.AppDomain.CurrentDomain.BaseDirectory() & gConfigGlobal.Registro_Federal & "/factura.frx") Then
-            vReport.Load(System.AppDomain.CurrentDomain.BaseDirectory() & gConfigGlobal.Registro_Federal & "/factura.frx")
+        If IO.File.Exists(System.AppDomain.CurrentDomain.BaseDirectory() & vFac.RFC_Emisor & "/factura.frx") Then
+            vReport.Load(System.AppDomain.CurrentDomain.BaseDirectory() & vFac.RFC_Emisor & "/factura.frx")
         Else
             vReport.Load(System.AppDomain.CurrentDomain.BaseDirectory() & "/Reportes/factura.frx")
         End If

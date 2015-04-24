@@ -7,3 +7,23 @@ C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\obj
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\obj\x86\Debug\BaseDatos.dll
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\obj\x86\Debug\BaseDatos.xml
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\BaseDatos\obj\x86\Debug\BaseDatos.pdb
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\BaseDatos\bin\x86\Debug\BaseDatos.dll
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\BaseDatos\bin\x86\Debug\BaseDatos.pdb
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\BaseDatos\bin\x86\Debug\BaseDatos.xml
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\BaseDatos\bin\x86\Debug\MySql.Data.dll
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\BaseDatos\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\BaseDatos\obj\x86\Debug\BaseDatos.Resources.resources
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\BaseDatos\obj\x86\Debug\BaseDatos.vbproj.GenerateResource.Cache
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\BaseDatos\obj\x86\Debug\BaseDatos.dll
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\BaseDatos\obj\x86\Debug\BaseDatos.xml
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\BaseDatos\obj\x86\Debug\BaseDatos.pdb
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\BaseDatos\bin\x86\Release\BaseDatos.dll
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\BaseDatos\bin\x86\Release\BaseDatos.pdb
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\BaseDatos\bin\x86\Release\BaseDatos.xml
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\BaseDatos\bin\x86\Release\MySql.Data.dll
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\BaseDatos\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\BaseDatos\obj\x86\Release\BaseDatos.Resources.resources
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\BaseDatos\obj\x86\Release\BaseDatos.vbproj.GenerateResource.Cache
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\BaseDatos\obj\x86\Release\BaseDatos.dll
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\BaseDatos\obj\x86\Release\BaseDatos.xml
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\BaseDatos\obj\x86\Release\BaseDatos.pdb
