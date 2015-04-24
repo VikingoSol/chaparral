@@ -764,3 +764,4 @@ C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Re
 C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Release\FacturaNET.exe.licenses
 C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Release\BAMF650219E70\factura.frx
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\BAMF650219E70\factura.frx
+C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\MySql.Data.dll
