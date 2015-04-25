@@ -216,11 +216,12 @@ Public Class frmFactura
         Me.txtIdProd.Text = ""
         Me.txtCantidad.SelectAll()
         Me.txtCantidad.Focus()
+
     End Sub
 
     Private Sub Calcular_Totales()
         Dim vSubTotal As Double = Me.grdProductos.GetTotal(Me.grdProductos.RootTable.Columns("importe"), Janus.Windows.GridEX.AggregateFunction.Sum)
-        Dim vDescuento As Double = Me.grdProductos.GetTotal(Me.grdProductos.RootTable.Columns("descuento"), Janus.Windows.GridEX.AggregateFunction.Sum)
+        Dim vDescuento As Double = Me.grdProductos.GetTotal(Me.grdProductos.RootTable.Columns("importe"), Janus.Windows.GridEX.AggregateFunction.Sum)
         Dim vIva As Double = Me.grdProductos.GetTotal(Me.grdProductos.RootTable.Columns("iva"), Janus.Windows.GridEX.AggregateFunction.Sum)
         Dim vRetIVA As Double = vIva * (2 / 3)
         If CDbl(Me.TxtDesctocte.Text) > 0 Then
