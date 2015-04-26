@@ -2,7 +2,7 @@ Imports BaseDatos
 Public Class frmFactura
     Dim vIdFactura As Integer = -1
     Dim vLastIdCl As Integer = -1
-    Dim vCliente As dCliente
+    Dim vCliente As New dCliente
     Dim vTablaProds As New DataTable
     Public gdescuento As Double
 
@@ -220,9 +220,22 @@ Public Class frmFactura
     End Sub
 
     Private Sub Calcular_Totales()
-        Dim vSubTotal As Double = Me.grdProductos.GetTotal(Me.grdProductos.RootTable.Columns("importe"), Janus.Windows.GridEX.AggregateFunction.Sum)
-        Dim vDescuento As Double = Me.grdProductos.GetTotal(Me.grdProductos.RootTable.Columns("importe"), Janus.Windows.GridEX.AggregateFunction.Sum)
-        Dim vIva As Double = Me.grdProductos.GetTotal(Me.grdProductos.RootTable.Columns("iva"), Janus.Windows.GridEX.AggregateFunction.Sum)
+        'If Not IsDBNull(Me.txtTotal.Text) Then Exit Sub
+        Dim vSubTotal As Double = 0
+        Dim vDescuento As Double = 0
+        Dim vIva As Double = 0
+        Try
+            vSubTotal = Me.grdProductos.GetTotal(Me.grdProductos.RootTable.Columns("importe"), Janus.Windows.GridEX.AggregateFunction.Sum)
+            vDescuento = Me.grdProductos.GetTotal(Me.grdProductos.RootTable.Columns("importe"), Janus.Windows.GridEX.AggregateFunction.Sum)
+            vIva = Me.grdProductos.GetTotal(Me.grdProductos.RootTable.Columns("iva"), Janus.Windows.GridEX.AggregateFunction.Sum)
+        Catch ex As Exception
+            vSubTotal = 0
+            vDescuento = 0
+            vIva = 0
+        End Try
+        'Dim vSubTotal As Double = Me.grdProductos.GetTotal(Me.grdProductos.RootTable.Columns("importe"), Janus.Windows.GridEX.AggregateFunction.Sum)
+        'Dim vDescuento As Double = Me.grdProductos.GetTotal(Me.grdProductos.RootTable.Columns("importe"), Janus.Windows.GridEX.AggregateFunction.Sum)
+
         Dim vRetIVA As Double = vIva * (2 / 3)
         If CDbl(Me.TxtDesctocte.Text) > 0 Then
             Me.Txtdescuento.Text = FormatNumber(vDescuento * (CDbl(Me.TxtDesctocte.Text) / 100), 2)

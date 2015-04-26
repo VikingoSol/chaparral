@@ -28,7 +28,7 @@ Public Class frmFacturas
         If vId > 0 Then
             Me.Mostrar_Facturas(Me.vFechaFacs)
             Me.grdFacturas.Find(Me.grdFacturas.RootTable.Columns("id"), Janus.Windows.GridEX.ConditionOperator.Equal, vId, -1, 1)
-            Imprimir_Factura(vId)
+            'Imprimir_Factura(vId) ' jc por error al imprimir
         End If
     End Sub
 

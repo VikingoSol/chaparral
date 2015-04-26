@@ -181,12 +181,11 @@ Public Class cFacturas
         Return vLastID
     End Function
 
-    Public Sub AgregarProducto(ByVal pIdFactura As Integer, ByVal pCodigo As String, ByVal pIdProd As Integer, ByVal pCantidad As Double, ByVal pPrecio As Double, ByVal pUnidad As Integer, ByVal pIsProducto As Boolean, ByVal pProducto As String, ByVal pTasa As Double)
+    Public Sub AgregarProducto(ByVal pIdFactura As Integer, ByVal pIdProd As Integer, ByVal pCantidad As Double, ByVal pPrecio As Double, ByVal pUnidad As Integer, ByVal pIsProducto As Boolean, ByVal pProducto As String, ByVal pTasa As Double, ByVal pCodigo As String)
         If gConn.State <> ConnectionState.Open Then gConn.Open()
         Try
-            Dim vCmd As New MySqlCommand("INSERT INTO productos_facturados(factura,producto,cantidad,precio,unidad,isproducto,producto_nombre, tasa,codigo) VALUES(?fac,?prod,?cant,?precio,?unidad,?isproducto,?producto, ?tasa, ?codigo)", gConn)
+            Dim vCmd As New MySqlCommand("INSERT INTO productos_facturados(factura,producto,cantidad,precio,unidad,isproducto,producto_nombre,tasa,codigo) VALUES(?fac,?prod,?cant,?precio,?unidad,?isproducto,?producto,?tasa,?codigo)", gConn)
             vCmd.Parameters.AddWithValue("?fac", pIdFactura)
-            vCmd.Parameters.AddWithValue("?codigo", pCodigo)
             vCmd.Parameters.AddWithValue("?prod", pIdProd)
             vCmd.Parameters.AddWithValue("?cant", pCantidad)
             vCmd.Parameters.AddWithValue("?precio", pPrecio)
@@ -194,6 +193,7 @@ Public Class cFacturas
             vCmd.Parameters.AddWithValue("?producto", pProducto)
             vCmd.Parameters.AddWithValue("?unidad", pUnidad)
             vCmd.Parameters.AddWithValue("?tasa", pTasa)
+            vCmd.Parameters.AddWithValue("?codigo", pCodigo)
             vCmd.ExecuteNonQuery()
         Catch ex As Exception
             MsgBox(ex.Message)
