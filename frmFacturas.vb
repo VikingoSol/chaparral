@@ -28,7 +28,7 @@ Public Class frmFacturas
         If vId > 0 Then
             Me.Mostrar_Facturas(Me.vFechaFacs)
             Me.grdFacturas.Find(Me.grdFacturas.RootTable.Columns("id"), Janus.Windows.GridEX.ConditionOperator.Equal, vId, -1, 1)
-            Imprimir_Factura(vId)
+            'Imprimir_Factura(vId) ' jc por error al imprimir
         End If
     End Sub
 
@@ -167,7 +167,7 @@ Public Class frmFacturas
         End If
 
         vReport.RegisterData(vTablaProds, "Productos")
-        vReport.SetParameterValue("fecha_emi", Format(vFactura.Data.Fecha.Value, "dd/MM/yyyy HH:mm:ss"))
+        vReport.SetParameterValue("fecha_emi", FormatDateTime(vFactura.Data.Fecha.Value, "dd/MM/yyyy HH:mm:ss"))
         vReport.SetParameterValue("Serie", vFactura.Data.Serie.Value)
         vReport.SetParameterValue("folio", vFactura.Data.Folio.Value)
         vReport.SetParameterValue("cer_emi", vFactura.Data.NoCertificado.Value)
@@ -235,7 +235,7 @@ Public Class frmFacturas
                 vReport.SetParameterValue("cadena_original", vTimbre.FingerPrintPac)
                 vReport.SetParameterValue("sello_sat", vTimbre.SelloSat.Value)
                 vReport.SetParameterValue("sello_emi", vTimbre.SelloCfd.Value)
-                vReport.SetParameterValue("fecha_cer", Format(vTimbre.FechaTimbrado.Value, "dd/MM/yyyy HH:mm:ss"))
+                vReport.SetParameterValue("fecha_cer", FormatDateTime(vTimbre.FechaTimbrado.Value, "dd/MM/yyyy HH:mm:ss"))
                 vReport.SetParameterValue("folio_fiscal", vTimbre.Uuid.Value.ToUpper)
                 'Me.txtCertificadoSAT.Text = vTimbre.NumeroCertificadoSat.Value
                 'Me.txtCadenaOrig.Text = vFactura.FingerPrintPac

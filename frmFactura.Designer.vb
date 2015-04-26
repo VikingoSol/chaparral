@@ -73,6 +73,7 @@ Partial Class frmFactura
         Me.CboRFCemisor = New System.Windows.Forms.ComboBox
         Me.Label18 = New System.Windows.Forms.Label
         Me.emisor = New System.Windows.Forms.Label
+        Me.Advanswsdl1 = New FacturaNET.mx.advans.app.advanswsdl
         Me.GroupBox1.SuspendLayout()
         CType(Me.grdProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -554,6 +555,12 @@ Partial Class frmFactura
         Me.emisor.TabIndex = 49
         Me.emisor.Text = "Nombre Emisor"
         '
+        'Advanswsdl1
+        '
+        Me.Advanswsdl1.Credentials = Nothing
+        Me.Advanswsdl1.Url = "https://app.advans.mx/ws/awscfdi.php"
+        Me.Advanswsdl1.UseDefaultCredentials = False
+        '
         'frmFactura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -660,4 +667,5 @@ Partial Class frmFactura
     Friend WithEvents CboRFCemisor As System.Windows.Forms.ComboBox
     Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents emisor As System.Windows.Forms.Label
+    Friend WithEvents Advanswsdl1 As FacturaNET.mx.advans.app.advanswsdl
 End Class

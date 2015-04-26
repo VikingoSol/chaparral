@@ -2,7 +2,7 @@ Imports BaseDatos
 Public Class frmFactura
     Dim vIdFactura As Integer = -1
     Dim vLastIdCl As Integer = -1
-    Dim vCliente As dCliente
+    Dim vCliente As New dCliente
     Dim vTablaProds As New DataTable
     Public gdescuento As Double
 
@@ -174,7 +174,7 @@ Public Class frmFactura
             txtIdProd.Focus()
             Exit Sub
         Else
-           
+
         End If
 
 
@@ -217,14 +217,25 @@ Public Class frmFactura
         Me.txtCantidad.SelectAll()
         Me.txtCantidad.Focus()
 
-
     End Sub
 
     Private Sub Calcular_Totales()
+        'If Not IsDBNull(Me.txtTotal.Text) Then Exit Sub
+        Dim vSubTotal As Double = 0
+        Dim vDescuento As Double = 0
+        Dim vIva As Double = 0
+        Try
+            vSubTotal = Me.grdProductos.GetTotal(Me.grdProductos.RootTable.Columns("importe"), Janus.Windows.GridEX.AggregateFunction.Sum)
+            vDescuento = Me.grdProductos.GetTotal(Me.grdProductos.RootTable.Columns("importe"), Janus.Windows.GridEX.AggregateFunction.Sum)
+            vIva = Me.grdProductos.GetTotal(Me.grdProductos.RootTable.Columns("iva"), Janus.Windows.GridEX.AggregateFunction.Sum)
+        Catch ex As Exception
+            vSubTotal = 0
+            vDescuento = 0
+            vIva = 0
+        End Try
+        'Dim vSubTotal As Double = Me.grdProductos.GetTotal(Me.grdProductos.RootTable.Columns("importe"), Janus.Windows.GridEX.AggregateFunction.Sum)
+        'Dim vDescuento As Double = Me.grdProductos.GetTotal(Me.grdProductos.RootTable.Columns("importe"), Janus.Windows.GridEX.AggregateFunction.Sum)
 
-        Dim vSubTotal As Double = Me.grdProductos.GetTotal(Me.grdProductos.RootTable.Columns("importe"), Janus.Windows.GridEX.AggregateFunction.Sum)
-        Dim vDescuento As Double = Me.grdProductos.GetTotal(Me.grdProductos.RootTable.Columns("importe"), Janus.Windows.GridEX.AggregateFunction.Sum)
-        Dim vIva As Double = Me.grdProductos.GetTotal(Me.grdProductos.RootTable.Columns("iva"), Janus.Windows.GridEX.AggregateFunction.Sum)
         Dim vRetIVA As Double = vIva * (2 / 3)
         If CDbl(Me.TxtDesctocte.Text) > 0 Then
             Me.Txtdescuento.Text = FormatNumber(vDescuento * (CDbl(Me.TxtDesctocte.Text) / 100), 2)
@@ -311,7 +322,7 @@ Public Class frmFactura
         Dim resp As Integer
         resp = MsgBox("Desea Timbrar su factura?", MsgBoxStyle.Question + MsgBoxStyle.YesNo)
         If resp = vbYes Then
-          
+
         Else
             Exit Sub
         End If
@@ -351,7 +362,7 @@ Public Class frmFactura
         vFactura.TipoCambio = Me.txtTipoCambio.Text
         vFactura.Moneda = Me.cmbMoneda.SelectedItem
 
-        vFactura.Fecha = Me.dpFecha.Value       
+        vFactura.Fecha = Me.dpFecha.Value
         Me.vIdFactura = vFac.Facturar(vFactura, Me.vTablaProds)
         If vIdFactura > 0 Then
             Me.DialogResult = Windows.Forms.DialogResult.OK
@@ -385,7 +396,7 @@ Public Class frmFactura
     End Sub
 
     Private Sub cmbMoneda_SelectedValueChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles cmbMoneda.SelectedValueChanged
-       
+
     End Sub
 
     Private Sub TxtDesctocte_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles TxtDesctocte.KeyDown
@@ -430,7 +441,7 @@ Public Class frmFactura
         Me.cmbMetodoPago.DataSource = vFac.GetMetodosPago
 
         Me.cmbMoneda.SelectedIndex = 0
-      
+
     End Sub
 
     Private Sub frmFactura_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
@@ -451,7 +462,7 @@ Public Class frmFactura
 
     Private Sub TxtDesctocte_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TxtDesctocte.TextChanged
         If IsNumeric(Me.TxtDesctocte.Text) Then
-            Calcular_Totales()       
+            Calcular_Totales()
         End If
     End Sub
 End Class
