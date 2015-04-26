@@ -145,6 +145,7 @@ Public Class frmFacturas
         ' sw.Write(vFac.xml_Timbrado)
         'sw.Flush()
         ' vFactura.Manage.Load.Options = vFactura.Manage.Load.Options - LoadOptions.ValidateCertificateWithCrl - LoadOptions.ValidateSignature - LoadOptions.ValidateStamp
+
         If Not vFactura.LoadFromString(vFac.xml_Timbrado) Then
             MsgBox("Error al leer la factura")
             Return Nothing
@@ -165,7 +166,7 @@ Public Class frmFacturas
         Else
             vReport.Load(System.AppDomain.CurrentDomain.BaseDirectory() & "/Reportes/factura.frx")
         End If
-
+        'MsgBox(vFac.Descuento.ToString)
         vReport.RegisterData(vTablaProds, "Productos")
         vReport.SetParameterValue("fecha_emi", Format(vFactura.Data.Fecha.Value, "dd/MM/yyyy HH:mm:ss"))
         vReport.SetParameterValue("Serie", vFactura.Data.Serie.Value)
@@ -178,7 +179,7 @@ Public Class frmFacturas
         vReport.SetParameterValue("RFC", vFactura.Data.Receptor.RFC.Value)
         vReport.SetParameterValue("metodo_pago", vFactura.Data.MetodoPago.Value)
         vReport.SetParameterValue("cuenta", vFactura.Data.NumeroCuentaPago.Value)
-        vReport.SetParameterValue("descuento", vFactura.Data.Descuento.Value)
+        vReport.SetParameterValue("descuento", vFac.Descuento.ToString)
 
         Dim vDir As String
         vDir = vFactura.Data.Receptor.Domicilio.Calle.Value
