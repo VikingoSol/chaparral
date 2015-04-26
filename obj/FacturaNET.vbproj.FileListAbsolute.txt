@@ -657,7 +657,6 @@ C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\De
 C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\FacturaNET.pdb
 C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\FacturaNET.xml
 C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\BaseDatos.dll
-C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\FacturaNETLib.dll
 C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\FastReport.dll
 C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\Ionic.Zip.dll
 C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\FastReport.Bars.dll
@@ -693,14 +692,7 @@ C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\De
 C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Debug\FacturaNET.exe.licenses
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\obj\x86\Debug\FacturaNET.Dialog1.resources
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\BAMG670420V91\factura.frx
-C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\Janus.Data.v3.dll
-C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\Janus.Windows.Common.v3.dll
-C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\Janus.Windows.GridEX.v3.dll
-C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\Janus.Windows.UI.v3.dll
 C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Debug\FacturaNET.Dialog1.resources
-C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\ThoughtWorks.QRCode.pdb
-C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\FacturaNETLib.pdb
-C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\FacturaNETLib.xml
 C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Release\FacturaNET.exe.config
 C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Release\FacturaNET.exe
 C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\obj\x86\Release\FacturaNET.xml
@@ -761,3 +753,5 @@ C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\FastReport.dll
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\FastReport.Bars.dll
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\ThoughtWorks.QRCode.dll
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\BAMF650219E70\factura.frx
+C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\FacturaNETLib.dll

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ScriptLanguage="Vb" ReportInfo.Created="02/23/2012 22:31:56" ReportInfo.Modified="04/23/2015 21:13:09" ReportInfo.CreatorVersion="1.9.1.0">
+<Report ScriptLanguage="Vb" ReportInfo.Created="02/23/2012 22:31:56" ReportInfo.Modified="04/26/2015 12:30:00" ReportInfo.CreatorVersion="1.9.1.0">
   <ScriptText>Imports System
 Imports System.Collections
 Imports System.Collections.Generic
@@ -38,12 +38,14 @@ Namespace FastReport
           Cell49.Fill=new SolidFill(System.Drawing.Color.FromArgb (230,231,232))
           Cell50.Fill=new SolidFill(System.Drawing.Color.FromArgb (230,231,232))
           Cell52.Fill=new SolidFill(System.Drawing.Color.FromArgb (230,231,232))
+          Cell94.Fill=new SolidFill(System.Drawing.Color.FromArgb (230,231,232))
         else
           Cell47.Fill=new SolidFill(System.Drawing.Color.White)
           Cell48.Fill=new SolidFill(System.Drawing.Color.White)
           Cell49.Fill=new SolidFill(System.Drawing.Color.White)
           Cell50.Fill=new SolidFill(System.Drawing.Color.White)
           Cell52.Fill=new SolidFill(System.Drawing.Color.White)
+          Cell94.Fill=new SolidFill(System.Drawing.Color.White)
         end if
         tblProds.PrintRow(1)
         
@@ -112,7 +114,7 @@ End Namespace
     <Parameter Name="metodo_pago" DataType="System.String"/>
     <Parameter Name="banco" DataType="System.String"/>
     <Parameter Name="cuenta" DataType="System.String"/>
-    <Parameter Name="descuento" DataType="System.String"/>
+    <Parameter Name="descuento" DataType="System.Double"/>
     <Parameter Name="retiva" DataType="System.String"/>
   </Dictionary>
   <ReportPage Name="Page1" Guides="699.52,15">
@@ -201,7 +203,7 @@ End Namespace
         <TableRow Name="Row12" Height="24.57" AutoSize="true">
           <TableCell Name="Cell47" Border.Lines="Left, Right, Top" Border.Color="96, 96, 98" Border.Width="1.5" Text="[prod_cant]" Padding="2, 3, 2, 1" HorzAlign="Right" Font="Arial, 8pt"/>
           <TableCell Name="Cell48" Border.Lines="Left, Right, Top" Border.Color="96, 96, 98" Border.Width="1.5" Text="[prod_unidad]" Padding="2, 3, 2, 1" HorzAlign="Center" Font="Arial, 8pt"/>
-          <TableCell Name="Cell94" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Text="[prod_codigo]" HorzAlign="Center" Font="Arial, 8pt"/>
+          <TableCell Name="Cell94" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Text="[prod_codigo]" Padding="2, 3, 2, 1" HorzAlign="Center" Font="Arial, 8pt"/>
           <TableCell Name="Cell49" Border.Lines="Left, Right, Top" Border.Color="96, 96, 98" Border.Width="1.5" Text="[prod_desc]" Padding="2, 3, 2, 1" Font="Arial, 8pt"/>
           <TableCell Name="Cell50" Border.Lines="Left, Right, Top" Border.Color="96, 96, 98" Border.Width="1.5" Text="[prod_precio]" Padding="2, 3, 2, 1" HorzAlign="Right" Font="Arial, 8pt"/>
           <TableCell Name="Cell52" Border.Lines="Left, Right, Top" Border.Color="96, 96, 98" Border.Width="1.5" Text="[prod_importe]" Padding="2, 3, 2, 1" HorzAlign="Right" Font="Arial, 8pt"/>
@@ -217,7 +219,7 @@ End Namespace
       </TableObject>
     </DataBand>
     <ReportSummaryBand Name="ReportSummary1" Top="486.17" Width="718.2" Height="137.37" CanGrow="true" CanBreak="true">
-      <PictureObject Name="BarCodeImg" Left="16.1" Top="1.89" Width="113.4" Height="113.4" Border.Lines="All" Fill.Color="96, 96, 98" Image=""/>
+      <PictureObject Name="BarCodeImg" Left="16.1" Top="1.89" Width="113.4" Height="113.4" Border.Lines="All" Fill.Color="96, 96, 98"/>
       <TableObject Name="Table5" Left="509.39" Top="3.78" Width="190.13" Height="127.92">
         <TableColumn Name="Column15" Width="88.83"/>
         <TableColumn Name="Column16" Width="101.3"/>
@@ -227,7 +229,7 @@ End Namespace
         </TableRow>
         <TableRow Name="Row23" Height="25.21">
           <TableCell Name="Cell96" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Fill.Color="1, 127, 252" Text="Descuento" HorzAlign="Right" VertAlign="Center" Font="Arial, 9pt, style=Bold" TextFill.Color="White"/>
-          <TableCell Name="Cell97" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Text="[descuento]" HorzAlign="Right" VertAlign="Center"/>
+          <TableCell Name="Cell97" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Text="[descuento]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.CurrencySymbol="$" Format.PositivePattern="0" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center"/>
         </TableRow>
         <TableRow Name="Row14" Height="25.21">
           <TableCell Name="Cell58" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Fill.Color="1, 127, 252" Text="[txtiva]" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt, style=Bold" TextFill.Color="White"/>
@@ -235,7 +237,7 @@ End Namespace
         </TableRow>
         <TableRow Name="Row24" Height="25.21">
           <TableCell Name="Cell98" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Fill.Color="1, 127, 252" Text="Ret. IVA" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt, style=Bold" TextFill.Color="White"/>
-          <TableCell Name="Cell99" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Text="[retiva]" HorzAlign="Right" VertAlign="Center"/>
+          <TableCell Name="Cell99" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Text="[retiva]" Format="Currency" Format.UseLocale="false" Format.DecimalDigits="2" Format.DecimalSeparator="." Format.GroupSeparator="," Format.CurrencySymbol="$" Format.PositivePattern="0" Format.NegativePattern="1" HorzAlign="Right" VertAlign="Center"/>
         </TableRow>
         <TableRow Name="Row15" Height="27.09">
           <TableCell Name="Cell60" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Fill.Color="1, 127, 252" Text="Total:" HorzAlign="Right" VertAlign="Center" Font="Arial, 9pt, style=Bold" TextFill.Color="White"/>

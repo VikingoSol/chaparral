@@ -178,7 +178,7 @@ Public Class frmFacturas
         vReport.SetParameterValue("RFC", vFactura.Data.Receptor.RFC.Value)
         vReport.SetParameterValue("metodo_pago", vFactura.Data.MetodoPago.Value)
         vReport.SetParameterValue("cuenta", vFactura.Data.NumeroCuentaPago.Value)
-        vReport.SetParameterValue("descuento", vFactura.Data.Descuento)
+        vReport.SetParameterValue("descuento", vFactura.Data.Descuento.Value)
 
         Dim vDir As String
         vDir = vFactura.Data.Receptor.Domicilio.Calle.Value
@@ -206,7 +206,7 @@ Public Class frmFacturas
         vReport.SetParameterValue("cl_dir", vDir)
 
         Dim vIva As Double
-        Dim vRetIva As Double
+        Dim vRetIva As Double = 0
 
         For n = 0 To vFactura.Data.Impuestos.Traslados.Count - 1
             If vFactura.Data.Impuestos.Traslados(n).Tipo.Value = "IVA" Then
@@ -216,6 +216,15 @@ Public Class frmFacturas
             End If
         Next
 
+        For n = 0 To vFactura.Data.Impuestos.Retenidos.Count - 1
+            If vFactura.Data.Impuestos.Retenidos(n).Tipo.Value = "IVA" Then
+                'vReport.SetParameterValue("iva", "$ " & FormatNumber(vFactura.Data.Impuestos.Traslados(n).Importe.Value, 2))
+                vRetIva = vFactura.Data.Impuestos.Retenidos(n).Importe.Value
+                Exit For
+            End If
+        Next
+
+        vReport.SetParameterValue("retiva", vRetIva)
         vReport.SetParameterValue("txtiva", "I.V.A.(" & FormatNumber((vIva / vFactura.Data.SubTotal.Value) * 100, 2) & "%):")
 
         If vFactura.Data.Moneda.Value = "MXN" Then
