@@ -28,7 +28,7 @@ Public Class frmFacturas
         If vId > 0 Then
             Me.Mostrar_Facturas(Me.vFechaFacs)
             Me.grdFacturas.Find(Me.grdFacturas.RootTable.Columns("id"), Janus.Windows.GridEX.ConditionOperator.Equal, vId, -1, 1)
-            'Imprimir_Factura(vId) ' jc por error al imprimir
+            Imprimir_Factura(vId)
         End If
     End Sub
 
@@ -178,7 +178,7 @@ Public Class frmFacturas
         vReport.SetParameterValue("RFC", vFactura.Data.Receptor.RFC.Value)
         vReport.SetParameterValue("metodo_pago", vFactura.Data.MetodoPago.Value)
         vReport.SetParameterValue("cuenta", vFactura.Data.NumeroCuentaPago.Value)
-        vReport.SetParameterValue("descuento", vFactura.Data.Descuento)
+        vReport.SetParameterValue("descuento", vFactura.Data.Descuento.Value)
 
         Dim vDir As String
         vDir = vFactura.Data.Receptor.Domicilio.Calle.Value

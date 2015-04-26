@@ -219,7 +219,7 @@ Public Class frmFacturaProc
                                 End If
                                 For Each vRow In Me.vProdsFac.Rows
                                     If vRow.Item("isproducto") Then
-                                        MsgBox("vIdFac " & vIdFac & "vRow.id " & vRow.Item("id") & "codigo " & vRow.Item("codigo") & " cantidad " & vRow.Item("cantidad") & " precio" & vRow.Item("precio") & "unidad" & vRow.Item("unidad") & vRow.Item("isproducto") & "" & "  tasa " & vRow.Item("tasa"))
+                                        'MsgBox("vIdFac " & vIdFac & "vRow.id " & vRow.Item("id") & "codigo " & vRow.Item("codigo") & " cantidad " & vRow.Item("cantidad") & " precio" & vRow.Item("precio") & "unidad" & vRow.Item("unidad") & vRow.Item("isproducto") & "" & "  tasa " & vRow.Item("tasa"))
                                         vFacs.AgregarProducto(vIdFac, vRow.Item("id"), vRow.Item("cantidad"), vRow.Item("precio"), vRow.Item("unidad"), vRow.Item("isproducto"), "", vRow.Item("tasa"), vRow.Item("codigo"))
                                     Else
                                         vFacs.AgregarProducto(vIdFac, vRow.Item("id"), vRow.Item("cantidad"), vRow.Item("precio"), vRow.Item("unidad"), vRow.Item("isproducto"), vRow.Item("producto"), vRow.Item("tasa"), vRow.Item("codigo"))
