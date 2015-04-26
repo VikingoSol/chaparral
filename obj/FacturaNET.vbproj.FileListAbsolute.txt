@@ -755,3 +755,4 @@ C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug
 C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\ThoughtWorks.QRCode.dll
 C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\BAMF650219E70\factura.frx
 C:\Users\MANUEL\Documents\Proyectos\VikingoSol\FacturaNET - Chaparral\bin\x86\Debug\FacturaNETLib.dll
+C:\Users\jbarboza\Desktop\Proyecto Compartidos\chaparral\chaparral\bin\x86\Debug\FacturaNETLib.dll

@@ -26,6 +26,7 @@ Partial Class frmPrincipal
         Me.FacturasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.FacturasToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
         Me.NuevaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ExportarXMLsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.CatalogoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.NuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
@@ -40,14 +41,16 @@ Partial Class frmPrincipal
         Me.ToolStripButton4 = New System.Windows.Forms.ToolStripButton
         Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton
         Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton
-        Me.ExportarXMLsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator
+        Me.SelecionarRFCToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.SeleccionarRFCToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.MenuStrip1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FacturasToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.ProductosServiciosToolStripMenuItem, Me.ConToolStripMenuItem, Me.SalirToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FacturasToolStripMenuItem, Me.ClientesToolStripMenuItem, Me.ProductosServiciosToolStripMenuItem, Me.SeleccionarRFCToolStripMenuItem, Me.ConToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(773, 24)
@@ -56,9 +59,9 @@ Partial Class frmPrincipal
         '
         'FacturasToolStripMenuItem
         '
-        Me.FacturasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FacturasToolStripMenuItem1, Me.NuevaToolStripMenuItem, Me.ExportarXMLsToolStripMenuItem})
+        Me.FacturasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FacturasToolStripMenuItem1, Me.NuevaToolStripMenuItem, Me.ExportarXMLsToolStripMenuItem, Me.ToolStripMenuItem1, Me.SelecionarRFCToolStripMenuItem})
         Me.FacturasToolStripMenuItem.Name = "FacturasToolStripMenuItem"
-        Me.FacturasToolStripMenuItem.Size = New System.Drawing.Size(75, 20)
+        Me.FacturasToolStripMenuItem.Size = New System.Drawing.Size(81, 20)
         Me.FacturasToolStripMenuItem.Text = "Facturacion"
         '
         'FacturasToolStripMenuItem1
@@ -73,54 +76,60 @@ Partial Class frmPrincipal
         Me.NuevaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.NuevaToolStripMenuItem.Text = "Nueva"
         '
+        'ExportarXMLsToolStripMenuItem
+        '
+        Me.ExportarXMLsToolStripMenuItem.Name = "ExportarXMLsToolStripMenuItem"
+        Me.ExportarXMLsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ExportarXMLsToolStripMenuItem.Text = "Exportar XMLs"
+        '
         'ClientesToolStripMenuItem
         '
         Me.ClientesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CatalogoToolStripMenuItem, Me.NuevoToolStripMenuItem})
         Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
-        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
+        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
         Me.ClientesToolStripMenuItem.Text = "Clientes"
         '
         'CatalogoToolStripMenuItem
         '
         Me.CatalogoToolStripMenuItem.Name = "CatalogoToolStripMenuItem"
-        Me.CatalogoToolStripMenuItem.Size = New System.Drawing.Size(128, 22)
+        Me.CatalogoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.CatalogoToolStripMenuItem.Text = "Catalogo"
         '
         'NuevoToolStripMenuItem
         '
         Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
-        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(128, 22)
+        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.NuevoToolStripMenuItem.Text = "Nuevo"
         '
         'ProductosServiciosToolStripMenuItem
         '
         Me.ProductosServiciosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CatalogoToolStripMenuItem1, Me.AgergarToolStripMenuItem})
         Me.ProductosServiciosToolStripMenuItem.Name = "ProductosServiciosToolStripMenuItem"
-        Me.ProductosServiciosToolStripMenuItem.Size = New System.Drawing.Size(119, 20)
+        Me.ProductosServiciosToolStripMenuItem.Size = New System.Drawing.Size(130, 20)
         Me.ProductosServiciosToolStripMenuItem.Text = "Productos / Servicios"
         '
         'CatalogoToolStripMenuItem1
         '
         Me.CatalogoToolStripMenuItem1.Name = "CatalogoToolStripMenuItem1"
-        Me.CatalogoToolStripMenuItem1.Size = New System.Drawing.Size(128, 22)
+        Me.CatalogoToolStripMenuItem1.Size = New System.Drawing.Size(122, 22)
         Me.CatalogoToolStripMenuItem1.Text = "Catalogo"
         '
         'AgergarToolStripMenuItem
         '
         Me.AgergarToolStripMenuItem.Name = "AgergarToolStripMenuItem"
-        Me.AgergarToolStripMenuItem.Size = New System.Drawing.Size(128, 22)
+        Me.AgergarToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
         Me.AgergarToolStripMenuItem.Text = "Nuevo"
         '
         'ConToolStripMenuItem
         '
         Me.ConToolStripMenuItem.Name = "ConToolStripMenuItem"
-        Me.ConToolStripMenuItem.Size = New System.Drawing.Size(85, 20)
+        Me.ConToolStripMenuItem.Size = New System.Drawing.Size(95, 20)
         Me.ConToolStripMenuItem.Text = "Configuracion"
         '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(39, 20)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(41, 20)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'ToolStrip1
@@ -178,11 +187,22 @@ Partial Class frmPrincipal
         Me.ToolStripButton5.Size = New System.Drawing.Size(28, 28)
         Me.ToolStripButton5.Text = "Salir"
         '
-        'ExportarXMLsToolStripMenuItem
+        'ToolStripMenuItem1
         '
-        Me.ExportarXMLsToolStripMenuItem.Name = "ExportarXMLsToolStripMenuItem"
-        Me.ExportarXMLsToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
-        Me.ExportarXMLsToolStripMenuItem.Text = "Exportar XMLs"
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(149, 6)
+        '
+        'SelecionarRFCToolStripMenuItem
+        '
+        Me.SelecionarRFCToolStripMenuItem.Name = "SelecionarRFCToolStripMenuItem"
+        Me.SelecionarRFCToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.SelecionarRFCToolStripMenuItem.Text = "Selecionar RFC"
+        '
+        'SeleccionarRFCToolStripMenuItem
+        '
+        Me.SeleccionarRFCToolStripMenuItem.Name = "SeleccionarRFCToolStripMenuItem"
+        Me.SeleccionarRFCToolStripMenuItem.Size = New System.Drawing.Size(103, 20)
+        Me.SeleccionarRFCToolStripMenuItem.Text = "Seleccionar RFC"
         '
         'frmPrincipal
         '
@@ -223,5 +243,8 @@ Partial Class frmPrincipal
     Friend WithEvents ToolStripButton4 As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripButton5 As System.Windows.Forms.ToolStripButton
     Friend WithEvents ExportarXMLsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem1 As System.Windows.Forms.ToolStripSeparator
+    Friend WithEvents SelecionarRFCToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents SeleccionarRFCToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

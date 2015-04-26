@@ -532,8 +532,9 @@ Partial Class frmFactura
         Me.CboRFCemisor.Items.AddRange(New Object() {"BAMF650219E70", "BAMG670420V91"})
         Me.CboRFCemisor.Location = New System.Drawing.Point(78, 17)
         Me.CboRFCemisor.Name = "CboRFCemisor"
-        Me.CboRFCemisor.Size = New System.Drawing.Size(223, 24)
+        Me.CboRFCemisor.Size = New System.Drawing.Size(119, 24)
         Me.CboRFCemisor.TabIndex = 48
+        Me.CboRFCemisor.Visible = False
         '
         'Label18
         '
@@ -543,13 +544,14 @@ Partial Class frmFactura
         Me.Label18.Size = New System.Drawing.Size(65, 13)
         Me.Label18.TabIndex = 47
         Me.Label18.Text = "RFC Emisor:"
+        Me.Label18.Visible = False
         '
         'emisor
         '
         Me.emisor.AutoSize = True
         Me.emisor.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.emisor.ForeColor = System.Drawing.Color.Gray
-        Me.emisor.Location = New System.Drawing.Point(329, 23)
+        Me.emisor.Location = New System.Drawing.Point(249, 17)
         Me.emisor.Name = "emisor"
         Me.emisor.Size = New System.Drawing.Size(115, 16)
         Me.emisor.TabIndex = 49

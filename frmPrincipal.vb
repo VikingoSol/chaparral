@@ -120,4 +120,32 @@ Public Class frmPrincipal
         Dim vExp As New frmExportarXML
         vExp.ShowDialog()
     End Sub
+
+    Private Sub SelecionarRFCToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SelecionarRFCToolStripMenuItem.Click
+        Dim f As New Dialog1
+        f.ShowDialog()
+
+        Dim cConfig As New cConfigGlobal
+        gConfigGlobal = cConfig.GetConfiguracion(RfcActual)
+
+
+        gPathFactuacion = gPathDataSoft & gConfigGlobal.Registro_Federal & "\"
+        gPathBarCodes = gPathDataSoft & gConfigGlobal.Registro_Federal & "\BarCodes\"
+
+        BajarCertificadoKey()
+    End Sub
+
+    Private Sub SeleccionarRFCToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SeleccionarRFCToolStripMenuItem.Click
+        Dim f As New Dialog1
+        f.ShowDialog()
+
+        Dim cConfig As New cConfigGlobal
+        gConfigGlobal = cConfig.GetConfiguracion(RfcActual)
+
+
+        gPathFactuacion = gPathDataSoft & gConfigGlobal.Registro_Federal & "\"
+        gPathBarCodes = gPathDataSoft & gConfigGlobal.Registro_Federal & "\BarCodes\"
+
+        BajarCertificadoKey()
+    End Sub
 End Class

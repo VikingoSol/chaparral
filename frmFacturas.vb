@@ -179,7 +179,7 @@ Public Class frmFacturas
         vReport.SetParameterValue("RFC", vFactura.Data.Receptor.RFC.Value)
         vReport.SetParameterValue("metodo_pago", vFactura.Data.MetodoPago.Value)
         vReport.SetParameterValue("cuenta", vFactura.Data.NumeroCuentaPago.Value)
-        vReport.SetParameterValue("descuento", vFac.Descuento.ToString)
+        vReport.SetParameterValue("descuento", vFactura.Data.Descuento.Value)
 
         Dim vDir As String
         vDir = vFactura.Data.Receptor.Domicilio.Calle.Value
