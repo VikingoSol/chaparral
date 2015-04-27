@@ -147,5 +147,6 @@ Public Class frmPrincipal
         gPathBarCodes = gPathDataSoft & gConfigGlobal.Registro_Federal & "\BarCodes\"
 
         BajarCertificadoKey()
+
     End Sub
 End Class
