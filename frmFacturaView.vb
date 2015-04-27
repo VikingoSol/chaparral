@@ -3,8 +3,11 @@ Imports FacturaNETLib
 Imports FacturaNETLib.Manager
 Imports FacturaNETLib.Document
 Imports FacturaNETLib.Certificate
+Imports System.Xml
+Imports System.Text
 Public Class frmFacturaView
     'Dim vTablaProds As New DataTable
+   
 
     Public Sub VerFactura(ByVal pId As Integer)
         Dim vFacs As New cFacturas
@@ -153,7 +156,6 @@ Public Class frmFacturaView
         'End If
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
 
-    End Sub
+
 End Class
