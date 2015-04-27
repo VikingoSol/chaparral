@@ -224,7 +224,7 @@ Public Class frmFacturaProc
                                     Else
                                         vFacs.AgregarProducto(vIdFac, vRow.Item("id"), vRow.Item("cantidad"), vRow.Item("precio"), vRow.Item("unidad"), vRow.Item("isproducto"), vRow.Item("producto"), vRow.Item("tasa"), vRow.Item("codigo"))
                                     End If
-                                  
+
                                 Next
 
                             End If

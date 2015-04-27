@@ -489,7 +489,7 @@ Partial Class frmConfig
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage3.Size = New System.Drawing.Size(414, 254)
         Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Expidetufactura"
+        Me.TabPage3.Text = "FacturarEnLinea"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
         'txtCancelId

@@ -138,9 +138,6 @@ Public Class frmFacturas
         vFactura = ElectronicDocument.NewEntity()
         vFactura.AssignManage(vManager)
 
-
-
-
         'Dim sw As IO.StreamWriter = New IO.StreamWriter(New IO.MemoryStream)
         ' sw.Write(vFac.xml_Timbrado)
         'sw.Flush()
