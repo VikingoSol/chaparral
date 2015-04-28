@@ -53,9 +53,9 @@ Partial Class Dialog1
         '
         Me.Cancel_Button.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Cancel_Button.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Cancel_Button.Location = New System.Drawing.Point(176, 3)
+        Me.Cancel_Button.Location = New System.Drawing.Point(171, 3)
         Me.Cancel_Button.Name = "Cancel_Button"
-        Me.Cancel_Button.Size = New System.Drawing.Size(100, 23)
+        Me.Cancel_Button.Size = New System.Drawing.Size(110, 23)
         Me.Cancel_Button.TabIndex = 1
         Me.Cancel_Button.Text = "BAMG670420V91"
         '
