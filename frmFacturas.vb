@@ -3,6 +3,7 @@ Imports FacturaNETLib
 Imports FacturaNETLib.Manager
 Imports FacturaNETLib.Certificate
 Imports FacturaNETLib.Document
+Imports System.Xml
 Public Class frmFacturas
     Private Shared _ObjSingleton As frmFacturas = Nothing
     Dim vFechaFacs As Date
@@ -300,9 +301,9 @@ Public Class frmFacturas
             Dim vFile As New IO.StreamWriter(Me.SaveFileDialog1.FileName)
             Dim vXml As String = cFacturas.GetFacturaXML(Me.grdFacturas.GetRow.Cells("id").Value)
             vFile.Write(vXml)
+            MsgBox(vXml)
             vFile.Flush()
             vFile.Close()
-            MsgBox("Se ha exportado correctamente el archivo xml", MsgBoxStyle.Exclamation, "Exportacion XML")
         End If
     End Sub
 

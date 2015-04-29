@@ -74,8 +74,13 @@ Partial Class frmFactura
         Me.Label18 = New System.Windows.Forms.Label
         Me.emisor = New System.Windows.Forms.Label
         Me.Advanswsdl1 = New FacturaNET.mx.advans.app.advanswsdl
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox
         Me.GroupBox1.SuspendLayout()
         CType(Me.grdProductos, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -175,7 +180,7 @@ Partial Class frmFactura
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Location = New System.Drawing.Point(6, 108)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(583, 100)
+        Me.GroupBox1.Size = New System.Drawing.Size(555, 100)
         Me.GroupBox1.TabIndex = 6
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Cliente"
@@ -183,7 +188,7 @@ Partial Class frmFactura
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(388, 77)
+        Me.Label17.Location = New System.Drawing.Point(378, 78)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(70, 13)
         Me.Label17.TabIndex = 47
@@ -191,12 +196,12 @@ Partial Class frmFactura
         '
         'TxtDesctocte
         '
-        Me.TxtDesctocte.Location = New System.Drawing.Point(464, 74)
+        Me.TxtDesctocte.Location = New System.Drawing.Point(454, 74)
         Me.TxtDesctocte.Name = "TxtDesctocte"
-        Me.TxtDesctocte.Size = New System.Drawing.Size(83, 20)
+        Me.TxtDesctocte.Size = New System.Drawing.Size(66, 20)
         Me.TxtDesctocte.TabIndex = 48
-        Me.TxtDesctocte.Text = "0.00"
-        Me.TxtDesctocte.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.TxtDesctocte.Text = "0"
+        Me.TxtDesctocte.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'btnAddCliente
         '
@@ -252,11 +257,12 @@ Partial Class frmFactura
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         grdProductos_DesignTimeLayout.LayoutString = resources.GetString("grdProductos_DesignTimeLayout.LayoutString")
         Me.grdProductos.DesignTimeLayout = grdProductos_DesignTimeLayout
+        Me.grdProductos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.grdProductos.GroupByBoxVisible = False
         Me.grdProductos.HideSelection = Janus.Windows.GridEX.HideSelection.Highlight
         Me.grdProductos.Location = New System.Drawing.Point(6, 214)
         Me.grdProductos.Name = "grdProductos"
-        Me.grdProductos.Size = New System.Drawing.Size(640, 184)
+        Me.grdProductos.Size = New System.Drawing.Size(743, 184)
         Me.grdProductos.TabIndex = 8
         '
         'txtCantidad
@@ -282,7 +288,7 @@ Partial Class frmFactura
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(402, 404)
+        Me.Label7.Location = New System.Drawing.Point(487, 404)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(53, 13)
         Me.Label7.TabIndex = 17
@@ -290,7 +296,7 @@ Partial Class frmFactura
         '
         'lblIVA
         '
-        Me.lblIVA.Location = New System.Drawing.Point(371, 452)
+        Me.lblIVA.Location = New System.Drawing.Point(456, 452)
         Me.lblIVA.Name = "lblIVA"
         Me.lblIVA.Size = New System.Drawing.Size(84, 13)
         Me.lblIVA.TabIndex = 18
@@ -300,7 +306,7 @@ Partial Class frmFactura
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(421, 502)
+        Me.Label9.Location = New System.Drawing.Point(506, 502)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(34, 13)
         Me.Label9.TabIndex = 19
@@ -308,7 +314,7 @@ Partial Class frmFactura
         '
         'txtSubTotal
         '
-        Me.txtSubTotal.Location = New System.Drawing.Point(461, 401)
+        Me.txtSubTotal.Location = New System.Drawing.Point(546, 401)
         Me.txtSubTotal.Name = "txtSubTotal"
         Me.txtSubTotal.ReadOnly = True
         Me.txtSubTotal.Size = New System.Drawing.Size(113, 20)
@@ -318,7 +324,7 @@ Partial Class frmFactura
         '
         'txtIVA
         '
-        Me.txtIVA.Location = New System.Drawing.Point(461, 449)
+        Me.txtIVA.Location = New System.Drawing.Point(546, 449)
         Me.txtIVA.Name = "txtIVA"
         Me.txtIVA.ReadOnly = True
         Me.txtIVA.Size = New System.Drawing.Size(113, 20)
@@ -329,7 +335,7 @@ Partial Class frmFactura
         'txtTotal
         '
         Me.txtTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTotal.Location = New System.Drawing.Point(461, 497)
+        Me.txtTotal.Location = New System.Drawing.Point(546, 497)
         Me.txtTotal.Name = "txtTotal"
         Me.txtTotal.ReadOnly = True
         Me.txtTotal.Size = New System.Drawing.Size(113, 22)
@@ -339,7 +345,7 @@ Partial Class frmFactura
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(264, 526)
+        Me.Button4.Location = New System.Drawing.Point(309, 521)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
         Me.Button4.TabIndex = 15
@@ -348,7 +354,7 @@ Partial Class frmFactura
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(345, 526)
+        Me.Button5.Location = New System.Drawing.Point(390, 521)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(75, 23)
         Me.Button5.TabIndex = 24
@@ -369,7 +375,7 @@ Partial Class frmFactura
         Me.btnDelete.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnDelete.Enabled = False
         Me.btnDelete.Image = Global.FacturaNET.My.Resources.Resources.delete
-        Me.btnDelete.Location = New System.Drawing.Point(656, 214)
+        Me.btnDelete.Location = New System.Drawing.Point(759, 214)
         Me.btnDelete.Name = "btnDelete"
         Me.btnDelete.Size = New System.Drawing.Size(36, 36)
         Me.btnDelete.TabIndex = 9
@@ -470,7 +476,7 @@ Partial Class frmFactura
         '
         'txtRetIva
         '
-        Me.txtRetIva.Location = New System.Drawing.Point(461, 472)
+        Me.txtRetIva.Location = New System.Drawing.Point(546, 472)
         Me.txtRetIva.Name = "txtRetIva"
         Me.txtRetIva.ReadOnly = True
         Me.txtRetIva.Size = New System.Drawing.Size(113, 20)
@@ -480,7 +486,7 @@ Partial Class frmFactura
         '
         'Label12
         '
-        Me.Label12.Location = New System.Drawing.Point(371, 475)
+        Me.Label12.Location = New System.Drawing.Point(456, 475)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(84, 13)
         Me.Label12.TabIndex = 41
@@ -507,7 +513,7 @@ Partial Class frmFactura
         '
         'Txtdescuento
         '
-        Me.Txtdescuento.Location = New System.Drawing.Point(461, 425)
+        Me.Txtdescuento.Location = New System.Drawing.Point(546, 425)
         Me.Txtdescuento.Name = "Txtdescuento"
         Me.Txtdescuento.ReadOnly = True
         Me.Txtdescuento.Size = New System.Drawing.Size(113, 20)
@@ -518,7 +524,7 @@ Partial Class frmFactura
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(394, 428)
+        Me.Label16.Location = New System.Drawing.Point(479, 428)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(62, 13)
         Me.Label16.TabIndex = 45
@@ -563,11 +569,54 @@ Partial Class frmFactura
         Me.Advanswsdl1.Url = "https://app.advans.mx/ws/awscfdi.php"
         Me.Advanswsdl1.UseDefaultCredentials = False
         '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(18, 19)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(108, 17)
+        Me.CheckBox1.TabIndex = 50
+        Me.CheckBox1.Text = "Addenda Soriana"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.CheckBox3)
+        Me.GroupBox2.Controls.Add(Me.CheckBox2)
+        Me.GroupBox2.Controls.Add(Me.CheckBox1)
+        Me.GroupBox2.Location = New System.Drawing.Point(581, 111)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(165, 92)
+        Me.GroupBox2.TabIndex = 51
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Addendas"
+        '
+        'CheckBox3
+        '
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Location = New System.Drawing.Point(18, 58)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(114, 17)
+        Me.CheckBox3.TabIndex = 52
+        Me.CheckBox3.Text = "Addenda Chedraui"
+        Me.CheckBox3.UseVisualStyleBackColor = True
+        '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Location = New System.Drawing.Point(18, 39)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(144, 17)
+        Me.CheckBox2.TabIndex = 51
+        Me.CheckBox2.Text = "Addenda Comercial Mex."
+        Me.CheckBox2.UseVisualStyleBackColor = True
+        '
         'frmFactura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(693, 556)
+        Me.ClientSize = New System.Drawing.Size(796, 556)
+        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.emisor)
         Me.Controls.Add(Me.CboRFCemisor)
         Me.Controls.Add(Me.Label18)
@@ -616,6 +665,8 @@ Partial Class frmFactura
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.grdProductos, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -670,4 +721,8 @@ Partial Class frmFactura
     Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents emisor As System.Windows.Forms.Label
     Friend WithEvents Advanswsdl1 As FacturaNET.mx.advans.app.advanswsdl
+    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents CheckBox3 As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
 End Class
