@@ -66,7 +66,7 @@ Public Class frmConfig
 
         If Me.txtCertificado.Text <> gConfigGlobal.Cer_Name Then
             If IO.File.Exists(Me.txtCertificado.Text) Then
-                vConfigBase.UploadCertificado(IO.Path.GetFileName(Me.txtCertificado.Text), File_To_Bytes(Me.txtCertificado.Text))
+                vConfigBase.UploadCertificado(IO.Path.GetFileName(Me.txtCertificado.Text), File_To_Bytes(Me.txtCertificado.Text), RfcActual)
                 gConfigGlobal.Cer_Name = IO.Path.GetFileName(Me.txtCertificado.Text)
                 Dim vFile As dArchivo = vConfigBase.DownloadCertificado(RfcActual)
                 If IO.File.Exists(gPathFactuacion & gConfigGlobal.Cer_Name) Then
@@ -85,7 +85,7 @@ Public Class frmConfig
 
         If Me.txtKeyFile.Text <> gConfigGlobal.Key_Name Then
             If IO.File.Exists(Me.txtKeyFile.Text) Then
-                vConfigBase.UploadKey(IO.Path.GetFileName(Me.txtKeyFile.Text), File_To_Bytes(Me.txtKeyFile.Text))
+                vConfigBase.UploadKey(IO.Path.GetFileName(Me.txtKeyFile.Text), File_To_Bytes(Me.txtKeyFile.Text), RfcActual)
                 gConfigGlobal.Key_Name = IO.Path.GetFileName(Me.txtKeyFile.Text)
                 Dim vFileKey As dArchivo = vConfigBase.DownloadKey(RfcActual)
                 If IO.File.Exists(gPathFactuacion & gConfigGlobal.Key_Name) Then
