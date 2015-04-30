@@ -401,7 +401,6 @@ Public Class dDireccion
     Public Estado As String
     Public Pais As String
     Public CodigoPostal As String
-
 End Class
 
 Public Class dArchivo

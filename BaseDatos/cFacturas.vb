@@ -109,6 +109,16 @@ Public Class cFacturas
         Return vFac
     End Function
 
+    Public Function GettiendasSoriana() As DataTable
+        If gConn.State <> ConnectionState.Open Then gConn.Open()
+        Dim vCmd As New MySqlCommand("SELECT * FROM Tiendas WHERE Tienda=@soriana", gConn)
+        vCmd.Parameters.AddWithValue("?soriana", "Soriana")
+        Dim vAdap As New MySqlDataAdapter(vCmd)
+        Dim vTabla As New DataTable
+        vAdap.Fill(vTabla)
+        Return vTabla
+    End Function
+
 
     Public Function GetMetodosPago() As DataTable
         If gConn.State <> ConnectionState.Open Then gConn.Open()

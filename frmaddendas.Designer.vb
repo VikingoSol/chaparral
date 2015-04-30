@@ -22,7 +22,7 @@ Partial Class frmaddendas
         Me.Button5 = New System.Windows.Forms.Button
         Me.Label44 = New System.Windows.Forms.Label
         Me.Label43 = New System.Windows.Forms.Label
-        Me.TextBox10 = New System.Windows.Forms.TextBox
+        Me.Txtnoarticulos = New System.Windows.Forms.TextBox
         Me.Label42 = New System.Windows.Forms.Label
         Me.TextBox9 = New System.Windows.Forms.TextBox
         Me.Label39 = New System.Windows.Forms.Label
@@ -32,12 +32,12 @@ Partial Class frmaddendas
         Me.Label37 = New System.Windows.Forms.Label
         Me.TextBox7 = New System.Windows.Forms.TextBox
         Me.Label33 = New System.Windows.Forms.Label
-        Me.TextBox6 = New System.Windows.Forms.TextBox
-        Me.TextBox2 = New System.Windows.Forms.TextBox
+        Me.Txtiva = New System.Windows.Forms.TextBox
+        Me.Txtieps = New System.Windows.Forms.TextBox
         Me.Label32 = New System.Windows.Forms.Label
-        Me.TextBox3 = New System.Windows.Forms.TextBox
-        Me.TextBox4 = New System.Windows.Forms.TextBox
-        Me.TextBox5 = New System.Windows.Forms.TextBox
+        Me.Txtotrosi = New System.Windows.Forms.TextBox
+        Me.Txttotal = New System.Windows.Forms.TextBox
+        Me.Txtsubtotal = New System.Windows.Forms.TextBox
         Me.Label34 = New System.Windows.Forms.Label
         Me.Label35 = New System.Windows.Forms.Label
         Me.Label36 = New System.Windows.Forms.Label
@@ -62,10 +62,10 @@ Partial Class frmaddendas
         Me.Label21 = New System.Windows.Forms.Label
         Me.Txtremision = New System.Windows.Forms.TextBox
         Me.GroupBox1 = New System.Windows.Forms.GroupBox
-        Me.ComboBox4 = New System.Windows.Forms.ComboBox
+        Me.CmbEntregaM = New System.Windows.Forms.ComboBox
         Me.Label1 = New System.Windows.Forms.Label
-        Me.TextBox12 = New System.Windows.Forms.TextBox
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox
+        Me.Txtdescuento = New System.Windows.Forms.TextBox
+        Me.CmbtiendaP = New System.Windows.Forms.ComboBox
         Me.Label2 = New System.Windows.Forms.Label
         Me.ComboBox3 = New System.Windows.Forms.ComboBox
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
@@ -100,17 +100,16 @@ Partial Class frmaddendas
         Me.Label43.TabIndex = 119
         Me.Label43.Text = "Cantidad Articulos:"
         '
-        'TextBox10
+        'Txtnoarticulos
         '
-        Me.TextBox10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox10.ForeColor = System.Drawing.Color.DarkRed
-        Me.TextBox10.Location = New System.Drawing.Point(338, 60)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.ReadOnly = True
-        Me.TextBox10.Size = New System.Drawing.Size(82, 20)
-        Me.TextBox10.TabIndex = 120
-        Me.TextBox10.Text = "0"
-        Me.TextBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.Txtnoarticulos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txtnoarticulos.ForeColor = System.Drawing.Color.DarkRed
+        Me.Txtnoarticulos.Location = New System.Drawing.Point(338, 60)
+        Me.Txtnoarticulos.Name = "Txtnoarticulos"
+        Me.Txtnoarticulos.Size = New System.Drawing.Size(82, 20)
+        Me.Txtnoarticulos.TabIndex = 120
+        Me.Txtnoarticulos.Text = "0"
+        Me.Txtnoarticulos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label42
         '
@@ -127,7 +126,6 @@ Partial Class frmaddendas
         Me.TextBox9.ForeColor = System.Drawing.Color.DarkRed
         Me.TextBox9.Location = New System.Drawing.Point(73, 60)
         Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.ReadOnly = True
         Me.TextBox9.Size = New System.Drawing.Size(82, 20)
         Me.TextBox9.TabIndex = 118
         Me.TextBox9.Text = "0"
@@ -136,7 +134,7 @@ Partial Class frmaddendas
         'Label39
         '
         Me.Label39.AutoSize = True
-        Me.Label39.Location = New System.Drawing.Point(496, 232)
+        Me.Label39.Location = New System.Drawing.Point(565, 258)
         Me.Label39.Name = "Label39"
         Me.Label39.Size = New System.Drawing.Size(98, 13)
         Me.Label39.TabIndex = 113
@@ -146,9 +144,8 @@ Partial Class frmaddendas
         '
         Me.TextBox8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox8.ForeColor = System.Drawing.Color.DarkRed
-        Me.TextBox8.Location = New System.Drawing.Point(502, 252)
+        Me.TextBox8.Location = New System.Drawing.Point(681, 255)
         Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.ReadOnly = True
         Me.TextBox8.Size = New System.Drawing.Size(95, 20)
         Me.TextBox8.TabIndex = 114
         Me.TextBox8.Text = "0"
@@ -158,7 +155,7 @@ Partial Class frmaddendas
         '
         Me.DateTimePicker1.CustomFormat = "dd / MMM / yyyy"
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(205, 252)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(387, 252)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(115, 20)
         Me.DateTimePicker1.TabIndex = 112
@@ -166,7 +163,7 @@ Partial Class frmaddendas
         'Label38
         '
         Me.Label38.AutoSize = True
-        Me.Label38.Location = New System.Drawing.Point(207, 232)
+        Me.Label38.Location = New System.Drawing.Point(291, 255)
         Me.Label38.Name = "Label38"
         Me.Label38.Size = New System.Drawing.Size(80, 13)
         Me.Label38.TabIndex = 111
@@ -175,7 +172,7 @@ Partial Class frmaddendas
         'Label37
         '
         Me.Label37.AutoSize = True
-        Me.Label37.Location = New System.Drawing.Point(51, 232)
+        Me.Label37.Location = New System.Drawing.Point(46, 251)
         Me.Label37.Name = "Label37"
         Me.Label37.Size = New System.Drawing.Size(90, 13)
         Me.Label37.TabIndex = 109
@@ -185,10 +182,9 @@ Partial Class frmaddendas
         '
         Me.TextBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox7.ForeColor = System.Drawing.Color.DarkRed
-        Me.TextBox7.Location = New System.Drawing.Point(54, 252)
+        Me.TextBox7.Location = New System.Drawing.Point(167, 248)
         Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.ReadOnly = True
-        Me.TextBox7.Size = New System.Drawing.Size(113, 20)
+        Me.TextBox7.Size = New System.Drawing.Size(88, 20)
         Me.TextBox7.TabIndex = 110
         Me.TextBox7.Text = "0"
         Me.TextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -202,25 +198,23 @@ Partial Class frmaddendas
         Me.Label33.Text = "Otros Impuestos"
         Me.Label33.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'TextBox6
+        'Txtiva
         '
-        Me.TextBox6.Location = New System.Drawing.Point(471, 198)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.ReadOnly = True
-        Me.TextBox6.Size = New System.Drawing.Size(93, 20)
-        Me.TextBox6.TabIndex = 107
-        Me.TextBox6.Text = "0.00"
-        Me.TextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.Txtiva.Location = New System.Drawing.Point(471, 198)
+        Me.Txtiva.Name = "Txtiva"
+        Me.Txtiva.Size = New System.Drawing.Size(93, 20)
+        Me.Txtiva.TabIndex = 107
+        Me.Txtiva.Text = "0.00"
+        Me.Txtiva.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'TextBox2
+        'Txtieps
         '
-        Me.TextBox2.Location = New System.Drawing.Point(323, 198)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ReadOnly = True
-        Me.TextBox2.Size = New System.Drawing.Size(82, 20)
-        Me.TextBox2.TabIndex = 106
-        Me.TextBox2.Text = "0.00"
-        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.Txtieps.Location = New System.Drawing.Point(323, 198)
+        Me.Txtieps.Name = "Txtieps"
+        Me.Txtieps.Size = New System.Drawing.Size(82, 20)
+        Me.Txtieps.TabIndex = 106
+        Me.Txtieps.Text = "0.00"
+        Me.Txtieps.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label32
         '
@@ -231,36 +225,33 @@ Partial Class frmaddendas
         Me.Label32.TabIndex = 105
         Me.Label32.Text = "IEPS:"
         '
-        'TextBox3
+        'Txtotrosi
         '
-        Me.TextBox3.Location = New System.Drawing.Point(581, 198)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.ReadOnly = True
-        Me.TextBox3.Size = New System.Drawing.Size(78, 20)
-        Me.TextBox3.TabIndex = 104
-        Me.TextBox3.Text = "0.00"
-        Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.Txtotrosi.Location = New System.Drawing.Point(581, 198)
+        Me.Txtotrosi.Name = "Txtotrosi"
+        Me.Txtotrosi.Size = New System.Drawing.Size(78, 20)
+        Me.Txtotrosi.TabIndex = 104
+        Me.Txtotrosi.Text = "0.00"
+        Me.Txtotrosi.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'TextBox4
+        'Txttotal
         '
-        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(681, 198)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.ReadOnly = True
-        Me.TextBox4.Size = New System.Drawing.Size(101, 20)
-        Me.TextBox4.TabIndex = 103
-        Me.TextBox4.Text = "0.00"
-        Me.TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.Txttotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txttotal.Location = New System.Drawing.Point(681, 198)
+        Me.Txttotal.Name = "Txttotal"
+        Me.Txttotal.Size = New System.Drawing.Size(101, 20)
+        Me.Txttotal.TabIndex = 103
+        Me.Txttotal.Text = "0.00"
+        Me.Txttotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'TextBox5
+        'Txtsubtotal
         '
-        Me.TextBox5.Location = New System.Drawing.Point(54, 198)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.ReadOnly = True
-        Me.TextBox5.Size = New System.Drawing.Size(113, 20)
-        Me.TextBox5.TabIndex = 102
-        Me.TextBox5.Text = "0.00"
-        Me.TextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.Txtsubtotal.Location = New System.Drawing.Point(54, 198)
+        Me.Txtsubtotal.Name = "Txtsubtotal"
+        Me.Txtsubtotal.Size = New System.Drawing.Size(113, 20)
+        Me.Txtsubtotal.TabIndex = 102
+        Me.Txtsubtotal.Text = "0.00"
+        Me.Txtsubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label34
         '
@@ -304,7 +295,6 @@ Partial Class frmaddendas
         Me.TextBox1.ForeColor = System.Drawing.Color.DarkRed
         Me.TextBox1.Location = New System.Drawing.Point(323, 133)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
         Me.TextBox1.Size = New System.Drawing.Size(79, 20)
         Me.TextBox1.TabIndex = 98
         Me.TextBox1.Text = "0"
@@ -366,7 +356,6 @@ Partial Class frmaddendas
         Me.Txttipobulto.ForeColor = System.Drawing.Color.DarkRed
         Me.Txttipobulto.Location = New System.Drawing.Point(209, 132)
         Me.Txttipobulto.Name = "Txttipobulto"
-        Me.Txttipobulto.ReadOnly = True
         Me.Txttipobulto.Size = New System.Drawing.Size(96, 20)
         Me.Txttipobulto.TabIndex = 91
         Me.Txttipobulto.Text = "0"
@@ -427,7 +416,6 @@ Partial Class frmaddendas
         Me.Txtconsecutivo.ForeColor = System.Drawing.Color.DarkRed
         Me.Txtconsecutivo.Location = New System.Drawing.Point(323, 63)
         Me.Txtconsecutivo.Name = "Txtconsecutivo"
-        Me.Txtconsecutivo.ReadOnly = True
         Me.Txtconsecutivo.Size = New System.Drawing.Size(79, 20)
         Me.Txtconsecutivo.TabIndex = 85
         Me.Txtconsecutivo.Text = "0"
@@ -437,7 +425,6 @@ Partial Class frmaddendas
         '
         Me.TxtProveedor.Location = New System.Drawing.Point(55, 63)
         Me.TxtProveedor.Name = "TxtProveedor"
-        Me.TxtProveedor.ReadOnly = True
         Me.TxtProveedor.Size = New System.Drawing.Size(112, 20)
         Me.TxtProveedor.TabIndex = 83
         Me.TxtProveedor.Text = "303008"
@@ -485,7 +472,6 @@ Partial Class frmaddendas
         Me.Txtremision.ForeColor = System.Drawing.Color.DarkRed
         Me.Txtremision.Location = New System.Drawing.Point(203, 63)
         Me.Txtremision.Name = "Txtremision"
-        Me.Txtremision.ReadOnly = True
         Me.Txtremision.Size = New System.Drawing.Size(102, 20)
         Me.Txtremision.TabIndex = 79
         Me.Txtremision.Text = "0"
@@ -494,10 +480,10 @@ Partial Class frmaddendas
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.GroupBox1.Controls.Add(Me.ComboBox4)
+        Me.GroupBox1.Controls.Add(Me.CmbEntregaM)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.Label23)
-        Me.GroupBox1.Controls.Add(Me.TextBox12)
+        Me.GroupBox1.Controls.Add(Me.Txtdescuento)
         Me.GroupBox1.Controls.Add(Me.TxtProveedor)
         Me.GroupBox1.Controls.Add(Me.Label21)
         Me.GroupBox1.Controls.Add(Me.Txtremision)
@@ -519,15 +505,15 @@ Partial Class frmaddendas
         Me.GroupBox1.Controls.Add(Me.Label31)
         Me.GroupBox1.Controls.Add(Me.Label33)
         Me.GroupBox1.Controls.Add(Me.Label37)
-        Me.GroupBox1.Controls.Add(Me.TextBox6)
+        Me.GroupBox1.Controls.Add(Me.Txtiva)
         Me.GroupBox1.Controls.Add(Me.ComboBox1)
-        Me.GroupBox1.Controls.Add(Me.TextBox2)
+        Me.GroupBox1.Controls.Add(Me.Txtieps)
         Me.GroupBox1.Controls.Add(Me.TextBox7)
         Me.GroupBox1.Controls.Add(Me.Label32)
         Me.GroupBox1.Controls.Add(Me.Label29)
-        Me.GroupBox1.Controls.Add(Me.TextBox3)
-        Me.GroupBox1.Controls.Add(Me.TextBox4)
-        Me.GroupBox1.Controls.Add(Me.TextBox5)
+        Me.GroupBox1.Controls.Add(Me.Txtotrosi)
+        Me.GroupBox1.Controls.Add(Me.Txttotal)
+        Me.GroupBox1.Controls.Add(Me.Txtsubtotal)
         Me.GroupBox1.Controls.Add(Me.Label28)
         Me.GroupBox1.Controls.Add(Me.Label34)
         Me.GroupBox1.Controls.Add(Me.Label36)
@@ -539,17 +525,17 @@ Partial Class frmaddendas
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Detalle Remision"
         '
-        'ComboBox4
+        'CmbEntregaM
         '
-        Me.ComboBox4.DisplayMember = "metodo"
-        Me.ComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Items.AddRange(New Object() {"1", "2", "3"})
-        Me.ComboBox4.Location = New System.Drawing.Point(619, 132)
-        Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(149, 21)
-        Me.ComboBox4.TabIndex = 126
-        Me.ComboBox4.ValueMember = "id"
+        Me.CmbEntregaM.DisplayMember = "metodo"
+        Me.CmbEntregaM.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CmbEntregaM.FormattingEnabled = True
+        Me.CmbEntregaM.Items.AddRange(New Object() {"1", "2", "3"})
+        Me.CmbEntregaM.Location = New System.Drawing.Point(619, 132)
+        Me.CmbEntregaM.Name = "CmbEntregaM"
+        Me.CmbEntregaM.Size = New System.Drawing.Size(149, 21)
+        Me.CmbEntregaM.TabIndex = 126
+        Me.CmbEntregaM.ValueMember = "id"
         '
         'Label1
         '
@@ -560,29 +546,28 @@ Partial Class frmaddendas
         Me.Label1.TabIndex = 124
         Me.Label1.Text = "Descuento"
         '
-        'TextBox12
+        'Txtdescuento
         '
-        Me.TextBox12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox12.ForeColor = System.Drawing.Color.DarkRed
-        Me.TextBox12.Location = New System.Drawing.Point(205, 198)
-        Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.ReadOnly = True
-        Me.TextBox12.Size = New System.Drawing.Size(101, 20)
-        Me.TextBox12.TabIndex = 125
-        Me.TextBox12.Text = "0"
-        Me.TextBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.Txtdescuento.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txtdescuento.ForeColor = System.Drawing.Color.DarkRed
+        Me.Txtdescuento.Location = New System.Drawing.Point(205, 198)
+        Me.Txtdescuento.Name = "Txtdescuento"
+        Me.Txtdescuento.Size = New System.Drawing.Size(101, 20)
+        Me.Txtdescuento.TabIndex = 125
+        Me.Txtdescuento.Text = "0"
+        Me.Txtdescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'ComboBox2
+        'CmbtiendaP
         '
-        Me.ComboBox2.DisplayMember = "metodo"
-        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Items.AddRange(New Object() {"1", "2", "3"})
-        Me.ComboBox2.Location = New System.Drawing.Point(196, 59)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(124, 21)
-        Me.ComboBox2.TabIndex = 125
-        Me.ComboBox2.ValueMember = "id"
+        Me.CmbtiendaP.DisplayMember = "metodo"
+        Me.CmbtiendaP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CmbtiendaP.FormattingEnabled = True
+        Me.CmbtiendaP.Items.AddRange(New Object() {"1", "2", "3"})
+        Me.CmbtiendaP.Location = New System.Drawing.Point(196, 59)
+        Me.CmbtiendaP.Name = "CmbtiendaP"
+        Me.CmbtiendaP.Size = New System.Drawing.Size(124, 21)
+        Me.CmbtiendaP.TabIndex = 125
+        Me.CmbtiendaP.ValueMember = "id"
         '
         'Label2
         '
@@ -610,10 +595,10 @@ Partial Class frmaddendas
         Me.GroupBox2.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.GroupBox2.Controls.Add(Me.ComboBox3)
         Me.GroupBox2.Controls.Add(Me.TextBox9)
-        Me.GroupBox2.Controls.Add(Me.ComboBox2)
+        Me.GroupBox2.Controls.Add(Me.CmbtiendaP)
         Me.GroupBox2.Controls.Add(Me.Label42)
         Me.GroupBox2.Controls.Add(Me.Label2)
-        Me.GroupBox2.Controls.Add(Me.TextBox10)
+        Me.GroupBox2.Controls.Add(Me.Txtnoarticulos)
         Me.GroupBox2.Controls.Add(Me.Label43)
         Me.GroupBox2.Controls.Add(Me.Label44)
         Me.GroupBox2.Location = New System.Drawing.Point(27, 359)
@@ -646,7 +631,7 @@ Partial Class frmaddendas
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents Label44 As System.Windows.Forms.Label
     Friend WithEvents Label43 As System.Windows.Forms.Label
-    Friend WithEvents TextBox10 As System.Windows.Forms.TextBox
+    Friend WithEvents Txtnoarticulos As System.Windows.Forms.TextBox
     Friend WithEvents Label42 As System.Windows.Forms.Label
     Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
     Friend WithEvents Label39 As System.Windows.Forms.Label
@@ -656,12 +641,12 @@ Partial Class frmaddendas
     Friend WithEvents Label37 As System.Windows.Forms.Label
     Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
     Friend WithEvents Label33 As System.Windows.Forms.Label
-    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents Txtiva As System.Windows.Forms.TextBox
+    Friend WithEvents Txtieps As System.Windows.Forms.TextBox
     Friend WithEvents Label32 As System.Windows.Forms.Label
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
+    Friend WithEvents Txtotrosi As System.Windows.Forms.TextBox
+    Friend WithEvents Txttotal As System.Windows.Forms.TextBox
+    Friend WithEvents Txtsubtotal As System.Windows.Forms.TextBox
     Friend WithEvents Label34 As System.Windows.Forms.Label
     Friend WithEvents Label35 As System.Windows.Forms.Label
     Friend WithEvents Label36 As System.Windows.Forms.Label
@@ -687,10 +672,10 @@ Partial Class frmaddendas
     Friend WithEvents Txtremision As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents TextBox12 As System.Windows.Forms.TextBox
-    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
+    Friend WithEvents Txtdescuento As System.Windows.Forms.TextBox
+    Friend WithEvents CmbtiendaP As System.Windows.Forms.ComboBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox4 As System.Windows.Forms.ComboBox
+    Friend WithEvents CmbEntregaM As System.Windows.Forms.ComboBox
     Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
 End Class

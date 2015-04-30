@@ -5,7 +5,7 @@ Public Class frmFactura
     Dim vCliente As New dCliente
     Dim vTablaProds As New DataTable
     Public gdescuento As Double
-
+    Dim noarticulosventa As Double = 0
     Public Function Agregar() As Integer
         If Me.ShowDialog = Windows.Forms.DialogResult.OK Then
             Return vIdFactura
@@ -228,14 +228,17 @@ Public Class frmFactura
             vSubTotal = Me.grdProductos.GetTotal(Me.grdProductos.RootTable.Columns("importe"), Janus.Windows.GridEX.AggregateFunction.Sum)
             vDescuento = Me.grdProductos.GetTotal(Me.grdProductos.RootTable.Columns("importe"), Janus.Windows.GridEX.AggregateFunction.Sum)
             vIva = Me.grdProductos.GetTotal(Me.grdProductos.RootTable.Columns("iva"), Janus.Windows.GridEX.AggregateFunction.Sum)
+            noarticulosventa = Me.grdProductos.GetTotal(Me.grdProductos.RootTable.Columns("Cantidad"), Janus.Windows.GridEX.AggregateFunction.Sum)
         Catch ex As Exception
             vSubTotal = 0
             vDescuento = 0
             vIva = 0
+            noarticulosventa = 0
         End Try
         'Dim vSubTotal As Double = Me.grdProductos.GetTotal(Me.grdProductos.RootTable.Columns("importe"), Janus.Windows.GridEX.AggregateFunction.Sum)
         'Dim vDescuento As Double = Me.grdProductos.GetTotal(Me.grdProductos.RootTable.Columns("importe"), Janus.Windows.GridEX.AggregateFunction.Sum)
         'Dim vIva As Double = Me.grdProductos.GetTotal(Me.grdProductos.RootTable.Columns("iva"), Janus.Windows.GridEX.AggregateFunction.Sum)
+
         Dim vRetIVA As Double = vIva * (2 / 3)
         If CDbl(Me.TxtDesctocte.Text) > 0 Then
             Me.Txtdescuento.Text = FormatNumber(vDescuento * (CDbl(Me.TxtDesctocte.Text) / 100), 2)
@@ -470,6 +473,7 @@ Public Class frmFactura
         If CDbl(Me.txtTotal.Text) > 0 Then
             If CheckBox1.Checked Then
                 Dim f As New frmaddendas
+                f.addendasoriana(Me.txtSubTotal.Text, Me.Txtdescuento.Text, 0, Me.txtIVA.Text, Me.txtTotal.Text, noarticulosventa)
                 f.ShowDialog()
                 CheckBox2.Checked = False
                 CheckBox3.Checked = False
