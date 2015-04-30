@@ -30,7 +30,6 @@ Partial Class frmFacturas
         Me.btnClose = New System.Windows.Forms.Button
         Me.PrintDialog1 = New System.Windows.Forms.PrintDialog
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog
-        Me.Button3 = New System.Windows.Forms.Button
         Me.Button2 = New System.Windows.Forms.Button
         Me.Button1 = New System.Windows.Forms.Button
         Me.btnExpXML = New System.Windows.Forms.Button
@@ -98,17 +97,6 @@ Partial Class frmFacturas
         'SaveFileDialog1
         '
         Me.SaveFileDialog1.Filter = "Archivo PDF (*.pdf) |*.pdf"
-        '
-        'Button3
-        '
-        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button3.BackgroundImage = Global.FacturaNET.My.Resources.Resources.adenda
-        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button3.Location = New System.Drawing.Point(1007, 381)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(36, 36)
-        Me.Button3.TabIndex = 16
-        Me.Button3.UseVisualStyleBackColor = True
         '
         'Button2
         '
@@ -209,7 +197,6 @@ Partial Class frmFacturas
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1048, 501)
-        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.Button1)
@@ -245,5 +232,4 @@ Partial Class frmFacturas
     Friend WithEvents SaveFileDialog1 As System.Windows.Forms.SaveFileDialog
     Friend WithEvents btnExpXML As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button3 As System.Windows.Forms.Button
 End Class

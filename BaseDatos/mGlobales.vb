@@ -22,5 +22,6 @@ Public Module mGlobales
         gConn = New MySqlConnection(CadenaConexion(pConfig.Servidor, pConfig.Puerto, pConfig.Usuario, pConfig.Password, pConfig.BaseDatos))
         gConn.Open()
     End Sub
+  
 
 End Module
