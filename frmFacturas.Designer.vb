@@ -30,6 +30,7 @@ Partial Class frmFacturas
         Me.btnClose = New System.Windows.Forms.Button
         Me.PrintDialog1 = New System.Windows.Forms.PrintDialog
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog
+        Me.Button3 = New System.Windows.Forms.Button
         Me.Button2 = New System.Windows.Forms.Button
         Me.Button1 = New System.Windows.Forms.Button
         Me.btnExpXML = New System.Windows.Forms.Button
@@ -53,12 +54,12 @@ Partial Class frmFacturas
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         grdFacturas_DesignTimeLayout.LayoutString = resources.GetString("grdFacturas_DesignTimeLayout.LayoutString")
         Me.grdFacturas.DesignTimeLayout = grdFacturas_DesignTimeLayout
-        Me.grdFacturas.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.grdFacturas.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.grdFacturas.GroupByBoxVisible = False
         Me.grdFacturas.HideSelection = Janus.Windows.GridEX.HideSelection.Highlight
         Me.grdFacturas.Location = New System.Drawing.Point(4, 47)
         Me.grdFacturas.Name = "grdFacturas"
-        Me.grdFacturas.Size = New System.Drawing.Size(997, 414)
+        Me.grdFacturas.Size = New System.Drawing.Size(938, 414)
         Me.grdFacturas.TabIndex = 6
         '
         'Label1
@@ -82,7 +83,7 @@ Partial Class frmFacturas
         'btnClose
         '
         Me.btnClose.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnClose.Location = New System.Drawing.Point(475, 470)
+        Me.btnClose.Location = New System.Drawing.Point(445, 470)
         Me.btnClose.Name = "btnClose"
         Me.btnClose.Size = New System.Drawing.Size(75, 23)
         Me.btnClose.TabIndex = 14
@@ -98,11 +99,21 @@ Partial Class frmFacturas
         '
         Me.SaveFileDialog1.Filter = "Archivo PDF (*.pdf) |*.pdf"
         '
+        'Button3
+        '
+        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button3.Image = Global.FacturaNET.My.Resources.Resources.CorreoFacturas2
+        Me.Button3.Location = New System.Drawing.Point(948, 382)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(36, 36)
+        Me.Button3.TabIndex = 16
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'Button2
         '
         Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button2.Image = Global.FacturaNET.My.Resources.Resources.excel_8
-        Me.Button2.Location = New System.Drawing.Point(1007, 339)
+        Me.Button2.Location = New System.Drawing.Point(948, 340)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(36, 36)
         Me.Button2.TabIndex = 15
@@ -122,7 +133,7 @@ Partial Class frmFacturas
         Me.btnExpXML.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnExpXML.Enabled = False
         Me.btnExpXML.Image = Global.FacturaNET.My.Resources.Resources.Xml
-        Me.btnExpXML.Location = New System.Drawing.Point(1007, 297)
+        Me.btnExpXML.Location = New System.Drawing.Point(948, 297)
         Me.btnExpXML.Name = "btnExpXML"
         Me.btnExpXML.Size = New System.Drawing.Size(36, 36)
         Me.btnExpXML.TabIndex = 10
@@ -133,7 +144,7 @@ Partial Class frmFacturas
         Me.btnToPDF.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnToPDF.Enabled = False
         Me.btnToPDF.Image = Global.FacturaNET.My.Resources.Resources.pdf
-        Me.btnToPDF.Location = New System.Drawing.Point(1007, 255)
+        Me.btnToPDF.Location = New System.Drawing.Point(948, 255)
         Me.btnToPDF.Name = "btnToPDF"
         Me.btnToPDF.Size = New System.Drawing.Size(36, 36)
         Me.btnToPDF.TabIndex = 10
@@ -144,7 +155,7 @@ Partial Class frmFacturas
         Me.btnImprimir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnImprimir.Enabled = False
         Me.btnImprimir.Image = Global.FacturaNET.My.Resources.Resources.imprimir1
-        Me.btnImprimir.Location = New System.Drawing.Point(1007, 213)
+        Me.btnImprimir.Location = New System.Drawing.Point(948, 213)
         Me.btnImprimir.Name = "btnImprimir"
         Me.btnImprimir.Size = New System.Drawing.Size(36, 36)
         Me.btnImprimir.TabIndex = 10
@@ -155,7 +166,7 @@ Partial Class frmFacturas
         Me.btnDel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnDel.Enabled = False
         Me.btnDel.Image = Global.FacturaNET.My.Resources.Resources.delete
-        Me.btnDel.Location = New System.Drawing.Point(1007, 171)
+        Me.btnDel.Location = New System.Drawing.Point(948, 171)
         Me.btnDel.Name = "btnDel"
         Me.btnDel.Size = New System.Drawing.Size(36, 36)
         Me.btnDel.TabIndex = 10
@@ -166,7 +177,7 @@ Partial Class frmFacturas
         Me.btnView.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnView.Enabled = False
         Me.btnView.Image = Global.FacturaNET.My.Resources.Resources.buscar
-        Me.btnView.Location = New System.Drawing.Point(1007, 129)
+        Me.btnView.Location = New System.Drawing.Point(948, 129)
         Me.btnView.Name = "btnView"
         Me.btnView.Size = New System.Drawing.Size(36, 36)
         Me.btnView.TabIndex = 9
@@ -176,7 +187,7 @@ Partial Class frmFacturas
         '
         Me.btnAdd.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnAdd.Image = Global.FacturaNET.My.Resources.Resources.add
-        Me.btnAdd.Location = New System.Drawing.Point(1007, 87)
+        Me.btnAdd.Location = New System.Drawing.Point(948, 87)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(36, 36)
         Me.btnAdd.TabIndex = 8
@@ -186,7 +197,7 @@ Partial Class frmFacturas
         '
         Me.btnActualizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnActualizar.Image = Global.FacturaNET.My.Resources.Resources.actualizar
-        Me.btnActualizar.Location = New System.Drawing.Point(1007, 45)
+        Me.btnActualizar.Location = New System.Drawing.Point(948, 45)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(36, 36)
         Me.btnActualizar.TabIndex = 7
@@ -196,7 +207,8 @@ Partial Class frmFacturas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1048, 501)
+        Me.ClientSize = New System.Drawing.Size(989, 501)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.btnClose)
         Me.Controls.Add(Me.Button1)
@@ -232,4 +244,5 @@ Partial Class frmFacturas
     Friend WithEvents SaveFileDialog1 As System.Windows.Forms.SaveFileDialog
     Friend WithEvents btnExpXML As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Button3 As System.Windows.Forms.Button
 End Class

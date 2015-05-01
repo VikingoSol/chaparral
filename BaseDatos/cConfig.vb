@@ -189,6 +189,10 @@ Public Class cConfigGlobal
                 Else
                     vConfig.ProveedorTimbres = eProveedorTimbres.Advans
                 End If
+                vConfig.servidorsmtp = .Item("servidorsmtp")
+                vConfig.smtpcuenta = .Item("smtpcuenta")
+                vConfig.smtppuerto = .Item("smtppuerto")
+                vConfig.smtppassword = .Item("smtppassword")
             End With
 
         End If
@@ -209,7 +213,7 @@ Public Class cConfigGlobal
     Public Sub GuardarConfiguracion(ByVal pConfig As dConfigGlobal, ByVal rfc As String)
         Try
             If gConn.State <> ConnectionState.Open Then gConn.Open()
-            Dim vCmd As New MySqlCommand("UPDATE config SET tipo_cambio=?tc, nextfolio=?folio,iva=?iva,rfc=?reg, tipo_cambio=?tcambio, pass=?pass, no_cer=?nocer, serie=?serie,cfdi_token=?token, cfdi_id=?cfdi_id, cfdi_url=?ws, razon_social=?razon, regimen_fiscal=?regimen, df_calle=?calle, df_noext=?noext, df_noint=?noint, df_colonia=?col, df_localidad=?loc, df_ref=?ref, df_municipio=?mun, df_estado=?estado, df_pais=?pais, df_cp=?cp, cfdi_can_url=?wscan, cfdi_can_id=?canid where id=?rfc", gConn)
+            Dim vCmd As New MySqlCommand("UPDATE config SET tipo_cambio=?tc, nextfolio=?folio,iva=?iva,rfc=?reg, tipo_cambio=?tcambio, pass=?pass, no_cer=?nocer, serie=?serie,cfdi_token=?token, cfdi_id=?cfdi_id, cfdi_url=?ws, razon_social=?razon, regimen_fiscal=?regimen, df_calle=?calle, df_noext=?noext, df_noint=?noint, df_colonia=?col, df_localidad=?loc, df_ref=?ref, df_municipio=?mun, df_estado=?estado, df_pais=?pais, df_cp=?cp, cfdi_can_url=?wscan, cfdi_can_id=?canid, servidorsmtp=?servidorsmtp, smtpcuenta=?smtpcuenta, smtppuerto=?smtppuerto, smtppassword=?smtppassword where id=?rfc", gConn)
             vCmd.Parameters.AddWithValue("?folio", pConfig.NextFolio)
             vCmd.Parameters.AddWithValue("?iva", pConfig.IVA)
             vCmd.Parameters.AddWithValue("?reg", pConfig.Registro_Federal)
@@ -236,6 +240,11 @@ Public Class cConfigGlobal
             vCmd.Parameters.AddWithValue("?canid", pConfig.CFDI_CancelId)
             vCmd.Parameters.AddWithValue("?tc", pConfig.TipoCambio)
             vCmd.Parameters.AddWithValue("?rfc", rfc)
+
+            vCmd.Parameters.AddWithValue("?servidorsmtp", pConfig.servidorsmtp)
+            vCmd.Parameters.AddWithValue("?smtpcuenta", pConfig.smtpcuenta)
+            vCmd.Parameters.AddWithValue("?smtppuerto", pConfig.smtppuerto)
+            vCmd.Parameters.AddWithValue("?smtppassword", pConfig.smtppassword)
             vCmd.ExecuteNonQuery()
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -305,6 +314,12 @@ Public Class dConfigGlobal
     Public CFDI_CancelId As String
     Public Direccion_Fiscal As New dDireccion
     Public ProveedorTimbres As eProveedorTimbres
+    ' datos cuenta email emisor 
+    Public servidorsmtp As String
+    Public smtpcuenta As String
+    Public smtppuerto As Integer
+    Public smtppassword As String
+
     'Public TipoCambio As Double
 End Class
 

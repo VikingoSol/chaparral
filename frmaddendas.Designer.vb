@@ -22,15 +22,15 @@ Partial Class frmaddendas
         Me.Button5 = New System.Windows.Forms.Button
         Me.Label44 = New System.Windows.Forms.Label
         Me.Label43 = New System.Windows.Forms.Label
-        Me.Txtnoarticulos = New System.Windows.Forms.TextBox
+        Me.TxtCantidadArticulos = New System.Windows.Forms.TextBox
         Me.Label42 = New System.Windows.Forms.Label
-        Me.TextBox9 = New System.Windows.Forms.TextBox
+        Me.Txtfoliopedido = New System.Windows.Forms.TextBox
         Me.Label39 = New System.Windows.Forms.Label
-        Me.TextBox8 = New System.Windows.Forms.TextBox
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker
+        Me.FolioNotaEntrada = New System.Windows.Forms.TextBox
+        Me.FechaEntregaM = New System.Windows.Forms.DateTimePicker
         Me.Label38 = New System.Windows.Forms.Label
         Me.Label37 = New System.Windows.Forms.Label
-        Me.TextBox7 = New System.Windows.Forms.TextBox
+        Me.Txtcantidadpedidos = New System.Windows.Forms.TextBox
         Me.Label33 = New System.Windows.Forms.Label
         Me.Txtiva = New System.Windows.Forms.TextBox
         Me.Txtieps = New System.Windows.Forms.TextBox
@@ -42,9 +42,9 @@ Partial Class frmaddendas
         Me.Label35 = New System.Windows.Forms.Label
         Me.Label36 = New System.Windows.Forms.Label
         Me.Label31 = New System.Windows.Forms.Label
-        Me.TextBox1 = New System.Windows.Forms.TextBox
+        Me.Txtcantidadbultos = New System.Windows.Forms.TextBox
         Me.Label30 = New System.Windows.Forms.Label
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox
+        Me.Cmbcumple = New System.Windows.Forms.ComboBox
         Me.Label29 = New System.Windows.Forms.Label
         Me.Label28 = New System.Windows.Forms.Label
         Me.Label27 = New System.Windows.Forms.Label
@@ -67,7 +67,7 @@ Partial Class frmaddendas
         Me.Txtdescuento = New System.Windows.Forms.TextBox
         Me.CmbtiendaP = New System.Windows.Forms.ComboBox
         Me.Label2 = New System.Windows.Forms.Label
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox
+        Me.CmbPedidoEmitidoProveedor = New System.Windows.Forms.ComboBox
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -79,7 +79,7 @@ Partial Class frmaddendas
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(84, 23)
         Me.Button5.TabIndex = 21
-        Me.Button5.Text = "Salir"
+        Me.Button5.Text = "Grabar"
         Me.Button5.UseVisualStyleBackColor = True
         '
         'Label44
@@ -100,16 +100,16 @@ Partial Class frmaddendas
         Me.Label43.TabIndex = 119
         Me.Label43.Text = "Cantidad Articulos:"
         '
-        'Txtnoarticulos
+        'TxtCantidadArticulos
         '
-        Me.Txtnoarticulos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txtnoarticulos.ForeColor = System.Drawing.Color.DarkRed
-        Me.Txtnoarticulos.Location = New System.Drawing.Point(338, 60)
-        Me.Txtnoarticulos.Name = "Txtnoarticulos"
-        Me.Txtnoarticulos.Size = New System.Drawing.Size(82, 20)
-        Me.Txtnoarticulos.TabIndex = 120
-        Me.Txtnoarticulos.Text = "0"
-        Me.Txtnoarticulos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.TxtCantidadArticulos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtCantidadArticulos.ForeColor = System.Drawing.Color.DarkRed
+        Me.TxtCantidadArticulos.Location = New System.Drawing.Point(338, 60)
+        Me.TxtCantidadArticulos.Name = "TxtCantidadArticulos"
+        Me.TxtCantidadArticulos.Size = New System.Drawing.Size(82, 20)
+        Me.TxtCantidadArticulos.TabIndex = 120
+        Me.TxtCantidadArticulos.Text = "0"
+        Me.TxtCantidadArticulos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label42
         '
@@ -120,45 +120,45 @@ Partial Class frmaddendas
         Me.Label42.TabIndex = 117
         Me.Label42.Text = "Folio Pedido:"
         '
-        'TextBox9
+        'Txtfoliopedido
         '
-        Me.TextBox9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox9.ForeColor = System.Drawing.Color.DarkRed
-        Me.TextBox9.Location = New System.Drawing.Point(73, 60)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(82, 20)
-        Me.TextBox9.TabIndex = 118
-        Me.TextBox9.Text = "0"
-        Me.TextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.Txtfoliopedido.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txtfoliopedido.ForeColor = System.Drawing.Color.DarkRed
+        Me.Txtfoliopedido.Location = New System.Drawing.Point(73, 60)
+        Me.Txtfoliopedido.Name = "Txtfoliopedido"
+        Me.Txtfoliopedido.Size = New System.Drawing.Size(82, 20)
+        Me.Txtfoliopedido.TabIndex = 118
+        Me.Txtfoliopedido.Text = "0"
+        Me.Txtfoliopedido.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label39
         '
         Me.Label39.AutoSize = True
-        Me.Label39.Location = New System.Drawing.Point(565, 258)
+        Me.Label39.Location = New System.Drawing.Point(533, 255)
         Me.Label39.Name = "Label39"
         Me.Label39.Size = New System.Drawing.Size(98, 13)
         Me.Label39.TabIndex = 113
         Me.Label39.Text = "Folio Nota Entrada:"
         '
-        'TextBox8
+        'FolioNotaEntrada
         '
-        Me.TextBox8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox8.ForeColor = System.Drawing.Color.DarkRed
-        Me.TextBox8.Location = New System.Drawing.Point(681, 255)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(95, 20)
-        Me.TextBox8.TabIndex = 114
-        Me.TextBox8.Text = "0"
-        Me.TextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.FolioNotaEntrada.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.FolioNotaEntrada.ForeColor = System.Drawing.Color.DarkRed
+        Me.FolioNotaEntrada.Location = New System.Drawing.Point(638, 252)
+        Me.FolioNotaEntrada.Name = "FolioNotaEntrada"
+        Me.FolioNotaEntrada.Size = New System.Drawing.Size(144, 20)
+        Me.FolioNotaEntrada.TabIndex = 114
+        Me.FolioNotaEntrada.Text = "0"
+        Me.FolioNotaEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'DateTimePicker1
+        'FechaEntregaM
         '
-        Me.DateTimePicker1.CustomFormat = "dd / MMM / yyyy"
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(387, 252)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(115, 20)
-        Me.DateTimePicker1.TabIndex = 112
+        Me.FechaEntregaM.CustomFormat = "dd / MMM / yyyy"
+        Me.FechaEntregaM.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.FechaEntregaM.Location = New System.Drawing.Point(387, 252)
+        Me.FechaEntregaM.Name = "FechaEntregaM"
+        Me.FechaEntregaM.Size = New System.Drawing.Size(115, 20)
+        Me.FechaEntregaM.TabIndex = 112
         '
         'Label38
         '
@@ -178,16 +178,16 @@ Partial Class frmaddendas
         Me.Label37.TabIndex = 109
         Me.Label37.Text = "Cantidad Pedidos"
         '
-        'TextBox7
+        'Txtcantidadpedidos
         '
-        Me.TextBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox7.ForeColor = System.Drawing.Color.DarkRed
-        Me.TextBox7.Location = New System.Drawing.Point(167, 248)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(88, 20)
-        Me.TextBox7.TabIndex = 110
-        Me.TextBox7.Text = "0"
-        Me.TextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.Txtcantidadpedidos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txtcantidadpedidos.ForeColor = System.Drawing.Color.DarkRed
+        Me.Txtcantidadpedidos.Location = New System.Drawing.Point(167, 248)
+        Me.Txtcantidadpedidos.Name = "Txtcantidadpedidos"
+        Me.Txtcantidadpedidos.Size = New System.Drawing.Size(88, 20)
+        Me.Txtcantidadpedidos.TabIndex = 110
+        Me.Txtcantidadpedidos.Text = "0"
+        Me.Txtcantidadpedidos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label33
         '
@@ -289,16 +289,16 @@ Partial Class frmaddendas
         Me.Label31.TabIndex = 97
         Me.Label31.Text = "# Bultos:"
         '
-        'TextBox1
+        'Txtcantidadbultos
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.ForeColor = System.Drawing.Color.DarkRed
-        Me.TextBox1.Location = New System.Drawing.Point(323, 133)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(79, 20)
-        Me.TextBox1.TabIndex = 98
-        Me.TextBox1.Text = "0"
-        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.Txtcantidadbultos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txtcantidadbultos.ForeColor = System.Drawing.Color.DarkRed
+        Me.Txtcantidadbultos.Location = New System.Drawing.Point(323, 133)
+        Me.Txtcantidadbultos.Name = "Txtcantidadbultos"
+        Me.Txtcantidadbultos.Size = New System.Drawing.Size(79, 20)
+        Me.Txtcantidadbultos.TabIndex = 98
+        Me.Txtcantidadbultos.Text = "0"
+        Me.Txtcantidadbultos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label30
         '
@@ -311,17 +311,17 @@ Partial Class frmaddendas
         Me.Label30.TabIndex = 96
         Me.Label30.Text = "Addenda Soriana"
         '
-        'ComboBox1
+        'Cmbcumple
         '
-        Me.ComboBox1.DisplayMember = "metodo"
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Si", "No"})
-        Me.ComboBox1.Location = New System.Drawing.Point(475, 131)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(93, 21)
-        Me.ComboBox1.TabIndex = 95
-        Me.ComboBox1.ValueMember = "id"
+        Me.Cmbcumple.DisplayMember = "metodo"
+        Me.Cmbcumple.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Cmbcumple.FormattingEnabled = True
+        Me.Cmbcumple.Items.AddRange(New Object() {"Si", "No"})
+        Me.Cmbcumple.Location = New System.Drawing.Point(475, 131)
+        Me.Cmbcumple.Name = "Cmbcumple"
+        Me.Cmbcumple.Size = New System.Drawing.Size(93, 21)
+        Me.Cmbcumple.TabIndex = 95
+        Me.Cmbcumple.ValueMember = "id"
         '
         'Label29
         '
@@ -491,14 +491,14 @@ Partial Class frmaddendas
         Me.GroupBox1.Controls.Add(Me.Txtconsecutivo)
         Me.GroupBox1.Controls.Add(Me.Label39)
         Me.GroupBox1.Controls.Add(Me.cmbMoneda)
-        Me.GroupBox1.Controls.Add(Me.TextBox8)
+        Me.GroupBox1.Controls.Add(Me.FolioNotaEntrada)
         Me.GroupBox1.Controls.Add(Me.Label25)
         Me.GroupBox1.Controls.Add(Me.Txttipobulto)
         Me.GroupBox1.Controls.Add(Me.Label27)
-        Me.GroupBox1.Controls.Add(Me.DateTimePicker1)
+        Me.GroupBox1.Controls.Add(Me.FechaEntregaM)
         Me.GroupBox1.Controls.Add(Me.cmbtienda)
         Me.GroupBox1.Controls.Add(Me.Label26)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.Txtcantidadbultos)
         Me.GroupBox1.Controls.Add(Me.Label38)
         Me.GroupBox1.Controls.Add(Me.dpFecha)
         Me.GroupBox1.Controls.Add(Me.Label22)
@@ -506,9 +506,9 @@ Partial Class frmaddendas
         Me.GroupBox1.Controls.Add(Me.Label33)
         Me.GroupBox1.Controls.Add(Me.Label37)
         Me.GroupBox1.Controls.Add(Me.Txtiva)
-        Me.GroupBox1.Controls.Add(Me.ComboBox1)
+        Me.GroupBox1.Controls.Add(Me.Cmbcumple)
         Me.GroupBox1.Controls.Add(Me.Txtieps)
-        Me.GroupBox1.Controls.Add(Me.TextBox7)
+        Me.GroupBox1.Controls.Add(Me.Txtcantidadpedidos)
         Me.GroupBox1.Controls.Add(Me.Label32)
         Me.GroupBox1.Controls.Add(Me.Label29)
         Me.GroupBox1.Controls.Add(Me.Txtotrosi)
@@ -578,27 +578,27 @@ Partial Class frmaddendas
         Me.Label2.TabIndex = 124
         Me.Label2.Text = "Tienda:"
         '
-        'ComboBox3
+        'CmbPedidoEmitidoProveedor
         '
-        Me.ComboBox3.DisplayMember = "metodo"
-        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Items.AddRange(New Object() {"SI", "NO"})
-        Me.ComboBox3.Location = New System.Drawing.Point(502, 60)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(124, 21)
-        Me.ComboBox3.TabIndex = 126
-        Me.ComboBox3.ValueMember = "id"
+        Me.CmbPedidoEmitidoProveedor.DisplayMember = "metodo"
+        Me.CmbPedidoEmitidoProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CmbPedidoEmitidoProveedor.FormattingEnabled = True
+        Me.CmbPedidoEmitidoProveedor.Items.AddRange(New Object() {"SI", "NO"})
+        Me.CmbPedidoEmitidoProveedor.Location = New System.Drawing.Point(502, 60)
+        Me.CmbPedidoEmitidoProveedor.Name = "CmbPedidoEmitidoProveedor"
+        Me.CmbPedidoEmitidoProveedor.Size = New System.Drawing.Size(124, 21)
+        Me.CmbPedidoEmitidoProveedor.TabIndex = 126
+        Me.CmbPedidoEmitidoProveedor.ValueMember = "id"
         '
         'GroupBox2
         '
         Me.GroupBox2.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.GroupBox2.Controls.Add(Me.ComboBox3)
-        Me.GroupBox2.Controls.Add(Me.TextBox9)
+        Me.GroupBox2.Controls.Add(Me.CmbPedidoEmitidoProveedor)
+        Me.GroupBox2.Controls.Add(Me.Txtfoliopedido)
         Me.GroupBox2.Controls.Add(Me.CmbtiendaP)
         Me.GroupBox2.Controls.Add(Me.Label42)
         Me.GroupBox2.Controls.Add(Me.Label2)
-        Me.GroupBox2.Controls.Add(Me.Txtnoarticulos)
+        Me.GroupBox2.Controls.Add(Me.TxtCantidadArticulos)
         Me.GroupBox2.Controls.Add(Me.Label43)
         Me.GroupBox2.Controls.Add(Me.Label44)
         Me.GroupBox2.Location = New System.Drawing.Point(27, 359)
@@ -631,15 +631,15 @@ Partial Class frmaddendas
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents Label44 As System.Windows.Forms.Label
     Friend WithEvents Label43 As System.Windows.Forms.Label
-    Friend WithEvents Txtnoarticulos As System.Windows.Forms.TextBox
+    Friend WithEvents TxtCantidadArticulos As System.Windows.Forms.TextBox
     Friend WithEvents Label42 As System.Windows.Forms.Label
-    Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
+    Friend WithEvents Txtfoliopedido As System.Windows.Forms.TextBox
     Friend WithEvents Label39 As System.Windows.Forms.Label
-    Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents FolioNotaEntrada As System.Windows.Forms.TextBox
+    Friend WithEvents FechaEntregaM As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label38 As System.Windows.Forms.Label
     Friend WithEvents Label37 As System.Windows.Forms.Label
-    Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
+    Friend WithEvents Txtcantidadpedidos As System.Windows.Forms.TextBox
     Friend WithEvents Label33 As System.Windows.Forms.Label
     Friend WithEvents Txtiva As System.Windows.Forms.TextBox
     Friend WithEvents Txtieps As System.Windows.Forms.TextBox
@@ -651,9 +651,9 @@ Partial Class frmaddendas
     Friend WithEvents Label35 As System.Windows.Forms.Label
     Friend WithEvents Label36 As System.Windows.Forms.Label
     Friend WithEvents Label31 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents Txtcantidadbultos As System.Windows.Forms.TextBox
     Friend WithEvents Label30 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
+    Friend WithEvents Cmbcumple As System.Windows.Forms.ComboBox
     Friend WithEvents Label29 As System.Windows.Forms.Label
     Friend WithEvents Label28 As System.Windows.Forms.Label
     Friend WithEvents Label27 As System.Windows.Forms.Label
@@ -676,6 +676,6 @@ Partial Class frmaddendas
     Friend WithEvents CmbtiendaP As System.Windows.Forms.ComboBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents CmbEntregaM As System.Windows.Forms.ComboBox
-    Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
+    Friend WithEvents CmbPedidoEmitidoProveedor As System.Windows.Forms.ComboBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
 End Class

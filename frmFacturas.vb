@@ -4,9 +4,13 @@ Imports FacturaNETLib.Manager
 Imports FacturaNETLib.Certificate
 Imports FacturaNETLib.Document
 Imports System.Xml
+Imports System.Net.Mail
+Imports System.Net
 Public Class frmFacturas
+    Dim vCliente As New dCliente
     Private Shared _ObjSingleton As frmFacturas = Nothing
     Dim vFechaFacs As Date
+    Private Declare Function IsNetworkAlive Lib "SENSAPI.DLL" (ByRef lpdwFlags As Long) As Long
 
     Public Shared Function GetInstance() As frmFacturas
         If _ObjSingleton Is Nothing OrElse _
@@ -262,7 +266,7 @@ Public Class frmFacturas
     Private Sub Imprimir_Factura(Optional ByVal pId As Integer = -1)
 
         Dim vReport As FastReport.Report = GetFacturaRep(pId)
-        PrintDialog1.PrinterSettings.Copies = 2
+        PrintDialog1.PrinterSettings.Copies = 3
         'vReport.PrintSettings.Printer = pImpresora
         If Me.PrintDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
             vReport.PrintSettings.Printer = PrintDialog1.PrinterSettings.PrinterName
@@ -301,7 +305,6 @@ Public Class frmFacturas
             Dim vFile As New IO.StreamWriter(Me.SaveFileDialog1.FileName)
             Dim vXml As String = cFacturas.GetFacturaXML(Me.grdFacturas.GetRow.Cells("id").Value)
             vFile.Write(vXml)
-            MsgBox(vXml)
             vFile.Flush()
             vFile.Close()
         End If
@@ -337,5 +340,91 @@ Public Class frmFacturas
 
     Private Sub dpFecha_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dpFecha.ValueChanged
 
+    End Sub
+
+    Private Sub Button3_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
+        Dim vReport As FastReport.Report = GetFacturaRep()
+        If IsNothing(vReport) Then Exit Sub
+        'vReport.PrintSettings.Printer = pImpresora
+        Dim pathfilepdf As String
+        Dim pathfilexml As String
+        'pdf
+        pathfilepdf = "c:\correo\" & Me.grdFacturas.GetRow.Cells("rfc_emisor").Value & "_" & Me.grdFacturas.GetRow.Cells("folio").Value & ".pdf"
+        Dim export As New FastReport.Export.Pdf.PDFExport
+        export.EmbeddingFonts = True
+        vReport.Prepare()
+        export.Export(vReport, pathfilepdf)
+        vReport.Dispose()
+        pathfilexml = "c:\correo\" & Me.grdFacturas.GetRow.Cells("rfc_emisor").Value & "_" & Me.grdFacturas.GetRow.Cells("folio").Value & ".xml"
+        ' xml
+        Dim vFile As New IO.StreamWriter(pathfilexml)
+        Dim vXml As String = cFacturas.GetFacturaXML(Me.grdFacturas.GetRow.Cells("id").Value)
+        vFile.Write(vXml)
+        vFile.Flush()
+        vFile.Close()
+        ' buscar email del cliente
+        Dim vClientes As New cClientes
+        vCliente = vClientes.GetClienteNombre(Me.grdFacturas.GetRow.Cells("cliente").Value)
+
+        'Dim correo As String = InputBox("Enviar archivo xml y pdf", "Teclee email Cliente", vCliente.Email, 100, 100)
+        EnvioMail(pathfilepdf, pathfilexml, vCliente.Email)
+    End Sub
+    Public Sub EnvioMail(ByVal pdf As String, ByVal xml As String, ByVal correo_cliente As String)
+        Dim Ret As Long
+        'Si el Api retorna 0 quiere decir que no hay ningun tipo de conexión de Red   
+        Dim vConfig As New dConfigGlobal
+        Dim servidorsmtp As String = vConfig.servidorsmtp
+        Dim smtpcuenta As String = vConfig.smtpcuenta
+        Dim smtppuerto As Integer = vConfig.smtppuerto
+        Dim smtppassword As String = vConfig.smtppassword
+
+        If IsNetworkAlive(Ret) = 0 Then
+            MsgBox("No existe conexion a internet" & vbNewLine + "Error enviando E-Mail." & vbNewLine & vbNewLine + "Por favor revise su conexion a internet" & vbNewLine + "e intentelo nuevamente.", MsgBoxStyle.Exclamation)
+        Else
+            If IsDBNull(servidorsmtp) Or servidorsmtp = "" Or IsDBNull(smtpcuenta.ToString.Trim) Or smtpcuenta.ToString.Trim = "" Then
+                MsgBox("No esta definida su cuenta de email del EMISOR de la factura !!!")
+                Exit Sub
+            End If
+            If IsDBNull(correo_cliente) Or correo_cliente = "" Then
+                MsgBox("Porfavor defina el email del CLIENTE y renvie la factura !!!")
+                Exit Sub
+            End If
+            Dim attachmentList As New ArrayList
+            attachmentList.Clear()
+            Dim MyMailMsg As New MailMessage
+            Dim HostName As String = My.Computer.Name
+            Dim AddFile As String = pdf
+            Dim filexml As String = xml
+            attachmentList.Add(AddFile)
+            attachmentList.Add(filexml)
+            Try
+                MyMailMsg.From = New MailAddress(smtpcuenta) '  "tonantzintn@gmail.com")
+                MyMailMsg.To.Add(correo_cliente) '"zorroedgar@hotmail.com")
+                MyMailMsg.Subject = "FACTURA Y ARCHIVO"
+
+                Dim adjuntoXML As String = ""
+                Dim adjuntoPDF As String = ""
+                adjuntoXML = filexml
+                adjuntoPDF = AddFile
+
+                MyMailMsg.Attachments.Clear()
+                Dim archivo1 As New Attachment(adjuntoXML)
+                Dim archivo2 As New Attachment(adjuntoPDF)
+
+                MyMailMsg.Attachments.Add(archivo1)
+                MyMailMsg.Attachments.Add(archivo2)
+
+                MyMailMsg.Body = ("ENVIO ARCHIVO XML Y PDF ADJUNTOS DE LA FACTURA SOLICITADA.")
+                Dim SMTP As New SmtpClient(servidorsmtp) 'para enviar por Hotmail, SMTP de Gmail (smtp.gmail.com) veo que en tu codigo te falto agregar "smtp"
+                SMTP.Port = smtppuerto
+                SMTP.EnableSsl = True
+                SMTP.Credentials = New System.Net.NetworkCredential(smtpcuenta, smtppassword)
+                SMTP.Send(MyMailMsg)
+                MsgBox("Su Factura CFDI se ha enviado exitosamente", MsgBoxStyle.Information, "Titulo de la Ventana")
+            Catch ex As Exception
+                MsgBox(ex.InnerException.ToString)
+            End Try
+
+        End If
     End Sub
 End Class

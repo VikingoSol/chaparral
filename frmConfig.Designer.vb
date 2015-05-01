@@ -94,11 +94,41 @@ Partial Class frmConfig
         Me.Label27 = New System.Windows.Forms.Label
         Me.Label28 = New System.Windows.Forms.Label
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
+        Me.TabPage5 = New System.Windows.Forms.TabPage
+        Me.TextBox1 = New System.Windows.Forms.TextBox
+        Me.TextBox2 = New System.Windows.Forms.TextBox
+        Me.TextBox3 = New System.Windows.Forms.TextBox
+        Me.Label32 = New System.Windows.Forms.Label
+        Me.TextBox4 = New System.Windows.Forms.TextBox
+        Me.TextBox5 = New System.Windows.Forms.TextBox
+        Me.TextBox6 = New System.Windows.Forms.TextBox
+        Me.TextBox7 = New System.Windows.Forms.TextBox
+        Me.TextBox8 = New System.Windows.Forms.TextBox
+        Me.TextBox9 = New System.Windows.Forms.TextBox
+        Me.TextBox10 = New System.Windows.Forms.TextBox
+        Me.Label33 = New System.Windows.Forms.Label
+        Me.Label34 = New System.Windows.Forms.Label
+        Me.Label35 = New System.Windows.Forms.Label
+        Me.Label36 = New System.Windows.Forms.Label
+        Me.Label37 = New System.Windows.Forms.Label
+        Me.Label38 = New System.Windows.Forms.Label
+        Me.Label39 = New System.Windows.Forms.Label
+        Me.Label40 = New System.Windows.Forms.Label
+        Me.Label41 = New System.Windows.Forms.Label
+        Me.Txtpassword = New System.Windows.Forms.TextBox
+        Me.TextBox12 = New System.Windows.Forms.TextBox
+        Me.Txtcuenta = New System.Windows.Forms.TextBox
+        Me.Txtservidoesmtp = New System.Windows.Forms.TextBox
+        Me.Label42 = New System.Windows.Forms.Label
+        Me.Label43 = New System.Windows.Forms.Label
+        Me.Label44 = New System.Windows.Forms.Label
+        Me.Label45 = New System.Windows.Forms.Label
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.TabPage4.SuspendLayout()
+        Me.TabPage5.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnAceptar
@@ -125,6 +155,7 @@ Partial Class frmConfig
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage4)
+        Me.TabControl1.Controls.Add(Me.TabPage5)
         Me.TabControl1.Location = New System.Drawing.Point(2, 5)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -766,6 +797,250 @@ Partial Class frmConfig
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
+        'TabPage5
+        '
+        Me.TabPage5.Controls.Add(Me.Txtpassword)
+        Me.TabPage5.Controls.Add(Me.TextBox12)
+        Me.TabPage5.Controls.Add(Me.Txtcuenta)
+        Me.TabPage5.Controls.Add(Me.Txtservidoesmtp)
+        Me.TabPage5.Controls.Add(Me.Label42)
+        Me.TabPage5.Controls.Add(Me.Label43)
+        Me.TabPage5.Controls.Add(Me.Label44)
+        Me.TabPage5.Controls.Add(Me.Label45)
+        Me.TabPage5.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage5.Name = "TabPage5"
+        Me.TabPage5.Size = New System.Drawing.Size(414, 254)
+        Me.TabPage5.TabIndex = 4
+        Me.TabPage5.Text = "Cuenta email"
+        Me.TabPage5.UseVisualStyleBackColor = True
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(74, 202)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(142, 20)
+        Me.TextBox1.TabIndex = 46
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(74, 178)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.Size = New System.Drawing.Size(223, 20)
+        Me.TextBox2.TabIndex = 45
+        '
+        'TextBox3
+        '
+        Me.TextBox3.Location = New System.Drawing.Point(74, 154)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.Size = New System.Drawing.Size(223, 20)
+        Me.TextBox3.TabIndex = 44
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.Location = New System.Drawing.Point(13, 134)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(55, 13)
+        Me.Label32.TabIndex = 33
+        Me.Label32.Text = "Municipio:"
+        '
+        'TextBox4
+        '
+        Me.TextBox4.Location = New System.Drawing.Point(74, 130)
+        Me.TextBox4.Name = "TextBox4"
+        Me.TextBox4.Size = New System.Drawing.Size(338, 20)
+        Me.TextBox4.TabIndex = 43
+        '
+        'TextBox5
+        '
+        Me.TextBox5.Location = New System.Drawing.Point(74, 106)
+        Me.TextBox5.Name = "TextBox5"
+        Me.TextBox5.Size = New System.Drawing.Size(338, 20)
+        Me.TextBox5.TabIndex = 42
+        '
+        'TextBox6
+        '
+        Me.TextBox6.Location = New System.Drawing.Point(74, 82)
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.Size = New System.Drawing.Size(338, 20)
+        Me.TextBox6.TabIndex = 41
+        '
+        'TextBox7
+        '
+        Me.TextBox7.Location = New System.Drawing.Point(74, 58)
+        Me.TextBox7.Name = "TextBox7"
+        Me.TextBox7.Size = New System.Drawing.Size(338, 20)
+        Me.TextBox7.TabIndex = 40
+        '
+        'TextBox8
+        '
+        Me.TextBox8.Location = New System.Drawing.Point(248, 34)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox8.TabIndex = 39
+        '
+        'TextBox9
+        '
+        Me.TextBox9.Location = New System.Drawing.Point(74, 34)
+        Me.TextBox9.Name = "TextBox9"
+        Me.TextBox9.Size = New System.Drawing.Size(100, 20)
+        Me.TextBox9.TabIndex = 38
+        '
+        'TextBox10
+        '
+        Me.TextBox10.Location = New System.Drawing.Point(74, 10)
+        Me.TextBox10.Name = "TextBox10"
+        Me.TextBox10.Size = New System.Drawing.Size(336, 20)
+        Me.TextBox10.TabIndex = 37
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.Location = New System.Drawing.Point(35, 206)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(33, 13)
+        Me.Label33.TabIndex = 36
+        Me.Label33.Text = "C.P. :"
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Location = New System.Drawing.Point(38, 182)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(30, 13)
+        Me.Label34.TabIndex = 35
+        Me.Label34.Text = "Pais:"
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.Location = New System.Drawing.Point(25, 158)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(43, 13)
+        Me.Label35.TabIndex = 34
+        Me.Label35.Text = "Estado:"
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Location = New System.Drawing.Point(6, 110)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(62, 13)
+        Me.Label36.TabIndex = 32
+        Me.Label36.Text = "Referencia:"
+        '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.Location = New System.Drawing.Point(12, 86)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(56, 13)
+        Me.Label37.TabIndex = 31
+        Me.Label37.Text = "Localidad:"
+        '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.Location = New System.Drawing.Point(23, 62)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(45, 13)
+        Me.Label38.TabIndex = 30
+        Me.Label38.Text = "Colonia:"
+        '
+        'Label39
+        '
+        Me.Label39.AutoSize = True
+        Me.Label39.Location = New System.Drawing.Point(3, 38)
+        Me.Label39.Name = "Label39"
+        Me.Label39.Size = New System.Drawing.Size(65, 13)
+        Me.Label39.TabIndex = 29
+        Me.Label39.Text = "No. Exterior:"
+        '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.Location = New System.Drawing.Point(180, 38)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(62, 13)
+        Me.Label40.TabIndex = 28
+        Me.Label40.Text = "No. Interior:"
+        '
+        'Label41
+        '
+        Me.Label41.AutoSize = True
+        Me.Label41.Location = New System.Drawing.Point(35, 14)
+        Me.Label41.Name = "Label41"
+        Me.Label41.Size = New System.Drawing.Size(33, 13)
+        Me.Label41.TabIndex = 27
+        Me.Label41.Text = "Calle:"
+        '
+        'Txtpassword
+        '
+        Me.Txtpassword.Location = New System.Drawing.Point(93, 69)
+        Me.Txtpassword.Name = "Txtpassword"
+        Me.Txtpassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.Txtpassword.Size = New System.Drawing.Size(128, 20)
+        Me.Txtpassword.TabIndex = 48
+        '
+        'TextBox12
+        '
+        Me.TextBox12.Location = New System.Drawing.Point(333, 44)
+        Me.TextBox12.Name = "TextBox12"
+        Me.TextBox12.Size = New System.Drawing.Size(73, 20)
+        Me.TextBox12.TabIndex = 47
+        Me.TextBox12.Text = "587"
+        Me.TextBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Txtcuenta
+        '
+        Me.Txtcuenta.Location = New System.Drawing.Point(93, 44)
+        Me.Txtcuenta.Name = "Txtcuenta"
+        Me.Txtcuenta.Size = New System.Drawing.Size(128, 20)
+        Me.Txtcuenta.TabIndex = 46
+        '
+        'Txtservidoesmtp
+        '
+        Me.Txtservidoesmtp.Location = New System.Drawing.Point(93, 20)
+        Me.Txtservidoesmtp.Name = "Txtservidoesmtp"
+        Me.Txtservidoesmtp.Size = New System.Drawing.Size(314, 20)
+        Me.Txtservidoesmtp.TabIndex = 45
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.Location = New System.Drawing.Point(36, 73)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(51, 13)
+        Me.Label42.TabIndex = 44
+        Me.Label42.Text = "Pasword:"
+        '
+        'Label43
+        '
+        Me.Label43.AutoSize = True
+        Me.Label43.Location = New System.Drawing.Point(39, 48)
+        Me.Label43.Name = "Label43"
+        Me.Label43.Size = New System.Drawing.Size(44, 13)
+        Me.Label43.TabIndex = 43
+        Me.Label43.Text = "Cuenta:"
+        '
+        'Label44
+        '
+        Me.Label44.AutoSize = True
+        Me.Label44.Location = New System.Drawing.Point(267, 48)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(61, 13)
+        Me.Label44.TabIndex = 42
+        Me.Label44.Text = "No. Puerto:"
+        '
+        'Label45
+        '
+        Me.Label45.AutoSize = True
+        Me.Label45.Location = New System.Drawing.Point(18, 24)
+        Me.Label45.Name = "Label45"
+        Me.Label45.Size = New System.Drawing.Size(69, 13)
+        Me.Label45.TabIndex = 41
+        Me.Label45.Text = "servidorsmtp:"
+        '
         'frmConfig
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -789,6 +1064,8 @@ Partial Class frmConfig
         Me.TabPage3.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
         Me.TabPage4.PerformLayout()
+        Me.TabPage5.ResumeLayout(False)
+        Me.TabPage5.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -864,4 +1141,33 @@ Partial Class frmConfig
     Friend WithEvents Label30 As System.Windows.Forms.Label
     Friend WithEvents txtTC As Janus.Windows.GridEX.EditControls.NumericEditBox
     Friend WithEvents Label31 As System.Windows.Forms.Label
+    Friend WithEvents TabPage5 As System.Windows.Forms.TabPage
+    Friend WithEvents Txtpassword As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox12 As System.Windows.Forms.TextBox
+    Friend WithEvents Txtcuenta As System.Windows.Forms.TextBox
+    Friend WithEvents Txtservidoesmtp As System.Windows.Forms.TextBox
+    Friend WithEvents Label42 As System.Windows.Forms.Label
+    Friend WithEvents Label43 As System.Windows.Forms.Label
+    Friend WithEvents Label44 As System.Windows.Forms.Label
+    Friend WithEvents Label45 As System.Windows.Forms.Label
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
+    Friend WithEvents Label32 As System.Windows.Forms.Label
+    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox10 As System.Windows.Forms.TextBox
+    Friend WithEvents Label33 As System.Windows.Forms.Label
+    Friend WithEvents Label34 As System.Windows.Forms.Label
+    Friend WithEvents Label35 As System.Windows.Forms.Label
+    Friend WithEvents Label36 As System.Windows.Forms.Label
+    Friend WithEvents Label37 As System.Windows.Forms.Label
+    Friend WithEvents Label38 As System.Windows.Forms.Label
+    Friend WithEvents Label39 As System.Windows.Forms.Label
+    Friend WithEvents Label40 As System.Windows.Forms.Label
+    Friend WithEvents Label41 As System.Windows.Forms.Label
 End Class

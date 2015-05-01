@@ -463,6 +463,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="facturanet.ico" />
+    <None Include="Resources\CorreoFacturas2.png" />
     <Content Include="ThoughtWorks.QRCode.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

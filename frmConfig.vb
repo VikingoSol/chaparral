@@ -49,6 +49,11 @@ Public Class frmConfig
         Me.txtWs.Text = gConfigGlobal.CFDI_Url
         Me.txtCancel.Text = gConfigGlobal.CFDI_CancelWs
         Me.txtCancelId.Text = gConfigGlobal.CFDI_CancelId
+        'email
+        Me.Txtservidoesmtp.Text = gConfigGlobal.servidorsmtp
+        Me.Txtcuenta.Text = gConfigGlobal.smtpcuenta
+        Me.Txtpassword.Text = gConfigGlobal.smtppassword
+        Me.txtPuerto.Text = gConfigGlobal.smtppuerto
 
 
     End Sub
@@ -126,6 +131,12 @@ Public Class frmConfig
         gConfigGlobal.Direccion_Fiscal.Estado = Me.txtEstado.Text
         gConfigGlobal.Direccion_Fiscal.Pais = Me.txtPais.Text
         gConfigGlobal.Direccion_Fiscal.CodigoPostal = Me.txtCP.Text
+        'email
+        gConfigGlobal.servidorsmtp = Me.Txtservidoesmtp.Text
+        gConfigGlobal.smtpcuenta = Me.Txtcuenta.Text
+        gConfigGlobal.smtppassword = Me.Txtpassword.Text
+        gConfigGlobal.smtppuerto = Me.txtPuerto.Text
+
 
         vConfigBase.GuardarConfiguracion(gConfigGlobal, Me.txtRFC.Text.Trim)
 
