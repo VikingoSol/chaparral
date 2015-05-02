@@ -6,6 +6,9 @@ Public Class frmFactura
     Dim vTablaProds As New DataTable
     Public gdescuento As Double
     Dim noarticulosventa As Double = 0
+    Public addenR As New AddendaSorianaremision
+    Public addenP As New AddendaSorianapedidos
+
     Public Function Agregar() As Integer
         If Me.ShowDialog = Windows.Forms.DialogResult.OK Then
             Return vIdFactura
@@ -111,6 +114,7 @@ Public Class frmFactura
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
         Dim vBus As New frmProductosBus
+        vBus.vidcliente = Me.txtIdCliente.Text
         Dim vId As Integer = vBus.Buscar_Producto()
         If vId > 0 Then
             Me.txtIdProd.Text = vId
@@ -471,15 +475,19 @@ Public Class frmFactura
     End Sub
 
     Private Sub CheckBox1_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CheckBox1.CheckedChanged
+
         If CDbl(Me.txtTotal.Text) > 0 Then
             If CheckBox1.Checked Then
                 Dim f As New frmaddendas
                 f.addendasoriana(Me.txtSubTotal.Text, Me.Txtdescuento.Text, 0, Me.txtIVA.Text, Me.txtTotal.Text, noarticulosventa)
+                addenR = f.vAddSorRemi
+                addenP = f.vAddSorpedido
                 f.ShowDialog()
                 CheckBox2.Checked = False
                 CheckBox3.Checked = False
+
             End If
-          
+
         Else
             CheckBox1.Checked = False
             CheckBox2.Checked = False

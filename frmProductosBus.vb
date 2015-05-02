@@ -1,8 +1,10 @@
 Imports BaseDatos
 Public Class frmProductosBus
-
+    Public vidcliente As Integer
 
     Public Function Buscar_Producto() As Integer
+        Dim vProds As New cProductos
+        Me.grdProductos.DataSource = vProds.GetProductosClientes(vidcliente)
         If Me.ShowDialog = Windows.Forms.DialogResult.OK Then
             Return Me.grdProductos.GetRow.Cells("id").Value
         Else
@@ -22,7 +24,8 @@ Public Class frmProductosBus
 
         ' Add any initialization after the InitializeComponent() call.
         Dim vProds As New cProductos
-        Me.grdProductos.DataSource = vProds.GetProductos
+        'Me.grdProductos.DataSource = vProds.GetProductos
+        Me.grdProductos.DataSource = vProds.GetProductosClientes(vidcliente)
     End Sub
 
     Private Sub btnOk_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnOk.Click

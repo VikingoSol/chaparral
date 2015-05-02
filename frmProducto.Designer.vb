@@ -36,6 +36,8 @@ Partial Class frmProducto
         Me.cmbTasa = New System.Windows.Forms.ComboBox
         Me.Txtcodigo = New System.Windows.Forms.TextBox
         Me.Label6 = New System.Windows.Forms.Label
+        Me.Cmbidprodcte = New System.Windows.Forms.ComboBox
+        Me.Label7 = New System.Windows.Forms.Label
         Me.SuspendLayout()
         '
         'Label1
@@ -91,7 +93,7 @@ Partial Class frmProducto
         '
         'btnAceptar
         '
-        Me.btnAceptar.Location = New System.Drawing.Point(114, 170)
+        Me.btnAceptar.Location = New System.Drawing.Point(114, 221)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
         Me.btnAceptar.TabIndex = 10
@@ -101,7 +103,7 @@ Partial Class frmProducto
         'btnCancelar
         '
         Me.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCancelar.Location = New System.Drawing.Point(195, 170)
+        Me.btnCancelar.Location = New System.Drawing.Point(195, 221)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 11
@@ -160,13 +162,33 @@ Partial Class frmProducto
         Me.Label6.TabIndex = 14
         Me.Label6.Text = "Codigo:"
         '
+        'Cmbidprodcte
+        '
+        Me.Cmbidprodcte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Cmbidprodcte.FormattingEnabled = True
+        Me.Cmbidprodcte.Location = New System.Drawing.Point(72, 170)
+        Me.Cmbidprodcte.Name = "Cmbidprodcte"
+        Me.Cmbidprodcte.Size = New System.Drawing.Size(304, 21)
+        Me.Cmbidprodcte.TabIndex = 15
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(19, 173)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(42, 13)
+        Me.Label7.TabIndex = 16
+        Me.Label7.Text = "Cliente:"
+        '
         'frmProducto
         '
         Me.AcceptButton = Me.btnAceptar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCancelar
-        Me.ClientSize = New System.Drawing.Size(388, 206)
+        Me.ClientSize = New System.Drawing.Size(388, 256)
+        Me.Controls.Add(Me.Cmbidprodcte)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Txtcodigo)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.cmbTasa)
@@ -204,4 +226,6 @@ Partial Class frmProducto
     Friend WithEvents cmbTasa As System.Windows.Forms.ComboBox
     Friend WithEvents Txtcodigo As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Cmbidprodcte As System.Windows.Forms.ComboBox
+    Friend WithEvents Label7 As System.Windows.Forms.Label
 End Class

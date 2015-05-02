@@ -46,7 +46,7 @@ Partial Class frmProductosBus
         Me.grdProductos.HideSelection = Janus.Windows.GridEX.HideSelection.Highlight
         Me.grdProductos.Location = New System.Drawing.Point(3, 3)
         Me.grdProductos.Name = "grdProductos"
-        Me.grdProductos.Size = New System.Drawing.Size(507, 222)
+        Me.grdProductos.Size = New System.Drawing.Size(502, 222)
         Me.grdProductos.TabIndex = 7
         '
         'btnOk
@@ -71,7 +71,7 @@ Partial Class frmProductosBus
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(516, 266)
+        Me.ClientSize = New System.Drawing.Size(517, 266)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnOk)
         Me.Controls.Add(Me.grdProductos)

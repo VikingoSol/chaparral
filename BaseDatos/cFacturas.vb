@@ -238,7 +238,7 @@ Public Class dFacturaView
 End Class
 
 Public Class AddendaSorianaremision
-    Public Proveedor As String = "303008"
+    Public Proveedor As Integer = 303008
     Public remision As String
     Public Consecutivo As String
     Public FechaRemision As String
@@ -258,7 +258,7 @@ Public Class AddendaSorianaremision
     Public FolioNotaEntrada As String
 End Class
 Public Class AddendaSorianapedidos
-    Public Proveedor As String
+    Public Proveedor As Integer
     Public remision As String
     Public FolioPedido As Integer
     Public Tienda As String
@@ -266,7 +266,7 @@ Public Class AddendaSorianapedidos
     Public PedidoEmitidoProveedor As String
 End Class
 Public Class AddendaSorianaArticulos
-    Public Proveedor As String
+    Public Proveedor As Integer
     Public remision As String
     Public FolioPedido As Integer
     Public Tienda As String

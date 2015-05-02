@@ -13,6 +13,7 @@ Public Class frmProducto
         Me.cmbUnidades.SelectedValue = vProd.Unidad
         Me.cmbTasa.SelectedValue = vProd.TasaId
         Me.Txtcodigo.Text = vProd.codigo
+        Me.Cmbidprodcte.SelectedValue = vProd.idProdcte
         If Me.ShowDialog = Windows.Forms.DialogResult.OK Then
             Return True
         Else : Return False
@@ -51,9 +52,9 @@ Public Class frmProducto
             Exit Sub
         End If
         If vIdProd = -1 Then
-            vIdProd = vProds.Agregar(Me.txtNombre.Text, Me.txtPrecio.Text, Me.cmbUnidades.SelectedValue, Me.cmbTasa.SelectedValue, Me.Txtcodigo.Text)
+            vIdProd = vProds.Agregar(Me.txtNombre.Text, Me.txtPrecio.Text, Me.cmbUnidades.SelectedValue, Me.cmbTasa.SelectedValue, Me.Txtcodigo.Text, Me.Cmbidprodcte.SelectedValue, Me.Cmbidprodcte.Text)
         Else
-            vProds.Modificar(Me.vIdProd, Me.txtNombre.Text, Me.txtPrecio.Text, Me.cmbUnidades.SelectedValue, Me.cmbTasa.SelectedValue, Me.Txtcodigo.Text)
+            vProds.Modificar(Me.vIdProd, Me.txtNombre.Text, Me.txtPrecio.Text, Me.cmbUnidades.SelectedValue, Me.cmbTasa.SelectedValue, Me.Txtcodigo.Text, Me.Cmbidprodcte.SelectedValue, Me.Cmbidprodcte.Text)
         End If
         Me.DialogResult = Windows.Forms.DialogResult.OK
         Me.Close()
@@ -73,5 +74,11 @@ Public Class frmProducto
         Me.cmbTasa.DisplayMember = "nombre"
         Me.cmbTasa.ValueMember = "id"
         Me.cmbTasa.DataSource = vProds.GetTasas
+
+        Dim vClientes As New BaseDatos.cClientes
+        Me.Cmbidprodcte.DisplayMember = "nombre"
+        Me.Cmbidprodcte.ValueMember = "id"
+        Me.Cmbidprodcte.DataSource = vClientes.GetClientes()
+  
     End Sub
 End Class
