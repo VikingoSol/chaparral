@@ -48,13 +48,13 @@ Partial Class frmProductos
         Me.grdProductos.HideSelection = Janus.Windows.GridEX.HideSelection.Highlight
         Me.grdProductos.Location = New System.Drawing.Point(4, 4)
         Me.grdProductos.Name = "grdProductos"
-        Me.grdProductos.Size = New System.Drawing.Size(601, 222)
+        Me.grdProductos.Size = New System.Drawing.Size(630, 222)
         Me.grdProductos.TabIndex = 6
         '
         'btnSalir
         '
         Me.btnSalir.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnSalir.Location = New System.Drawing.Point(288, 235)
+        Me.btnSalir.Location = New System.Drawing.Point(302, 235)
         Me.btnSalir.Name = "btnSalir"
         Me.btnSalir.Size = New System.Drawing.Size(75, 23)
         Me.btnSalir.TabIndex = 11
@@ -66,7 +66,7 @@ Partial Class frmProductos
         Me.btnDel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnDel.Enabled = False
         Me.btnDel.Image = Global.FacturaNET.My.Resources.Resources.delete
-        Me.btnDel.Location = New System.Drawing.Point(611, 129)
+        Me.btnDel.Location = New System.Drawing.Point(640, 129)
         Me.btnDel.Name = "btnDel"
         Me.btnDel.Size = New System.Drawing.Size(36, 36)
         Me.btnDel.TabIndex = 10
@@ -77,7 +77,7 @@ Partial Class frmProductos
         Me.btnEdit.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnEdit.Enabled = False
         Me.btnEdit.Image = Global.FacturaNET.My.Resources.Resources.edit
-        Me.btnEdit.Location = New System.Drawing.Point(611, 87)
+        Me.btnEdit.Location = New System.Drawing.Point(640, 87)
         Me.btnEdit.Name = "btnEdit"
         Me.btnEdit.Size = New System.Drawing.Size(36, 36)
         Me.btnEdit.TabIndex = 9
@@ -87,7 +87,7 @@ Partial Class frmProductos
         '
         Me.btnAdd.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnAdd.Image = Global.FacturaNET.My.Resources.Resources.add
-        Me.btnAdd.Location = New System.Drawing.Point(611, 45)
+        Me.btnAdd.Location = New System.Drawing.Point(640, 45)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(36, 36)
         Me.btnAdd.TabIndex = 8
@@ -97,7 +97,7 @@ Partial Class frmProductos
         '
         Me.btnActualizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnActualizar.Image = Global.FacturaNET.My.Resources.Resources.actualizar
-        Me.btnActualizar.Location = New System.Drawing.Point(611, 3)
+        Me.btnActualizar.Location = New System.Drawing.Point(640, 3)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(36, 36)
         Me.btnActualizar.TabIndex = 7
@@ -107,7 +107,7 @@ Partial Class frmProductos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(650, 266)
+        Me.ClientSize = New System.Drawing.Size(679, 266)
         Me.Controls.Add(Me.btnSalir)
         Me.Controls.Add(Me.btnDel)
         Me.Controls.Add(Me.btnEdit)

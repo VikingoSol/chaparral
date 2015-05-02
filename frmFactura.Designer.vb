@@ -78,6 +78,7 @@ Partial Class frmFactura
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
         Me.CheckBox3 = New System.Windows.Forms.CheckBox
         Me.CheckBox2 = New System.Windows.Forms.CheckBox
+        Me.Txttotalart = New Janus.Windows.GridEX.EditControls.NumericEditBox
         Me.GroupBox1.SuspendLayout()
         CType(Me.grdProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -264,11 +265,12 @@ Partial Class frmFactura
         Me.grdProductos.Name = "grdProductos"
         Me.grdProductos.Size = New System.Drawing.Size(743, 184)
         Me.grdProductos.TabIndex = 8
+        Me.grdProductos.TotalRow = Janus.Windows.GridEX.InheritableBoolean.[True]
         '
         'txtCantidad
         '
         Me.txtCantidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCantidad.Location = New System.Drawing.Point(6, 420)
+        Me.txtCantidad.Location = New System.Drawing.Point(23, 466)
         Me.txtCantidad.Name = "txtCantidad"
         Me.txtCantidad.Size = New System.Drawing.Size(66, 22)
         Me.txtCantidad.TabIndex = 10
@@ -278,7 +280,7 @@ Partial Class frmFactura
         'txtIdProd
         '
         Me.txtIdProd.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIdProd.Location = New System.Drawing.Point(99, 420)
+        Me.txtIdProd.Location = New System.Drawing.Point(99, 468)
         Me.txtIdProd.Name = "txtIdProd"
         Me.txtIdProd.Numeric = True
         Me.txtIdProd.Size = New System.Drawing.Size(98, 22)
@@ -384,7 +386,7 @@ Partial Class frmFactura
         'Button3
         '
         Me.Button3.Image = Global.FacturaNET.My.Resources.Resources.add_prod5
-        Me.Button3.Location = New System.Drawing.Point(294, 405)
+        Me.Button3.Location = New System.Drawing.Point(294, 453)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(36, 36)
         Me.Button3.TabIndex = 14
@@ -393,7 +395,7 @@ Partial Class frmFactura
         'Button1
         '
         Me.Button1.Image = Global.FacturaNET.My.Resources.Resources.add
-        Me.Button1.Location = New System.Drawing.Point(252, 405)
+        Me.Button1.Location = New System.Drawing.Point(252, 453)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(36, 36)
         Me.Button1.TabIndex = 13
@@ -402,7 +404,7 @@ Partial Class frmFactura
         'Button2
         '
         Me.Button2.Image = Global.FacturaNET.My.Resources.Resources.buscar
-        Me.Button2.Location = New System.Drawing.Point(210, 405)
+        Me.Button2.Location = New System.Drawing.Point(210, 453)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(36, 36)
         Me.Button2.TabIndex = 12
@@ -496,7 +498,7 @@ Partial Class frmFactura
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(12, 401)
+        Me.Label13.Location = New System.Drawing.Point(29, 447)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(49, 13)
         Me.Label13.TabIndex = 43
@@ -505,7 +507,7 @@ Partial Class frmFactura
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(117, 401)
+        Me.Label15.Location = New System.Drawing.Point(117, 449)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(52, 13)
         Me.Label15.TabIndex = 44
@@ -611,11 +613,24 @@ Partial Class frmFactura
         Me.CheckBox2.Text = "Addenda Comercial Mex."
         Me.CheckBox2.UseVisualStyleBackColor = True
         '
+        'Txttotalart
+        '
+        Me.Txttotalart.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txttotalart.Location = New System.Drawing.Point(8, 399)
+        Me.Txttotalart.Name = "Txttotalart"
+        Me.Txttotalart.Size = New System.Drawing.Size(66, 22)
+        Me.Txttotalart.TabIndex = 52
+        Me.Txttotalart.TabStop = False
+        Me.Txttotalart.Text = "0.00"
+        Me.Txttotalart.TextAlignment = Janus.Windows.GridEX.TextAlignment.Center
+        Me.Txttotalart.Value = New Decimal(New Integer() {0, 0, 0, 131072})
+        '
         'frmFactura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(796, 556)
+        Me.Controls.Add(Me.Txttotalart)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.emisor)
         Me.Controls.Add(Me.CboRFCemisor)
@@ -725,4 +740,5 @@ Partial Class frmFactura
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents CheckBox3 As System.Windows.Forms.CheckBox
     Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
+    Friend WithEvents Txttotalart As Janus.Windows.GridEX.EditControls.NumericEditBox
 End Class

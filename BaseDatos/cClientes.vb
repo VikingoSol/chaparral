@@ -129,7 +129,7 @@ Public Class cClientes
         Dim vCl As dCliente
         If vTabla.Rows.Count > 0 Then
             vCl = New dCliente
-            vCl.Id = pId
+            vCl.Id = vTabla.Rows(0).Item("id")
             vCl.Nombre = vTabla.Rows(0).Item("nombre")
             vCl.RFC = vTabla.Rows(0).Item("rfc")
             vCl.Calle = vTabla.Rows(0).Item("calle")

@@ -240,7 +240,6 @@ Public Class cConfigGlobal
             vCmd.Parameters.AddWithValue("?canid", pConfig.CFDI_CancelId)
             vCmd.Parameters.AddWithValue("?tc", pConfig.TipoCambio)
             vCmd.Parameters.AddWithValue("?rfc", rfc)
-
             vCmd.Parameters.AddWithValue("?servidorsmtp", pConfig.servidorsmtp)
             vCmd.Parameters.AddWithValue("?smtpcuenta", pConfig.smtpcuenta)
             vCmd.Parameters.AddWithValue("?smtppuerto", pConfig.smtppuerto)

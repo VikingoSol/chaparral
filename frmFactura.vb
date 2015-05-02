@@ -229,6 +229,7 @@ Public Class frmFactura
             vDescuento = Me.grdProductos.GetTotal(Me.grdProductos.RootTable.Columns("importe"), Janus.Windows.GridEX.AggregateFunction.Sum)
             vIva = Me.grdProductos.GetTotal(Me.grdProductos.RootTable.Columns("iva"), Janus.Windows.GridEX.AggregateFunction.Sum)
             noarticulosventa = Me.grdProductos.GetTotal(Me.grdProductos.RootTable.Columns("Cantidad"), Janus.Windows.GridEX.AggregateFunction.Sum)
+            Me.Txttotalart.Text = noarticulosventa
         Catch ex As Exception
             vSubTotal = 0
             vDescuento = 0

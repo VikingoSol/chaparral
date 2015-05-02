@@ -372,11 +372,11 @@ Public Class frmFacturas
     Public Sub EnvioMail(ByVal pdf As String, ByVal xml As String, ByVal correo_cliente As String)
         Dim Ret As Long
         'Si el Api retorna 0 quiere decir que no hay ningun tipo de conexión de Red   
-        Dim vConfig As New dConfigGlobal
-        Dim servidorsmtp As String = vConfig.servidorsmtp
-        Dim smtpcuenta As String = vConfig.smtpcuenta
-        Dim smtppuerto As Integer = vConfig.smtppuerto
-        Dim smtppassword As String = vConfig.smtppassword
+
+        Dim servidorsmtp As String = gConfigGlobal.servidorsmtp
+        Dim smtpcuenta As String = gConfigGlobal.smtpcuenta
+        Dim smtppuerto As Integer = gConfigGlobal.smtppuerto
+        Dim smtppassword As String = gConfigGlobal.smtppassword
 
         If IsNetworkAlive(Ret) = 0 Then
             MsgBox("No existe conexion a internet" & vbNewLine + "Error enviando E-Mail." & vbNewLine & vbNewLine + "Por favor revise su conexion a internet" & vbNewLine + "e intentelo nuevamente.", MsgBoxStyle.Exclamation)
