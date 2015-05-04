@@ -358,7 +358,6 @@ Public Class frmFactura
         Dim vFac As New frmFacturaProc
         vFac.vAddendaSR = addenR
         vFac.vAddendaSP = addenP
-
         Dim vFactura As New dFactura
         vFactura.Serie = Me.txtSerie.Text
         vFactura.Folio = Me.txtFolio.Text
@@ -373,7 +372,6 @@ Public Class frmFactura
         vFactura.Cuenta = Trim(Me.txtCuenta.Text)
         vFactura.TipoCambio = Me.txtTipoCambio.Text
         vFactura.Moneda = Me.cmbMoneda.SelectedItem
-
         vFactura.Fecha = Me.dpFecha.Value
         Me.vIdFactura = vFac.Facturar(vFactura, Me.vTablaProds)
         If vIdFactura > 0 Then
@@ -391,7 +389,7 @@ Public Class frmFactura
     End Sub
 
     Private Sub cmbMetodoPago_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbMetodoPago.SelectedIndexChanged
-        If Me.cmbMetodoPago.SelectedValue <= 2 Or Me.cmbMetodoPago.SelectedValue >= 6 Then
+        If Me.cmbMetodoPago.SelectedValue <= 1 Or Me.cmbMetodoPago.SelectedValue >= 6 Then
             Me.txtCuenta.Text = ""
             Me.txtCuenta.Enabled = False
         Else

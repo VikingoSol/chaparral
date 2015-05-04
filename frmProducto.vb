@@ -49,7 +49,7 @@ Public Class frmProducto
             MsgBox("Ya existe un Producto/Servicio con el mismo nombre", MsgBoxStyle.Critical, "Producto / Servicio Existente")
             Me.txtNombre.SelectAll()
             Me.txtNombre.Focus()
-            Exit Sub
+            'Exit Sub
         End If
         If vIdProd = -1 Then
             vIdProd = vProds.Agregar(Me.txtNombre.Text, Me.txtPrecio.Text, Me.cmbUnidades.SelectedValue, Me.cmbTasa.SelectedValue, Me.Txtcodigo.Text, Me.Cmbidprodcte.SelectedValue, Me.Cmbidprodcte.Text)
