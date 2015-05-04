@@ -15,6 +15,9 @@ Module mGlobales
     Public RfcActual As String = ""
     Public IdRfc As Integer
 
+    Public vAddSorianaRemi As BaseDatos.AddendaSorianaremision
+    Public vAddSorianapedido As BaseDatos.AddendaSorianapedidos
+
     Public Function RFC_Check(ByVal pRFC As String) As Boolean
         If Regex.IsMatch(pRFC, "^([a-zA-Z\s]{3,4})\d{6}([0-9a-zA-Z\w]{3})$") Then
             Return True
@@ -399,5 +402,5 @@ Module mGlobales
 
         End If
     End Sub
-
+   
 End Module

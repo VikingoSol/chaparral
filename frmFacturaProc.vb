@@ -10,6 +10,9 @@ Public Class frmFacturaProc
     Private vProdsFac As DataTable
     Private vIdFac As Integer = -1
 
+    Public vAddendaSR As AddendaSorianaremision
+    Public vAddendaSP As AddendaSorianapedidos
+
     Public Function Facturar(ByVal pFactura As dFactura, ByVal pProd As DataTable) As Integer
         Me.txtEstatus.Text = "Generando CFDi"
         If IsNothing(pFactura) OrElse IsNothing(pProd) OrElse pProd.Rows.Count = 0 Then Return -1
@@ -152,25 +155,27 @@ Public Class frmFacturaProc
             End If
             '---------Adenda Soriana ----------------
 
-            'If frmFactura.CheckBox1.Checked = True Then
+            'Dim vAddendaSR As BaseDatos.AddendaSorianaremision
+
+            'If frmFactura.CheckBox1.Checked Then
             '    Dim AddsorianaRemision As FacturaNETLib.Addendas.Soriana.SorianaRemision
-            '    AddsorianaRemision.Remision.Value = frmFactura.addenR.remision
-            '    AddsorianaRemision.Proveedor.Value = frmFactura.addenR.Proveedor
-            '    AddsorianaRemision.Consecutivo.Value = frmFactura.addenR.Consecutivo
-            '    AddsorianaRemision.FechaRemision.Value = frmFactura.addenR.FechaRemision
-            '    AddsorianaRemision.Tienda.Value = frmFactura.addenR.Tienda
-            '    AddsorianaRemision.TipoMoneda.Value = frmFactura.addenR.TipoMoneda
-            '    AddsorianaRemision.TipoBulto.Value = frmFactura.addenR.TipoBulto
-            '    AddsorianaRemision.EntregaMercancia.Value = frmFactura.addenR.EntregaMercancia
-            '    AddsorianaRemision.CumpleReqFiscales.Value = frmFactura.addenR.CumpleReqFiscales
-            '    AddsorianaRemision.CantidadBultos.Value = frmFactura.addenR.CantidadBultos
-            '    AddsorianaRemision.Subtotal.Value = frmFactura.addenR.Subtotal
-            '    AddsorianaRemision.IEPS.Value = frmFactura.addenR.IEPS
-            '    AddsorianaRemision.IVA.Value = frmFactura.addenR.IVA
-            '    AddsorianaRemision.OtrosImpuestos.Value = frmFactura.addenR.OtrosImpuestos
-            '    AddsorianaRemision.Total.Value = frmFactura.addenR.Total
-            '    AddsorianaRemision.CantidadPedidos.Value = frmFactura.addenR.CantidadPedidos
-            '    AddsorianaRemision.FechaEntregaMercancia.Value = frmFactura.addenR.FechaEntregaMercancia
+            '    AddsorianaRemision.Remision.Value = vAddendaSR.remision
+            '    AddsorianaRemision.Proveedor.Value = vAddendaSR.Proveedor
+            '    AddsorianaRemision.Consecutivo.Value = vAddendaSR.Consecutivo
+            '    AddsorianaRemision.FechaRemision.Value = vAddendaSR.FechaRemision
+            '    AddsorianaRemision.Tienda.Value = vAddendaSR.Tienda
+            '    AddsorianaRemision.TipoMoneda.Value = vAddendaSR.TipoMoneda
+            '    AddsorianaRemision.TipoBulto.Value = vAddendaSR.TipoBulto
+            '    AddsorianaRemision.EntregaMercancia.Value = vAddendaSR.EntregaMercancia
+            '    AddsorianaRemision.CumpleReqFiscales.Value = vAddendaSR.CumpleReqFiscales
+            '    AddsorianaRemision.CantidadBultos.Value = vAddendaSR.CantidadBultos
+            '    AddsorianaRemision.Subtotal.Value = vAddendaSR.Subtotal
+            '    AddsorianaRemision.IEPS.Value = vAddendaSR.IEPS
+            '    AddsorianaRemision.IVA.Value = vAddendaSR.IVA
+            '    AddsorianaRemision.OtrosImpuestos.Value = vAddendaSR.OtrosImpuestos
+            '    AddsorianaRemision.Total.Value = vAddendaSR.Total
+            '    AddsorianaRemision.CantidadPedidos.Value = vAddendaSR.CantidadPedidos
+            '    AddsorianaRemision.FechaEntregaMercancia.Value = vAddendaSR.FechaEntregaMercancia
 
             '    'pedidos ---------
             '    Dim AddsorianaPedidos As New FacturaNETLib.Addendas.Soriana.SorianaPedidos

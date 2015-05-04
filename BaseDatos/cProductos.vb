@@ -35,7 +35,11 @@ Public Class cProductos
     Public Function GetProductosClientes(ByVal idcte As Integer) As DataTable
         If gConn.State <> ConnectionState.Open Then gConn.Open()
         Dim vCmd As New MySqlCommand("SELECT * FROM productos where idprodcte=?id", gConn)
-        vCmd.Parameters.AddWithValue("?id", idcte)
+        If hayProductos(idcte) Then
+            vCmd.Parameters.AddWithValue("?id", idcte)
+        Else
+            vCmd.Parameters.AddWithValue("?id", 1)
+        End If
         Dim vAdap As New MySqlDataAdapter(vCmd)
         Dim vTabla As New DataTable
         vAdap.Fill(vTabla)
@@ -109,6 +113,18 @@ Public Class cProductos
         Dim vCmd As New MySqlCommand("SELECT COUNT(*) FROM productos WHERE nombre=?nom AND id<>?id", gConn)
         vCmd.Parameters.AddWithValue("?id", pIdDiff)
         vCmd.Parameters.AddWithValue("?nom", pNombre)        
+        Dim vRes As Object = vCmd.ExecuteScalar
+        If IsNothing(vRes) OrElse IsDBNull(vRes) OrElse vRes <= 0 Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
+
+    Public Function hayProductos(ByVal pid As Integer)
+        If gConn.State <> ConnectionState.Open Then gConn.Open()
+        Dim vCmd As New MySqlCommand("SELECT COUNT(*) FROM productos WHERE idprodcte=?id", gConn)
+        vCmd.Parameters.AddWithValue("?id", pid)
         Dim vRes As Object = vCmd.ExecuteScalar
         If IsNothing(vRes) OrElse IsDBNull(vRes) OrElse vRes <= 0 Then
             Return False

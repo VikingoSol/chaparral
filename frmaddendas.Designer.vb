@@ -75,7 +75,7 @@ Partial Class frmaddendas
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(382, 491)
+        Me.Button5.Location = New System.Drawing.Point(308, 364)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(84, 23)
         Me.Button5.TabIndex = 21
@@ -85,7 +85,7 @@ Partial Class frmaddendas
         'Label44
         '
         Me.Label44.AutoSize = True
-        Me.Label44.Location = New System.Drawing.Point(499, 34)
+        Me.Label44.Location = New System.Drawing.Point(418, 31)
         Me.Label44.Name = "Label44"
         Me.Label44.Size = New System.Drawing.Size(132, 13)
         Me.Label44.TabIndex = 121
@@ -94,7 +94,7 @@ Partial Class frmaddendas
         'Label43
         '
         Me.Label43.AutoSize = True
-        Me.Label43.Location = New System.Drawing.Point(335, 31)
+        Me.Label43.Location = New System.Drawing.Point(274, 31)
         Me.Label43.Name = "Label43"
         Me.Label43.Size = New System.Drawing.Size(95, 13)
         Me.Label43.TabIndex = 119
@@ -104,7 +104,7 @@ Partial Class frmaddendas
         '
         Me.TxtCantidadArticulos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtCantidadArticulos.ForeColor = System.Drawing.Color.DarkRed
-        Me.TxtCantidadArticulos.Location = New System.Drawing.Point(338, 60)
+        Me.TxtCantidadArticulos.Location = New System.Drawing.Point(287, 48)
         Me.TxtCantidadArticulos.Name = "TxtCantidadArticulos"
         Me.TxtCantidadArticulos.Size = New System.Drawing.Size(82, 20)
         Me.TxtCantidadArticulos.TabIndex = 120
@@ -114,7 +114,7 @@ Partial Class frmaddendas
         'Label42
         '
         Me.Label42.AutoSize = True
-        Me.Label42.Location = New System.Drawing.Point(70, 34)
+        Me.Label42.Location = New System.Drawing.Point(22, 31)
         Me.Label42.Name = "Label42"
         Me.Label42.Size = New System.Drawing.Size(68, 13)
         Me.Label42.TabIndex = 117
@@ -124,7 +124,7 @@ Partial Class frmaddendas
         '
         Me.Txtfoliopedido.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txtfoliopedido.ForeColor = System.Drawing.Color.DarkRed
-        Me.Txtfoliopedido.Location = New System.Drawing.Point(73, 60)
+        Me.Txtfoliopedido.Location = New System.Drawing.Point(25, 47)
         Me.Txtfoliopedido.Name = "Txtfoliopedido"
         Me.Txtfoliopedido.Size = New System.Drawing.Size(82, 20)
         Me.Txtfoliopedido.TabIndex = 118
@@ -134,7 +134,7 @@ Partial Class frmaddendas
         'Label39
         '
         Me.Label39.AutoSize = True
-        Me.Label39.Location = New System.Drawing.Point(533, 255)
+        Me.Label39.Location = New System.Drawing.Point(261, 180)
         Me.Label39.Name = "Label39"
         Me.Label39.Size = New System.Drawing.Size(98, 13)
         Me.Label39.TabIndex = 113
@@ -144,9 +144,9 @@ Partial Class frmaddendas
         '
         Me.FolioNotaEntrada.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FolioNotaEntrada.ForeColor = System.Drawing.Color.DarkRed
-        Me.FolioNotaEntrada.Location = New System.Drawing.Point(638, 252)
+        Me.FolioNotaEntrada.Location = New System.Drawing.Point(264, 199)
         Me.FolioNotaEntrada.Name = "FolioNotaEntrada"
-        Me.FolioNotaEntrada.Size = New System.Drawing.Size(144, 20)
+        Me.FolioNotaEntrada.Size = New System.Drawing.Size(105, 20)
         Me.FolioNotaEntrada.TabIndex = 114
         Me.FolioNotaEntrada.Text = "0"
         Me.FolioNotaEntrada.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -155,7 +155,7 @@ Partial Class frmaddendas
         '
         Me.FechaEntregaM.CustomFormat = "dd / MMM / yyyy"
         Me.FechaEntregaM.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.FechaEntregaM.Location = New System.Drawing.Point(387, 252)
+        Me.FechaEntregaM.Location = New System.Drawing.Point(120, 196)
         Me.FechaEntregaM.Name = "FechaEntregaM"
         Me.FechaEntregaM.Size = New System.Drawing.Size(115, 20)
         Me.FechaEntregaM.TabIndex = 112
@@ -163,7 +163,7 @@ Partial Class frmaddendas
         'Label38
         '
         Me.Label38.AutoSize = True
-        Me.Label38.Location = New System.Drawing.Point(291, 255)
+        Me.Label38.Location = New System.Drawing.Point(127, 180)
         Me.Label38.Name = "Label38"
         Me.Label38.Size = New System.Drawing.Size(80, 13)
         Me.Label38.TabIndex = 111
@@ -172,7 +172,7 @@ Partial Class frmaddendas
         'Label37
         '
         Me.Label37.AutoSize = True
-        Me.Label37.Location = New System.Drawing.Point(46, 251)
+        Me.Label37.Location = New System.Drawing.Point(14, 180)
         Me.Label37.Name = "Label37"
         Me.Label37.Size = New System.Drawing.Size(90, 13)
         Me.Label37.TabIndex = 109
@@ -182,7 +182,7 @@ Partial Class frmaddendas
         '
         Me.Txtcantidadpedidos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txtcantidadpedidos.ForeColor = System.Drawing.Color.DarkRed
-        Me.Txtcantidadpedidos.Location = New System.Drawing.Point(167, 248)
+        Me.Txtcantidadpedidos.Location = New System.Drawing.Point(17, 196)
         Me.Txtcantidadpedidos.Name = "Txtcantidadpedidos"
         Me.Txtcantidadpedidos.Size = New System.Drawing.Size(88, 20)
         Me.Txtcantidadpedidos.TabIndex = 110
@@ -191,7 +191,7 @@ Partial Class frmaddendas
         '
         'Label33
         '
-        Me.Label33.Location = New System.Drawing.Point(579, 177)
+        Me.Label33.Location = New System.Drawing.Point(418, 129)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(84, 13)
         Me.Label33.TabIndex = 108
@@ -200,7 +200,7 @@ Partial Class frmaddendas
         '
         'Txtiva
         '
-        Me.Txtiva.Location = New System.Drawing.Point(471, 198)
+        Me.Txtiva.Location = New System.Drawing.Point(315, 145)
         Me.Txtiva.Name = "Txtiva"
         Me.Txtiva.Size = New System.Drawing.Size(93, 20)
         Me.Txtiva.TabIndex = 107
@@ -209,7 +209,7 @@ Partial Class frmaddendas
         '
         'Txtieps
         '
-        Me.Txtieps.Location = New System.Drawing.Point(323, 198)
+        Me.Txtieps.Location = New System.Drawing.Point(230, 145)
         Me.Txtieps.Name = "Txtieps"
         Me.Txtieps.Size = New System.Drawing.Size(82, 20)
         Me.Txtieps.TabIndex = 106
@@ -219,7 +219,7 @@ Partial Class frmaddendas
         'Label32
         '
         Me.Label32.AutoSize = True
-        Me.Label32.Location = New System.Drawing.Point(324, 177)
+        Me.Label32.Location = New System.Drawing.Point(227, 129)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(34, 13)
         Me.Label32.TabIndex = 105
@@ -227,7 +227,7 @@ Partial Class frmaddendas
         '
         'Txtotrosi
         '
-        Me.Txtotrosi.Location = New System.Drawing.Point(581, 198)
+        Me.Txtotrosi.Location = New System.Drawing.Point(424, 145)
         Me.Txtotrosi.Name = "Txtotrosi"
         Me.Txtotrosi.Size = New System.Drawing.Size(78, 20)
         Me.Txtotrosi.TabIndex = 104
@@ -237,7 +237,7 @@ Partial Class frmaddendas
         'Txttotal
         '
         Me.Txttotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txttotal.Location = New System.Drawing.Point(681, 198)
+        Me.Txttotal.Location = New System.Drawing.Point(517, 145)
         Me.Txttotal.Name = "Txttotal"
         Me.Txttotal.Size = New System.Drawing.Size(101, 20)
         Me.Txttotal.TabIndex = 103
@@ -246,9 +246,9 @@ Partial Class frmaddendas
         '
         'Txtsubtotal
         '
-        Me.Txtsubtotal.Location = New System.Drawing.Point(54, 198)
+        Me.Txtsubtotal.Location = New System.Drawing.Point(15, 145)
         Me.Txtsubtotal.Name = "Txtsubtotal"
-        Me.Txtsubtotal.Size = New System.Drawing.Size(113, 20)
+        Me.Txtsubtotal.Size = New System.Drawing.Size(89, 20)
         Me.Txtsubtotal.TabIndex = 102
         Me.Txtsubtotal.Text = "0.00"
         Me.Txtsubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -256,7 +256,7 @@ Partial Class frmaddendas
         'Label34
         '
         Me.Label34.AutoSize = True
-        Me.Label34.Location = New System.Drawing.Point(699, 177)
+        Me.Label34.Location = New System.Drawing.Point(546, 129)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(34, 13)
         Me.Label34.TabIndex = 101
@@ -264,7 +264,7 @@ Partial Class frmaddendas
         '
         'Label35
         '
-        Me.Label35.Location = New System.Drawing.Point(465, 177)
+        Me.Label35.Location = New System.Drawing.Point(306, 129)
         Me.Label35.Name = "Label35"
         Me.Label35.Size = New System.Drawing.Size(84, 13)
         Me.Label35.TabIndex = 100
@@ -274,7 +274,7 @@ Partial Class frmaddendas
         'Label36
         '
         Me.Label36.AutoSize = True
-        Me.Label36.Location = New System.Drawing.Point(51, 177)
+        Me.Label36.Location = New System.Drawing.Point(12, 129)
         Me.Label36.Name = "Label36"
         Me.Label36.Size = New System.Drawing.Size(53, 13)
         Me.Label36.TabIndex = 99
@@ -283,7 +283,7 @@ Partial Class frmaddendas
         'Label31
         '
         Me.Label31.AutoSize = True
-        Me.Label31.Location = New System.Drawing.Point(322, 111)
+        Me.Label31.Location = New System.Drawing.Point(212, 77)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(49, 13)
         Me.Label31.TabIndex = 97
@@ -293,7 +293,7 @@ Partial Class frmaddendas
         '
         Me.Txtcantidadbultos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txtcantidadbultos.ForeColor = System.Drawing.Color.DarkRed
-        Me.Txtcantidadbultos.Location = New System.Drawing.Point(323, 133)
+        Me.Txtcantidadbultos.Location = New System.Drawing.Point(211, 94)
         Me.Txtcantidadbultos.Name = "Txtcantidadbultos"
         Me.Txtcantidadbultos.Size = New System.Drawing.Size(79, 20)
         Me.Txtcantidadbultos.TabIndex = 98
@@ -317,16 +317,16 @@ Partial Class frmaddendas
         Me.Cmbcumple.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Cmbcumple.FormattingEnabled = True
         Me.Cmbcumple.Items.AddRange(New Object() {"Si", "No"})
-        Me.Cmbcumple.Location = New System.Drawing.Point(475, 131)
+        Me.Cmbcumple.Location = New System.Drawing.Point(307, 93)
         Me.Cmbcumple.Name = "Cmbcumple"
-        Me.Cmbcumple.Size = New System.Drawing.Size(93, 21)
+        Me.Cmbcumple.Size = New System.Drawing.Size(117, 21)
         Me.Cmbcumple.TabIndex = 95
         Me.Cmbcumple.ValueMember = "id"
         '
         'Label29
         '
         Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(468, 111)
+        Me.Label29.Location = New System.Drawing.Point(304, 77)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(104, 13)
         Me.Label29.TabIndex = 94
@@ -335,7 +335,7 @@ Partial Class frmaddendas
         'Label28
         '
         Me.Label28.AutoSize = True
-        Me.Label28.Location = New System.Drawing.Point(616, 111)
+        Me.Label28.Location = New System.Drawing.Point(441, 77)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(96, 13)
         Me.Label28.TabIndex = 92
@@ -344,7 +344,7 @@ Partial Class frmaddendas
         'Label27
         '
         Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(207, 111)
+        Me.Label27.Location = New System.Drawing.Point(138, 77)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(58, 13)
         Me.Label27.TabIndex = 90
@@ -354,9 +354,9 @@ Partial Class frmaddendas
         '
         Me.Txttipobulto.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txttipobulto.ForeColor = System.Drawing.Color.DarkRed
-        Me.Txttipobulto.Location = New System.Drawing.Point(209, 132)
+        Me.Txttipobulto.Location = New System.Drawing.Point(130, 94)
         Me.Txttipobulto.Name = "Txttipobulto"
-        Me.Txttipobulto.Size = New System.Drawing.Size(96, 20)
+        Me.Txttipobulto.Size = New System.Drawing.Size(66, 20)
         Me.Txttipobulto.TabIndex = 91
         Me.Txttipobulto.Text = "0"
         Me.Txttipobulto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -366,7 +366,7 @@ Partial Class frmaddendas
         Me.cmbMoneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbMoneda.FormattingEnabled = True
         Me.cmbMoneda.Items.AddRange(New Object() {"PESOS", "DOLARES"})
-        Me.cmbMoneda.Location = New System.Drawing.Point(58, 132)
+        Me.cmbMoneda.Location = New System.Drawing.Point(15, 93)
         Me.cmbMoneda.Name = "cmbMoneda"
         Me.cmbMoneda.Size = New System.Drawing.Size(109, 21)
         Me.cmbMoneda.TabIndex = 89
@@ -374,7 +374,7 @@ Partial Class frmaddendas
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(52, 111)
+        Me.Label25.Location = New System.Drawing.Point(22, 77)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(73, 13)
         Me.Label25.TabIndex = 88
@@ -386,16 +386,16 @@ Partial Class frmaddendas
         Me.cmbtienda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbtienda.FormattingEnabled = True
         Me.cmbtienda.Items.AddRange(New Object() {"1", "2", "3"})
-        Me.cmbtienda.Location = New System.Drawing.Point(619, 59)
+        Me.cmbtienda.Location = New System.Drawing.Point(444, 42)
         Me.cmbtienda.Name = "cmbtienda"
-        Me.cmbtienda.Size = New System.Drawing.Size(149, 21)
+        Me.cmbtienda.Size = New System.Drawing.Size(187, 21)
         Me.cmbtienda.TabIndex = 87
         Me.cmbtienda.ValueMember = "id"
         '
         'Label26
         '
         Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(616, 35)
+        Me.Label26.Location = New System.Drawing.Point(441, 26)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(43, 13)
         Me.Label26.TabIndex = 86
@@ -404,7 +404,7 @@ Partial Class frmaddendas
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(320, 35)
+        Me.Label24.Location = New System.Drawing.Point(208, 26)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(69, 13)
         Me.Label24.TabIndex = 84
@@ -414,7 +414,7 @@ Partial Class frmaddendas
         '
         Me.Txtconsecutivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txtconsecutivo.ForeColor = System.Drawing.Color.DarkRed
-        Me.Txtconsecutivo.Location = New System.Drawing.Point(323, 63)
+        Me.Txtconsecutivo.Location = New System.Drawing.Point(211, 42)
         Me.Txtconsecutivo.Name = "Txtconsecutivo"
         Me.Txtconsecutivo.Size = New System.Drawing.Size(79, 20)
         Me.Txtconsecutivo.TabIndex = 85
@@ -423,9 +423,9 @@ Partial Class frmaddendas
         '
         'TxtProveedor
         '
-        Me.TxtProveedor.Location = New System.Drawing.Point(55, 63)
+        Me.TxtProveedor.Location = New System.Drawing.Point(13, 42)
         Me.TxtProveedor.Name = "TxtProveedor"
-        Me.TxtProveedor.Size = New System.Drawing.Size(112, 20)
+        Me.TxtProveedor.Size = New System.Drawing.Size(91, 20)
         Me.TxtProveedor.TabIndex = 83
         Me.TxtProveedor.Text = "303008"
         Me.TxtProveedor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -433,7 +433,7 @@ Partial Class frmaddendas
         'Label23
         '
         Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(61, 36)
+        Me.Label23.Location = New System.Drawing.Point(22, 26)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(59, 13)
         Me.Label23.TabIndex = 82
@@ -443,7 +443,7 @@ Partial Class frmaddendas
         '
         Me.dpFecha.CustomFormat = "dd / MMM / yyyy"
         Me.dpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.dpFecha.Location = New System.Drawing.Point(447, 60)
+        Me.dpFecha.Location = New System.Drawing.Point(307, 42)
         Me.dpFecha.Name = "dpFecha"
         Me.dpFecha.Size = New System.Drawing.Size(117, 20)
         Me.dpFecha.TabIndex = 81
@@ -451,7 +451,7 @@ Partial Class frmaddendas
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(444, 35)
+        Me.Label22.Location = New System.Drawing.Point(304, 26)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(86, 13)
         Me.Label22.TabIndex = 80
@@ -460,7 +460,7 @@ Partial Class frmaddendas
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(202, 36)
+        Me.Label21.Location = New System.Drawing.Point(117, 26)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(53, 13)
         Me.Label21.TabIndex = 78
@@ -470,9 +470,9 @@ Partial Class frmaddendas
         '
         Me.Txtremision.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txtremision.ForeColor = System.Drawing.Color.DarkRed
-        Me.Txtremision.Location = New System.Drawing.Point(203, 63)
+        Me.Txtremision.Location = New System.Drawing.Point(110, 42)
         Me.Txtremision.Name = "Txtremision"
-        Me.Txtremision.Size = New System.Drawing.Size(102, 20)
+        Me.Txtremision.Size = New System.Drawing.Size(86, 20)
         Me.Txtremision.TabIndex = 79
         Me.Txtremision.Text = "0"
         Me.Txtremision.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -518,9 +518,9 @@ Partial Class frmaddendas
         Me.GroupBox1.Controls.Add(Me.Label34)
         Me.GroupBox1.Controls.Add(Me.Label36)
         Me.GroupBox1.Controls.Add(Me.Label35)
-        Me.GroupBox1.Location = New System.Drawing.Point(27, 29)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(801, 298)
+        Me.GroupBox1.Size = New System.Drawing.Size(646, 233)
         Me.GroupBox1.TabIndex = 123
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Detalle Remision"
@@ -531,16 +531,16 @@ Partial Class frmaddendas
         Me.CmbEntregaM.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CmbEntregaM.FormattingEnabled = True
         Me.CmbEntregaM.Items.AddRange(New Object() {"1", "2", "3"})
-        Me.CmbEntregaM.Location = New System.Drawing.Point(619, 132)
+        Me.CmbEntregaM.Location = New System.Drawing.Point(444, 93)
         Me.CmbEntregaM.Name = "CmbEntregaM"
-        Me.CmbEntregaM.Size = New System.Drawing.Size(149, 21)
+        Me.CmbEntregaM.Size = New System.Drawing.Size(187, 21)
         Me.CmbEntregaM.TabIndex = 126
         Me.CmbEntregaM.ValueMember = "id"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(202, 177)
+        Me.Label1.Location = New System.Drawing.Point(127, 129)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(59, 13)
         Me.Label1.TabIndex = 124
@@ -550,9 +550,9 @@ Partial Class frmaddendas
         '
         Me.Txtdescuento.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txtdescuento.ForeColor = System.Drawing.Color.DarkRed
-        Me.Txtdescuento.Location = New System.Drawing.Point(205, 198)
+        Me.Txtdescuento.Location = New System.Drawing.Point(120, 145)
         Me.Txtdescuento.Name = "Txtdescuento"
-        Me.Txtdescuento.Size = New System.Drawing.Size(101, 20)
+        Me.Txtdescuento.Size = New System.Drawing.Size(87, 20)
         Me.Txtdescuento.TabIndex = 125
         Me.Txtdescuento.Text = "0"
         Me.Txtdescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -563,7 +563,7 @@ Partial Class frmaddendas
         Me.CmbtiendaP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CmbtiendaP.FormattingEnabled = True
         Me.CmbtiendaP.Items.AddRange(New Object() {"1", "2", "3"})
-        Me.CmbtiendaP.Location = New System.Drawing.Point(196, 59)
+        Me.CmbtiendaP.Location = New System.Drawing.Point(137, 47)
         Me.CmbtiendaP.Name = "CmbtiendaP"
         Me.CmbtiendaP.Size = New System.Drawing.Size(124, 21)
         Me.CmbtiendaP.TabIndex = 125
@@ -572,7 +572,7 @@ Partial Class frmaddendas
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(193, 34)
+        Me.Label2.Location = New System.Drawing.Point(143, 31)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(43, 13)
         Me.Label2.TabIndex = 124
@@ -584,7 +584,7 @@ Partial Class frmaddendas
         Me.CmbPedidoEmitidoProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CmbPedidoEmitidoProveedor.FormattingEnabled = True
         Me.CmbPedidoEmitidoProveedor.Items.AddRange(New Object() {"SI", "NO"})
-        Me.CmbPedidoEmitidoProveedor.Location = New System.Drawing.Point(502, 60)
+        Me.CmbPedidoEmitidoProveedor.Location = New System.Drawing.Point(413, 48)
         Me.CmbPedidoEmitidoProveedor.Name = "CmbPedidoEmitidoProveedor"
         Me.CmbPedidoEmitidoProveedor.Size = New System.Drawing.Size(124, 21)
         Me.CmbPedidoEmitidoProveedor.TabIndex = 126
@@ -601,9 +601,9 @@ Partial Class frmaddendas
         Me.GroupBox2.Controls.Add(Me.TxtCantidadArticulos)
         Me.GroupBox2.Controls.Add(Me.Label43)
         Me.GroupBox2.Controls.Add(Me.Label44)
-        Me.GroupBox2.Location = New System.Drawing.Point(27, 359)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 251)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(801, 109)
+        Me.GroupBox2.Size = New System.Drawing.Size(646, 93)
         Me.GroupBox2.TabIndex = 127
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Detalle Pedidos"
@@ -612,7 +612,7 @@ Partial Class frmaddendas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(852, 526)
+        Me.ClientSize = New System.Drawing.Size(676, 399)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label30)

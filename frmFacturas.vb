@@ -169,7 +169,6 @@ Public Class frmFacturas
         Else
             vReport.Load(System.AppDomain.CurrentDomain.BaseDirectory() & "/Reportes/factura.frx")
         End If
-        'MsgBox(vFac.Descuento.ToString)
         vReport.RegisterData(vTablaProds, "Productos")
         vReport.SetParameterValue("fecha_emi", Format(vFactura.Data.Fecha.Value, "dd/MM/yyyy HH:mm:ss"))
         vReport.SetParameterValue("Serie", vFactura.Data.Serie.Value)

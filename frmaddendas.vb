@@ -1,8 +1,10 @@
 Imports MySql.Data.MySqlClient
 Imports BaseDatos
+
 Public Class frmaddendas
     Public vAddSorRemi As New BaseDatos.AddendaSorianaremision
     Public vAddSorpedido As New BaseDatos.AddendaSorianapedidos
+
     Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
 
         vAddSorRemi.Proveedor = Me.TxtProveedor.Text
@@ -22,14 +24,14 @@ Public Class frmaddendas
         vAddSorRemi.Total = Me.Txttotal.Text
         vAddSorRemi.CantidadPedidos = Me.Txtcantidadpedidos.Text
         vAddSorRemi.FechaEntregaMercancia = Me.FechaEntregaM.Text
-        vAddSorRemi.FolioNotaEntrada = Me.FolioNotaEntrada.Text
+        'vAddSorRemi.FolioNotaEntrada = Me.FolioNotaEntrada.Text
         '-------------pedidos
         vAddSorpedido.Proveedor = Me.TxtProveedor.Text
         vAddSorpedido.remision = Me.Txtremision.Text
         vAddSorpedido.FolioPedido = Me.Txtfoliopedido.Text
         vAddSorpedido.Tienda = Me.CmbtiendaP.SelectedValue
         vAddSorpedido.CantidadArticulos = Me.TxtCantidadArticulos.Text
-        vAddSorpedido.PedidoEmitidoProveedor = Me.CmbPedidoEmitidoProveedor.Text
+        'vAddSorpedido.PedidoEmitidoProveedor = Me.CmbPedidoEmitidoProveedor.Text
         Close()
     End Sub
   
@@ -65,4 +67,12 @@ Public Class frmaddendas
 
     End Sub
 
+    Private Sub Label28_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label28.Click
+
+    End Sub
+
+    Private Sub cmbtienda_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbtienda.SelectedIndexChanged
+        CmbEntregaM.Text = cmbtienda.Text
+        CmbtiendaP.Text = cmbtienda.Text
+    End Sub
 End Class

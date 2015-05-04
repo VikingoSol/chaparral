@@ -6,6 +6,7 @@ Public Class frmFactura
     Dim vTablaProds As New DataTable
     Public gdescuento As Double
     Dim noarticulosventa As Double = 0
+
     Public addenR As New AddendaSorianaremision
     Public addenP As New AddendaSorianapedidos
 
@@ -355,6 +356,9 @@ Public Class frmFactura
         'End If
 
         Dim vFac As New frmFacturaProc
+        vFac.vAddendaSR = addenR
+        vFac.vAddendaSP = addenP
+
         Dim vFactura As New dFactura
         vFactura.Serie = Me.txtSerie.Text
         vFactura.Folio = Me.txtFolio.Text
@@ -483,6 +487,7 @@ Public Class frmFactura
                 addenR = f.vAddSorRemi
                 addenP = f.vAddSorpedido
                 f.ShowDialog()
+
                 CheckBox2.Checked = False
                 CheckBox3.Checked = False
 
