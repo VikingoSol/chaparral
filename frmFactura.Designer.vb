@@ -414,7 +414,7 @@ Partial Class frmFactura
         Me.txtCuenta.Location = New System.Drawing.Point(298, 82)
         Me.txtCuenta.MaxLength = 4
         Me.txtCuenta.Name = "txtCuenta"
-        Me.txtCuenta.Size = New System.Drawing.Size(127, 20)
+        Me.txtCuenta.Size = New System.Drawing.Size(66, 20)
         Me.txtCuenta.TabIndex = 34
         '
         'Label14
