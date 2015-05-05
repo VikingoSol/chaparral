@@ -7,8 +7,8 @@ Public Class frmFactura
     Public gdescuento As Double
     Dim noarticulosventa As Double = 0
 
-    Public addenR As New AddendaSorianaremision
-    Public addenP As New AddendaSorianapedidos
+    Public addenR As New dAddendaSorianaremision
+    Public addenP As New dAddendaSorianapedidos
 
     Public Function Agregar() As Integer
         If Me.ShowDialog = Windows.Forms.DialogResult.OK Then
@@ -542,4 +542,44 @@ Public Class dFactura
     Public Moneda As String = "MXN"
     Public TipoCambio As Double
     Public Descuento As Double
+End Class
+Public Class dAddendaSorianaremision
+    Public Proveedor As Integer = 303008
+    Public remision As String
+    Public Consecutivo As String
+    Public FechaRemision As String
+    Public Tienda As String
+    Public TipoMoneda As String
+    Public TipoBulto As Integer
+    Public EntregaMercancia As String
+    Public CumpleReqFiscales As String
+    Public CantidadBultos As Integer
+    Public Subtotal As Double
+    Public IEPS As Double
+    Public IVA As Double
+    Public OtrosImpuestos As Double
+    Public Total As Double
+    Public CantidadPedidos As Integer
+    Public FechaEntregaMercancia As String
+    Public FolioNotaEntrada As String
+End Class
+Public Class dAddendaSorianapedidos
+    Public Proveedor As Integer
+    Public remision As String
+    Public FolioPedido As Integer
+    Public Tienda As String
+    Public CantidadArticulos As Integer
+    Public PedidoEmitidoProveedor As String
+End Class
+Public Class dAddendaSorianaArticulos
+    Public Proveedor As Integer
+    Public remision As String
+    Public FolioPedido As Integer
+    Public Tienda As String
+    Public CantidadArticulos As Integer
+    Public Codigo As String
+    Public CantidadUnidadCompra As Double
+    Public CostoNetoUnidadCompra As Double
+    Public PorcentajeIEPS As Double
+    Public PorcentajeIVA As String
 End Class

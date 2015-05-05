@@ -15,8 +15,8 @@ Module mGlobales
     Public RfcActual As String = ""
     Public IdRfc As Integer
 
-    Public vAddSorianaRemi As BaseDatos.AddendaSorianaremision
-    Public vAddSorianapedido As BaseDatos.AddendaSorianapedidos
+    Public vAddSorianaRemi As dAddendaSorianaremision
+    Public vAddSorianapedido As dAddendaSorianapedidos
 
     Public Function RFC_Check(ByVal pRFC As String) As Boolean
         If Regex.IsMatch(pRFC, "^([a-zA-Z\s]{3,4})\d{6}([0-9a-zA-Z\w]{3})$") Then
@@ -342,10 +342,6 @@ Module mGlobales
     '    vManager = ElectronicManage.NewEntity
     '    vFactura = ElectronicDocument.NewEntity()
     '    vFactura.AssignManage(vManager)
-
-
-
-
     '    Dim sw As New IO.StreamReader("c:/error.txt")
     '    Dim n As Integer
     '    vFactura.Manage.Load.Options = vFactura.Manage.Load.Options - LoadOptions.ValidateCertificateWithCrl - LoadOptions.ValidateSignature - LoadOptions.ValidateStamp

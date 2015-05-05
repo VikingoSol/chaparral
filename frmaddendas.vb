@@ -2,8 +2,8 @@ Imports MySql.Data.MySqlClient
 Imports BaseDatos
 
 Public Class frmaddendas
-    Public vAddSorRemi As New BaseDatos.AddendaSorianaremision
-    Public vAddSorpedido As New BaseDatos.AddendaSorianapedidos
+    Public vAddSorRemi As New dAddendaSorianaremision
+    Public vAddSorpedido As New dAddendaSorianapedidos
 
     Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
 

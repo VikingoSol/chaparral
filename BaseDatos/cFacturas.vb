@@ -237,43 +237,4 @@ Public Class dFacturaView
     Public RFC_Emisor As String
 End Class
 
-Public Class AddendaSorianaremision
-    Public Proveedor As Integer = 303008
-    Public remision As String
-    Public Consecutivo As String
-    Public FechaRemision As String
-    Public Tienda As String
-    Public TipoMoneda As String
-    Public TipoBulto As Integer
-    Public EntregaMercancia As String
-    Public CumpleReqFiscales As String
-    Public CantidadBultos As Integer
-    Public Subtotal As Double
-    Public IEPS As Double
-    Public IVA As Double
-    Public OtrosImpuestos As Double
-    Public Total As Double
-    Public CantidadPedidos As Integer
-    Public FechaEntregaMercancia As String
-    Public FolioNotaEntrada As String
-End Class
-Public Class AddendaSorianapedidos
-    Public Proveedor As Integer
-    Public remision As String
-    Public FolioPedido As Integer
-    Public Tienda As String
-    Public CantidadArticulos As Integer
-    Public PedidoEmitidoProveedor As String
-End Class
-Public Class AddendaSorianaArticulos
-    Public Proveedor As Integer
-    Public remision As String
-    Public FolioPedido As Integer
-    Public Tienda As String
-    Public CantidadArticulos As Integer
-    Public Codigo As String
-    Public CantidadUnidadCompra As Double
-    Public CostoNetoUnidadCompra As Double
-    Public PorcentajeIEPS As Double
-    Public PorcentajeIVA As String
-End Class
+

@@ -6,7 +6,10 @@ Imports FacturaNETLib.Document
 Imports System.Xml
 Imports System.Net.Mail
 Imports System.Net
+Imports System.Text
+Imports System.IO
 Public Class frmFacturas
+    Dim doc As New XmlDocument()
     Dim vCliente As New dCliente
     Private Shared _ObjSingleton As frmFacturas = Nothing
     Dim vFechaFacs As Date
@@ -357,6 +360,7 @@ Public Class frmFacturas
         pathfilexml = "c:\correo\" & Me.grdFacturas.GetRow.Cells("rfc_emisor").Value & "_" & Me.grdFacturas.GetRow.Cells("folio").Value & ".xml"
         ' xml
         Dim vFile As New IO.StreamWriter(pathfilexml)
+        Dim vFile2 As New IO.StreamReader("c:\xml\templatesoriana.xml")
         Dim vXml As String = cFacturas.GetFacturaXML(Me.grdFacturas.GetRow.Cells("id").Value)
         vFile.Write(vXml)
         vFile.Flush()
@@ -368,6 +372,7 @@ Public Class frmFacturas
         'Dim correo As String = InputBox("Enviar archivo xml y pdf", "Teclee email Cliente", vCliente.Email, 100, 100)
         EnvioMail(pathfilepdf, pathfilexml, vCliente.Email)
     End Sub
+  
     Public Sub EnvioMail(ByVal pdf As String, ByVal xml As String, ByVal correo_cliente As String)
         Dim Ret As Long
         'Si el Api retorna 0 quiere decir que no hay ningun tipo de conexión de Red   
