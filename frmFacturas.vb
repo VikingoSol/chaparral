@@ -88,7 +88,6 @@ Public Class frmFacturas
             e.Row.Cells("estado").FormatStyle.FontBold = Janus.Windows.GridEX.TriState.True
         End If
     End Sub
-
     Private Sub grdFacturas_RowCountChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles grdFacturas.RowCountChanged
         If Me.grdFacturas.RecordCount = 0 Then
             Me.btnView.Enabled = False
@@ -120,7 +119,6 @@ Public Class frmFacturas
             Me.btnExpXML.Enabled = True
         End If
     End Sub
-
     Private Sub btnView_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnView.Click
         Dim vFacs As New frmFacturaView
         vFacs.VerFactura(Me.grdFacturas.GetRow.Cells("id").Value)
@@ -142,7 +140,6 @@ Public Class frmFacturas
             Return Nothing
         End If
 
-
         vManager = ElectronicManage.NewEntity
         vFactura = ElectronicDocument.NewEntity()
         vFactura.AssignManage(vManager)
@@ -158,7 +155,6 @@ Public Class frmFacturas
         End If
 
         Dim n As Integer
-
         Dim vTablaProds As DataTable = vFacs.GetProductosFacturados(Me.grdFacturas.GetRow.Cells("id").Value)
         'Dim vDs As New DataSet
         vTablaProds.TableName = "Productos"
