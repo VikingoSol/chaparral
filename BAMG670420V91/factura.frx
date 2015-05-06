@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ScriptLanguage="Vb" ReportInfo.Created="02/23/2012 22:31:56" ReportInfo.Modified="04/26/2015 12:30:19" ReportInfo.CreatorVersion="1.9.1.0">
+<Report ScriptLanguage="Vb" ReportInfo.Created="02/23/2012 22:31:56" ReportInfo.Modified="05/05/2015 18:08:19" ReportInfo.CreatorVersion="1.9.1.0">
   <ScriptText>Imports System
 Imports System.Collections
 Imports System.Collections.Generic
@@ -116,6 +116,7 @@ End Namespace
     <Parameter Name="cuenta" DataType="System.String"/>
     <Parameter Name="descuento" DataType="System.Double"/>
     <Parameter Name="retiva" DataType="System.String"/>
+    <Parameter Name="porc_desc" DataType="System.String"/>
   </Dictionary>
   <ReportPage Name="Page1" Guides="699.52,15">
     <PageHeaderBand Name="PageHeader1" Width="718.2" Height="410.13">
@@ -246,6 +247,11 @@ End Namespace
       </TableObject>
       <TextObject Name="Text1" Left="137.06" Top="3.78" Width="370.44" Height="109.62" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Text="[txt_cantidad]" Padding="2, 5, 2, 0"/>
       <TextObject Name="Text9" Left="140.84" Top="98.28" Width="362.88" Height="15.12" Text="PAGO EN UNA SOLA EXHIBICIÓN" HorzAlign="Center" Font="Arial, 9pt, style=Bold" TextFill.Color="95, 95, 96"/>
+      <TextObject Name="Text10" Left="137.85" Top="117.18" Width="362.88" Height="18.9" Visible="false" Text="[porc_desc]% DESCUENTO EN LINEA" VertAlign="Center">
+        <Highlight>
+          <Condition Expression="[porc_desc] &gt;0" ApplyTextFill="false"/>
+        </Highlight>
+      </TextObject>
       <ChildBand Name="Child5" Top="627.54" Width="718.2" Height="60.48" CanGrow="true" CanBreak="true">
         <TextObject Name="Text2" Left="15.49" Top="3.78" Width="684.03" Height="22.68" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Fill.Color="1, 127, 252" Text="CADENA ORIGINAL DEL COMPLEMENTO DE CERTIFICACION DIGITAL DEL SAT" VertAlign="Center" Font="Arial, 10pt, style=Bold" TextFill.Color="White"/>
         <TextObject Name="Text3" Left="15.49" Top="26.46" Width="684.03" Height="30.24" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Fill.Color="White" CanGrow="true" GrowToBottom="true" Text="[cadena_original]" Font="Arial, 8pt"/>
