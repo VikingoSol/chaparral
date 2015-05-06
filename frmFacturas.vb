@@ -164,7 +164,6 @@ Public Class frmFacturas
         vTablaProds.TableName = "Productos"
         'vDs.Tables.Add(vTablaProds)
         'vDs.WriteXml("c:/dsFactura.xml")
-
         Dim vReport As New FastReport.Report
 
         If IO.File.Exists(System.AppDomain.CurrentDomain.BaseDirectory() & vFac.RFC_Emisor & "/factura.frx") Then
