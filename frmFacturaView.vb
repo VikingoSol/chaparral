@@ -7,7 +7,7 @@ Imports System.Xml
 Imports System.Text
 Public Class frmFacturaView
     'Dim vTablaProds As New DataTable
-   
+    
 
     Public Sub VerFactura(ByVal pId As Integer)
         Dim vFacs As New cFacturas
@@ -71,6 +71,8 @@ Public Class frmFacturaView
                 Me.txtSelloSAT.Text = vTimbre.SelloSat.Value
                 Me.txtSelloEmisor.Text = vTimbre.SelloCfd.Value
                 Me.txtFecha_Cer.Text = vTimbre.FechaTimbrado.Value
+                Dim vXml As String = cFacturas.GetFacturaXML(pId)
+                Me.TxtXml.Text = vXml
             End If
         Next
 
@@ -113,6 +115,19 @@ Public Class frmFacturaView
         If Not IsNothing(vUnis) Then
             Me.grdProductos.RootTable.Columns("unidad").ValueList.PopulateValueList(vUnis.DefaultView, "id", "unidad")
         End If
+
+        Dim vFac As New BaseDatos.cFacturas
+        Me.cmbtienda.DisplayMember = "nombre"
+        Me.cmbtienda.ValueMember = "no"
+        Me.cmbtienda.DataSource = vFac.GettiendasSoriana
+
+        Me.CmbEntregaM.DisplayMember = "nombre"
+        Me.CmbEntregaM.ValueMember = "no"
+        Me.CmbEntregaM.DataSource = vFac.GettiendasSoriana
+
+        Me.CmbtiendaP.DisplayMember = "nombre"
+        Me.CmbtiendaP.ValueMember = "no"
+        Me.CmbtiendaP.DataSource = vFac.GettiendasSoriana
     End Sub
 
     'Private Sub Crear_Tabla()
@@ -143,7 +158,7 @@ Public Class frmFacturaView
         Me.Close()
     End Sub
 
-    Private Sub TextBox3_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Txtconsecutivo.TextChanged
+    Private Sub TextBox3_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
 
@@ -158,4 +173,44 @@ Public Class frmFacturaView
 
 
 
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
+    End Sub
+
+    Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
+        Dim vAddSorRemi As FacturaNETLib.Addendas.Soriana.SorianaRemision
+        Dim vAddSorpedido As FacturaNETLib.Addendas.Soriana.SorianaPedidos
+
+        vAddSorRemi.Proveedor.Value = Me.TxtProveedor.Text
+        vAddSorRemi.Remision.Value = Me.Txtremision.Text
+        vAddSorRemi.Consecutivo.Value = Me.Txtconsecutivo.Text
+        vAddSorRemi.FechaRemision.Value = Me.Txtremision.Text
+        vAddSorRemi.Tienda.Value = Me.cmbtienda.SelectedValue
+        vAddSorRemi.TipoMoneda.Value = Me.cmbMoneda.Text
+        vAddSorRemi.TipoBulto.Value = Me.Txttipobulto.Text
+        vAddSorRemi.EntregaMercancia.Value = Me.CmbEntregaM.Text
+        vAddSorRemi.CumpleReqFiscales.Value = Me.Cmbcumple.Text
+        vAddSorRemi.CantidadBultos.Value = Me.Txtcantidadbultos.Text
+        vAddSorRemi.Subtotal.Value = Me.txtSubTotal.Text
+        vAddSorRemi.IEPS.Value = Me.Txtieps.Text
+        vAddSorRemi.IVA.Value = Me.txtIVA.Text
+        vAddSorRemi.OtrosImpuestos.Value = Me.Txtotrosi.Text
+        vAddSorRemi.Total.Value = Me.txtTotal.Text
+        vAddSorRemi.CantidadPedidos.Value = Me.Txtcantidadpedidos.Text
+        vAddSorRemi.FechaEntregaMercancia.Value = Me.FechaEntregaM.Text
+        'vAddSorRemi.FolioNotaEntrada = Me.FolioNotaEntrada.Text
+        '-------------pedidos
+        vAddSorpedido.Proveedor.Value = Me.TxtProveedor.Text
+        vAddSorpedido.Remision.Value = Me.Txtremision.Text
+        vAddSorpedido.FolioPedido.Value = Me.Txtfoliopedido.Text
+        vAddSorpedido.Tienda.Value = Me.CmbtiendaP.SelectedValue
+        vAddSorpedido.CantidadArticulos.Value = Me.TxtCantidadArticulos.Text
+        'vAddSorpedido.PedidoEmitidoProveedor.Value = Me.CmbPedidoEmitidoProveedor.Text
+
+    End Sub
+
+    Private Sub cmbtienda_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmbtienda.SelectedIndexChanged
+        CmbEntregaM.Text = cmbtienda.Text
+        CmbtiendaP.Text = cmbtienda.Text
+    End Sub
 End Class

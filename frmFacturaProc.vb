@@ -160,49 +160,51 @@ Public Class frmFacturaProc
             '---------Adenda Soriana ----------------
 
             'Dim vAddendaSR As dAddendaSorianaremision
+            'Dim Addsoriana As Addenda
+            'Addsoriana = New Addenda
+            'Dim AddsorianaRemision As Addendas.Soriana.SorianaRemision
 
             'If vAddSoriana Then
-            'Dim AddsorianaRemision As Addendas.Soriana.SorianaRemision
-            'AddsorianaRemision.Remision.Value = vAddendaSR.remision
-            'AddsorianaRemision.Proveedor.Value = vAddendaSR.Proveedor
-            'AddsorianaRemision.Consecutivo.Value = vAddendaSR.Consecutivo
-            'AddsorianaRemision.FechaRemision.Value = vAddendaSR.FechaRemision
-            'AddsorianaRemision.Tienda.Value = vAddendaSR.Tienda
-            'AddsorianaRemision.TipoMoneda.Value = vAddendaSR.TipoMoneda
-            'AddsorianaRemision.TipoBulto.Value = vAddendaSR.TipoBulto
-            'AddsorianaRemision.EntregaMercancia.Value = vAddendaSR.EntregaMercancia
-            'AddsorianaRemision.CumpleReqFiscales.Value = vAddendaSR.CumpleReqFiscales
-            'AddsorianaRemision.CantidadBultos.Value = vAddendaSR.CantidadBultos
-            'AddsorianaRemision.Subtotal.Value = vAddendaSR.Subtotal
-            'AddsorianaRemision.IEPS.Value = vAddendaSR.IEPS
-            'AddsorianaRemision.IVA.Value = vAddendaSR.IVA
-            'AddsorianaRemision.OtrosImpuestos.Value = vAddendaSR.OtrosImpuestos
-            'AddsorianaRemision.Total.Value = vAddendaSR.Total
-            'AddsorianaRemision.CantidadPedidos.Value = vAddendaSR.CantidadPedidos
-            'AddsorianaRemision.FechaEntregaMercancia.Value = vAddendaSR.FechaEntregaMercancia
+            '    AddsorianaRemision.Remision.Value = vAddendaSR.remision
+            '    AddsorianaRemision.Proveedor.Value = vAddendaSR.Proveedor
+            '    AddsorianaRemision.Consecutivo.Value = vAddendaSR.Consecutivo
+            '    AddsorianaRemision.FechaRemision.Value = vAddendaSR.FechaRemision
+            '    AddsorianaRemision.Tienda.Value = vAddendaSR.Tienda
+            '    AddsorianaRemision.TipoMoneda.Value = vAddendaSR.TipoMoneda
+            '    AddsorianaRemision.TipoBulto.Value = vAddendaSR.TipoBulto
+            '    AddsorianaRemision.EntregaMercancia.Value = vAddendaSR.EntregaMercancia
+            '    AddsorianaRemision.CumpleReqFiscales.Value = vAddendaSR.CumpleReqFiscales
+            '    AddsorianaRemision.CantidadBultos.Value = vAddendaSR.CantidadBultos
+            '    AddsorianaRemision.Subtotal.Value = vAddendaSR.Subtotal
+            '    AddsorianaRemision.IEPS.Value = vAddendaSR.IEPS
+            '    AddsorianaRemision.IVA.Value = vAddendaSR.IVA
+            '    AddsorianaRemision.OtrosImpuestos.Value = vAddendaSR.OtrosImpuestos
+            '    AddsorianaRemision.Total.Value = vAddendaSR.Total
+            '    AddsorianaRemision.CantidadPedidos.Value = vAddendaSR.CantidadPedidos
+            '    AddsorianaRemision.FechaEntregaMercancia.Value = vAddendaSR.FechaEntregaMercancia
 
-            ''pedidos ---------
-            'Dim AddsorianaPedidos As New Addendas.Soriana.SorianaPedidos
-            'AddsorianaPedidos.Proveedor.Value = frmFactura.addenP.Proveedor
-            'AddsorianaPedidos.Remision.Value = frmFactura.addenP.remision
-            'AddsorianaPedidos.FolioPedido.Value = frmFactura.addenP.FolioPedido
-            'AddsorianaPedidos.Tienda.Value = frmFactura.addenP.Tienda
-            'AddsorianaPedidos.CantidadArticulos.Value = frmFactura.addenP.CantidadArticulos
-            ''AddsorianaPedidos.PedidoEmitidoProveedor.value = "SI" falta este campo
+            '    'pedidos ---------
+            '    Dim AddsorianaPedidos As New Addendas.Soriana.SorianaPedidos
+            '    AddsorianaPedidos.Proveedor.Value = frmFactura.addenP.Proveedor
+            '    AddsorianaPedidos.Remision.Value = frmFactura.addenP.remision
+            '    AddsorianaPedidos.FolioPedido.Value = frmFactura.addenP.FolioPedido
+            '    AddsorianaPedidos.Tienda.Value = frmFactura.addenP.Tienda
+            '    AddsorianaPedidos.CantidadArticulos.Value = frmFactura.addenP.CantidadArticulos
+            '    'AddsorianaPedidos.PedidoEmitidoProveedor.value = "SI" falta este campo
 
-            'Dim AddsorianaArticulos As Addendas.Soriana.SorianaArticulos
-            'For Each vRow In Me.vProdsFac.Rows
-            '    AddsorianaArticulos = New FacturaNETLib.Addendas.Soriana.SorianaArticulos
-            '    AddsorianaArticulos.Proveedor.Value = vRow.Item("cantidad")
-            '    AddsorianaArticulos.Remision.Value = vRow.Item("producto")
-            '    AddsorianaArticulos.FolioPedido.Value = vRow.Item("codigo")
-            '    AddsorianaArticulos.Tienda.Value = FormatNumber(vRow.Item("precio"), 2, TriState.False, TriState.False, TriState.False)
-            '    AddsorianaArticulos.Codigo.Value = FormatNumber(vRow.Item("precio") * vRow.Item("cantidad"), 2, TriState.False, TriState.False, TriState.False)
-            '    AddsorianaArticulos.CantidadUnidadCompra.Value = vRow.Item("unidadnom")
-            '    AddsorianaArticulos.CostoNetoUnidadCompra.Value = vRow.Item("unidadnom")
-            '    AddsorianaArticulos.PorcentajeIEPS.Value = vRow.Item("unidadnom")
-            '    AddsorianaArticulos.PorcentajeIVA.Value = vRow.Item("unidadnom")
-            'Next
+            '    Dim AddsorianaArticulos As Addendas.Soriana.SorianaArticulos
+            '    For Each vRow In Me.vProdsFac.Rows
+            '        AddsorianaArticulos = New FacturaNETLib.Addendas.Soriana.SorianaArticulos
+            '        AddsorianaArticulos.Proveedor.Value = vRow.Item("cantidad")
+            '        AddsorianaArticulos.Remision.Value = vRow.Item("producto")
+            '        AddsorianaArticulos.FolioPedido.Value = vRow.Item("codigo")
+            '        AddsorianaArticulos.Tienda.Value = FormatNumber(vRow.Item("precio"), 2, TriState.False, TriState.False, TriState.False)
+            '        AddsorianaArticulos.Codigo.Value = FormatNumber(vRow.Item("precio") * vRow.Item("cantidad"), 2, TriState.False, TriState.False, TriState.False)
+            '        AddsorianaArticulos.CantidadUnidadCompra.Value = vRow.Item("unidadnom")
+            '        AddsorianaArticulos.CostoNetoUnidadCompra.Value = vRow.Item("unidadnom")
+            '        AddsorianaArticulos.PorcentajeIEPS.Value = vRow.Item("unidadnom")
+            '        AddsorianaArticulos.PorcentajeIVA.Value = vRow.Item("unidadnom")
+            '    Next
             'Else
 
             'End If

@@ -181,7 +181,8 @@ Public Class frmFacturas
         vReport.SetParameterValue("metodo_pago", vFactura.Data.MetodoPago.Value)
         vReport.SetParameterValue("cuenta", vFactura.Data.NumeroCuentaPago.Value)
         vReport.SetParameterValue("descuento", vFactura.Data.Descuento.Value)
-        vReport.SetParameterValue("porc_desc", CInt(((vFactura.Data.Descuento.Value * 100) / vFactura.Data.Total.Value)))
+        vdesc = CDbl(((vFactura.Data.Descuento.Value * 100) / vFactura.Data.SubTotal.Value))
+        vReport.SetParameterValue("porc_desc", vdesc)
 
         Dim vDir As String
         vDir = vFactura.Data.Receptor.Domicilio.Calle.Value
