@@ -24,14 +24,14 @@ Public Class frmaddendas
         vAddSorRemi.Total = Me.Txttotal.Text
         vAddSorRemi.CantidadPedidos = Me.Txtcantidadpedidos.Text
         vAddSorRemi.FechaEntregaMercancia = Me.FechaEntregaM.Text
-        'vAddSorRemi.FolioNotaEntrada = Me.FolioNotaEntrada.Text
+        vAddSorRemi.FolioNotaEntrada = Me.FolioNotaEntrada.Text
         '-------------pedidos
         vAddSorpedido.Proveedor = Me.TxtProveedor.Text
         vAddSorpedido.remision = Me.Txtremision.Text
         vAddSorpedido.FolioPedido = Me.Txtfoliopedido.Text
         vAddSorpedido.Tienda = Me.CmbtiendaP.SelectedValue
         vAddSorpedido.CantidadArticulos = Me.TxtCantidadArticulos.Text
-        'vAddSorpedido.PedidoEmitidoProveedor = Me.CmbPedidoEmitidoProveedor.Text
+        vAddSorpedido.PedidoEmitidoProveedor = Me.CmbPedidoEmitidoProveedor.Text
         Close()
     End Sub
   
