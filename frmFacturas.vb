@@ -155,6 +155,7 @@ Public Class frmFacturas
         End If
 
         Dim n As Integer
+        Dim vdesc As Double
         Dim vTablaProds As DataTable = vFacs.GetProductosFacturados(Me.grdFacturas.GetRow.Cells("id").Value)
         'Dim vDs As New DataSet
         vTablaProds.TableName = "Productos"
@@ -180,6 +181,7 @@ Public Class frmFacturas
         vReport.SetParameterValue("metodo_pago", vFactura.Data.MetodoPago.Value)
         vReport.SetParameterValue("cuenta", vFactura.Data.NumeroCuentaPago.Value)
         vReport.SetParameterValue("descuento", vFactura.Data.Descuento.Value)
+        vReport.SetParameterValue("porc_desc", CInt(((vFactura.Data.Descuento.Value * 100) / vFactura.Data.Total.Value)))
 
         Dim vDir As String
         vDir = vFactura.Data.Receptor.Domicilio.Calle.Value

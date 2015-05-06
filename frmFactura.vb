@@ -373,7 +373,7 @@ Public Class frmFactura
         vFactura.TipoCambio = Me.txtTipoCambio.Text
         vFactura.Moneda = Me.cmbMoneda.SelectedItem
         vFactura.Fecha = Me.dpFecha.Value
-        Me.vIdFactura = vFac.Facturar(vFactura, Me.vTablaProds)
+        Me.vIdFactura = vFac.Facturar(vFactura, Me.vTablaProds, Me.CheckBox1.Checked)
         If vIdFactura > 0 Then
             Me.DialogResult = Windows.Forms.DialogResult.OK
             Me.Close()

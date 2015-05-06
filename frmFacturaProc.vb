@@ -11,14 +11,16 @@ Public Class frmFacturaProc
     Private vFacturaData As dFactura
     Private vProdsFac As DataTable
     Private vIdFac As Integer = -1
+    Private vAddSoriana As Boolean
 
     Public vAddendaSR As dAddendaSorianaremision
     Public vAddendaSP As dAddendaSorianapedidos
 
-    Public Function Facturar(ByVal pFactura As dFactura, ByVal pProd As DataTable) As Integer
+    Public Function Facturar(ByVal pFactura As dFactura, ByVal pProd As DataTable, ByVal pConAddSoriana As Boolean) As Integer
         Me.txtEstatus.Text = "Generando CFDi"
         If IsNothing(pFactura) OrElse IsNothing(pProd) OrElse pProd.Rows.Count = 0 Then Return -1
         vFacturaData = pFactura
+        vAddSoriana = pConAddSoriana
         vProdsFac = pProd
         Bw.RunWorkerAsync()
         If Me.ShowDialog = Windows.Forms.DialogResult.OK Then
@@ -159,7 +161,7 @@ Public Class frmFacturaProc
 
             'Dim vAddendaSR As dAddendaSorianaremision
 
-            'If frmFactura.CheckBox1.Checked Then
+            'If vAddSoriana Then
             'Dim AddsorianaRemision As Addendas.Soriana.SorianaRemision
             'AddsorianaRemision.Remision.Value = vAddendaSR.remision
             'AddsorianaRemision.Proveedor.Value = vAddendaSR.Proveedor
