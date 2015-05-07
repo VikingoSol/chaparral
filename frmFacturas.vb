@@ -183,6 +183,7 @@ Public Class frmFacturas
         vReport.SetParameterValue("descuento", vFactura.Data.Descuento.Value)
         vdesc = CDbl(((vFactura.Data.Descuento.Value * 100) / vFactura.Data.SubTotal.Value))
         vReport.SetParameterValue("porc_desc", vdesc)
+         vReport.SetParameterValue("picturebox2",
 
         Dim vDir As String
         vDir = vFactura.Data.Receptor.Domicilio.Calle.Value
