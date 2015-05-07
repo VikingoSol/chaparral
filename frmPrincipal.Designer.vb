@@ -27,12 +27,15 @@ Partial Class frmPrincipal
         Me.FacturasToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
         Me.NuevaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ExportarXMLsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator
+        Me.SelecionarRFCToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.CatalogoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.NuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ProductosServiciosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.CatalogoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem
         Me.AgergarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.SeleccionarRFCToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ConToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
@@ -41,9 +44,6 @@ Partial Class frmPrincipal
         Me.ToolStripButton4 = New System.Windows.Forms.ToolStripButton
         Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton
         Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator
-        Me.SelecionarRFCToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.SeleccionarRFCToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.MenuStrip1.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -82,6 +82,17 @@ Partial Class frmPrincipal
         Me.ExportarXMLsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ExportarXMLsToolStripMenuItem.Text = "Exportar XMLs"
         '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(149, 6)
+        '
+        'SelecionarRFCToolStripMenuItem
+        '
+        Me.SelecionarRFCToolStripMenuItem.Name = "SelecionarRFCToolStripMenuItem"
+        Me.SelecionarRFCToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.SelecionarRFCToolStripMenuItem.Text = "Selecionar RFC"
+        '
         'ClientesToolStripMenuItem
         '
         Me.ClientesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CatalogoToolStripMenuItem, Me.NuevoToolStripMenuItem})
@@ -92,13 +103,13 @@ Partial Class frmPrincipal
         'CatalogoToolStripMenuItem
         '
         Me.CatalogoToolStripMenuItem.Name = "CatalogoToolStripMenuItem"
-        Me.CatalogoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CatalogoToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
         Me.CatalogoToolStripMenuItem.Text = "Catalogo"
         '
         'NuevoToolStripMenuItem
         '
         Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
-        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
         Me.NuevoToolStripMenuItem.Text = "Nuevo"
         '
         'ProductosServiciosToolStripMenuItem
@@ -119,6 +130,12 @@ Partial Class frmPrincipal
         Me.AgergarToolStripMenuItem.Name = "AgergarToolStripMenuItem"
         Me.AgergarToolStripMenuItem.Size = New System.Drawing.Size(122, 22)
         Me.AgergarToolStripMenuItem.Text = "Nuevo"
+        '
+        'SeleccionarRFCToolStripMenuItem
+        '
+        Me.SeleccionarRFCToolStripMenuItem.Name = "SeleccionarRFCToolStripMenuItem"
+        Me.SeleccionarRFCToolStripMenuItem.Size = New System.Drawing.Size(103, 20)
+        Me.SeleccionarRFCToolStripMenuItem.Text = "Seleccionar RFC"
         '
         'ConToolStripMenuItem
         '
@@ -186,23 +203,6 @@ Partial Class frmPrincipal
         Me.ToolStripButton5.Name = "ToolStripButton5"
         Me.ToolStripButton5.Size = New System.Drawing.Size(28, 28)
         Me.ToolStripButton5.Text = "Salir"
-        '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(149, 6)
-        '
-        'SelecionarRFCToolStripMenuItem
-        '
-        Me.SelecionarRFCToolStripMenuItem.Name = "SelecionarRFCToolStripMenuItem"
-        Me.SelecionarRFCToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.SelecionarRFCToolStripMenuItem.Text = "Selecionar RFC"
-        '
-        'SeleccionarRFCToolStripMenuItem
-        '
-        Me.SeleccionarRFCToolStripMenuItem.Name = "SeleccionarRFCToolStripMenuItem"
-        Me.SeleccionarRFCToolStripMenuItem.Size = New System.Drawing.Size(103, 20)
-        Me.SeleccionarRFCToolStripMenuItem.Text = "Seleccionar RFC"
         '
         'frmPrincipal
         '
