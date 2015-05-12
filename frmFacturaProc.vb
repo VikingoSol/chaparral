@@ -158,8 +158,6 @@ Public Class frmFacturaProc
                 .Impuestos.TotalRetenidos.Value = FormatNumber(vFacturaData.RetencionIVA, 2, TriState.False, TriState.False, TriState.False)
             End If
             '---------Adenda Soriana ----------------
-
-            'Dim vAddendaSR As dAddendaSorianaremision
             'Dim Addsoriana As Addenda
             'Addsoriana = New Addenda
             'Dim AddsorianaRemision As Addendas.Soriana.SorianaRemision
@@ -288,9 +286,9 @@ Public Class frmFacturaProc
 
                             End If
                         Next
-
-
                     End If
+                 
+
                 Catch ex As Exception
                     MsgBox(ex.Message, MsgBoxStyle.Critical, "Error")
                     If Not IsNothing(vRes) AndAlso vRes.Timbre <> "" Then
