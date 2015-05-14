@@ -950,7 +950,7 @@ Partial Class frmFacturaView
         Me.Txttipobulto.Name = "Txttipobulto"
         Me.Txttipobulto.Size = New System.Drawing.Size(66, 20)
         Me.Txttipobulto.TabIndex = 91
-        Me.Txttipobulto.Text = "0"
+        Me.Txttipobulto.Text = "2"
         Me.Txttipobulto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label27
@@ -1071,7 +1071,7 @@ Partial Class frmFacturaView
         Me.Cmbcumple.DisplayMember = "metodo"
         Me.Cmbcumple.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Cmbcumple.FormattingEnabled = True
-        Me.Cmbcumple.Items.AddRange(New Object() {"Si", "No"})
+        Me.Cmbcumple.Items.AddRange(New Object() {"true", "false"})
         Me.Cmbcumple.Location = New System.Drawing.Point(307, 93)
         Me.Cmbcumple.Name = "Cmbcumple"
         Me.Cmbcumple.Size = New System.Drawing.Size(117, 21)

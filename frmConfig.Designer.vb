@@ -93,8 +93,16 @@ Partial Class frmConfig
         Me.Label26 = New System.Windows.Forms.Label
         Me.Label27 = New System.Windows.Forms.Label
         Me.Label28 = New System.Windows.Forms.Label
-        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
         Me.TabPage5 = New System.Windows.Forms.TabPage
+        Me.Txtpassword = New System.Windows.Forms.TextBox
+        Me.Txtsmptpuerto = New System.Windows.Forms.TextBox
+        Me.Txtcuenta = New System.Windows.Forms.TextBox
+        Me.Txtservidoesmtp = New System.Windows.Forms.TextBox
+        Me.Label42 = New System.Windows.Forms.Label
+        Me.Label43 = New System.Windows.Forms.Label
+        Me.Label44 = New System.Windows.Forms.Label
+        Me.Label45 = New System.Windows.Forms.Label
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog
         Me.TextBox1 = New System.Windows.Forms.TextBox
         Me.TextBox2 = New System.Windows.Forms.TextBox
         Me.TextBox3 = New System.Windows.Forms.TextBox
@@ -115,14 +123,6 @@ Partial Class frmConfig
         Me.Label39 = New System.Windows.Forms.Label
         Me.Label40 = New System.Windows.Forms.Label
         Me.Label41 = New System.Windows.Forms.Label
-        Me.Txtpassword = New System.Windows.Forms.TextBox
-        Me.TextBox12 = New System.Windows.Forms.TextBox
-        Me.Txtcuenta = New System.Windows.Forms.TextBox
-        Me.Txtservidoesmtp = New System.Windows.Forms.TextBox
-        Me.Label42 = New System.Windows.Forms.Label
-        Me.Label43 = New System.Windows.Forms.Label
-        Me.Label44 = New System.Windows.Forms.Label
-        Me.Label45 = New System.Windows.Forms.Label
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -355,6 +355,7 @@ Partial Class frmConfig
         'txtRFC
         '
         Me.txtRFC.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txtRFC.Enabled = False
         Me.txtRFC.Location = New System.Drawing.Point(93, 80)
         Me.txtRFC.Name = "txtRFC"
         Me.txtRFC.Size = New System.Drawing.Size(132, 20)
@@ -793,14 +794,10 @@ Partial Class frmConfig
         Me.Label28.TabIndex = 27
         Me.Label28.Text = "Calle:"
         '
-        'OpenFileDialog1
-        '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
         'TabPage5
         '
         Me.TabPage5.Controls.Add(Me.Txtpassword)
-        Me.TabPage5.Controls.Add(Me.TextBox12)
+        Me.TabPage5.Controls.Add(Me.Txtsmptpuerto)
         Me.TabPage5.Controls.Add(Me.Txtcuenta)
         Me.TabPage5.Controls.Add(Me.Txtservidoesmtp)
         Me.TabPage5.Controls.Add(Me.Label42)
@@ -813,6 +810,77 @@ Partial Class frmConfig
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Cuenta email"
         Me.TabPage5.UseVisualStyleBackColor = True
+        '
+        'Txtpassword
+        '
+        Me.Txtpassword.Location = New System.Drawing.Point(93, 69)
+        Me.Txtpassword.Name = "Txtpassword"
+        Me.Txtpassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.Txtpassword.Size = New System.Drawing.Size(128, 20)
+        Me.Txtpassword.TabIndex = 48
+        '
+        'Txtsmptpuerto
+        '
+        Me.Txtsmptpuerto.Location = New System.Drawing.Point(333, 44)
+        Me.Txtsmptpuerto.Name = "Txtsmptpuerto"
+        Me.Txtsmptpuerto.Size = New System.Drawing.Size(73, 20)
+        Me.Txtsmptpuerto.TabIndex = 47
+        Me.Txtsmptpuerto.Text = "587"
+        Me.Txtsmptpuerto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Txtcuenta
+        '
+        Me.Txtcuenta.Location = New System.Drawing.Point(93, 44)
+        Me.Txtcuenta.Name = "Txtcuenta"
+        Me.Txtcuenta.Size = New System.Drawing.Size(128, 20)
+        Me.Txtcuenta.TabIndex = 46
+        '
+        'Txtservidoesmtp
+        '
+        Me.Txtservidoesmtp.Location = New System.Drawing.Point(93, 20)
+        Me.Txtservidoesmtp.Name = "Txtservidoesmtp"
+        Me.Txtservidoesmtp.Size = New System.Drawing.Size(314, 20)
+        Me.Txtservidoesmtp.TabIndex = 45
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.Location = New System.Drawing.Point(36, 73)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(51, 13)
+        Me.Label42.TabIndex = 44
+        Me.Label42.Text = "Pasword:"
+        '
+        'Label43
+        '
+        Me.Label43.AutoSize = True
+        Me.Label43.Location = New System.Drawing.Point(39, 48)
+        Me.Label43.Name = "Label43"
+        Me.Label43.Size = New System.Drawing.Size(44, 13)
+        Me.Label43.TabIndex = 43
+        Me.Label43.Text = "Cuenta:"
+        '
+        'Label44
+        '
+        Me.Label44.AutoSize = True
+        Me.Label44.Location = New System.Drawing.Point(267, 48)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(61, 13)
+        Me.Label44.TabIndex = 42
+        Me.Label44.Text = "No. Puerto:"
+        '
+        'Label45
+        '
+        Me.Label45.AutoSize = True
+        Me.Label45.Location = New System.Drawing.Point(18, 24)
+        Me.Label45.Name = "Label45"
+        Me.Label45.Size = New System.Drawing.Size(69, 13)
+        Me.Label45.TabIndex = 41
+        Me.Label45.Text = "servidorsmtp:"
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
         'TextBox1
         '
@@ -974,73 +1042,6 @@ Partial Class frmConfig
         Me.Label41.TabIndex = 27
         Me.Label41.Text = "Calle:"
         '
-        'Txtpassword
-        '
-        Me.Txtpassword.Location = New System.Drawing.Point(93, 69)
-        Me.Txtpassword.Name = "Txtpassword"
-        Me.Txtpassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.Txtpassword.Size = New System.Drawing.Size(128, 20)
-        Me.Txtpassword.TabIndex = 48
-        '
-        'TextBox12
-        '
-        Me.TextBox12.Location = New System.Drawing.Point(333, 44)
-        Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Size = New System.Drawing.Size(73, 20)
-        Me.TextBox12.TabIndex = 47
-        Me.TextBox12.Text = "587"
-        Me.TextBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Txtcuenta
-        '
-        Me.Txtcuenta.Location = New System.Drawing.Point(93, 44)
-        Me.Txtcuenta.Name = "Txtcuenta"
-        Me.Txtcuenta.Size = New System.Drawing.Size(128, 20)
-        Me.Txtcuenta.TabIndex = 46
-        '
-        'Txtservidoesmtp
-        '
-        Me.Txtservidoesmtp.Location = New System.Drawing.Point(93, 20)
-        Me.Txtservidoesmtp.Name = "Txtservidoesmtp"
-        Me.Txtservidoesmtp.Size = New System.Drawing.Size(314, 20)
-        Me.Txtservidoesmtp.TabIndex = 45
-        '
-        'Label42
-        '
-        Me.Label42.AutoSize = True
-        Me.Label42.Location = New System.Drawing.Point(36, 73)
-        Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(51, 13)
-        Me.Label42.TabIndex = 44
-        Me.Label42.Text = "Pasword:"
-        '
-        'Label43
-        '
-        Me.Label43.AutoSize = True
-        Me.Label43.Location = New System.Drawing.Point(39, 48)
-        Me.Label43.Name = "Label43"
-        Me.Label43.Size = New System.Drawing.Size(44, 13)
-        Me.Label43.TabIndex = 43
-        Me.Label43.Text = "Cuenta:"
-        '
-        'Label44
-        '
-        Me.Label44.AutoSize = True
-        Me.Label44.Location = New System.Drawing.Point(267, 48)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(61, 13)
-        Me.Label44.TabIndex = 42
-        Me.Label44.Text = "No. Puerto:"
-        '
-        'Label45
-        '
-        Me.Label45.AutoSize = True
-        Me.Label45.Location = New System.Drawing.Point(18, 24)
-        Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(69, 13)
-        Me.Label45.TabIndex = 41
-        Me.Label45.Text = "servidorsmtp:"
-        '
         'frmConfig
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1143,7 +1144,7 @@ Partial Class frmConfig
     Friend WithEvents Label31 As System.Windows.Forms.Label
     Friend WithEvents TabPage5 As System.Windows.Forms.TabPage
     Friend WithEvents Txtpassword As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox12 As System.Windows.Forms.TextBox
+    Friend WithEvents Txtsmptpuerto As System.Windows.Forms.TextBox
     Friend WithEvents Txtcuenta As System.Windows.Forms.TextBox
     Friend WithEvents Txtservidoesmtp As System.Windows.Forms.TextBox
     Friend WithEvents Label42 As System.Windows.Forms.Label

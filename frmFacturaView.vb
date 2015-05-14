@@ -207,7 +207,6 @@ Public Class frmFacturaView
         vFile.Write(vXml)
         vFile.Flush()
         vFile.Close()
-
         Dim mifecha As DateTime = Me.dpFecha.Value
 
 
@@ -220,7 +219,7 @@ Public Class frmFacturaView
         vAddSorRemi.Tienda = Me.cmbtienda.SelectedValue
         vAddSorRemi.TipoMoneda = Me.cmbMoneda.Text
         vAddSorRemi.TipoBulto = Me.Txttipobulto.Text
-        vAddSorRemi.EntregaMercancia = Me.CmbEntregaM.Text
+        vAddSorRemi.EntregaMercancia = Me.CmbEntregaM.SelectedValue
         vAddSorRemi.CumpleReqFiscales = Me.Cmbcumple.Text
         vAddSorRemi.CantidadBultos = Me.Txtcantidadbultos.Text
         vAddSorRemi.Subtotal = Me.txtSubTotal.Text
@@ -240,19 +239,6 @@ Public Class frmFacturaView
         vAddSorpedido.PedidoEmitidoProveedor = Me.CmbPedidoEmitidoProveedor.Text
         '****vAddSorArticulos*************
         vAddSorArticulos.Proveedor = CInt(Me.TxtProveedor.Text)
-
-        'Dim n As Integer
-        'For n = 0 To Me.grdProductos.RecordCount - 1
-        '    vAddSorArticulos.remision = Me.Txtremision.Text
-        '    vAddSorArticulos.FolioPedido = Me.Txtfoliopedido.Text
-        '    vAddSorArticulos.Tienda = Me.CmbtiendaP.SelectedValue
-        '    vAddSorArticulos.CantidadArticulos = 10
-        '    vAddSorArticulos.Codigo = "3200111"
-        '    vAddSorArticulos.CantidadUnidadCompra = 10.0
-        '    vAddSorArticulos.CostoNetoUnidadCompra = 600.0
-        '    vAddSorArticulos.PorcentajeIEPS = 0.0
-        '    vAddSorArticulos.PorcentajeIVA = 0.0
-        'Next
 
         Dim vRow As DataRow
         Dim VvFacs As New cFacturas
@@ -287,7 +273,8 @@ Public Class frmFacturaView
 
 
 
-        Dim newAuthor As XmlElement = xd.CreateElement("Addenda")
+        Dim newAuthor As XmlElement
+        newAuthor = xd.CreateElement("cfdi:Addenda", Nothing)
         'newAuthor.SetAttribute("code", "6")
         Dim DSCargaRemisionProv As XmlElement = xd.CreateElement("DSCargaRemisionProv")
         'fn.InnerText = "Bikram"
@@ -300,7 +287,7 @@ Public Class frmFacturaView
 
         DSCargaRemisionProv.AppendChild(Remision)
 
-        Dim pedidos As XmlElement = xd.CreateElement("pedidos")
+        Dim pedidos As XmlElement = xd.CreateElement("Pedidos")
         'ln.InnerText = "Seth"
         pedidos.SetAttribute("RowOrder", 1)
         pedidos.SetAttribute("Id", "Pedidos1")
@@ -311,7 +298,7 @@ Public Class frmFacturaView
         DSCargaRemisionProv.AppendChild(Articulos)
 
         '----------------------------------------------
-        Dim proveedor As XmlElement = xd.CreateElement("proveedor")
+        Dim proveedor As XmlElement = xd.CreateElement("Proveedor")
         Remision.AppendChild(proveedor)
         proveedor.InnerText = vFac.Proveedor
         IndentarNodo(proveedor, 2)
@@ -430,7 +417,7 @@ Public Class frmFacturaView
         pedidos.AppendChild(PedidoEmitidoProveedor)
         IndentarNodo(PedidoEmitidoProveedor, 2)
 
-        Dim TiendaP As XmlElement = xd.CreateElement("tienda")
+        Dim TiendaP As XmlElement = xd.CreateElement("Tienda")
         TiendaP.InnerText = vpedi.Tienda
         pedidos.AppendChild(TiendaP)
         IndentarNodo(TiendaP, 2)
@@ -457,7 +444,7 @@ Public Class frmFacturaView
             concepto.AppendChild(FolioPedidoA)
             IndentarNodo(FolioPedidoA, 2)
 
-            Dim TiendaA As XmlElement = xd.CreateElement("tienda")
+            Dim TiendaA As XmlElement = xd.CreateElement("Tienda")
             TiendaA.InnerText = vArt.Tienda
             concepto.AppendChild(TiendaA)
             IndentarNodo(TiendaA, 2)

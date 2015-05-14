@@ -53,7 +53,7 @@ Public Class frmConfig
         Me.Txtservidoesmtp.Text = gConfigGlobal.servidorsmtp
         Me.Txtcuenta.Text = gConfigGlobal.smtpcuenta
         Me.Txtpassword.Text = gConfigGlobal.smtppassword
-        Me.txtPuerto.Text = gConfigGlobal.smtppuerto
+        Me.Txtsmptpuerto.Text = gConfigGlobal.smtppuerto
 
 
     End Sub
@@ -135,7 +135,7 @@ Public Class frmConfig
         gConfigGlobal.servidorsmtp = Me.Txtservidoesmtp.Text
         gConfigGlobal.smtpcuenta = Me.Txtcuenta.Text
         gConfigGlobal.smtppassword = Me.Txtpassword.Text
-        gConfigGlobal.smtppuerto = Me.txtPuerto.Text
+        gConfigGlobal.smtppuerto = Me.Txtsmptpuerto.Text
 
 
         vConfigBase.GuardarConfiguracion(gConfigGlobal, Me.txtRFC.Text.Trim)
