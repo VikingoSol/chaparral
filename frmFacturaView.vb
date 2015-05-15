@@ -5,6 +5,7 @@ Imports FacturaNETLib.Document
 Imports FacturaNETLib.Certificate
 Imports System.Xml
 Imports System.Text
+Imports System.IO
 Public Class frmFacturaView
     'Dim vTablaProds As New DataTable
     Dim pathfilexml As String
@@ -252,16 +253,136 @@ Public Class frmFacturaView
             vAddSorArticulos.CostoNetoUnidadCompra = FormatNumber(vRow.Item("precio") * vRow.Item("cantidad"), 2, TriState.False, TriState.False, TriState.False)
             vAddSorArticulos.PorcentajeIEPS = 0.0
             vAddSorArticulos.PorcentajeIVA = 0.0
-
         Next
         leexml()
+
+        'Declaro variable para leer archivo Xml
+        Dim reader As XmlTextReader = New XmlTextReader(pathfilexml)
+        Dim readder As XmlTextReader = New XmlTextReader("c:\correo\AddSoriana.xml")
+
+        Dim objStreamReader As StreamReader
+        Dim objStreamReadder As StreamReader
+        Dim strLine As String
+        Dim objStreamWriter As StreamWriter
+
+        'Pass the file path and the file name to the StreamWriter constructor.
+        objStreamWriter = New StreamWriter("C:\correo\Testfile.xml")
+
+
+        'Pass the file path and the file name to the StreamReader constructor.
+        objStreamReader = New StreamReader(pathfilexml)
+        objStreamReadder = New StreamReader("c:\correo\AddSoriana.xml")
+
+        Dim file As System.IO.StreamWriter = System.IO.File.CreateText("C:\correo\Testfile.txt")
+        'Read the first line of text.
+        strLine = objStreamReader.ReadLine
+
+        'Continue to read until you reach the end of the file.
+        Do While Not strLine Is Nothing
+
+            'Write the line to the Console window.
+            objStreamWriter.WriteLine(strLine)
+            file.WriteLine(strLine)
+
+            'Read the next line.
+            strLine = objStreamReader.ReadLine
+        Loop
+        '--------------------------------------
+        'Close the file.
+        objStreamReader.Close()
+
+        'Read the first line of text.
+        strLine = objStreamReadder.ReadLine
+
+        'Continue to read until you reach the end of the file.
+        Do While Not strLine Is Nothing
+
+            'Write the line to the Console window.
+            objStreamWriter.WriteLine(strLine)
+            If Mid(strLine, 1, 5) = "<?xml" Then
+            Else
+                file.WriteLine(strLine)
+            End If
+            'Read the next line.
+            strLine = objStreamReadder.ReadLine
+        Loop
+
+        'Close the file.
+        objStreamReadder.Close()
+
+        file.Close()
+        Console.ReadLine()
+
+
+        'Ciclo de lectura
+        Do While (reader.Read())
+            objStreamWriter.WriteLine(reader.Read())
+            Select Case reader.NodeType
+                Case XmlNodeType.Element 'Mostrar comienzo del elemento.
+
+                    If reader.HasAttributes Then 'If attributes exist
+                        While reader.MoveToNextAttribute()
+                            'Mostrar nombre y valor del atributo.
+
+                        End While
+                    End If
+
+                Case XmlNodeType.Text 'Mostrar el texto de cada elemento.
+
+                Case XmlNodeType.EndElement 'Mostrar final del elemento.
+                    'Txtcontenido.Text += " txtContenido.Text += " > " + vbCrLf"
+
+                    If reader.Name = "cfdi:Complemento" Then
+                        Do While (readder.Read())
+                            Select Case readder.NodeType
+                                Case XmlNodeType.Element 'Mostrar comienzo del elemento.
+
+                                    If reader.HasAttributes Then 'If attributes exist
+                                        While reader.MoveToNextAttribute()
+                                            'Mostrar nombre y valor del atributo.
+
+                                        End While
+                                    End If
+
+                                Case XmlNodeType.Text 'Mostrar el texto de cada elemento.
+
+                                Case XmlNodeType.EndElement 'Mostrar final del elemento.
+                                    'Txtcontenido.Text += " txtContenido.Text += " > " + vbCrLf"
+
+                            End Select
+                        Loop
+
+                        'Cierra el Archivo
+                        readder.Close()
+
+                    End If
+            End Select
+        Loop
+        objStreamWriter.Close()
+        'Cierra el Archivo
+        reader.Close()
+
         MsgBox("Addenda Adicionada")
 
     End Sub
     Private Sub leexml()
         xd = New XmlDocument
-        xd.Load(pathfilexml)
+        'xd.Load(pathfilexml)
 
+
+        Dim vOpt As New XmlWriterSettings
+        Dim vXml As XmlWriter = XmlWriter.Create("c:\correo\jc.xml", vOpt)
+        Dim Prefijo As String = "cfdi", EspacioDeNombre As String = " "
+
+        With vXml
+            '1
+            .WriteStartElement(prefix:=Prefijo, localName:="Addenda", ns:=EspacioDeNombre)
+            .WriteEndElement()
+        End With
+        vXml.Flush()
+        vXml.Close()
+
+        xd.Load("c:\correo\jc.xml")
         Dim vFac As dAddendaSorianaremision = vAddSorRemi
         'vFac = New dAddendaSorianaremision
 
@@ -271,31 +392,30 @@ Public Class frmFacturaView
         Dim vArt As dAddendaSorianaArticulos = vAddSorArticulos
         'vArt = New dAddendaSorianaArticulos
 
-
-
         Dim newAuthor As XmlElement
-        newAuthor = xd.CreateElement("cfdi:Addenda", Nothing)
+        newAuthor = xd.CreateElement("cfdi:DSCargaRemisionProv", Nothing)
         'newAuthor.SetAttribute("code", "6")
-        Dim DSCargaRemisionProv As XmlElement = xd.CreateElement("DSCargaRemisionProv")
-        'fn.InnerText = "Bikram"
-        newAuthor.AppendChild(DSCargaRemisionProv)
+        'Dim DSCargaRemisionProv As XmlElement = xd.CreateElement("DSCargaRemisionProv")
+
+        ''fn.InnerText = "Bikram"
+        'newAuthor.AppendChild(DSCargaRemisionProv)
 
         Dim Remision As XmlElement = xd.CreateElement("Remision")
         Remision.SetAttribute("RowOrder", 1)
         Remision.SetAttribute("Id", "Remision1")
         'ln.InnerText = "Seth"
 
-        DSCargaRemisionProv.AppendChild(Remision)
+        newAuthor.AppendChild(Remision)
 
         Dim pedidos As XmlElement = xd.CreateElement("Pedidos")
         'ln.InnerText = "Seth"
         pedidos.SetAttribute("RowOrder", 1)
         pedidos.SetAttribute("Id", "Pedidos1")
-        DSCargaRemisionProv.AppendChild(pedidos)
+        newAuthor.AppendChild(pedidos)
 
         Dim Articulos As XmlElement = xd.CreateElement("Articulos")
         ''aln1.InnerText = "Seth"
-        DSCargaRemisionProv.AppendChild(Articulos)
+        newAuthor.AppendChild(Articulos)
 
         '----------------------------------------------
         Dim proveedor As XmlElement = xd.CreateElement("Proveedor")
@@ -482,12 +602,26 @@ Public Class frmFacturaView
             Articulos.AppendChild(concepto)
         Next c
         '************************************************
-        Dim fileXmlOut As String = "c:\correo\" & Me.txtRFC.Text & "_" & Me.txtFolio.Text & "AddSor.xml"
+        Dim fileXmlOut As String = "c:\correo\AddSoriana.xml"
         xd.DocumentElement.AppendChild(newAuthor)
-        Dim tr As XmlTextWriter = New XmlTextWriter(fileXmlOut, Nothing)
+        Dim tr As XmlTextWriter = New XmlTextWriter(fileXmlOut, System.Text.Encoding.UTF8)
         tr.Formatting = Formatting.Indented
         xd.WriteContentTo(tr)
+        Dim file2XmlOut As String = "c:\correo\" & Me.txtRFC.Text & "_" & Me.txtFolio.Text & "AddSor.xml"
         tr.Close()
+
+        'Dim Vxd As XmlDocument = New XmlDocument
+        'Vxd.Load(pathfilexml)
+        'Dim Txd As XmlDocument = New XmlDocument
+        'Txd.Load(fileXmlOut)
+        'Dim nodoRaiz As XmlNode = Vxd.DocumentElement
+        'nodoRaiz.InsertAfter(Txd.DocumentElement, nodoRaiz.LastChild)
+        ''Vxd.DocumentElement.AppendChild(Txd)
+        'Dim trt As XmlTextWriter = New XmlTextWriter(file2XmlOut, Nothing)
+        'trt.Formatting = Formatting.Indented
+        'Vxd.WriteContentTo(trt)
+        'trt.Close()
+
     End Sub
     Private Sub IndentarNodo(ByVal Nodo As XmlNode, ByVal Nivel As Long)
         Nodo.AppendChild(xd.CreateTextNode(vbNewLine & New String(ControlChars.Tab, Nivel)))
