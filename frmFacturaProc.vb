@@ -287,7 +287,7 @@ Public Class frmFacturaProc
                             End If
                         Next
                     End If
-                 
+
 
                 Catch ex As Exception
                     MsgBox(ex.Message, MsgBoxStyle.Critical, "Error")

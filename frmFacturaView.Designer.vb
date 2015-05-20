@@ -73,6 +73,12 @@ Partial Class frmFacturaView
         Me.Label11 = New System.Windows.Forms.Label
         Me.Label10 = New System.Windows.Forms.Label
         Me.TabPage3 = New System.Windows.Forms.TabPage
+        Me.Button1 = New System.Windows.Forms.Button
+        Me.comboEmpaqueCajas = New System.Windows.Forms.ComboBox
+        Me.Button5 = New System.Windows.Forms.Button
+        Me.Label46 = New System.Windows.Forms.Label
+        Me.campoRowOrder = New System.Windows.Forms.TextBox
+        Me.campoIdRemision = New System.Windows.Forms.TextBox
         Me.TxtXml = New System.Windows.Forms.TextBox
         Me.Label45 = New System.Windows.Forms.Label
         Me.GroupBox2 = New System.Windows.Forms.GroupBox
@@ -100,7 +106,7 @@ Partial Class frmFacturaView
         Me.Label25 = New System.Windows.Forms.Label
         Me.Txttipobulto = New System.Windows.Forms.TextBox
         Me.Label27 = New System.Windows.Forms.Label
-        Me.FechaEntregaM = New System.Windows.Forms.DateTimePicker
+        Me.fFechaEntregaM = New System.Windows.Forms.DateTimePicker
         Me.cmbtienda = New System.Windows.Forms.ComboBox
         Me.Label28 = New System.Windows.Forms.Label
         Me.Txtcantidadbultos = New System.Windows.Forms.TextBox
@@ -110,20 +116,19 @@ Partial Class frmFacturaView
         Me.Label33 = New System.Windows.Forms.Label
         Me.Label34 = New System.Windows.Forms.Label
         Me.Label37 = New System.Windows.Forms.Label
-        Me.iva = New System.Windows.Forms.TextBox
+        Me.iiva = New System.Windows.Forms.TextBox
         Me.Cmbcumple = New System.Windows.Forms.ComboBox
-        Me.ieps = New System.Windows.Forms.TextBox
+        Me.iieps = New System.Windows.Forms.TextBox
         Me.Txtcantidadpedidos = New System.Windows.Forms.TextBox
         Me.Label35 = New System.Windows.Forms.Label
         Me.Label32 = New System.Windows.Forms.Label
         Me.otrosi = New System.Windows.Forms.TextBox
-        Me.total = New System.Windows.Forms.TextBox
-        Me.subtotal = New System.Windows.Forms.TextBox
+        Me.ttotal = New System.Windows.Forms.TextBox
+        Me.ssubtotal = New System.Windows.Forms.TextBox
         Me.Label31 = New System.Windows.Forms.Label
         Me.Label36 = New System.Windows.Forms.Label
         Me.Label40 = New System.Windows.Forms.Label
         Me.Label41 = New System.Windows.Forms.Label
-        Me.Button5 = New System.Windows.Forms.Button
         Me.Label30 = New System.Windows.Forms.Label
         Me.GroupBox1.SuspendLayout()
         CType(Me.grdProductos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -328,7 +333,7 @@ Partial Class frmFacturaView
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(267, 582)
+        Me.Button4.Location = New System.Drawing.Point(267, 579)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
         Me.Button4.TabIndex = 23
@@ -631,11 +636,16 @@ Partial Class frmFacturaView
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.Button1)
+        Me.TabPage3.Controls.Add(Me.comboEmpaqueCajas)
+        Me.TabPage3.Controls.Add(Me.Button5)
+        Me.TabPage3.Controls.Add(Me.Label46)
+        Me.TabPage3.Controls.Add(Me.campoRowOrder)
+        Me.TabPage3.Controls.Add(Me.campoIdRemision)
         Me.TabPage3.Controls.Add(Me.TxtXml)
         Me.TabPage3.Controls.Add(Me.Label45)
         Me.TabPage3.Controls.Add(Me.GroupBox2)
         Me.TabPage3.Controls.Add(Me.GroupBox3)
-        Me.TabPage3.Controls.Add(Me.Button5)
         Me.TabPage3.Controls.Add(Me.Label30)
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
@@ -643,6 +653,64 @@ Partial Class frmFacturaView
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Addenda Soriana"
         Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(264, 516)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(84, 23)
+        Me.Button1.TabIndex = 135
+        Me.Button1.Text = "Aplicar Adenda"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'comboEmpaqueCajas
+        '
+        Me.comboEmpaqueCajas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.comboEmpaqueCajas.FormattingEnabled = True
+        Me.comboEmpaqueCajas.Items.AddRange(New Object() {"Si", "No"})
+        Me.comboEmpaqueCajas.Location = New System.Drawing.Point(473, 20)
+        Me.comboEmpaqueCajas.Name = "comboEmpaqueCajas"
+        Me.comboEmpaqueCajas.Size = New System.Drawing.Size(82, 21)
+        Me.comboEmpaqueCajas.TabIndex = 136
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(159, 516)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(84, 23)
+        Me.Button5.TabIndex = 128
+        Me.Button5.Text = "Grabar"
+        Me.Button5.UseVisualStyleBackColor = True
+        Me.Button5.Visible = False
+        '
+        'Label46
+        '
+        Me.Label46.AutoSize = True
+        Me.Label46.Location = New System.Drawing.Point(470, 4)
+        Me.Label46.Name = "Label46"
+        Me.Label46.Size = New System.Drawing.Size(98, 13)
+        Me.Label46.TabIndex = 135
+        Me.Label46.Text = "Empaque en cajas:"
+        '
+        'campoRowOrder
+        '
+        Me.campoRowOrder.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.campoRowOrder.Location = New System.Drawing.Point(388, 18)
+        Me.campoRowOrder.Name = "campoRowOrder"
+        Me.campoRowOrder.Size = New System.Drawing.Size(25, 20)
+        Me.campoRowOrder.TabIndex = 137
+        Me.campoRowOrder.Text = "1"
+        Me.campoRowOrder.Visible = False
+        '
+        'campoIdRemision
+        '
+        Me.campoIdRemision.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.campoIdRemision.Location = New System.Drawing.Point(282, 18)
+        Me.campoIdRemision.Name = "campoIdRemision"
+        Me.campoIdRemision.Size = New System.Drawing.Size(66, 20)
+        Me.campoIdRemision.TabIndex = 134
+        Me.campoIdRemision.Text = "Remision1"
+        Me.campoIdRemision.Visible = False
         '
         'TxtXml
         '
@@ -783,7 +851,7 @@ Partial Class frmFacturaView
         Me.GroupBox3.Controls.Add(Me.Label25)
         Me.GroupBox3.Controls.Add(Me.Txttipobulto)
         Me.GroupBox3.Controls.Add(Me.Label27)
-        Me.GroupBox3.Controls.Add(Me.FechaEntregaM)
+        Me.GroupBox3.Controls.Add(Me.fFechaEntregaM)
         Me.GroupBox3.Controls.Add(Me.cmbtienda)
         Me.GroupBox3.Controls.Add(Me.Label28)
         Me.GroupBox3.Controls.Add(Me.Txtcantidadbultos)
@@ -793,15 +861,15 @@ Partial Class frmFacturaView
         Me.GroupBox3.Controls.Add(Me.Label33)
         Me.GroupBox3.Controls.Add(Me.Label34)
         Me.GroupBox3.Controls.Add(Me.Label37)
-        Me.GroupBox3.Controls.Add(Me.iva)
+        Me.GroupBox3.Controls.Add(Me.iiva)
         Me.GroupBox3.Controls.Add(Me.Cmbcumple)
-        Me.GroupBox3.Controls.Add(Me.ieps)
+        Me.GroupBox3.Controls.Add(Me.iieps)
         Me.GroupBox3.Controls.Add(Me.Txtcantidadpedidos)
         Me.GroupBox3.Controls.Add(Me.Label35)
         Me.GroupBox3.Controls.Add(Me.Label32)
         Me.GroupBox3.Controls.Add(Me.otrosi)
-        Me.GroupBox3.Controls.Add(Me.total)
-        Me.GroupBox3.Controls.Add(Me.subtotal)
+        Me.GroupBox3.Controls.Add(Me.ttotal)
+        Me.GroupBox3.Controls.Add(Me.ssubtotal)
         Me.GroupBox3.Controls.Add(Me.Label31)
         Me.GroupBox3.Controls.Add(Me.Label36)
         Me.GroupBox3.Controls.Add(Me.Label40)
@@ -962,14 +1030,14 @@ Partial Class frmFacturaView
         Me.Label27.TabIndex = 90
         Me.Label27.Text = "Tipo Bulto:"
         '
-        'FechaEntregaM
+        'fFechaEntregaM
         '
-        Me.FechaEntregaM.CustomFormat = "dd / MMM / yyyy"
-        Me.FechaEntregaM.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.FechaEntregaM.Location = New System.Drawing.Point(120, 196)
-        Me.FechaEntregaM.Name = "FechaEntregaM"
-        Me.FechaEntregaM.Size = New System.Drawing.Size(115, 20)
-        Me.FechaEntregaM.TabIndex = 112
+        Me.fFechaEntregaM.CustomFormat = "dd / MMM / yyyy"
+        Me.fFechaEntregaM.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.fFechaEntregaM.Location = New System.Drawing.Point(120, 196)
+        Me.fFechaEntregaM.Name = "fFechaEntregaM"
+        Me.fFechaEntregaM.Size = New System.Drawing.Size(115, 20)
+        Me.fFechaEntregaM.TabIndex = 112
         '
         'cmbtienda
         '
@@ -1057,14 +1125,14 @@ Partial Class frmFacturaView
         Me.Label37.TabIndex = 109
         Me.Label37.Text = "Cantidad Pedidos"
         '
-        'iva
+        'iiva
         '
-        Me.iva.Location = New System.Drawing.Point(315, 145)
-        Me.iva.Name = "iva"
-        Me.iva.Size = New System.Drawing.Size(93, 20)
-        Me.iva.TabIndex = 107
-        Me.iva.Text = "0.00"
-        Me.iva.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.iiva.Location = New System.Drawing.Point(315, 145)
+        Me.iiva.Name = "iiva"
+        Me.iiva.Size = New System.Drawing.Size(93, 20)
+        Me.iiva.TabIndex = 107
+        Me.iiva.Text = "0.00"
+        Me.iiva.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Cmbcumple
         '
@@ -1078,14 +1146,14 @@ Partial Class frmFacturaView
         Me.Cmbcumple.TabIndex = 95
         Me.Cmbcumple.ValueMember = "id"
         '
-        'ieps
+        'iieps
         '
-        Me.ieps.Location = New System.Drawing.Point(230, 145)
-        Me.ieps.Name = "ieps"
-        Me.ieps.Size = New System.Drawing.Size(82, 20)
-        Me.ieps.TabIndex = 106
-        Me.ieps.Text = "0.00"
-        Me.ieps.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.iieps.Location = New System.Drawing.Point(230, 145)
+        Me.iieps.Name = "iieps"
+        Me.iieps.Size = New System.Drawing.Size(82, 20)
+        Me.iieps.TabIndex = 106
+        Me.iieps.Text = "0.00"
+        Me.iieps.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Txtcantidadpedidos
         '
@@ -1125,24 +1193,24 @@ Partial Class frmFacturaView
         Me.otrosi.Text = "0.00"
         Me.otrosi.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'total
+        'ttotal
         '
-        Me.total.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.total.Location = New System.Drawing.Point(517, 145)
-        Me.total.Name = "total"
-        Me.total.Size = New System.Drawing.Size(63, 20)
-        Me.total.TabIndex = 103
-        Me.total.Text = "0.00"
-        Me.total.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.ttotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ttotal.Location = New System.Drawing.Point(517, 145)
+        Me.ttotal.Name = "ttotal"
+        Me.ttotal.Size = New System.Drawing.Size(63, 20)
+        Me.ttotal.TabIndex = 103
+        Me.ttotal.Text = "0.00"
+        Me.ttotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'subtotal
+        'ssubtotal
         '
-        Me.subtotal.Location = New System.Drawing.Point(15, 145)
-        Me.subtotal.Name = "subtotal"
-        Me.subtotal.Size = New System.Drawing.Size(89, 20)
-        Me.subtotal.TabIndex = 102
-        Me.subtotal.Text = "0.00"
-        Me.subtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.ssubtotal.Location = New System.Drawing.Point(15, 145)
+        Me.ssubtotal.Name = "ssubtotal"
+        Me.ssubtotal.Size = New System.Drawing.Size(89, 20)
+        Me.ssubtotal.TabIndex = 102
+        Me.ssubtotal.Text = "0.00"
+        Me.ssubtotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label31
         '
@@ -1180,21 +1248,12 @@ Partial Class frmFacturaView
         Me.Label41.Text = "I.V.A.:"
         Me.Label41.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'Button5
-        '
-        Me.Button5.Location = New System.Drawing.Point(251, 516)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(84, 23)
-        Me.Button5.TabIndex = 128
-        Me.Button5.Text = "Grabar"
-        Me.Button5.UseVisualStyleBackColor = True
-        '
         'Label30
         '
         Me.Label30.AutoSize = True
         Me.Label30.Font = New System.Drawing.Font("Arial", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label30.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.Label30.Location = New System.Drawing.Point(175, 11)
+        Me.Label30.Location = New System.Drawing.Point(5, 11)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(238, 33)
         Me.Label30.TabIndex = 49
@@ -1304,7 +1363,7 @@ Partial Class frmFacturaView
     Friend WithEvents Label25 As System.Windows.Forms.Label
     Friend WithEvents Txttipobulto As System.Windows.Forms.TextBox
     Friend WithEvents Label27 As System.Windows.Forms.Label
-    Friend WithEvents FechaEntregaM As System.Windows.Forms.DateTimePicker
+    Friend WithEvents fFechaEntregaM As System.Windows.Forms.DateTimePicker
     Friend WithEvents cmbtienda As System.Windows.Forms.ComboBox
     Friend WithEvents Label28 As System.Windows.Forms.Label
     Friend WithEvents Txtcantidadbultos As System.Windows.Forms.TextBox
@@ -1314,15 +1373,15 @@ Partial Class frmFacturaView
     Friend WithEvents Label33 As System.Windows.Forms.Label
     Friend WithEvents Label34 As System.Windows.Forms.Label
     Friend WithEvents Label37 As System.Windows.Forms.Label
-    Friend WithEvents iva As System.Windows.Forms.TextBox
+    Friend WithEvents iiva As System.Windows.Forms.TextBox
     Friend WithEvents Cmbcumple As System.Windows.Forms.ComboBox
-    Friend WithEvents ieps As System.Windows.Forms.TextBox
+    Friend WithEvents iieps As System.Windows.Forms.TextBox
     Friend WithEvents Txtcantidadpedidos As System.Windows.Forms.TextBox
     Friend WithEvents Label35 As System.Windows.Forms.Label
     Friend WithEvents Label32 As System.Windows.Forms.Label
     Friend WithEvents otrosi As System.Windows.Forms.TextBox
-    Friend WithEvents total As System.Windows.Forms.TextBox
-    Friend WithEvents subtotal As System.Windows.Forms.TextBox
+    Friend WithEvents ttotal As System.Windows.Forms.TextBox
+    Friend WithEvents ssubtotal As System.Windows.Forms.TextBox
     Friend WithEvents Label31 As System.Windows.Forms.Label
     Friend WithEvents Label36 As System.Windows.Forms.Label
     Friend WithEvents Label40 As System.Windows.Forms.Label
@@ -1330,4 +1389,9 @@ Partial Class frmFacturaView
     Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents TxtXml As System.Windows.Forms.TextBox
     Friend WithEvents Label45 As System.Windows.Forms.Label
+    Private WithEvents comboEmpaqueCajas As System.Windows.Forms.ComboBox
+    Private WithEvents Label46 As System.Windows.Forms.Label
+    Private WithEvents campoRowOrder As System.Windows.Forms.TextBox
+    Private WithEvents campoIdRemision As System.Windows.Forms.TextBox
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

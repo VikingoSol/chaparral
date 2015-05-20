@@ -555,6 +555,7 @@ Public Class dAddendaSorianaremision
     Public CumpleReqFiscales As String
     Public CantidadBultos As Integer
     Public Subtotal As Double
+    Public descuento As Double
     Public IEPS As Double
     Public IVA As Double
     Public OtrosImpuestos As Double
