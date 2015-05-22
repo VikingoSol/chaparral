@@ -186,7 +186,8 @@ Public Class cFacturas
         vCmd.Parameters.AddWithValue("?rfcEmisor", rfcEmisor)
         vCmd.ExecuteNonQuery()
         Dim vLastID As Long = vCmd.LastInsertedId
-        vCmd = New MySqlCommand("UPDATE config SET nextfolio=nextfolio+1", gConn)
+        vCmd = New MySqlCommand("UPDATE config SET nextfolio=nextfolio+1 where rfc=?rfcEmisor", gConn)
+        vCmd.Parameters.AddWithValue("?rfcEmisor", rfcEmisor)
         vCmd.ExecuteNonQuery()
         Return vLastID
     End Function

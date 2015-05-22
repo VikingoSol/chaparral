@@ -116,7 +116,7 @@ End Namespace
     <Parameter Name="cuenta" DataType="System.String"/>
     <Parameter Name="descuento" DataType="System.Double"/>
     <Parameter Name="retiva" DataType="System.String"/>
-    <Parameter Name="porc_desc" DataType="System.String"/>
+    <Parameter Name="porc_desc" DataType="System.Double"/>
   </Dictionary>
   <ReportPage Name="Page1" Guides="699.52,15">
     <PageHeaderBand Name="PageHeader1" Width="718.2" Height="410.13">

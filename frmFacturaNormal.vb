@@ -279,7 +279,7 @@ Public Class frmFacturaNormal
         vFactura.Metodo_Pago = Trim(Me.txtMetodosPago.Text)
 
         vFactura.Fecha = Me.dpFecha.Value
-        Me.vIdFactura = vFac.Facturar(vFactura, Me.vTablaProds)
+        Me.vIdFactura = vFac.Facturar(vFactura, Me.vTablaProds, False)
         If vIdFactura > 0 Then
             Me.DialogResult = Windows.Forms.DialogResult.OK
             Me.Close()

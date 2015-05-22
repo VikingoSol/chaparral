@@ -155,6 +155,7 @@ Public Class frmFacturas
         End If
 
         Dim n As Integer
+        Dim vdesc As Double
         Dim vTablaProds As DataTable = vFacs.GetProductosFacturados(Me.grdFacturas.GetRow.Cells("id").Value)
         'Dim vDs As New DataSet
         vTablaProds.TableName = "Productos"
@@ -162,10 +163,19 @@ Public Class frmFacturas
         'vDs.WriteXml("c:/dsFactura.xml")
         Dim vReport As New FastReport.Report
 
-        If IO.File.Exists(System.AppDomain.CurrentDomain.BaseDirectory() & vFac.RFC_Emisor & "/factura.frx") Then
-            vReport.Load(System.AppDomain.CurrentDomain.BaseDirectory() & vFac.RFC_Emisor & "/factura.frx")
+        If vFactura.Data.Descuento.Value > 0 Then ' si hay descuento por el momenento 2 reportes
+            If IO.File.Exists(System.AppDomain.CurrentDomain.BaseDirectory() & vFac.RFC_Emisor & "/facturaD.frx") Then
+                vReport.Load(System.AppDomain.CurrentDomain.BaseDirectory() & vFac.RFC_Emisor & "/facturaD.frx")
+            Else
+                vReport.Load(System.AppDomain.CurrentDomain.BaseDirectory() & "/Reportes/facturaD.frx")
+            End If
         Else
-            vReport.Load(System.AppDomain.CurrentDomain.BaseDirectory() & "/Reportes/factura.frx")
+            If IO.File.Exists(System.AppDomain.CurrentDomain.BaseDirectory() & vFac.RFC_Emisor & "/factura.frx") Then
+                vReport.Load(System.AppDomain.CurrentDomain.BaseDirectory() & vFac.RFC_Emisor & "/factura.frx")
+            Else
+                vReport.Load(System.AppDomain.CurrentDomain.BaseDirectory() & "/Reportes/factura.frx")
+            End If
+
         End If
         vReport.RegisterData(vTablaProds, "Productos")
         vReport.SetParameterValue("fecha_emi", Format(vFactura.Data.Fecha.Value, "dd/MM/yyyy HH:mm:ss"))
@@ -180,6 +190,8 @@ Public Class frmFacturas
         vReport.SetParameterValue("metodo_pago", vFactura.Data.MetodoPago.Value)
         vReport.SetParameterValue("cuenta", vFactura.Data.NumeroCuentaPago.Value)
         vReport.SetParameterValue("descuento", vFactura.Data.Descuento.Value)
+        vdesc = CDbl(((vFactura.Data.Descuento.Value * 100) / vFactura.Data.SubTotal.Value))
+        vReport.SetParameterValue("porc_desc", vdesc)
 
         Dim vDir As String
         vDir = vFactura.Data.Receptor.Domicilio.Calle.Value

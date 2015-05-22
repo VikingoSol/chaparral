@@ -61,7 +61,7 @@ Public Class cConfigGlobal
         Dim vTabla As New DataTable
         vAdap.Fill(vTabla)
         Dim vFile As dArchivo
-        If vTabla.Rows.Count > 0 Then
+        If vTabla.Rows.Count = 1 Then
             vFile = New dArchivo
             vFile.File = vTabla.Rows(0).Item("cer_file")
             vFile.Nombre = vTabla.Rows(0).Item("cer_name")
@@ -78,7 +78,7 @@ Public Class cConfigGlobal
         Dim vTabla As New DataTable
         vAdap.Fill(vTabla)
         Dim vFile As dArchivo
-        If vTabla.Rows.Count > 0 Then
+        If vTabla.Rows.Count = 1 Then
             vFile = New dArchivo
             vFile.File = vTabla.Rows(0).Item("key_file")
             vFile.Nombre = vTabla.Rows(0).Item("key_name")
@@ -151,7 +151,7 @@ Public Class cConfigGlobal
         Dim vTabla As New DataTable
         vAdap.Fill(vTabla)
         Dim vConfig As dConfigGlobal
-        If vTabla.Rows.Count > 0 Then
+        If vTabla.Rows.Count = 1 Then
             vConfig = New dConfigGlobal
             With vTabla.Rows(0)
                 'MsgBox(.Item("id"))
@@ -213,7 +213,7 @@ Public Class cConfigGlobal
     Public Sub GuardarConfiguracion(ByVal pConfig As dConfigGlobal, ByVal rfc As String)
         Try
             If gConn.State <> ConnectionState.Open Then gConn.Open()
-            Dim vCmd As New MySqlCommand("UPDATE config SET tipo_cambio=?tc, nextfolio=?folio,iva=?iva,rfc=?reg, tipo_cambio=?tcambio, pass=?pass, no_cer=?nocer, serie=?serie,cfdi_token=?token, cfdi_id=?cfdi_id, cfdi_url=?ws, razon_social=?razon, regimen_fiscal=?regimen, df_calle=?calle, df_noext=?noext, df_noint=?noint, df_colonia=?col, df_localidad=?loc, df_ref=?ref, df_municipio=?mun, df_estado=?estado, df_pais=?pais, df_cp=?cp, cfdi_can_url=?wscan, cfdi_can_id=?canid, servidorsmtp=?servidorsmtp, smtpcuenta=?smtpcuenta, smtppuerto=?smtppuerto, smtppassword=?smtppassword where id=?rfc", gConn)
+            Dim vCmd As New MySqlCommand("UPDATE config SET tipo_cambio=?tc, nextfolio=?folio,iva=?iva,tipo_cambio=?tcambio, pass=?pass, no_cer=?nocer, serie=?serie,cfdi_token=?token, cfdi_id=?cfdi_id, cfdi_url=?ws, razon_social=?razon, regimen_fiscal=?regimen, df_calle=?calle, df_noext=?noext, df_noint=?noint, df_colonia=?col, df_localidad=?loc, df_ref=?ref, df_municipio=?mun, df_estado=?estado, df_pais=?pais, df_cp=?cp, cfdi_can_url=?wscan, cfdi_can_id=?canid, servidorsmtp=?servidorsmtp, smtpcuenta=?smtpcuenta, smtppuerto=?smtppuerto, smtppassword=?smtppassword where rfc=?rfc", gConn)
             vCmd.Parameters.AddWithValue("?folio", pConfig.NextFolio)
             vCmd.Parameters.AddWithValue("?iva", pConfig.IVA)
             vCmd.Parameters.AddWithValue("?reg", pConfig.Registro_Federal)
@@ -268,6 +268,7 @@ Public Class cConfigGlobal
         If gConn.State <> ConnectionState.Open Then gConn.Open()
         Dim vCmd As MySqlCommand
         vCmd = New MySqlCommand("UPDATE config SET nextfolio=nextfolio+1", gConn)
+
         vCmd.ExecuteNonQuery()
     End Sub
 

@@ -116,7 +116,7 @@ End Namespace
     <Parameter Name="cuenta" DataType="System.String"/>
     <Parameter Name="descuento" DataType="System.Double"/>
     <Parameter Name="retiva" DataType="System.String"/>
-    <Parameter Name="porc_desc" DataType="System.Double"/>
+    <Parameter Name="porc_desc" DataType="System.Double"/>    
   </Dictionary>
   <ReportPage Name="Page1" Guides="699.52,15">
     <PageHeaderBand Name="PageHeader1" Width="718.2" Height="410.13">
@@ -247,7 +247,7 @@ End Namespace
       </TableObject>
       <TextObject Name="Text1" Left="137.06" Top="3.78" Width="370.44" Height="109.62" Border.Lines="All" Border.Color="96, 96, 98" Border.Width="1.5" Text="[txt_cantidad]" Padding="2, 5, 2, 0"/>
       <TextObject Name="Text9" Left="140.84" Top="98.28" Width="362.88" Height="15.12" Text="PAGO EN UNA SOLA EXHIBICIÓN" HorzAlign="Center" Font="Arial, 9pt, style=Bold" TextFill.Color="95, 95, 96"/>
-      <TextObject Name="Text10" Left="139.86" Top="117.18" Width="364.77" Height="18.9" Visible="false" Text="[porc_desc]% DESCUENTO EN LINEA">
+      <TextObject Name="Text10" Left="139.86" Top="117.18" Width="364.77" Height="18.9" Visible="false" Text="Motivo del descuento [porc_desc]% DESCUENTO EN LINEA">
         <Highlight>
           <Condition Expression="[porc_desc] &gt; 0" ApplyTextFill="false"/>
         </Highlight>

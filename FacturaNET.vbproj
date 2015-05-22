@@ -67,6 +67,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Referencias\FastReport.Bars.dll</HintPath>
     </Reference>
+    <Reference Include="geCFD, Version=1.0.0.17, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Documents\Visual Studio 2005\Projects\xml\xml\bin\Debug\geCFD.dll</HintPath>
+    </Reference>
     <Reference Include="Ionic.Zip, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Referencias\Ionic.Zip.dll</HintPath>
@@ -78,6 +82,10 @@
     <Reference Include="MySql.Data, Version=6.7.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Referencias\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NodosAddendaSorianaCFDI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Documents\Visual Studio 2005\Projects\xml\xml\bin\Debug\NodosAddendaSorianaCFDI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -463,6 +471,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="facturanet.ico" />
+    <None Include="BAMF650219E70\facturaD.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="BAMG670420V91\facturaD.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\CorreoFacturas2.png" />
     <Content Include="ThoughtWorks.QRCode.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
