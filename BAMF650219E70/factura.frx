@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ScriptLanguage="Vb" ReportInfo.Created="02/23/2012 22:31:56" ReportInfo.Modified="05/05/2015 18:08:57" ReportInfo.CreatorVersion="1.9.1.0">
+<Report ScriptLanguage="Vb" ReportInfo.Created="02/23/2012 22:31:56" ReportInfo.Modified="05/06/2015 11:56:47" ReportInfo.CreatorVersion="1.9.1.0">
   <ScriptText>Imports System
 Imports System.Collections
 Imports System.Collections.Generic
@@ -249,7 +249,7 @@ End Namespace
       <TextObject Name="Text9" Left="140.84" Top="98.28" Width="362.88" Height="15.12" Text="PAGO EN UNA SOLA EXHIBICIÓN" HorzAlign="Center" Font="Arial, 9pt, style=Bold" TextFill.Color="95, 95, 96"/>
       <TextObject Name="Text10" Left="139.86" Top="117.18" Width="364.77" Height="18.9" Visible="false" Text="[porc_desc]% DESCUENTO EN LINEA">
         <Highlight>
-          <Condition Expression="[porc_desc] &gt;0" ApplyTextFill="false"/>
+          <Condition Expression="[porc_desc] &gt; 0" ApplyTextFill="false"/>
         </Highlight>
       </TextObject>
       <ChildBand Name="Child5" Top="627.54" Width="718.2" Height="60.48" CanGrow="true" CanBreak="true">
