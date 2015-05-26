@@ -591,7 +591,6 @@ Partial Class frmFactura
         Me.GroupBox2.TabIndex = 51
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Addendas"
-        Me.GroupBox2.Visible = False
         '
         'CheckBox3
         '

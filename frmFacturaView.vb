@@ -436,24 +436,17 @@ Public Class frmFacturaView
 
     End Function
 
-
-
     Private Function insertarAddenda(ByVal archivoXML As String) As Boolean
         Dim vFac As dAddendaSorianaremision = vAddSorRemi
         Dim vpedi As dAddendaSorianapedidos = vAddSorpedido
         Dim vArt As dAddendaSorianaArticulos = vAddSorArticulos
-        Dim myaddenda As String
         Try
             addenda = nodos.nodoAddenda()
-            myaddenda = "<cfdi:Addenda>"
             DSCarga = nodos.nodoDSCargaRemisionProv()
-            myaddenda += "<DSCargaRemisionProv>"
             If Not validarCampos() Then
                 Return False
             End If
             remision_Remision = nodos.nodoRemision(campoIdRemision.Text, campoRowOrder.Text)
-            myaddenda += "<Remision " & campoIdRemision.Text & " Id=" & campoRowOrder.Text
-            MsgBox(myaddenda)
             elementoProveedor = nodos.datoProveedor(vFac.Proveedor)
             proveedor = nodos.nodoProveedor()
             elementoFolioRemision = nodos.elementoFolioRemision(vFac.remision.Trim)
