@@ -18,6 +18,39 @@ Module mGlobales
     Public vAddSorianaRemi As dAddendaSorianaremision
     Public vAddSorianapedido As dAddendaSorianapedidos
 
+    Public Structure stcAP1
+        '<Remision>
+        Public contrato As Integer
+        Public surtimiento As String
+        Public gestor As Integer
+        Public pocision As String
+        Public entrada As String 'DateTime
+        Public ejecutor As String
+        Public receptor As String
+        Public ejercicio As String
+
+        Public Proveedor As Integer
+        Public remision As String
+        Public Consecutivo As String
+        Public FechaRemision As String
+        Public Tienda As String
+        Public TipoMoneda As String
+        Public TipoBulto As Integer
+        Public EntregaMercancia As String
+        Public CumpleReqFiscales As String
+        Public CantidadBultos As Integer
+        Public Subtotal As Double
+        Public IEPS As Double
+        Public IVA As Double
+        Public OtrosImpuestos As Double
+        Public Total As Double
+        Public CantidadPedidos As Integer
+        Public FechaEntregaMercancia As String
+        Public FolioNotaEntrada As String
+        Public descuento As Double
+    End Structure
+
+
     Public Function RFC_Check(ByVal pRFC As String) As Boolean
         If Regex.IsMatch(pRFC, "^([a-zA-Z\s]{3,4})\d{6}([0-9a-zA-Z\w]{3})$") Then
             Return True

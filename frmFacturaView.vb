@@ -6,6 +6,8 @@ Imports FacturaNETLib.Certificate
 Imports System.Xml
 Imports System.Text
 Public Class frmFacturaView
+   
+
     'Dim vTablaProds As New DataTable
     Dim pathfilexml As String
     Dim vAddSorRemi As New dAddendaSorianaremision
@@ -14,199 +16,11 @@ Public Class frmFacturaView
     Dim xd As XmlDocument
     Dim facturasel As Integer
     Dim vTablaProds As DataTable
-
+    Dim jcxmlelement As XmlElement
     '---------------------------------
     Dim ruta As String = ""
-    Dim proceso As geCFD.cProccess = New geCFD.cProccess()
-
-    Dim cfdi As geCFD.cCFDI = New geCFD.cCFDI()
-    Dim nodos As NodosAddendaSorianaCFDI.Nodos = New NodosAddendaSorianaCFDI.Nodos()
-
-    Dim addenda As geCFD.cMyElement = New geCFD.cMyElement() ' addenda
-
-    Dim DSCarga As geCFD.cMyElement = New geCFD.cMyElement()   ' dsc
-
-    Dim remision_Remision As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim proveedor As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elementoProveedor As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim folioRemision As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elementoFolioRemision As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim nodeConsecutivo As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elementConsecutivo As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim nodeFechaRem As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elementFechaRem As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim nodeTienda As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elementTienda As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim tipoMoneda As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntTipoMoneda As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim tipoBulto As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntTipoBulto As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim entregaMerc As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntEntregaMerc As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim cumpleReqFiscales As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntCumpleRF As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim cantBultos As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntCantBultos As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim subtotal As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntSubtotal As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim descuentos As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntDescuentos As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim ieps As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntIeps As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim iva As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntIva As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim otrosImp As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntOtrosImp As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim total As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntTotal As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim cantidadPedidos As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntCantPedidos As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim FechaEntregaM As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntFechaEntregaM As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim empaqueCajas As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntEmpaqueCajas As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim empaqueTarimas As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntEmpaqueTarimas As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim cantCajasTarimas As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntCantCajasTarimas As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim cita As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntCita As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim pedimento As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim provPedimento As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntProvPedimento As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim remisionPedimento As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntRemisionPedimento As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim numPedimento As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntNumPedimento As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim aduana As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntAduana As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim agenteAduanal As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntAgenteAduanal As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim tipoPedimento As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntTipoPedimento As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim fechaPedimento As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntFechaPedimento As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim fechaReciboL As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntFechaReciboL As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim fechaBillOL As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntFechaBill As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim nodoRaiz_Pedidos As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim proveedorPedidos As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntProvPedidos As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim remisionPedidos As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntRemisionPedidos As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim folioPedido As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntFolioPedido As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim tiendaPedidos As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntTiendaPedidos As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim cantArticuloPedidos As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntCantArtPedidos As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim nodoRaiz_Articulos As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim proveedorArticulos As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntProvArticulos As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim remisionArticulos As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntRemisionArticulos As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim folioArticulos As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntFolioArticulos As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim tiendaArticulos As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntTiendaArticulos As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim codigoArticulos As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntCodigoArticulos As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim cantUCompraArt As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntCantUCArt As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim costoNetoUCompraArt As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmtnCostoNetoUCArt As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim porcenIEPSArt As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntPorcenIEPSArt As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim porcentajeIVAArt As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntPorcenIVAArt As geCFD.cMyElement = New geCFD.cMyElement()
-
-    Dim nodoRaiz_Articulos1 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim proveedorArticulos1 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntProvArticulos1 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim remisionArticulos1 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntRemisionArticulos1 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim folioArticulos1 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntFolioArticulos1 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim tiendaArticulos1 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntTiendaArticulos1 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim codigoArticulos1 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntCodigoArticulos1 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim cantUCompraArt1 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntCantUCArt1 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim costoNetoUCompraArt1 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmtnCostoNetoUCArt1 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim porcenIEPSArt1 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntPorcenIEPSArt1 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim porcentajeIVAArt1 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntPorcenIVAArt1 As geCFD.cMyElement = New geCFD.cMyElement()
-
-    Dim nodoRaiz_Articulos2 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim proveedorArticulos2 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntProvArticulos2 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim remisionArticulos2 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntRemisionArticulos2 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim folioArticulos2 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntFolioArticulos2 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim tiendaArticulos2 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntTiendaArticulos2 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim codigoArticulos2 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntCodigoArticulos2 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim cantUCompraArt2 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntCantUCArt2 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim costoNetoUCompraArt2 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmtnCostoNetoUCArt2 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim porcenIEPSArt2 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntPorcenIEPSArt2 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim porcentajeIVAArt2 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntPorcenIVAArt2 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim nodoRaiz_Articulos3 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim proveedorArticulos3 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntProvArticulos3 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim remisionArticulos3 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntRemisionArticulos3 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim folioArticulos3 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntFolioArticulos3 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim tiendaArticulos3 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntTiendaArticulos3 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim codigoArticulos3 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntCodigoArticulos3 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim cantUCompraArt3 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntCantUCArt3 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim costoNetoUCompraArt3 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmtnCostoNetoUCArt3 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim porcenIEPSArt3 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntPorcenIEPSArt3 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim porcentajeIVAArt3 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntPorcenIVAArt3 As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim nodoRaiz_CajaTarima As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim proveedorCajaTarima As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntProvCajaTarima As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim remisionCajaTarima As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntRemisionCajaTarima As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim numCajaTarima As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntNumCajaTarima As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim codBarrasCajaTarima As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntCodBarrasCajaTarima As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim sucDistrCajaTarima As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntSucDistrCajaTarima As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim cantArtCajaTarima As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntCantArtCajaTarima As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim nodoRaiz_ArtPorCajaTarima As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim proveedorArtCajaTarima As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntProvArtCajaTarima As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim remisionArtCajaTarima As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntremisionArtCajaTarima As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim folioPedidoArtCajaTarima As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntFolioPedidoArtCajaTarima As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim NumCTArtCajaTarima As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntNumCTArtCajaTarima As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim sucDistrArtCajaTarima As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntSucDistArtCajaTarima As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim codigoArtCajaTarima As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntCodigoArtCajaTarima As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim cantUndCompraArtCajaTarima As geCFD.cMyElement = New geCFD.cMyElement()
-    Dim elmntCantUndCArtCajaTarima As geCFD.cMyElement = New geCFD.cMyElement()
+    
+    
     '---------------------------------
 
     Public Sub VerFactura(ByVal pId As Integer)
@@ -258,12 +72,20 @@ Public Class frmFacturaView
         ' sw.Write(vFac.xml_Timbrado)
         ' sw.Flush()
         ' vFactura.Manage.Load.Options = vFactura.Manage.Load.Options - LoadOptions.ValidateCertificateWithCa - LoadOptions.ValidateCertificateWithCrl - -LoadOptions.ValidateStamp
+
+        'Dim rutapdf As String = Application.StartupPath & "\CFDI\"
+        'Dim xml_timbrado As String = rutapdf & "AAA010101AAA" & "-" & vFac.Folio & ".xml"
+
+        'Dim docXmlFile As XmlDocument = New XmlDocument()
+        'docXmlFile.Load(xml_timbrado)
+        'docXmlFile.Save(Console.Out)
+
+        'vFac.xml_Timbrado = docXmlFile.InnerXml
+        'Me.TxtXml.Text = docXmlFile.InnerXml
         If Not vFactura.LoadFromString(vFac.xml_Timbrado) Then
             MsgBox("Error al leer la factura")
             Exit Sub
         End If
-
-
 
         Dim n As Integer
         Dim x As Integer
@@ -292,7 +114,80 @@ Public Class frmFacturaView
         Me.TxtCantidadArticulos.Text = sumart
         Me.ShowDialog()
     End Sub
+    Private Sub leerxml(ByVal vfolio As Integer)
+        Dim rutapdf As String = Application.StartupPath & "\CFDI\"
+        Dim xml_timbrado As String = rutapdf & "AAA010101AAA" & "-" & vfolio & ".xml"
+        Dim reader As XmlTextReader = New XmlTextReader(xml_timbrado)
+        Dim cabeza As String
+        Try
+            Do While (reader.Read())
+                Select Case reader.NodeType
+                    Case XmlNodeType.Element 'Mostrar comienzo del elemento.
+                        cabeza = reader.Name
+                        If reader.HasAttributes Then 'If attributes exist
+                            While reader.MoveToNextAttribute()
+                                If reader.Name = "rfc" And cabeza = "cfdi:Emisor" Then
+                                    'Me.TextBox22.Text = reader.Value
+                                End If
+                                If reader.Name = "nombre" And cabeza = "cfdi:Emisor" Then
+                                    'Me.nombre.Text = reader.Value
+                                End If
+                                If reader.Name = "folio" And cabeza = "cfdi:Comprobante" Then
+                                    'Me.folio.Text = reader.Value
+                                End If
+                                If reader.Name = "total" And cabeza = "cfdi:Comprobante" Then
+                                    'Me.total.Text = reader.Value
+                                End If
+                                If reader.Name = "metodoDePago" And cabeza = "cfdi:Comprobante" Then
+                                    'Me.MetodoDePago.Text = reader.Value
+                                End If
+                                If reader.Name = "fecha" And cabeza = "cfdi:Comprobante" Then
+                                    'Me.fecha.Text = reader.Value
+                                End If
+                                '-------------------------
+                                If reader.Name = "rfc" And cabeza = "cfdi:Receptor" Then
+                                    'Me.rfcR.Text = reader.Value
+                                End If
+                                If reader.Name = "nombre" And cabeza = "cfdi:Receptor" Then
+                                    'Me.NombreR.Text = reader.Value
+                                End If
+                                If reader.Name = "UUID" And cabeza = "tfd:TimbreFiscalDigital" Then
+                                    'Me.uuuid.Text = reader.Value
+                                End If
+                                If reader.Name = "noCertificadoSAT" And cabeza = "tfd:TimbreFiscalDigital" Then
+                                    Me.txtCertificadoSAT.Text = reader.Value
+                                End If
+                                If reader.Name = "selloSAT" And cabeza = "tfd:TimbreFiscalDigital" Then
+                                    Me.txtSelloSAT.Text = reader.Value
+                                End If
+                                If reader.Name = "selloCFD" And cabeza = "tfd:TimbreFiscalDigital" Then
+                                    Me.txtSelloEmisor.Text = reader.Value
+                                End If
+                                If reader.Name = "FechaTimbrado" And cabeza = "tfd:TimbreFiscalDigital" Then
+                                    Me.txtFecha_Cer.Text = reader.Value
+                                End If
+                                If reader.Name = "CertificadoSat" And cabeza = "tfd:TimbreFiscalDigital" Then
+                                    Me.txtCertificadoSAT.Text = reader.Value
+                                End If
 
+
+                            End While
+                        End If
+
+
+                    Case XmlNodeType.Text 'Mostrar el texto de cada elemento.
+                        ' TextBox1.Text += reader.Value + vbCrLf
+
+                    Case XmlNodeType.EndElement 'Mostrar final del elemento.
+                        '                    
+
+                End Select
+            Loop
+            Console.ReadLine()
+        Catch oe As Exception
+            'MsgBox(oe.Message, MsgBoxStyle.Critical)
+        End Try
+    End Sub
     Private Sub Clear_Datos_Cliente()
         Me.txtCliente.Text = ""
         Me.txtRFC.Text = ""
@@ -410,7 +305,7 @@ Public Class frmFacturaView
         Return fecha
 
     End Function
- 
+
 
     Public Function formatoFechaEntregaM() As String
         Dim fecha As String = ""
@@ -436,435 +331,9 @@ Public Class frmFacturaView
 
     End Function
 
-    Private Function insertarAddenda(ByVal archivoXML As String) As Boolean
-        Dim vFac As dAddendaSorianaremision = vAddSorRemi
-        Dim vpedi As dAddendaSorianapedidos = vAddSorpedido
-        Dim vArt As dAddendaSorianaArticulos = vAddSorArticulos
-        Try
-            addenda = nodos.nodoAddenda()
-            DSCarga = nodos.nodoDSCargaRemisionProv()
-            If Not validarCampos() Then
-                Return False
-            End If
-            remision_Remision = nodos.nodoRemision(campoIdRemision.Text, campoRowOrder.Text)
-            elementoProveedor = nodos.datoProveedor(vFac.Proveedor)
-            proveedor = nodos.nodoProveedor()
-            elementoFolioRemision = nodos.elementoFolioRemision(vFac.remision.Trim)
-            folioRemision = nodos.nodoFolioRemision()
-            elementConsecutivo = nodos.elementoConsecutivo(vFac.Consecutivo.Trim)
-            nodeConsecutivo = nodos.nodoConsecutivo()
-            elementFechaRem = nodos.elementoFechaRemision(vFac.FechaRemision.Trim)
-            nodeFechaRem = nodos.nodoFechaRemision()
-            elementTienda = nodos.elementoTienda(vFac.Tienda.Trim)
-            nodeTienda = nodos.nodoTienda()
-            elmntTipoMoneda = nodos.elementoMoneda(vFac.TipoMoneda.Trim)
-            tipoMoneda = nodos.nodoTipoMoneda()
-            elmntTipoBulto = nodos.elementoBulto(vFac.TipoBulto.ToString.Trim)
-            tipoBulto = nodos.nodoTipoBulto()
-            elmntEntregaMerc = nodos.elementoEntregaMercancia(vFac.EntregaMercancia)
-            entregaMerc = nodos.nodoEntregaMercancia()
-            ' *** En Visual Basic 2008 se puede hacer así:
-            'elmntCumpleRF = If( nodos.elementoCumpleRF(comboCumpleRqF.Text = "Si" , "true" , "false"))
-            '*** Debes comprobar el tipo del valor devuelto
-
-            elmntCumpleRF = nodos.elementoCumpleRF(vFac.CumpleReqFiscales.Trim) 'IIf(nodos.elementoCumpleRF(comboCumpleRqF.Text = "Si", "true", "false"))
-            cumpleReqFiscales = nodos.nodoCumpleReqF()
-            elmntCantBultos = nodos.elementoCantBultos(vFac.CantidadBultos.ToString.Trim)
-            cantBultos = nodos.nodoCantidadBultos()
-            elmntSubtotal = nodos.elementoSubtotal(vFac.Subtotal.ToString.Trim)
-            subtotal = nodos.nodoSubtotal()
-            elmntDescuentos = nodos.elementoDescuentos(vAddSorRemi.descuento.ToString.Trim)
-            descuentos = nodos.nodoDescuentos()
-            elmntIeps = nodos.elementoIEPS(vFac.IEPS.ToString.Trim)
-            ieps = nodos.nodoIEPS()
-            elmntIva = nodos.elementoIVA(vFac.IVA.ToString.Trim)
-            iva = nodos.nodoIVA()
-            elmntOtrosImp = nodos.elementoOtrosImp(vFac.OtrosImpuestos.ToString.Trim)
-            otrosImp = nodos.nodoOtrosImp()
-            elmntTotal = nodos.elementoTotal(vFac.Total)
-            total = nodos.nodoTotal()
-
-            elmntCantPedidos = nodos.elementoCantPedidos(Txtcantidadpedidos.Text.Trim)
-            cantidadPedidos = nodos.nodoCantPedidos()
-            elmntFechaEntregaM = nodos.elementoFechaEM(vFac.FechaEntregaMercancia)
-            FechaEntregaM = nodos.nodoFechaEntregaMercancia()
-            ' *** En Visual Basic 2008 se puede hacer así:
-            'elmntEmpaqueCajas = If( nodos.elementoEmpaqueCajas(comboEmpaqueCajas.Text = "Si" , "true" , "false"))
-            '*** Debes comprobar el tipo del valor devuelto
-
-            elmntEmpaqueCajas = nodos.elementoEmpaqueCajas(comboEmpaqueCajas.Text.Trim) ' IIf(nodos.elementoEmpaqueCajas(comboEmpaqueCajas.Text = "Si", "true", "false"))
-            empaqueCajas = nodos.nodoEmpaqueEnCajas()
-            ' *** En Visual Basic 2008 se puede hacer así:
-            'elmntEmpaqueTarimas = If( nodos.elementoEmpaqueTarima(comboEmpaqueTarimas.Text = "Si" , "true" , "false"))
-            '*** Debes comprobar el tipo del valor devuelto
 
 
-            'elmntEmpaqueTarimas = nodos.elementoEmpaqueTarima(comboEmpaqueTarimas.Text) 'IIf(nodos.elementoEmpaqueTarima(comboEmpaqueTarimas.Text = "Si", "true", "false"))
-            'empaqueTarimas = nodos.nodoEmpaqueTarimas()
-            'elmntCantCajasTarimas = nodos.elementoCajasTarimas(campoCantCajaTarima.Text)
-            'cantCajasTarimas = nodos.nodoCantCajasTarimas()
-            'elmntCita = nodos.elementoCita(campoCita.Text)
-            'cita = nodos.nodoCita()
-
-            'pedimento = nodos.nodoPedimento(campoIDPedimento.Text, campoRowOrderPedimento.Text)
-            'elmntProvPedimento = nodos.elementoProvPedimento(campoProveedorPedimento.Text)
-            'provPedimento = nodos.nodoProveedorPedimento()
-            'elmntRemisionPedimento = nodos.elementoRemisionPedimento(campoRemisionPedimento.Text)
-            'remisionPedimento = nodos.nodoRemisionPedimento()
-            'elmntNumPedimento = nodos.elementoNumPedimento(campoPedimentoPedimento.Text)
-            'numPedimento = nodos.nodoNumeroPedimento()
-            'elmntAduana = nodos.elementoAduanaPedimento(campoAduanaPedimento.Text)
-            'aduana = nodos.nodoAduanaPedimento()
-            'elmntAgenteAduanal = nodos.elementoAgenteAduanal(CampoAgentePedimento.Text)
-            'agenteAduanal = nodos.nodoAgenteAduanal()
-            'elmntTipoPedimento = nodos.elementoTipoPedimento(CampoTipoPedimentoPedimento.Text)
-            'tipoPedimento = nodos.nodoTipoPedimento()
-            'elmntFechaPedimento = nodos.elementoFechaPedimento(formatoFechaPedimento())
-            'fechaPedimento = nodos.nodoFechaPedimento()
-            'elmntFechaReciboL = nodos.elementoFechaRL(formatoFechaReciboL())
-            'fechaReciboL = nodos.nodoFechaReciboLaredo()
-            'elmntFechaBill = nodos.elementoFechaBill(formatoFechaBillOL())
-            'fechaBillOL = nodos.nodoFechaBillOL()
-
-            nodoRaiz_Pedidos = nodos.nodoPedidos("Pedidos1", "1")
-            elmntProvPedidos = nodos.elementoProvPedido(vpedi.Proveedor.ToString.Trim)
-            proveedorPedidos = nodos.nodoProveedorPedidos()
-            elmntRemisionPedidos = nodos.elementoRemisionPedidos(vpedi.remision.Trim)
-            remisionPedidos = nodos.nodoRemisionPedidos()
-            elmntFolioPedido = nodos.elementoFolioPedido(vpedi.FolioPedido.ToString.Trim)
-            folioPedido = nodos.nodoFolioPedido()
-            elmntTiendaPedidos = nodos.elementoTiendaPedidos(CmbtiendaP.SelectedValue.ToString.Trim)
-            tiendaPedidos = nodos.nodoTiendaPedidos()
-            elmntCantArtPedidos = nodos.elementoCantArt(vpedi.CantidadArticulos.ToString.Trim)
-            cantArticuloPedidos = nodos.nodoCantArticulos()
-
-            Dim vRow As DataRow
-            'For Each vRow In vTablaProds.Rows
-            '    MsgBox(vRow.Item("cantidad"))
-            '    vAddSorArticulos.remision = Me.Txtremision.Text
-            '    vAddSorArticulos.FolioPedido = Me.Txtfoliopedido.Text
-            '    vAddSorArticulos.Tienda = Me.CmbtiendaP.SelectedValue
-            '    vAddSorArticulos.CantidadArticulos = vRow.Item("cantidad")
-            '    vAddSorArticulos.Codigo = vRow.Item("codigo")
-            '    vAddSorArticulos.CantidadUnidadCompra = FormatNumber(vRow.Item("cantidad"), 2, TriState.False, TriState.False, TriState.False)
-            '    vAddSorArticulos.CostoNetoUnidadCompra = FormatNumber(vRow.Item("precio") * vRow.Item("cantidad"), 2, TriState.False, TriState.False, TriState.False)
-            '    vAddSorArticulos.PorcentajeIEPS = 0.0
-            '    vAddSorArticulos.PorcentajeIVA = 0.0
-
-            'Next
-
-            Dim c As Integer = 0
-            For Each vRow In vTablaProds.Rows
-                If c = 0 Then
-                    nodoRaiz_Articulos = nodos.nodoArticulos("Articulos" & c + 1, c + 1)
-                    elmntProvArticulos = nodos.elementoProvArticulos(vArt.Proveedor.ToString.Trim)
-                    proveedorArticulos = nodos.nodoProveedorArticulos()
-                    elmntRemisionArticulos = nodos.elementoRemisionArticulos(vArt.remision.Trim)
-                    remisionArticulos = nodos.nodoRemisionArticulos()
-                    elmntFolioArticulos = nodos.elementoFolioPedidoArt(vArt.FolioPedido.ToString.Trim)
-                    folioArticulos = nodos.nodoFolioPedidoArticulo()
-                    elmntTiendaArticulos = nodos.elementoTiendaArticulo(CmbtiendaP.SelectedValue.ToString.Trim)
-                    tiendaArticulos = nodos.nodoTiendaArticulos()
-
-                    elmntCodigoArticulos = nodos.elementoCodigoArt(vRow.Item("codigo").ToString.Trim)
-                    codigoArticulos = nodos.nodoCodigoArticulo()
-                    elmntCantUCArt = nodos.elementoCantUC(FormatNumber(vRow.Item("cantidad"), 2, TriState.False, TriState.False, TriState.False))
-                    cantUCompraArt = nodos.nodoCantidadUCompra()
-                    elmtnCostoNetoUCArt = nodos.elementoCostoNUC(FormatNumber(vRow.Item("precio") * vRow.Item("cantidad"), 2, TriState.False, TriState.False, TriState.False))
-                    costoNetoUCompraArt = nodos.nodoCostoNetoUC()
-
-                    elmntPorcenIEPSArt = nodos.elementoPorcentajeIEPS(vArt.PorcentajeIEPS.ToString.Trim)
-                    porcenIEPSArt = nodos.nodoPorcentajeIEPS()
-                    elmntPorcenIVAArt = nodos.elementoPorcentajeIVA(vArt.PorcentajeIVA.Trim)
-                    porcentajeIVAArt = nodos.nodoPorcentajeIVA()
-                End If
-                If c = 1 Then
-                    nodoRaiz_Articulos1 = nodos.nodoArticulos("Articulos" & c + 1, c + 1)
-                    elmntProvArticulos1 = nodos.elementoProvArticulos(vArt.Proveedor.ToString.Trim)
-                    proveedorArticulos1 = nodos.nodoProveedorArticulos()
-                    elmntRemisionArticulos1 = nodos.elementoRemisionArticulos(vArt.remision.Trim)
-                    remisionArticulos1 = nodos.nodoRemisionArticulos()
-                    elmntFolioArticulos1 = nodos.elementoFolioPedidoArt(vArt.FolioPedido.ToString.Trim)
-                    folioArticulos1 = nodos.nodoFolioPedidoArticulo()
-                    elmntTiendaArticulos1 = nodos.elementoTiendaArticulo(CmbtiendaP.SelectedValue.ToString.Trim)
-                    tiendaArticulos1 = nodos.nodoTiendaArticulos()
-
-                    elmntCodigoArticulos1 = nodos.elementoCodigoArt(vRow.Item("codigo").ToString.Trim)
-                    codigoArticulos1 = nodos.nodoCodigoArticulo()
-                    elmntCantUCArt1 = nodos.elementoCantUC(FormatNumber(vRow.Item("cantidad"), 2, TriState.False, TriState.False, TriState.False))
-                    cantUCompraArt1 = nodos.nodoCantidadUCompra()
-                    elmtnCostoNetoUCArt1 = nodos.elementoCostoNUC(FormatNumber(vRow.Item("precio") * vRow.Item("cantidad"), 2, TriState.False, TriState.False, TriState.False))
-                    costoNetoUCompraArt1 = nodos.nodoCostoNetoUC()
-
-                    elmntPorcenIEPSArt1 = nodos.elementoPorcentajeIEPS(vArt.PorcentajeIEPS.ToString.Trim)
-                    porcenIEPSArt1 = nodos.nodoPorcentajeIEPS()
-                    elmntPorcenIVAArt1 = nodos.elementoPorcentajeIVA(vArt.PorcentajeIVA.Trim)
-                    porcentajeIVAArt1 = nodos.nodoPorcentajeIVA()
-                End If
-                If c = 2 Then
-                    nodoRaiz_Articulos2 = nodos.nodoArticulos("Articulos" & c + 1, c + 1)
-                    elmntProvArticulos2 = nodos.elementoProvArticulos(vArt.Proveedor.ToString.Trim)
-                    proveedorArticulos2 = nodos.nodoProveedorArticulos()
-                    elmntRemisionArticulos2 = nodos.elementoRemisionArticulos(vArt.remision.Trim)
-                    remisionArticulos2 = nodos.nodoRemisionArticulos()
-                    elmntFolioArticulos2 = nodos.elementoFolioPedidoArt(vArt.FolioPedido.ToString.Trim)
-                    folioArticulos2 = nodos.nodoFolioPedidoArticulo()
-                    elmntTiendaArticulos2 = nodos.elementoTiendaArticulo(CmbtiendaP.SelectedValue)
-                    tiendaArticulos2 = nodos.nodoTiendaArticulos()
-
-                    elmntCodigoArticulos2 = nodos.elementoCodigoArt(vRow.Item("codigo").ToString.Trim)
-                    codigoArticulos2 = nodos.nodoCodigoArticulo()
-                    elmntCantUCArt2 = nodos.elementoCantUC(FormatNumber(vRow.Item("cantidad"), 2, TriState.False, TriState.False, TriState.False))
-                    cantUCompraArt2 = nodos.nodoCantidadUCompra()
-                    elmtnCostoNetoUCArt2 = nodos.elementoCostoNUC(FormatNumber(vRow.Item("precio") * vRow.Item("cantidad"), 2, TriState.False, TriState.False, TriState.False))
-                    costoNetoUCompraArt2 = nodos.nodoCostoNetoUC()
-
-                    elmntPorcenIEPSArt2 = nodos.elementoPorcentajeIEPS(vArt.PorcentajeIEPS)
-                    porcenIEPSArt2 = nodos.nodoPorcentajeIEPS()
-                    elmntPorcenIVAArt2 = nodos.elementoPorcentajeIVA(vArt.PorcentajeIVA)
-                    porcentajeIVAArt2 = nodos.nodoPorcentajeIVA()
-                End If
-                If c = 3 Then
-                    nodoRaiz_Articulos3 = nodos.nodoArticulos("Articulos" & c + 1, c + 1)
-                    elmntProvArticulos3 = nodos.elementoProvArticulos(vArt.Proveedor)
-                    proveedorArticulos3 = nodos.nodoProveedorArticulos()
-                    elmntRemisionArticulos3 = nodos.elementoRemisionArticulos(vArt.remision)
-                    remisionArticulos3 = nodos.nodoRemisionArticulos()
-                    elmntFolioArticulos3 = nodos.elementoFolioPedidoArt(vArt.FolioPedido)
-                    folioArticulos3 = nodos.nodoFolioPedidoArticulo()
-                    elmntTiendaArticulos3 = nodos.elementoTiendaArticulo(CmbtiendaP.SelectedValue)
-                    tiendaArticulos3 = nodos.nodoTiendaArticulos()
-                    elmntCodigoArticulos3 = nodos.elementoCodigoArt(vRow.Item("codigo").ToString.Trim)
-                    codigoArticulos3 = nodos.nodoCodigoArticulo()
-                    elmntCantUCArt3 = nodos.elementoCantUC(FormatNumber(vRow.Item("cantidad"), 2, TriState.False, TriState.False, TriState.False))
-                    cantUCompraArt3 = nodos.nodoCantidadUCompra()
-                    elmtnCostoNetoUCArt3 = nodos.elementoCostoNUC(FormatNumber(vRow.Item("precio") * vRow.Item("cantidad"), 2, TriState.False, TriState.False, TriState.False))
-                    costoNetoUCompraArt3 = nodos.nodoCostoNetoUC()
-
-                    elmntPorcenIEPSArt3 = nodos.elementoPorcentajeIEPS(vArt.PorcentajeIEPS)
-                    porcenIEPSArt3 = nodos.nodoPorcentajeIEPS()
-                    elmntPorcenIVAArt3 = nodos.elementoPorcentajeIVA(vArt.PorcentajeIVA)
-                    porcentajeIVAArt3 = nodos.nodoPorcentajeIVA()
-                End If
-                c = c + 1
-            Next
-
-            folioRemision.Elements.Add(elementoFolioRemision)
-            proveedor.Elements.Add(elementoProveedor)
-            nodeConsecutivo.Elements.Add(elementConsecutivo)
-            nodeFechaRem.Elements.Add(elementFechaRem)
-            nodeTienda.Elements.Add(elementTienda)
-            tipoMoneda.Elements.Add(elmntTipoMoneda)
-            tipoBulto.Elements.Add(elmntTipoBulto)
-            entregaMerc.Elements.Add(elmntEntregaMerc)
-            cumpleReqFiscales.Elements.Add(elmntCumpleRF)
-            cantBultos.Elements.Add(elmntCantBultos)
-            subtotal.Elements.Add(elmntSubtotal)
-            descuentos.Elements.Add(elmntDescuentos)
-            ieps.Elements.Add(elmntIeps)
-            iva.Elements.Add(elmntIva)
-            otrosImp.Elements.Add(elmntOtrosImp)
-            total.Elements.Add(elmntTotal)
-            cantidadPedidos.Elements.Add(elmntCantPedidos)
-            FechaEntregaM.Elements.Add(elmntFechaEntregaM)
-            'empaqueCajas.Elements.Add(elmntEmpaqueCajas);
-            'empaqueTarimas.Elements.Add(elmntEmpaqueTarimas);
-            'cantCajasTarimas.Elements.Add(elmntCantCajasTarimas);
-            'cita.Elements.Add(elmntCita);
-            provPedimento.Elements.Add(elmntProvPedimento)
-            remisionPedimento.Elements.Add(elmntRemisionPedimento)
-            numPedimento.Elements.Add(elmntNumPedimento)
-            aduana.Elements.Add(elmntAduana)
-            agenteAduanal.Elements.Add(elmntAgenteAduanal)
-            tipoPedimento.Elements.Add(elmntTipoPedimento)
-            fechaPedimento.Elements.Add(elmntFechaPedimento)
-            fechaReciboL.Elements.Add(elmntFechaReciboL)
-            fechaBillOL.Elements.Add(elmntFechaBill)
-            proveedorPedidos.Elements.Add(elmntProvPedidos)
-            remisionPedidos.Elements.Add(elmntRemisionPedidos)
-            folioPedido.Elements.Add(elmntFolioPedido)
-            tiendaPedidos.Elements.Add(elmntTiendaPedidos)
-            cantArticuloPedidos.Elements.Add(elmntCantArtPedidos)
-            proveedorArticulos.Elements.Add(elmntProvArticulos)
-            remisionArticulos.Elements.Add(elmntRemisionArticulos)
-            folioArticulos.Elements.Add(elmntFolioArticulos)
-            tiendaArticulos.Elements.Add(elmntTiendaArticulos)
-            codigoArticulos.Elements.Add(elmntCodigoArticulos)
-            cantUCompraArt.Elements.Add(elmntCantUCArt)
-            costoNetoUCompraArt.Elements.Add(elmtnCostoNetoUCArt)
-            porcenIEPSArt.Elements.Add(elmntPorcenIEPSArt)
-            porcentajeIVAArt.Elements.Add(elmntPorcenIVAArt)
-
-            proveedorArticulos1.Elements.Add(elmntProvArticulos1)
-            remisionArticulos1.Elements.Add(elmntRemisionArticulos)
-            folioArticulos1.Elements.Add(elmntFolioArticulos)
-            tiendaArticulos1.Elements.Add(elmntTiendaArticulos)
-            codigoArticulos1.Elements.Add(elmntCodigoArticulos1)
-            cantUCompraArt1.Elements.Add(elmntCantUCArt1)
-            costoNetoUCompraArt1.Elements.Add(elmtnCostoNetoUCArt1)
-            porcenIEPSArt1.Elements.Add(elmntPorcenIEPSArt1)
-            porcentajeIVAArt1.Elements.Add(elmntPorcenIVAArt1)
-            proveedorArticulos2.Elements.Add(elmntProvArticulos2)
-            remisionArticulos2.Elements.Add(elmntRemisionArticulos)
-            folioArticulos2.Elements.Add(elmntFolioArticulos)
-            tiendaArticulos2.Elements.Add(elmntTiendaArticulos)
-            codigoArticulos2.Elements.Add(elmntCodigoArticulos2)
-            cantUCompraArt2.Elements.Add(elmntCantUCArt2)
-            costoNetoUCompraArt2.Elements.Add(elmtnCostoNetoUCArt2)
-            porcenIEPSArt2.Elements.Add(elmntPorcenIEPSArt2)
-            porcentajeIVAArt2.Elements.Add(elmntPorcenIVAArt2)
-            proveedorArticulos3.Elements.Add(elmntProvArticulos3)
-            remisionArticulos3.Elements.Add(elmntRemisionArticulos)
-            folioArticulos3.Elements.Add(elmntFolioArticulos)
-            tiendaArticulos3.Elements.Add(elmntTiendaArticulos)
-            codigoArticulos3.Elements.Add(elmntCodigoArticulos3)
-            cantUCompraArt3.Elements.Add(elmntCantUCArt3)
-            costoNetoUCompraArt3.Elements.Add(elmtnCostoNetoUCArt3)
-            porcenIEPSArt3.Elements.Add(elmntPorcenIEPSArt3)
-            porcentajeIVAArt3.Elements.Add(elmntPorcenIVAArt3)
-            proveedorCajaTarima.Elements.Add(elmntProvCajaTarima)
-            remisionCajaTarima.Elements.Add(elmntRemisionCajaTarima)
-            numCajaTarima.Elements.Add(elmntNumCajaTarima)
-            codBarrasCajaTarima.Elements.Add(elmntCodBarrasCajaTarima)
-            sucDistrCajaTarima.Elements.Add(elmntSucDistrCajaTarima)
-            cantArtCajaTarima.Elements.Add(elmntCantArtCajaTarima)
-            proveedorArtCajaTarima.Elements.Add(elmntProvArtCajaTarima)
-            remisionArtCajaTarima.Elements.Add(elmntremisionArtCajaTarima)
-            folioPedidoArtCajaTarima.Elements.Add(elmntFolioPedidoArtCajaTarima)
-            NumCTArtCajaTarima.Elements.Add(elmntNumCTArtCajaTarima)
-            sucDistrArtCajaTarima.Elements.Add(elmntSucDistArtCajaTarima)
-            codigoArtCajaTarima.Elements.Add(elmntCodigoArtCajaTarima)
-            cantUndCompraArtCajaTarima.Elements.Add(elmntCantUndCArtCajaTarima)
-            remision_Remision.Elements.Add(proveedor) '<Proveedor>
-            remision_Remision.Elements.Add(folioRemision) '<Remision> Folio remision
-            remision_Remision.Elements.Add(nodeConsecutivo) '<Consecutivo>
-            remision_Remision.Elements.Add(nodeFechaRem) '<FechaRemision>
-            remision_Remision.Elements.Add(nodeTienda) '<Tienda>
-            remision_Remision.Elements.Add(tipoMoneda)
-            remision_Remision.Elements.Add(tipoBulto)
-            remision_Remision.Elements.Add(entregaMerc)
-            remision_Remision.Elements.Add(cumpleReqFiscales)
-            remision_Remision.Elements.Add(cantBultos)
-            remision_Remision.Elements.Add(subtotal)
-            remision_Remision.Elements.Add(descuentos)
-            remision_Remision.Elements.Add(ieps)
-            remision_Remision.Elements.Add(iva)
-            remision_Remision.Elements.Add(otrosImp)
-            remision_Remision.Elements.Add(total)
-            remision_Remision.Elements.Add(cantidadPedidos)
-            remision_Remision.Elements.Add(FechaEntregaM)
-            'remision_Remision.Elements.Add(empaqueCajas)
-            'remision_Remision.Elements.Add(empaqueTarimas)
-            'remision_Remision.Elements.Add(cantCajasTarimas)
-            'remision_Remision.Elements.Add(cita)
-            pedimento.Elements.Add(provPedimento)
-            pedimento.Elements.Add(remisionPedimento)
-            pedimento.Elements.Add(numPedimento)
-            pedimento.Elements.Add(aduana)
-            pedimento.Elements.Add(agenteAduanal)
-            pedimento.Elements.Add(tipoPedimento)
-            pedimento.Elements.Add(fechaPedimento)
-            pedimento.Elements.Add(fechaReciboL)
-            pedimento.Elements.Add(fechaBillOL)
-            nodoRaiz_Pedidos.Elements.Add(proveedorPedidos)
-            nodoRaiz_Pedidos.Elements.Add(remisionPedidos)
-            nodoRaiz_Pedidos.Elements.Add(folioPedido)
-            nodoRaiz_Pedidos.Elements.Add(tiendaPedidos)
-            nodoRaiz_Pedidos.Elements.Add(cantArticuloPedidos)
-            nodoRaiz_Articulos.Elements.Add(proveedorArticulos)
-            nodoRaiz_Articulos.Elements.Add(remisionArticulos)
-            nodoRaiz_Articulos.Elements.Add(folioArticulos)
-            nodoRaiz_Articulos.Elements.Add(tiendaArticulos)
-            nodoRaiz_Articulos.Elements.Add(codigoArticulos)
-            nodoRaiz_Articulos.Elements.Add(cantUCompraArt)
-            nodoRaiz_Articulos.Elements.Add(costoNetoUCompraArt)
-            nodoRaiz_Articulos.Elements.Add(porcenIEPSArt)
-            nodoRaiz_Articulos.Elements.Add(porcentajeIVAArt)
-
-            nodoRaiz_Articulos1.Elements.Add(proveedorArticulos1)
-            nodoRaiz_Articulos1.Elements.Add(remisionArticulos)
-            nodoRaiz_Articulos1.Elements.Add(folioArticulos)
-            nodoRaiz_Articulos1.Elements.Add(tiendaArticulos)
-            nodoRaiz_Articulos1.Elements.Add(codigoArticulos1)
-            nodoRaiz_Articulos1.Elements.Add(cantUCompraArt1)
-            nodoRaiz_Articulos1.Elements.Add(costoNetoUCompraArt1)
-            nodoRaiz_Articulos1.Elements.Add(porcenIEPSArt1)
-            nodoRaiz_Articulos1.Elements.Add(porcentajeIVAArt1)
-            nodoRaiz_Articulos2.Elements.Add(proveedorArticulos2)
-            nodoRaiz_Articulos2.Elements.Add(remisionArticulos)
-            nodoRaiz_Articulos2.Elements.Add(folioArticulos)
-            nodoRaiz_Articulos2.Elements.Add(tiendaArticulos)
-            nodoRaiz_Articulos2.Elements.Add(codigoArticulos2)
-            nodoRaiz_Articulos2.Elements.Add(cantUCompraArt2)
-            nodoRaiz_Articulos2.Elements.Add(costoNetoUCompraArt2)
-            nodoRaiz_Articulos2.Elements.Add(porcenIEPSArt2)
-            nodoRaiz_Articulos2.Elements.Add(porcentajeIVAArt2)
-            nodoRaiz_Articulos3.Elements.Add(proveedorArticulos3)
-            nodoRaiz_Articulos3.Elements.Add(remisionArticulos)
-            nodoRaiz_Articulos3.Elements.Add(folioArticulos)
-            nodoRaiz_Articulos3.Elements.Add(tiendaArticulos)
-            nodoRaiz_Articulos3.Elements.Add(codigoArticulos3)
-            nodoRaiz_Articulos3.Elements.Add(cantUCompraArt3)
-            nodoRaiz_Articulos3.Elements.Add(costoNetoUCompraArt3)
-            nodoRaiz_Articulos3.Elements.Add(porcenIEPSArt3)
-            nodoRaiz_Articulos3.Elements.Add(porcentajeIVAArt3)
-            'nodoRaiz_CajaTarima.Elements.Add(proveedorCajaTarima)
-            'nodoRaiz_CajaTarima.Elements.Add(remisionCajaTarima)
-            'nodoRaiz_CajaTarima.Elements.Add(numCajaTarima)
-            'nodoRaiz_CajaTarima.Elements.Add(codBarrasCajaTarima)
-            'nodoRaiz_CajaTarima.Elements.Add(sucDistrCajaTarima)
-            'nodoRaiz_CajaTarima.Elements.Add(cantArtCajaTarima)
-            'nodoRaiz_ArtPorCajaTarima.Elements.Add(proveedorArtCajaTarima)
-            'nodoRaiz_ArtPorCajaTarima.Elements.Add(remisionArtCajaTarima)
-            'nodoRaiz_ArtPorCajaTarima.Elements.Add(folioPedidoArtCajaTarima)
-            'nodoRaiz_ArtPorCajaTarima.Elements.Add(NumCTArtCajaTarima)
-            'nodoRaiz_ArtPorCajaTarima.Elements.Add(sucDistrArtCajaTarima)
-            'nodoRaiz_ArtPorCajaTarima.Elements.Add(codigoArtCajaTarima)
-            'nodoRaiz_ArtPorCajaTarima.Elements.Add(cantUndCompraArtCajaTarima)
-
-            DSCarga.Elements.Add(remision_Remision)
-            'DSCarga.Elements.Add(pedimento) ' no se necesita
-            DSCarga.Elements.Add(nodoRaiz_Pedidos)
-
-            For c = 0 To grdProductos.RecordCount - 1
-                If c = 0 Then
-                    DSCarga.Elements.Add(nodoRaiz_Articulos) '<Articulos> Bloque Articulos
-                End If
-                If c = 1 Then
-                    DSCarga.Elements.Add(nodoRaiz_Articulos1) '<Articulos> Bloque Articulos
-                End If
-                If c = 2 Then
-                    DSCarga.Elements.Add(nodoRaiz_Articulos2) '<Articulos> Bloque Articulos
-                End If
-                If c = 3 Then
-                    DSCarga.Elements.Add(nodoRaiz_Articulos3) '<Articulos> Bloque Articulos
-                End If
-            Next
-
-
-            'DSCarga.Elements.Add(nodoRaiz_CajaTarima)
-            'DSCarga.Elements.Add(nodoRaiz_ArtPorCajaTarima)
-
-            addenda.Elements.Add(DSCarga) '<DSCarga>
-
-            If proceso.setAddendaInXMLCFDI(archivoXML, addenda) Then
-                MessageBox.Show("Addenda generada correctamente.")
-                Close()
-                Return True
-
-            Else
-                MessageBox.Show("No se pudo generar la Addenda.")
-                Return False
-
-            End If
-
-        Catch ex As Exception
-            MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            Return False
-
-        End Try
-
-    End Function
+   
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         pathfilexml = "c:\correo\" & Me.txtRFC.Text & "_" & Me.txtFolio.Text & ".xml"
         ' xml
@@ -920,11 +389,12 @@ Public Class frmFacturaView
             vAddSorArticulos.PorcentajeIEPS = 0.0
             vAddSorArticulos.PorcentajeIVA = 0.0
         Next
-        insertarAddenda(pathfilexml)
+        'insertarAddenda(pathfilexml)
     End Sub
 
 
     Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
+        ' grabamos el archivo xml en disco 
         pathfilexml = "c:\correo\" & Me.txtRFC.Text & "_" & Me.txtFolio.Text & ".xml"
         ' xml
         Dim vFile As New IO.StreamWriter(pathfilexml)
@@ -1219,12 +689,18 @@ Public Class frmFacturaView
             Articulos.AppendChild(concepto)
         Next c
         '************************************************
+        subAgregaR1()
+
         xd.DocumentElement.AppendChild(newAuthor)
-        Dim fileXmlOut As String = "c:\correo\" & Me.txtRFC.Text & "_" & Me.txtFolio.Text & "AddSor.xml"
-        Dim tr As XmlTextWriter = New XmlTextWriter(fileXmlOut, Nothing)
-        tr.Formatting = Formatting.Indented
-        xd.WriteContentTo(tr)
-        tr.Close()
+        jcxmlelement = newAuthor
+        'Dim fileXmlOut As String = "c:\correo\" & Me.txtRFC.Text & "_" & Me.txtFolio.Text & "Add1.xml"
+        'xd.PreserveWhitespace = True
+        'Dim tr As XmlTextWriter = New XmlTextWriter(fileXmlOut, System.Text.Encoding.UTF8)
+        'tr.Formatting = Formatting.Indented
+        'xd.WriteContentTo(tr)
+        'tr.Close()
+        'xd.Save(Console.Out)
+
 
     End Sub
     Private Sub IndentarNodo(ByVal Nodo As XmlNode, ByVal Nivel As Long)
@@ -1239,8 +715,371 @@ Public Class frmFacturaView
         CmbtiendaP.Text = cmbtienda.Text
     End Sub
 
+    Public Sub subAgregaR1()
+        Dim vRow As DataRow
+        Try
+            'Declaro variable array para el Array
+            Dim objAddendas As New ArrayList
+            Dim oAddenda As New stcAP1
+            Dim oPedidos As New dAddendaSorianapedidos
+            Dim oArticulos As New dAddendaSorianaArticulos
 
-    Private Sub campoRowOrder_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles campoRowOrder.TextChanged
+            'Dim oAddenda2 As New stcAddenda2
 
+            'Variable para el Archivo Xlml
+            Dim A As XmlTextWriter = New XmlTextWriter("C:\correo\Addenda.xml", System.Text.UTF8Encoding.UTF8)
+
+            'PARA RECEPCION 1
+            'PAR oAddenda.contrato = CInt(txtcontrato.Text)
+            oAddenda.surtimiento = "4560000"
+            oAddenda.gestor = 456456
+            oAddenda.pocision = "59675708"
+            oAddenda.entrada = "59675708"
+            oAddenda.ejecutor = "59675708"
+            oAddenda.receptor = "59675708"
+            oAddenda.ejercicio = "59675708"
+            oAddenda.Proveedor = 303008
+            oAddenda.remision = "100"
+
+            oPedidos.Proveedor = "3033008"
+            oPedidos.remision = "100"
+
+
+
+            'Agrego a la Colección
+            objAddendas.Add(oAddenda)
+
+            'Formatea indentado el archivo
+            A.Formatting = System.Xml.Formatting.Indented
+
+            'Si escribe la inicializacion del Archivo
+            A.WriteStartDocument(True)
+            'Crear el elemento principal del documento
+            A.WriteStartElement("Addenda") '                                         1
+            'A.WriteAttributeString("tipo", "version")
+            'Ciclo para incluir los elementos de la colección
+            For Each oNodoAddenda As stcAP1 In objAddendas
+                'Escribe el Titulo
+                A.WriteStartAttribute("xsi:schemaLocation")
+                A.WriteValue("http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv32.xsd")
+                A.WriteEndAttribute() 'TERMINA ATRIBUTO
+
+                'Escribe el Titulo
+                A.WriteStartAttribute("xmlns:cfdi")
+                A.WriteValue("http://www.sat.gob.mx/cfd/3")
+                A.WriteEndAttribute() 'TERMINA ATRIBUTO
+
+                ''Escribe el Titulo
+                A.WriteStartAttribute("xmlns:xsi")
+                A.WriteValue("http://www.w3.org/2001/XMLSchema-instance")
+                A.WriteEndAttribute() 'TERMINA ATRIBUTO
+
+                ''Escribe el Titulo
+                'A.WriteStartAttribute("version")
+                'A.WriteValue("3.2")
+                'A.WriteEndAttribute() 'TERMINA ATRIBUTO
+
+                '************************************************
+                '               INICIA ELEMENTO CFDI:ADDENDA SAT
+
+                '*************************************************
+                'Crear un elemento llamado 'Nodo Principal Addenda' con un nodo de texto
+                A.WriteStartElement("cfdi:Addenda") '                                                2
+
+                'Escribe el Titulo
+                'A.WriteStartAttribute("xmlns:cfdi")
+                'A.WriteValue("http://www.sat.gob.mx/cfd/3")
+                'A.WriteEndAttribute() 'TERMINA ATRIBUTO
+
+                '*************************************************
+                'Crear un elemento llamado 'Nodo Principal Addenda' con un nodo de texto
+                A.WriteStartElement("DSCargaRemisionProv") '                                            3
+
+                A.WriteStartElement("Remision") '                                          4
+
+                A.WriteStartAttribute("Id")
+                A.WriteValue("Remision1")
+                A.WriteEndAttribute() 'TERMINA ATRIBUTO Id
+
+                A.WriteStartAttribute("RowOrder")
+                A.WriteValue("1")
+                A.WriteEndAttribute() 'TERMINA ATRIBUTO RowOrder
+               
+                A.WriteStartElement("Proveedor")
+                A.WriteValue(vAddSorRemi.Proveedor)
+                A.WriteEndElement()  'FIN DE NODO PROVEEDOR
+
+                A.WriteStartElement("Remision")
+                A.WriteValue(vAddSorRemi.remision)
+                A.WriteEndElement()  'FIN DE NODO remision
+
+                A.WriteStartElement("Consecutivo")
+                A.WriteValue(vAddSorRemi.Consecutivo)
+                A.WriteEndElement()  'FIN DE NODO ("Consecutivo")
+
+                A.WriteStartElement("FechaRemision")
+                A.WriteValue(vAddSorRemi.FechaRemision)
+                A.WriteEndElement()  'FIN DE NODO FechaRemision
+
+                A.WriteStartElement("Tienda")
+                A.WriteValue(vAddSorRemi.Tienda)
+                A.WriteEndElement()  'FIN DE NODO Tienda
+
+                A.WriteStartElement("TipoMoneda")
+                If vAddSorRemi.TipoMoneda = "PESOS" Then
+                    A.WriteValue(1)
+                Else
+                    A.WriteValue(2)
+                End If
+                A.WriteEndElement()  'FIN DE NODO TipoMoneda
+
+                A.WriteStartElement("TipoBulto")
+                A.WriteValue(vAddSorRemi.TipoBulto)
+                A.WriteEndElement()  'FIN DE NODO TipoBulto
+
+                A.WriteStartElement("EntregaMercancia")
+                A.WriteValue(vAddSorRemi.EntregaMercancia)
+                A.WriteEndElement()  'FIN DE NODO EntregaMercancia
+
+                A.WriteStartElement("CumpleReqFiscales")
+                A.WriteValue(vAddSorRemi.CumpleReqFiscales)
+                A.WriteEndElement()  'FIN DE NODO CumpleReqFiscales
+
+                A.WriteStartElement("CantidadBultos")
+                A.WriteValue(vAddSorRemi.CantidadBultos)
+                A.WriteEndElement()  'FIN DE NODO CantidadBultos
+
+                A.WriteStartElement("Subtotal")
+                A.WriteValue(vAddSorRemi.Subtotal)
+                A.WriteEndElement()  'FIN DE NODO Subtotal
+
+                A.WriteStartElement("IEPS")
+                A.WriteValue(vAddSorRemi.IEPS)
+                A.WriteEndElement()  'FIN DE NODO IEPS
+                A.WriteStartElement("IVA")
+                A.WriteValue(vAddSorRemi.IVA)
+                A.WriteEndElement()  'FIN DE NODO IVA
+                A.WriteStartElement("OtrosImpuestos")
+                A.WriteValue(vAddSorRemi.OtrosImpuestos)
+                A.WriteEndElement()  'FIN DE NODO OtrosImpuestos
+
+
+                A.WriteStartElement("Total")
+                A.WriteValue(vAddSorRemi.Total)
+                A.WriteEndElement()  'FIN DE NODO Total
+
+                A.WriteStartElement("CantidadPedidos")
+                A.WriteValue(vAddSorRemi.CantidadPedidos)
+                A.WriteEndElement()  'FIN DE NODO CantidadPedidos
+
+                A.WriteStartElement("FechaEntregaMercancia")
+                A.WriteValue(vAddSorRemi.FechaEntregaMercancia)
+                A.WriteEndElement()  'FIN DE NODO FechaEntregaMercancia
+
+                A.WriteStartElement("FolioNotaEntrada")
+                A.WriteValue(vAddSorRemi.FolioNotaEntrada)
+                A.WriteEndElement()  'FIN DE NODO FolioNotaEntrada
+
+                A.WriteEndElement()  'FIN DE NODO MASTER remision                         cierro 4   
+
+
+                A.WriteStartElement("Pedidos") '                                       abro pedidos  5
+
+                A.WriteStartAttribute("Id")
+                A.WriteValue("Pedidos1")
+                A.WriteEndAttribute() 'TERMINA ATRIBUTO Id
+
+                A.WriteStartAttribute("RowOrder")
+                A.WriteValue("1")
+                A.WriteEndAttribute() 'TERMINA ATRIBUTO RowOrder
+              
+                A.WriteStartElement("Proveedor")
+                A.WriteValue(vAddSorpedido.Proveedor)
+                A.WriteEndElement()  'FIN DE NODO PROVEEDOR
+
+                A.WriteStartElement("Remision")
+                A.WriteValue(vAddSorpedido.remision)
+                A.WriteEndElement()  'FIN DE NODO remision
+
+                A.WriteStartElement("FolioPedido")
+                A.WriteValue(vAddSorpedido.FolioPedido)
+                A.WriteEndElement()  'FIN DE NODO FolioPedido
+
+                A.WriteStartElement("PedidoEmitidoProveedor")
+                A.WriteValue(vAddSorpedido.PedidoEmitidoProveedor)
+                A.WriteEndElement()  'FIN DE NODO PedidoEmitidoProveedor
+
+                A.WriteStartElement("Tienda")
+                A.WriteValue(vAddSorpedido.Tienda)
+                A.WriteEndElement()  'FIN DE NODO tienda
+
+                A.WriteEndElement()  'FIN DE NODO pedidos                                cierro pedidos 5
+
+
+                'A.WriteStartElement("Articulos") '                                        abro articulos  6
+
+                ''Escribe el Titulo
+                'A.WriteStartAttribute("Id")
+                'A.WriteValue("Articulos1")
+                'A.WriteEndAttribute() 'TERMINA ATRIBUTO Id
+
+                'A.WriteStartAttribute("RowOrder")
+                'A.WriteValue("1")
+                'A.WriteEndAttribute() 'TERMINA ATRIBUTO RowOrder
+
+
+                'A.WriteStartElement("Proveedor")
+                'A.WriteValue(vAddSorArticulos.Proveedor)
+                'A.WriteEndElement()  'FIN DE NODO PROVEEDOR
+
+                'A.WriteStartElement("Remision")
+                'A.WriteValue(vAddSorArticulos.remision)
+                'A.WriteEndElement()  'FIN DE NODO remision
+
+                'A.WriteStartElement("Foliopedido")
+                'A.WriteValue(vAddSorArticulos.FolioPedido)
+                'A.WriteEndElement()  'FIN DE NODO remision
+
+                'A.WriteStartElement("Tienda")
+                'A.WriteValue(vAddSorArticulos.Tienda)
+                'A.WriteEndElement()  'FIN DE NODO tienda
+
+                'A.WriteStartElement("CantidadArticulos")
+                'A.WriteValue(vAddSorArticulos.CantidadArticulos)
+                'A.WriteEndElement()  'FIN DE NODO CantidadArticulos
+
+                'A.WriteStartElement("Codigo")
+                'A.WriteValue(vAddSorArticulos.Codigo)
+                'A.WriteEndElement()  'FIN DE NODO Codigo
+
+                'A.WriteStartElement("CantidadUnidadCompra")
+                'A.WriteValue(vAddSorArticulos.CantidadUnidadCompra)
+                'A.WriteEndElement()  'FIN DE NODO CantidadUnidadCompra
+
+                'A.WriteStartElement("CostoNetoUnidadCompra")
+                'A.WriteValue(vAddSorArticulos.CostoNetoUnidadCompra)
+                'A.WriteEndElement()  'FIN DE NODO CostoNetoUnidadCompra
+
+                'A.WriteStartElement("PorcentajeIEPS")
+                'A.WriteValue(vAddSorArticulos.PorcentajeIEPS)
+                'A.WriteEndElement()  'FIN DE NODO PorcentajeIEPS
+
+                'A.WriteStartElement("PorcentajeIVA")
+                'A.WriteValue(vAddSorArticulos.PorcentajeIVA)
+                'A.WriteEndElement()  'FIN DE NODO PorcentajeIVA
+
+                'A.WriteEndElement()  'FIN DE NODO articulos                            cierro articulos 6
+
+                Dim c As Integer = 0
+                For Each vRow In vTablaProds.Rows
+
+                    A.WriteStartElement("Articulos") '                                          6
+                    'Escribe el Titulo
+                    A.WriteStartAttribute("Id")
+                    A.WriteValue("Articulos" & c + 1)
+                    A.WriteEndAttribute() 'TERMINA ATRIBUTO Id
+                    A.WriteStartAttribute("RowOrder")
+                    A.WriteValue(c + 1)
+                    A.WriteEndAttribute() 'TERMINA ATRIBUTO RowOrder
+
+
+                    A.WriteStartElement("Proveedor")
+                    A.WriteValue(vAddSorArticulos.Proveedor)
+                    A.WriteEndElement()  'FIN DE NODO PROVEEDOR
+
+                    A.WriteStartElement("Remision")
+                    A.WriteValue(vAddSorArticulos.remision)
+                    A.WriteEndElement()  'FIN DE NODO remision
+                    A.WriteStartElement("Foliopedido")
+                    A.WriteValue(vAddSorArticulos.FolioPedido)
+                    A.WriteEndElement()  'FIN DE NODO remision
+
+                    A.WriteStartElement("Tienda")
+                    A.WriteValue(vAddSorArticulos.Tienda)
+                    A.WriteEndElement()  'FIN DE NODO tienda
+
+                    'A.WriteStartElement("CantidadArticulos")
+                    'A.WriteValue(vAddSorArticulos.CantidadArticulos)
+                    'A.WriteEndElement()  'FIN DE NODO CantidadArticulos
+                    A.WriteStartElement("Codigo")
+                    A.WriteValue(vAddSorArticulos.Codigo)
+                    A.WriteEndElement()  'FIN DE NODO Codigo
+                    A.WriteStartElement("CantidadUnidadCompra")
+                    A.WriteValue(vAddSorArticulos.CantidadUnidadCompra)
+                    A.WriteEndElement()  'FIN DE NODO CantidadUnidadCompra
+                    A.WriteStartElement("CostoNetoUnidadCompra")
+                    A.WriteValue(vAddSorArticulos.CostoNetoUnidadCompra)
+                    A.WriteEndElement()  'FIN DE NODO CostoNetoUnidadCompra
+
+                    A.WriteStartElement("PorcentajeIEPS")
+                    A.WriteValue(vAddSorArticulos.PorcentajeIEPS)
+                    A.WriteEndElement()  'FIN DE NODO PorcentajeIEPS
+                    A.WriteStartElement("PorcentajeIVA")
+                    A.WriteValue(vAddSorArticulos.PorcentajeIVA)
+                    A.WriteEndElement()  'FIN DE NODO PorcentajeIVA
+                    A.WriteEndElement()  'FIN DE NODO articulos
+
+
+                    c = c + 1
+
+                Next
+                'A.WriteEndElement()  'FIN DE NODO articulos
+
+                A.WriteEndElement() ''Cierra el elemento DSCargaRemisionProv.          cierro 3
+
+
+                A.WriteEndElement() 'Para Elemento principal Inicial de URL SAT <cfdi:Addenda> cierro 2
+                A.WriteEndElement() ''Cierra el elemento addenda         cierro 1
+            Next
+            'Forza grabación a Disco
+            A.Flush()
+
+            'Cierra el Archivo
+            A.Close()
+
+            MsgBox("Se genero Nodo Addenda", MsgBoxStyle.Information, "Notificacion - NET")
+            'Else
+            'MsgBox("Error en generar Addenda", MsgBoxStyle.Information, "Notificacion HORROR.Net")
+            'End If
+            subGrabaAddendaPM()
+
+        Catch ex As Exception
+
+        End Try
+
+    End Sub
+    Sub subGrabaAddendaPM()
+        Dim archivoXMLaddendado As String = "c:\correo\" & Me.txtRFC.Text & "_" & Me.txtFolio.Text & "Add.xml"
+        Try
+            'Create the XmlDocument.
+
+            '1. Cargo atravez de txtLoad la URL de la Factura Timbrada y sellada por SAT desde un directorio
+            Dim docXmlF As XmlDocument = New XmlDocument()
+            docXmlF.Load(pathfilexml)
+
+
+
+            '2. Crear en otro XmlDocument el Nodo a Insertar Este lo cargo directamende del directorio, es el nodo Addenda capturado. 
+            Dim docXmlA As New XmlDocument()
+            docXmlA.Load("C:\correo\Addenda.xml")
+
+            '3. Import el nodo Addenda dedocXmlA en el documento Original docXmlF. 
+            Dim Addenda As XmlNode = docXmlF.ImportNode(docXmlA.DocumentElement.LastChild, True)
+            docXmlF.DocumentElement.AppendChild(Addenda)
+
+
+            ' 4. Save the modified fil XML a formato UTF8.
+            docXmlF.PreserveWhitespace = True
+            Dim wrtr As XmlTextWriter = New XmlTextWriter(archivoXMLaddendado, System.Text.Encoding.UTF8)
+            'wrtr.Formatting = Formatting.Indented
+            docXmlF.WriteTo(wrtr)
+            wrtr.Close()
+            '5. Guardo y Senalo la Direccion
+            docXmlF.Save(Console.Out)
+           
+
+        Catch ex As Exception
+            MsgBox("Error de Ruta, No Existe en 'C:\correo\' , verificar con el Administrador de Sistemas", MsgBoxStyle.Exclamation, "Notificacion del Sistema Addendas Soriana")
+        End Try
     End Sub
 End Class

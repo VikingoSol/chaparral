@@ -656,12 +656,13 @@ Partial Class frmFacturaView
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(264, 516)
+        Me.Button1.Location = New System.Drawing.Point(405, 516)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(84, 23)
         Me.Button1.TabIndex = 135
         Me.Button1.Text = "Aplicar Adenda"
         Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.Visible = False
         '
         'comboEmpaqueCajas
         '
@@ -675,13 +676,12 @@ Partial Class frmFacturaView
         '
         'Button5
         '
-        Me.Button5.Location = New System.Drawing.Point(159, 516)
+        Me.Button5.Location = New System.Drawing.Point(251, 516)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(84, 23)
         Me.Button5.TabIndex = 128
         Me.Button5.Text = "Grabar"
         Me.Button5.UseVisualStyleBackColor = True
-        Me.Button5.Visible = False
         '
         'Label46
         '
@@ -1270,6 +1270,7 @@ Partial Class frmFacturaView
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmFacturaView"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Factura"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
