@@ -141,7 +141,7 @@ Public Class cFacturas
 
     Public Function GetFacturas(ByVal pDesde As Date) As DataTable
         If gConn.State <> ConnectionState.Open Then gConn.Open()
-        Dim vCmd As New MySqlCommand("SELECT facturas.*,clientes.nombre as cliente FROM facturas INNER JOIN clientes ON facturas.idcliente=clientes.id WHERE fecha_emision>=?fecha", gConn)
+        Dim vCmd As New MySqlCommand("SELECT f.id,f.folio,f.serie,f.fecha_emision, f.subtotal, f.iva, f.total,f.estado, f.metodo_pago, f.rfc_emisor, f.descuento, f.folio_fiscal  ,clientes.nombre as cliente FROM facturas f INNER JOIN clientes ON f.idcliente=clientes.id WHERE f.fecha_emision>=?fecha", gConn)
         vCmd.Parameters.AddWithValue("?fecha", pDesde)
         Dim vAdap As New MySqlDataAdapter(vCmd)
         Dim vTabla As New DataTable
