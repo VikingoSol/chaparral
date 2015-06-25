@@ -50,7 +50,7 @@ Public Class frmFacturas
     End Sub
 
     Private Sub frmFacturas_Shown(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Shown
-        Me.dpFecha.Value = Now.AddMonths(-1)
+        Me.dpFecha.Value = Now.AddDays(-5)
         Mostrar_Facturas(Me.dpFecha.Value)
     End Sub
 

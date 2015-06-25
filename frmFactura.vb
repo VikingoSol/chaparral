@@ -1,4 +1,13 @@
 Imports BaseDatos
+Imports FacturaNETLib
+Imports FacturaNETLib.Manager
+Imports FacturaNETLib.Certificate
+Imports FacturaNETLib.Document
+Imports System.Xml
+Imports System.Net.Mail
+Imports System.Net
+Imports System.Text
+Imports System.IO
 Public Class frmFactura
     Dim vIdFactura As Integer = -1
     Dim vLastIdCl As Integer = -1
@@ -356,6 +365,8 @@ Public Class frmFactura
         'End If
 
         Dim vFac As New frmFacturaProc
+        Dim vFacs As New frmFacturas
+
         vFac.vAddendaSR = addenR
         vFac.vAddendaSP = addenP
         Dim vFactura As New dFactura
@@ -376,10 +387,169 @@ Public Class frmFactura
         Me.vIdFactura = vFac.Facturar(vFactura, Me.vTablaProds, Me.CheckBox1.Checked)
         If vIdFactura > 0 Then
             Me.DialogResult = Windows.Forms.DialogResult.OK
+            'Imprimir_Factura(vIdFactura)
             Me.Close()
         End If
     End Sub
+    'Private Sub Imprimir_Factura(Optional ByVal pId As Integer = -1)
 
+    '    Dim vReport As FastReport.Report = GetFacturaRep(pId)
+    '    PrintDialog1.PrinterSettings.Copies = 3
+    '    'vReport.PrintSettings.Printer = pImpresora
+    '    If Me.PrintDialog1.ShowDialog = Windows.Forms.DialogResult.OK Then
+    '        vReport.PrintSettings.Printer = PrintDialog1.PrinterSettings.PrinterName
+    '        vReport.PrintSettings.Copies = PrintDialog1.PrinterSettings.Copies
+    '        'vReport.PrintSettings.PrintToFileName = "Invoice_#" & pFolio
+    '        If vReport.Prepare() Then
+    '            vReport.PrintSettings.ShowDialog = False
+    '            vReport.PrintPrepared()
+    '        End If
+    '    End If
+
+    'End Sub
+    'Private Function GetFacturaRep(Optional ByVal pId As Integer = -1) As FastReport.Report
+    '    Dim vFactura As ElectronicDocument
+    '    Dim vManager As ElectronicManage
+    '    Dim vFacs As New cFacturas
+
+    '    Dim vFac As dFacturaView
+    '    If pId > 0 Then
+    '        vFac = vFacs.GetFactura(pId)
+    '    Else
+    '        vFac = vFacs.GetFactura(Me.grdFacturas.GetRow.Cells("id").Value)
+    '    End If
+
+    '    If IsNothing(vFac) Then
+    '        Return Nothing
+    '    End If
+
+    '    vManager = ElectronicManage.NewEntity
+    '    vFactura = ElectronicDocument.NewEntity()
+    '    vFactura.AssignManage(vManager)
+
+    '    'Dim sw As IO.StreamWriter = New IO.StreamWriter(New IO.MemoryStream)
+    '    ' sw.Write(vFac.xml_Timbrado)
+    '    'sw.Flush()
+    '    ' vFactura.Manage.Load.Options = vFactura.Manage.Load.Options - LoadOptions.ValidateCertificateWithCrl - LoadOptions.ValidateSignature - LoadOptions.ValidateStamp
+
+    '    If Not vFactura.LoadFromString(vFac.xml_Timbrado) Then
+    '        MsgBox("Error al leer la factura")
+    '        Return Nothing
+    '    End If
+
+    '    Dim n As Integer
+    '    Dim vdesc As Double
+    '    Dim vTablaProds As DataTable = vFacs.GetProductosFacturados(Me.grdFacturas.GetRow.Cells("id").Value)
+    '    'Dim vDs As New DataSet
+    '    vTablaProds.TableName = "Productos"
+    '    'vDs.Tables.Add(vTablaProds)
+    '    'vDs.WriteXml("c:/dsFactura.xml")
+    '    Dim vReport As New FastReport.Report
+
+    '    If vFactura.Data.Descuento.Value > 0 Then ' si hay descuento por el momenento 2 reportes
+    '        If IO.File.Exists(System.AppDomain.CurrentDomain.BaseDirectory() & vFac.RFC_Emisor & "/facturaD.frx") Then
+    '            vReport.Load(System.AppDomain.CurrentDomain.BaseDirectory() & vFac.RFC_Emisor & "/facturaD.frx")
+    '        Else
+    '            vReport.Load(System.AppDomain.CurrentDomain.BaseDirectory() & "/Reportes/facturaD.frx")
+    '        End If
+    '    Else
+    '        If IO.File.Exists(System.AppDomain.CurrentDomain.BaseDirectory() & vFac.RFC_Emisor & "/factura.frx") Then
+    '            vReport.Load(System.AppDomain.CurrentDomain.BaseDirectory() & vFac.RFC_Emisor & "/factura.frx")
+    '        Else
+    '            vReport.Load(System.AppDomain.CurrentDomain.BaseDirectory() & "/Reportes/factura.frx")
+    '        End If
+
+    '    End If
+    '    vReport.RegisterData(vTablaProds, "Productos")
+    '    vReport.SetParameterValue("fecha_emi", Format(vFactura.Data.Fecha.Value, "dd/MM/yyyy HH:mm:ss"))
+    '    vReport.SetParameterValue("Serie", vFactura.Data.Serie.Value)
+    '    vReport.SetParameterValue("folio", vFactura.Data.Folio.Value)
+    '    vReport.SetParameterValue("cer_emi", vFactura.Data.NoCertificado.Value)
+    '    vReport.SetParameterValue("Moneda", vFactura.Data.Moneda.Value)
+    '    vReport.SetParameterValue("tipo_cambio", FormatNumber(vFactura.Data.TipoCambio.Value, 2))
+    '    vReport.SetParameterValue("subtotal", "$ " & FormatNumber(vFactura.Data.SubTotal.Value, 2))
+    '    vReport.SetParameterValue("Cliente", vFactura.Data.Receptor.Nombre.Value)
+    '    vReport.SetParameterValue("RFC", vFactura.Data.Receptor.RFC.Value)
+    '    vReport.SetParameterValue("metodo_pago", vFactura.Data.MetodoPago.Value)
+    '    vReport.SetParameterValue("cuenta", vFactura.Data.NumeroCuentaPago.Value)
+    '    vReport.SetParameterValue("descuento", vFactura.Data.Descuento.Value)
+    '    vdesc = CDbl(((vFactura.Data.Descuento.Value * 100) / vFactura.Data.SubTotal.Value))
+    '    vReport.SetParameterValue("porc_desc", vdesc)
+
+    '    Dim vDir As String
+    '    vDir = vFactura.Data.Receptor.Domicilio.Calle.Value
+    '    If vFactura.Data.Receptor.Domicilio.NumeroExterior.Value <> "" Then
+    '        If IsNumeric(vFactura.Data.Receptor.Domicilio.NumeroExterior) Then
+    '            vDir &= " #" & vFactura.Data.Receptor.Domicilio.NumeroExterior.Value
+    '        Else
+    '            vDir &= " " & vFactura.Data.Receptor.Domicilio.NumeroExterior.Value
+    '        End If
+    '    End If
+    '    If vFactura.Data.Receptor.Domicilio.NumeroInterior.Value <> "" Then vDir &= " No. Int. " & vFactura.Data.Receptor.Domicilio.NumeroInterior.Value
+    '    If vFactura.Data.Receptor.Domicilio.Colonia.Value <> "" Then vDir &= ", Col. " & vFactura.Data.Receptor.Domicilio.Colonia.Value
+    '    If vFactura.Data.Receptor.Domicilio.CodigoPostal.Value <> "" Then
+    '        '  If IsNumeric(vFactura.Data.Receptor.Domicilio.NumeroExterior) Then
+    '        vDir &= ", C.P. " & vFactura.Data.Receptor.Domicilio.CodigoPostal.Value
+    '        'Else
+    '        '   vDir &= " " & vFactura.Data.Receptor.Domicilio.NumeroExterior.Value
+    '        ' End If
+    '    End If
+    '    If vFactura.Data.Receptor.Domicilio.Localidad.Value <> "" Then vDir &= Environment.NewLine & vFactura.Data.Receptor.Domicilio.Localidad.Value
+    '    If vFactura.Data.Receptor.Domicilio.Localidad.Value <> "" And vFactura.Data.Receptor.Domicilio.Estado.Value <> "" Then vDir &= ","
+    '    If vFactura.Data.Receptor.Domicilio.Estado.Value <> "" Then vDir &= " " & vFactura.Data.Receptor.Domicilio.Estado.Value
+    '    If vFactura.Data.Receptor.Domicilio.Pais.Value <> "" Then vDir &= ", " & vFactura.Data.Receptor.Domicilio.Pais.Value
+
+    '    vReport.SetParameterValue("cl_dir", vDir)
+
+    '    Dim vIva As Double
+    '    Dim vRetIva As Double
+
+    '    For n = 0 To vFactura.Data.Impuestos.Traslados.Count - 1
+    '        If vFactura.Data.Impuestos.Traslados(n).Tipo.Value = "IVA" Then
+    '            vReport.SetParameterValue("iva", "$ " & FormatNumber(vFactura.Data.Impuestos.Traslados(n).Importe.Value, 2))
+    '            vIva = vFactura.Data.Impuestos.Traslados(n).Importe.Value
+    '            Exit For
+    '        End If
+    '    Next
+
+    '    vReport.SetParameterValue("txtiva", "I.V.A.(" & FormatNumber((vIva / vFactura.Data.SubTotal.Value) * 100, 2) & "%):")
+
+    '    If vFactura.Data.Moneda.Value = "MXN" Then
+    '        vReport.SetParameterValue("txt_cantidad", Letras(vFactura.Data.Total.Value, "PESOS"))
+    '    Else
+    '        vReport.SetParameterValue("txt_cantidad", Letras(vFactura.Data.Total.Value, vFactura.Data.Moneda.Value))
+    '    End If
+
+    '    vReport.SetParameterValue("total", "$ " & FormatNumber(vFactura.Data.Total.Value, 2))
+
+
+    '    Dim vTimbre As Complementos.TimbreFiscalDigital
+    '    For n = 0 To vFactura.Data.Complementos.Count - 1
+    '        If vFactura.Data.Complementos(n).Type = Complementos.eComplementoTipo.TimbreFiscalDigital Then
+    '            vTimbre = CType(vFactura.Data.Complementos(n).Data, Complementos.TimbreFiscalDigital)
+    '            vReport.SetParameterValue("cer_sat", vTimbre.NumeroCertificadoSat.Value)
+    '            vReport.SetParameterValue("cadena_original", vTimbre.FingerPrintPac)
+    '            vReport.SetParameterValue("sello_sat", vTimbre.SelloSat.Value)
+    '            vReport.SetParameterValue("sello_emi", vTimbre.SelloCfd.Value)
+    '            vReport.SetParameterValue("fecha_cer", Format(vTimbre.FechaTimbrado.Value, "dd/MM/yyyy HH:mm:ss"))
+    '            vReport.SetParameterValue("folio_fiscal", vTimbre.Uuid.Value.ToUpper)
+    '            'Me.txtCertificadoSAT.Text = vTimbre.NumeroCertificadoSat.Value
+    '            'Me.txtCadenaOrig.Text = vFactura.FingerPrintPac
+    '            'Me.txtSelloSAT.Text = vTimbre.SelloSat.Value
+    '            'Me.txtSelloEmisor.Text = vTimbre.SelloCfd.Value
+    '            'Me.txtFecha_Cer.Text = vTimbre.FechaTimbrado.Value
+    '        End If
+    '    Next
+
+    '    Dim vTotal As Double = vFactura.Data.Total.Value
+    '    Dim vFileBarCode As String = Generar_CodigoBarrasBi(vFactura, FormatNumber(vTotal, 2, TriState.False, TriState.False, TriState.False), 4, gPathBarCodes)
+    '    If vFileBarCode = "" Then
+    '        Return Nothing
+    '    End If
+    '    Dim vImage As FastReport.PictureObject = vReport.FindObject("BarCodeImg")
+    '    vImage.Image = System.Drawing.Bitmap.FromFile(vFileBarCode)
+    '    Return vReport
+    'End Function
     Private Sub Button5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button5.Click
         Me.Close()
     End Sub

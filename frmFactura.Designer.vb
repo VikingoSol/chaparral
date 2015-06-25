@@ -79,6 +79,7 @@ Partial Class frmFactura
         Me.CheckBox3 = New System.Windows.Forms.CheckBox
         Me.CheckBox2 = New System.Windows.Forms.CheckBox
         Me.Txttotalart = New System.Windows.Forms.Label
+        Me.PrintDialog1 = New System.Windows.Forms.PrintDialog
         Me.GroupBox1.SuspendLayout()
         CType(Me.grdProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -621,6 +622,11 @@ Partial Class frmFactura
         Me.Txttotalart.TabIndex = 53
         Me.Txttotalart.Text = "0.00"
         '
+        'PrintDialog1
+        '
+        Me.PrintDialog1.AllowPrintToFile = False
+        Me.PrintDialog1.UseEXDialog = True
+        '
         'frmFactura
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -737,4 +743,5 @@ Partial Class frmFactura
     Friend WithEvents CheckBox3 As System.Windows.Forms.CheckBox
     Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
     Friend WithEvents Txttotalart As System.Windows.Forms.Label
+    Friend WithEvents PrintDialog1 As System.Windows.Forms.PrintDialog
 End Class
