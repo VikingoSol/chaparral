@@ -476,7 +476,7 @@ Public Class frmFacturaView
         Dim vpedi As dAddendaSorianapedidos = vAddSorpedido
         'vpedi = New dAddendaSorianapedidos
 
-        Dim vArt As dAddendaSorianaArticulos = vAddSorArticulos
+        Dim vArt As dAddendaSorianaArticulos '= vAddSorArticulos
         'vArt = New dAddendaSorianaArticulos
 
 
@@ -629,8 +629,23 @@ Public Class frmFacturaView
         pedidos.AppendChild(TiendaP)
         IndentarNodo(TiendaP, 2)
         '************************************************
-        Dim c As Integer
-        For c = 0 To grdProductos.RecordCount - 1
+        Dim c As Integer = 0
+        Dim vRow As DataRow
+        Dim VvFacs As New cFacturas
+        For Each vRow In vTablaProds.Rows
+            vAddSorArticulos.remision = Me.Txtremision.Text
+            vAddSorArticulos.FolioPedido = Me.Txtfoliopedido.Text
+            vAddSorArticulos.Tienda = Me.CmbtiendaP.SelectedValue
+            vAddSorArticulos.CantidadArticulos = vRow.Item("cantidad")
+            vAddSorArticulos.Codigo = vRow.Item("codigo")
+            vAddSorArticulos.CantidadUnidadCompra = FormatNumber(vRow.Item("cantidad"), 2, TriState.False, TriState.False, TriState.False)
+            vAddSorArticulos.CostoNetoUnidadCompra = FormatNumber(vRow.Item("precio") * vRow.Item("cantidad"), 2, TriState.False, TriState.False, TriState.False)
+            vAddSorArticulos.PorcentajeIEPS = 0.0
+            vAddSorArticulos.PorcentajeIVA = 0.0
+            vArt = vAddSorArticulos
+            'Next
+
+            'For c = 0 To grdProductos.RecordCount - 1
             Dim concepto As XmlElement = xd.CreateElement("Articulos")
             concepto.SetAttribute("RowOrder", c + 1)
             concepto.SetAttribute("Id", "Articulos" & c + 1)
@@ -642,17 +657,17 @@ Public Class frmFacturaView
             IndentarNodo(proveArt, 2)
 
             Dim RegimenFiscal As XmlElement = xd.CreateElement("Remision")
-            RegimenFiscal.InnerText = vArt.remision
+            RegimenFiscal.InnerText = vAddSorArticulos.remision
             concepto.AppendChild(RegimenFiscal)
             IndentarNodo(RegimenFiscal, 2)
 
             Dim FolioPedidoA As XmlElement = xd.CreateElement("FolioPedido")
-            FolioPedidoA.InnerText = vArt.FolioPedido
+            FolioPedidoA.InnerText = vAddSorArticulos.FolioPedido
             concepto.AppendChild(FolioPedidoA)
             IndentarNodo(FolioPedidoA, 2)
 
             Dim TiendaA As XmlElement = xd.CreateElement("tienda")
-            TiendaA.InnerText = vArt.Tienda
+            TiendaA.InnerText = vFac.Tienda
             concepto.AppendChild(TiendaA)
             IndentarNodo(TiendaA, 2)
 
@@ -677,17 +692,18 @@ Public Class frmFacturaView
             IndentarNodo(CostoNetoUnidadCompra, 2)
 
             Dim PorcentajeIEPS As XmlElement = xd.CreateElement("PorcentajeIEPS")
-            PorcentajeIEPS.InnerText = vArt.PorcentajeIEPS
+            PorcentajeIEPS.InnerText = vAddSorArticulos.PorcentajeIEPS
             concepto.AppendChild(PorcentajeIEPS)
             IndentarNodo(PorcentajeIEPS, 2)
 
             Dim PorcentajeIVA As XmlElement = xd.CreateElement("PorcentajeIVA")
-            PorcentajeIVA.InnerText = vArt.PorcentajeIVA
+            PorcentajeIVA.InnerText = vAddSorArticulos.PorcentajeIVA
             concepto.AppendChild(PorcentajeIVA)
             IndentarNodo(PorcentajeIVA, 2)
 
             Articulos.AppendChild(concepto)
-        Next c
+
+        Next
         '************************************************
         subAgregaR1()
 
@@ -1001,14 +1017,15 @@ Public Class frmFacturaView
                     'A.WriteStartElement("CantidadArticulos")
                     'A.WriteValue(vAddSorArticulos.CantidadArticulos)
                     'A.WriteEndElement()  'FIN DE NODO CantidadArticulos
+
                     A.WriteStartElement("Codigo")
-                    A.WriteValue(vAddSorArticulos.Codigo)
+                    A.WriteValue(vRow.Item("codigo"))
                     A.WriteEndElement()  'FIN DE NODO Codigo
                     A.WriteStartElement("CantidadUnidadCompra")
-                    A.WriteValue(vAddSorArticulos.CantidadUnidadCompra)
+                    A.WriteValue(FormatNumber(vRow.Item("cantidad"), 2, TriState.False, TriState.False, TriState.False))
                     A.WriteEndElement()  'FIN DE NODO CantidadUnidadCompra
                     A.WriteStartElement("CostoNetoUnidadCompra")
-                    A.WriteValue(vAddSorArticulos.CostoNetoUnidadCompra)
+                    A.WriteValue(FormatNumber(vRow.Item("precio") * vRow.Item("cantidad"), 2, TriState.False, TriState.False, TriState.False))
                     A.WriteEndElement()  'FIN DE NODO CostoNetoUnidadCompra
 
                     A.WriteStartElement("PorcentajeIEPS")

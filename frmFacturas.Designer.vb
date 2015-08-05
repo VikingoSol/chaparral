@@ -54,6 +54,7 @@ Partial Class frmFacturas
                     Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         grdFacturas_DesignTimeLayout.LayoutString = resources.GetString("grdFacturas_DesignTimeLayout.LayoutString")
         Me.grdFacturas.DesignTimeLayout = grdFacturas_DesignTimeLayout
+        Me.grdFacturas.FilterMode = Janus.Windows.GridEX.FilterMode.Automatic
         Me.grdFacturas.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.grdFacturas.GroupByBoxVisible = False
         Me.grdFacturas.HideSelection = Janus.Windows.GridEX.HideSelection.Highlight
